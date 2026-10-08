@@ -26,12 +26,12 @@ const configuredBase =
     ? `/${repositoryName}`
     : "");
 const basePath = configuredBase.replace(/\/$/, "");
-const siteOrigin = (
+const siteOrigin = new URL(
   process.env.PUBLIC_SITE_URL ||
-  (isGitHubPagesBuild
-    ? `https://${repositoryOwner}.github.io`
-    : "https://zevqio.site")
-).replace(/\/$/, "");
+    (isGitHubPagesBuild
+      ? `https://${repositoryOwner}.github.io`
+      : "https://zevqio.site"),
+).origin;
 const publicPath = (path: string): string =>
   `${basePath}${path === "/" ? "/" : path}`;
 const localRoute = (path: string): string =>
