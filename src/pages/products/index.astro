@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Icon from "../../components/Icon.astro";
+import { products } from "../../data/products";
+import { withBase } from "../../utils/paths";
+---
+
+<BaseLayout
+  title="Products"
+  description="Explore Zevqio's early-stage software projects and product areas, including Vidoany and TokenSaver."
+  path="/products"
+>
+  <section class="page-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href={withBase("/")}>Home</a>
+        <Icon name="chevronRight" size={13} />
+        <span aria-current="page">Products</span>
+      </nav>
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span> Product portfolio
+      </p>
+      <div class="page-hero-row">
+        <h1>
+          Software for work
+          <br />
+          <span class="text-gradient">that repeats.</span>
+        </h1>
+        <p>
+          We’re exploring focused software projects for practical work. Every
+          project listed here is in development, and some public details are
+          still taking shape.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="page-content-section section-space compact-top">
+    <div class="shell">
+      <div class="product-grid product-grid-page">
+        {products.map((product) => (
+          <ProductCard {product} />
+        ))}
+      </div>
+      <div class="portfolio-note">
+        <span class="note-mark">
+          <Icon name="sparkles" size={16} />
+        </span>
+        <p>
+          We’ll share availability and specific capabilities once each product
+          area is ready to discuss publicly.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="page-cta-section">
+    <div class="shell page-cta-inner">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Have a use case?
+        </p>
+        <h2>Tell us about the work.</h2>
+      </div>
+      <a class="button button-primary" href={withBase("/contact")}>
+        Get in touch <Icon name="arrowUpRight" size={16} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

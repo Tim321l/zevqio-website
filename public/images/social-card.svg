@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="82" y1="30" x2="1104" y2="626" gradientUnits="userSpaceOnUse"><stop stop-color="#0B1322"/><stop offset=".55" stop-color="#09101C"/><stop offset="1" stop-color="#111A2B"/></linearGradient>
+    <linearGradient id="a" x1="510" y1="305" x2="1044" y2="594" gradientUnits="userSpaceOnUse"><stop stop-color="#4A8CFF"/><stop offset="1" stop-color="#3ED9DB"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 358 -511 0 876 276)" gradientUnits="userSpaceOnUse"><stop stop-color="#2A93D4" stop-opacity=".18"/><stop offset="1" stop-color="#132642" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" stroke="#A9C0E3" stroke-opacity=".07"/></pattern>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v630H0z"/><path fill="url(#glow)" d="M0 0h1200v630H0z"/><path fill="url(#grid)" d="M0 0h1200v630H0z"/>
+  <circle cx="910" cy="315" r="236" stroke="#A9C0E3" stroke-opacity=".11"/><circle cx="910" cy="315" r="183" stroke="#A9C0E3" stroke-opacity=".12"/><circle cx="910" cy="315" r="128" stroke="#A9C0E3" stroke-opacity=".13"/>
+  <path d="M945 315 1075 165M945 315l130 150" stroke="url(#a)" stroke-opacity=".42" stroke-width="1.5" stroke-dasharray="4 8"/>
+  <circle cx="910" cy="315" r="35" fill="#101D30" stroke="#59CBEA" stroke-opacity=".7"/><path d="m898 303 24 0-14 24h14m-24 0h10" stroke="#EAF8FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="921" cy="303" r="1.6" fill="#59CBEA"/>
+  <rect x="793" y="116" width="230" height="70" rx="12" fill="#0E1929" stroke="#A9C0E3" stroke-opacity=".17"/><circle cx="819" cy="151" r="10" fill="#162E4D"/><path d="M816 147h6l4 4-4 4h-6v-8Z" stroke="#55C8EB" stroke-width="1.4"/><text x="841" y="148" fill="#7B90AC" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.8">DOCUMENT INPUT</text><text x="841" y="164" fill="#EFF7FF" font-family="Arial,sans-serif" font-size="13">Digital or scanned</text>
+  <rect x="985" y="439" width="174" height="70" rx="12" fill="#0E1929" stroke="#A9C0E3" stroke-opacity=".17"/><circle cx="1011" cy="474" r="10" fill="#12333A"/><path d="m1007 474 3 3 6-7" stroke="#62DDD0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="1031" y="471" fill="#7B90AC" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.8">NEXT STEP</text><text x="1031" y="487" fill="#EFF7FF" font-family="Arial,sans-serif" font-size="13">Human review</text>
+  <g transform="translate(60 55)"><path d="M19 2.8 35 12v14L19 35.2 3 26V12L19 2.8Z" stroke="#67D9E9" stroke-width="1.4"/><path d="m12 13 14 0-8 12h8M12 25h6" stroke="#EAF8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="27" cy="13" r="1.25" fill="#67D9E9"/><text x="50" y="27" fill="#F3F8FF" font-family="Arial,sans-serif" font-size="28" font-weight="600" letter-spacing="-.7">zevqio</text><circle cx="143" cy="21" r="3" fill="#67D9E9"/></g>
+  <text x="60" y="267" fill="#65D6E8" font-family="Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="3">INDEPENDENT SOFTWARE STUDIO</text>
+  <text x="60" y="350" fill="#F4F8FE" font-family="Arial,sans-serif" font-size="65" font-weight="650" letter-spacing="-3">Build Smarter.</text>
+  <text x="60" y="428" fill="url(#a)" font-family="Arial,sans-serif" font-size="65" font-weight="650" letter-spacing="-3">Work Faster.</text>
+  <text x="63" y="484" fill="#A4B2C6" font-family="Arial,sans-serif" font-size="19">Practical software for modern business workflows.</text>
+  <path d="M60 550h128" stroke="#52637B"/><text x="60" y="582" fill="#667890" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">ZEVQIO.SITE</text>
+</svg>

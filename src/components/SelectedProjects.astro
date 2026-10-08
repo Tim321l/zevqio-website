@@ -1,0 +1,53 @@
+---
+import Icon from "./Icon.astro";
+import { selectedProjects } from "../data/projects";
+---
+
+<section class="selected-projects-section section-space" id="selected-projects">
+  <div class="shell">
+    <div class="section-heading heading-split">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Selected projects
+        </p>
+        <h2>
+          Work across
+          <br />
+          <span class="text-muted">code and sound.</span>
+        </h2>
+      </div>
+      <p class="section-intro">
+        A selection of independent work in game development, web, and original
+        audio. Project titles and demos can be added as they’re ready to share.
+      </p>
+    </div>
+    <div class="principle-grid selected-project-grid">
+      {selectedProjects.map((project, index) => (
+        <article
+          class:list={[
+            "principle-card",
+            "selected-project-card",
+            `accent-${project.accent}`,
+          ]}
+        >
+          <div class="principle-top">
+            <span class="principle-icon">
+              <Icon name={project.icon} size={22} />
+            </span>
+            <span>0{index + 1}</span>
+          </div>
+          <h3>{project.name}</h3>
+          <p>{project.summary}</p>
+          <ul
+            class="selected-project-tags"
+            aria-label={`${project.name} tools`}
+          >
+            {project.tools.map((tool) => (
+              <li>{tool}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

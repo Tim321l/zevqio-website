@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import { engineeringPrinciples, site } from "../data/site";
+import { withBase } from "../utils/paths";
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about Zevqio, an independent founder-led software initiative focused on useful business tools."
+  path="/about"
+>
+  <section class="page-hero about-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href={withBase("/")}>Home</a>
+        <Icon name="chevronRight" size={13} />
+        <span aria-current="page">About</span>
+      </nav>
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span> A small independent studio
+      </p>
+      <div class="page-hero-row">
+        <h1>
+          Make useful things.
+          <br />
+          <span class="text-gradient">Make them thoughtfully.</span>
+        </h1>
+        <p>
+          Zevqio is an independent, founder-led software initiative exploring
+          practical tools for document processing, automation, and business
+          productivity.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="about-story-section section-space compact-top">
+    <div class="shell about-story-grid">
+      <div class="about-story-main">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Why Zevqio exists
+        </p>
+        <h2>
+          Software should make the next step{" "}
+          <span class="text-gradient">easier to see.</span>
+        </h2>
+        <p class="large-body">
+          We combine software engineering with modern AI techniques to explore
+          reliable, efficient solutions for real operational challenges.
+        </p>
+        <p>
+          Our current areas of interest include document intelligence, OCR and
+          data extraction, PDF automation, business workflows, and developer
+          tools. These are early explorations, and we’ll be clear as products
+          develop and become ready to share.
+        </p>
+        <p>
+          Zevqio is bootstrapped and early-stage. The work is intentionally
+          focused: understand a real task, find a useful way to reduce friction,
+          and build carefully from there.
+        </p>
+      </div>
+      <aside class="about-stage-card">
+        <span class="stage-card-eyebrow">ZEVQIO / STUDIO PROFILE</span>
+        <div class="stage-card-mark">
+          <span>Z</span>
+          <i></i>
+        </div>
+        <dl>
+          <div>
+            <dt>Structure</dt>
+            <dd>Independent initiative</dd>
+          </div>
+          <div>
+            <dt>Stage</dt>
+            <dd>
+              <span class="status-dot"></span> Early-stage
+            </dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Practical software</dd>
+          </div>
+          <div>
+            <dt>Approach</dt>
+            <dd>Founder-led · Bootstrapped</dd>
+          </div>
+        </dl>
+        <p class="stage-card-foot">
+          Building with care, one useful step at a time.
+        </p>
+      </aside>
+    </div>
+  </section>
+  <section class="about-principles section-space">
+    <div class="shell">
+      <div class="section-heading heading-split">
+        <div>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> Working principles
+          </p>
+          <h2>
+            How we approach
+            <br />
+            <span class="text-muted">the details.</span>
+          </h2>
+        </div>
+        <p class="section-intro">
+          Good software respects people’s time, context, and confidence in the
+          result.
+        </p>
+      </div>
+      <div class="principle-grid">
+        {engineeringPrinciples.map((principle) => (
+          <article class="principle-card">
+            <div class="principle-top">
+              <span class="principle-icon">
+                <Icon name={principle.icon} size={22} />
+              </span>
+              <span>{principle.number}</span>
+            </div>
+            <h3>{principle.title}</h3>
+            <p>{principle.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="page-cta-section">
+    <div class="shell page-cta-inner">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Say hello
+        </p>
+        <h2>What are you working on?</h2>
+      </div>
+      <a
+        class="button button-primary"
+        href={`mailto:${site.email}?subject=${encodeURIComponent("Hello, Zevqio")}`}
+      >
+        Contact Zevqio <Icon name="arrowUpRight" size={16} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

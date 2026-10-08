@@ -1,0 +1,396 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import SelectedProjects from "../components/SelectedProjects.astro";
+import Icon from "../components/Icon.astro";
+import { capabilities, engineeringPrinciples, site } from "../data/site";
+import { products } from "../data/products";
+import { withBase } from "../utils/paths";
+---
+
+<BaseLayout
+  title="Practical AI & Workflow Software"
+  description={site.description}
+  path="/"
+>
+  <section class="hero-section" id="top">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="shell hero-layout">
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Independent software studio
+        </p>
+        <h1>
+          Build Smarter.
+          <br />
+          <span>Work Faster.</span>
+        </h1>
+        <p class="hero-lede">
+          Practical software and intelligent automation tools for modern
+          business workflows.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href={withBase("/products")}>
+            Explore products <Icon name="arrowUpRight" size={16} />
+          </a>
+          <a class="button button-quiet" href={withBase("/contact")}>
+            Contact us <Icon name="arrowRight" size={16} />
+          </a>
+        </div>
+        <div class="hero-footnote">
+          <span class="footnote-mark">
+            <Icon name="sparkles" size={14} />
+          </span>
+          <span>Small, useful software for real operational work.</span>
+        </div>
+      </div>
+
+      <div
+        class="hero-art"
+        role="img"
+        aria-label="Illustration of a document moving through an information processing workflow"
+      >
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-crosshair crosshair-a" aria-hidden="true"></div>
+        <div class="art-crosshair crosshair-b" aria-hidden="true"></div>
+        <div class="art-label label-input">
+          <span class="art-label-dot blue-dot"></span> DOCUMENT INPUT
+        </div>
+        <div class="art-label label-output">
+          <span class="art-label-dot cyan-dot"></span> STRUCTURED DATA
+        </div>
+        <div class="art-connector connector-one" aria-hidden="true"></div>
+        <div class="art-connector connector-two" aria-hidden="true"></div>
+        <div class="art-node node-one">
+          <Icon name="file" size={18} />
+        </div>
+        <div class="art-node node-two">
+          <Icon name="scan" size={19} />
+        </div>
+        <div class="art-node node-three">
+          <Icon name="braces" size={19} />
+        </div>
+        <div class="data-window">
+          <div class="window-bar">
+            <span class="window-dots">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+            <span class="window-label">EXAMPLE / EXTRACT</span>
+            <span class="window-mark">ZVQ</span>
+          </div>
+          <div class="window-content">
+            <div class="document-preview" aria-hidden="true">
+              <span class="doc-symbol">
+                <Icon name="file" size={15} />
+              </span>
+              <span class="doc-lines">
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+              <span class="doc-stamp">PDF</span>
+            </div>
+            <div class="window-arrow">
+              <Icon name="arrowRight" size={17} />
+            </div>
+            <div class="code-preview" aria-hidden="true">
+              <span class="code-row">
+                <i>01</i> <b>type</b> <em>"invoice"</em>
+              </span>
+              <span class="code-row">
+                <i>02</i> <b>total</b> <em>1,240.00</em>
+              </span>
+              <span class="code-row">
+                <i>03</i> <b>status</b> <em class="code-valid">verified</em>
+              </span>
+            </div>
+          </div>
+          <div class="window-foot">
+            <span>
+              <i class="status-dot"></i> Illustrative workflow
+            </span>
+            <span>01 — 04</span>
+          </div>
+        </div>
+        <span class="art-coordinate coordinate-one">22°18′N / 114°10′E</span>
+        <span class="art-coordinate coordinate-two">ZVQ · SYSTEMS 001</span>
+      </div>
+    </div>
+    <div class="hero-bottom shell">
+      <span>DOCUMENT INTELLIGENCE</span>
+      <span>WORKFLOW AUTOMATION</span>
+      <span>SOFTWARE THAT DOES USEFUL WORK</span>
+    </div>
+  </section>
+
+  <section class="capabilities-section section-space" id="solutions">
+    <div class="shell">
+      <div class="section-heading heading-split">
+        <div>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> What we work on
+          </p>
+          <h2>
+            Less busywork.
+            <br />
+            <span class="text-muted">More room to think.</span>
+          </h2>
+        </div>
+        <p class="section-intro">
+          A focused set of software ideas for the document-heavy, repetitive
+          parts of modern work.
+        </p>
+      </div>
+      <div class="capability-grid">
+        {capabilities.map((capability, index) => (
+          <a class="capability-card" href={withBase(capability.href)}>
+            <div class="capability-top">
+              <span class="capability-icon">
+                <Icon name={capability.icon} size={21} />
+              </span>
+              <span class="capability-index">0{index + 1}</span>
+            </div>
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
+            <span class="capability-arrow" aria-hidden="true">
+              <Icon name="arrowUpRight" size={16} />
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section section-space" id="products">
+    <div class="shell">
+      <div class="section-heading heading-split">
+        <div>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> Product areas
+          </p>
+          <h2>
+            Ideas becoming
+            <br />
+            <span class="text-muted">useful tools.</span>
+          </h2>
+        </div>
+        <div class="section-intro-block">
+          <p class="section-intro">
+            We’re building with care and sharing progress honestly. Each product
+            area is currently in development.
+          </p>
+          <a class="text-link" href={withBase("/products")}>
+            View all product areas <Icon name="arrowRight" size={16} />
+          </a>
+        </div>
+      </div>
+      <div class="product-grid">
+        {products.map((product) => (
+          <ProductCard {product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SelectedProjects />
+
+  <section class="workflow-section section-space">
+    <div class="shell workflow-layout">
+      <div class="workflow-copy">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> The shape of the work
+        </p>
+        <h2>
+          From a file
+          <br />
+          to <span class="text-gradient">a clear next step.</span>
+        </h2>
+        <p>
+          Good automation makes the work easier to follow. This example shows a
+          possible document workflow, with a person in the loop before
+          information moves forward.
+        </p>
+        <a class="text-link" href={withBase("/products/document-intelligence")}>
+          Explore document intelligence <Icon name="arrowRight" size={16} />
+        </a>
+      </div>
+      <div class="workflow-board">
+        <div class="board-head">
+          <span>ILLUSTRATIVE WORKFLOW</span>
+          <span class="board-state">
+            <i class="status-dot"></i> EXAMPLE ONLY
+          </span>
+        </div>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="step-icon">
+              <Icon name="file" size={18} />
+            </span>
+            <span class="step-copy">
+              <b>Document input</b>
+              <small>Scanned or digital file</small>
+            </span>
+            <span class="step-number">01</span>
+          </div>
+          <div class="step-join">
+            <span></span>
+          </div>
+          <div class="workflow-step">
+            <span class="step-icon">
+              <Icon name="scan" size={18} />
+            </span>
+            <span class="step-copy">
+              <b>OCR & extraction</b>
+              <small>Text to structured fields</small>
+            </span>
+            <span class="step-number">02</span>
+          </div>
+          <div class="step-join">
+            <span></span>
+          </div>
+          <div class="workflow-step">
+            <span class="step-icon">
+              <Icon name="check" size={18} />
+            </span>
+            <span class="step-copy">
+              <b>Validation</b>
+              <small>Check what was captured</small>
+            </span>
+            <span class="step-number">03</span>
+          </div>
+          <div class="step-join">
+            <span></span>
+          </div>
+          <div class="workflow-step review-step">
+            <span class="step-icon">
+              <Icon name="user-check" size={18} />
+            </span>
+            <span class="step-copy">
+              <b>Human review</b>
+              <small>Confirm before proceeding</small>
+            </span>
+            <span class="step-number">04</span>
+          </div>
+          <div class="step-join">
+            <span></span>
+          </div>
+          <div class="workflow-step output-step">
+            <span class="step-icon">
+              <Icon name="braces" size={18} />
+            </span>
+            <span class="step-copy">
+              <b>Structured output</b>
+              <small>Ready for the next tool</small>
+            </span>
+            <span class="step-number">05</span>
+          </div>
+        </div>
+        <p class="board-note">
+          <Icon name="sparkles" size={14} /> Example diagram only. Product
+          capabilities are in development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles-section section-space">
+    <div class="shell">
+      <div class="section-heading heading-center">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> How we think about software{" "}
+          <span class="eyebrow-line"></span>
+        </p>
+        <h2>
+          Built around the <span class="text-muted">real work.</span>
+        </h2>
+        <p class="section-intro">
+          Useful tools should feel understandable, fit the way people work, and
+          earn trust one step at a time.
+        </p>
+      </div>
+      <div class="principle-grid">
+        {engineeringPrinciples.map((principle) => (
+          <article class="principle-card">
+            <div class="principle-top">
+              <span class="principle-icon">
+                <Icon name={principle.icon} size={22} />
+              </span>
+              <span>{principle.number}</span>
+            </div>
+            <h3>{principle.title}</h3>
+            <p>{principle.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="studio-section section-space">
+    <div class="shell studio-layout">
+      <div class="studio-art" aria-hidden="true">
+        <div class="studio-graphic">
+          <span class="graphic-ring ring-a"></span>
+          <span class="graphic-ring ring-b"></span>
+          <span class="graphic-ring ring-c"></span>
+          <span class="graphic-center">
+            <span>Z</span>
+          </span>
+          <span class="graphic-dot dot-a"></span>
+          <span class="graphic-dot dot-b"></span>
+          <span class="graphic-dot dot-c"></span>
+          <span class="graphic-caption caption-a">THOUGHTFUL BY DEFAULT</span>
+          <span class="graphic-caption caption-b">
+            SMALL STUDIO / BIG CURIOSITY
+          </span>
+        </div>
+      </div>
+      <div class="studio-copy">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> About Zevqio
+        </p>
+        <h2>
+          An independent studio, working on{" "}
+          <span class="text-gradient">useful things.</span>
+        </h2>
+        <p>
+          Zevqio is an independent software initiative focused on practical
+          tools for document processing, automation, and business productivity.
+          We combine software engineering with modern AI techniques to explore
+          reliable, efficient solutions for real operational challenges.
+        </p>
+        <p class="studio-note">
+          <span class="status-dot"></span> Founder-led · Bootstrapped ·
+          Early-stage
+        </p>
+        <a class="text-link" href={withBase("/about")}>
+          More about Zevqio <Icon name="arrowRight" size={16} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band">
+    <div class="contact-band-glow" aria-hidden="true"></div>
+    <div class="shell contact-band-inner">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Start a conversation
+        </p>
+        <h2>Let’s build something useful.</h2>
+        <p>
+          Have a workflow worth making simpler? Tell us what you’re working on.
+        </p>
+      </div>
+      <a
+        class="button button-light"
+        href={`mailto:${site.email}?subject=${encodeURIComponent("A workflow worth simplifying")}`}
+      >
+        <Icon name="mail" size={17} /> {site.email}{" "}
+        <Icon name="arrowUpRight" size={16} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

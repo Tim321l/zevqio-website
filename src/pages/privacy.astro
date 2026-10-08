@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import { site } from "../data/site";
+import { withBase } from "../utils/paths";
+---
+
+<BaseLayout
+  title="Privacy"
+  description="How the Zevqio website handles browser preferences, email links, and basic hosting requests."
+  path="/privacy"
+>
+  <section class="page-hero legal-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href={withBase("/")}>Home</a>
+        <Icon name="chevronRight" size={13} />
+        <span aria-current="page">Privacy</span>
+      </nav>
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span> Plain-language policy
+      </p>
+      <div class="page-hero-row">
+        <h1>
+          Your privacy,
+          <br />
+          <span class="text-gradient">in plain terms.</span>
+        </h1>
+        <p>This page describes what this website does and doesn’t collect.</p>
+      </div>
+    </div>
+  </section>
+  <section class="legal-content section-space compact-top">
+    <div class="shell legal-layout">
+      <aside class="legal-aside">
+        <span class="legal-date-label">LAST UPDATED</span>
+        <time datetime="2026-10-08">October 8, 2026</time>
+        <span class="legal-aside-rule"></span>
+        <p>This website is a small, static information site for Zevqio.</p>
+      </aside>
+      <article class="legal-article">
+        <p class="legal-intro">
+          Zevqio aims to keep this website simple. It does not include
+          analytics, advertising trackers, a contact form, or an account system.
+        </p>
+        <section>
+          <h2>Information the site stores</h2>
+          <p>
+            If you choose a light or dark theme, the site can save that
+            preference in your browser’s local storage so it remains selected on
+            later visits. This preference stays in your browser and is not sent
+            to Zevqio.
+          </p>
+          <p>The site does not set advertising or analytics cookies.</p>
+        </section>
+        <section>
+          <h2>Hosting and technical requests</h2>
+          <p>
+            The website is intended to be hosted as static pages through GitHub
+            Pages. When a browser requests a page, the hosting provider may
+            process technical request information to deliver and protect the
+            service, according to its own terms and settings. Zevqio has not
+            added a separate analytics or visitor-tracking service to this site.
+          </p>
+        </section>
+        <section>
+          <h2>Email</h2>
+          <p>
+            Links to <a href={`mailto:${site.email}`}>{site.email}</a> open your
+            own email application. If you send a message, the information you
+            include is handled by your and Zevqio’s email providers. This
+            website does not receive or store the message.
+          </p>
+          <p>
+            Please avoid including confidential documents or sensitive personal
+            information in an introductory message.
+          </p>
+        </section>
+        <section>
+          <h2>External links</h2>
+          <p>
+            Links to other websites are governed by those sites’ own privacy
+            practices. This policy applies only to the Zevqio website.
+          </p>
+        </section>
+        <section>
+          <h2>Questions</h2>
+          <p>
+            For a question about this policy, email{" "}
+            <a
+              href={`mailto:${site.email}?subject=${encodeURIComponent("Privacy question")}`}
+            >
+              {site.email}
+            </a>
+            .
+          </p>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

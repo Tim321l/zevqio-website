@@ -1,0 +1,29 @@
+---
+import Icon from "./Icon.astro";
+import { withBase } from "../utils/paths";
+---
+
+<section class="not-found-section">
+  <div class="shell not-found-inner">
+    <div class="not-found-code">
+      <span>404</span>
+      <i></i>
+      <b></b>
+    </div>
+    <p class="eyebrow">
+      <span class="eyebrow-line"></span> Page not found
+    </p>
+    <h1>
+      Looks like this
+      <br />
+      <span class="text-muted">path wandered off.</span>
+    </h1>
+    <p class="not-found-copy">
+      The page may have moved, or the link may be out of date. Let’s get you
+      back to something useful.
+    </p>
+    <a class="button button-primary" href={withBase("/")}>
+      Return to homepage <Icon name="arrowLeft" size={16} />
+    </a>
+  </div>
+</section>

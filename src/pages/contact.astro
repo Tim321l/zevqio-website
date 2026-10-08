@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import { site } from "../data/site";
+import { withBase } from "../utils/paths";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Zevqio about practical software, document processing, and business workflow automation."
+  path="/contact"
+>
+  <section class="page-hero contact-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href={withBase("/")}>Home</a>
+        <Icon name="chevronRight" size={13} />
+        <span aria-current="page">Contact</span>
+      </nav>
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span> Contact
+      </p>
+      <div class="page-hero-row">
+        <h1>
+          Let’s talk about
+          <br />
+          <span class="text-gradient">the work.</span>
+        </h1>
+        <p>
+          Tell us about a repetitive process, a document challenge, or a useful
+          tool you wish existed. We read every note.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-content section-space compact-top">
+    <div class="shell contact-content-grid">
+      <div class="contact-email-card">
+        <span class="contact-icon">
+          <Icon name="mail" size={24} />
+        </span>
+        <p class="contact-card-label">EMAIL</p>
+        <h2>Start with a note.</h2>
+        <p>
+          Use your email app to reach the founder directly. There’s no website
+          contact form or submission database.
+        </p>
+        <a class="contact-address" href={`mailto:${site.email}`}>
+          {site.email} <Icon name="arrowUpRight" size={16} />
+        </a>
+      </div>
+      <aside class="contact-guidance">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> A useful starting point
+        </p>
+        <h2>What should I include?</h2>
+        <p>
+          A few lines about the task and the outcome you’re after is plenty.
+        </p>
+        <ul>
+          <li>
+            <span>
+              <Icon name="check" size={14} />
+            </span>{" "}
+            What part of the workflow takes time?
+          </li>
+          <li>
+            <span>
+              <Icon name="check" size={14} />
+            </span>{" "}
+            Which documents or tools are involved?
+          </li>
+          <li>
+            <span>
+              <Icon name="check" size={14} />
+            </span>{" "}
+            What would a better next step look like?
+          </li>
+        </ul>
+        <p class="contact-privacy-note">
+          Please don’t send confidential documents or sensitive personal
+          information in an introductory email.
+        </p>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

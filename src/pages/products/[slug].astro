@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Icon from "../../components/Icon.astro";
+import { products, type Product } from "../../data/products";
+import { site } from "../../data/site";
+import { withBase } from "../../utils/paths";
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props as { product: Product };
+const description = `${product.summary} ${product.stage} at Zevqio.`;
+const subject = encodeURIComponent(`Question about ${product.name}`);
+---
+
+<BaseLayout
+  title={product.name}
+  {description}
+  path={`/products/${product.slug}`}
+>
+  <section class="product-detail-hero">
+    <div class="shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href={withBase("/")}>Home</a>
+        <Icon name="chevronRight" size={13} />
+        <a href={withBase("/products")}>Products</a>
+        <Icon name="chevronRight" size={13} />
+        <span aria-current="page">{product.name}</span>
+      </nav>
+      <div class="product-detail-grid">
+        <div>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            {product.category}
+          </p>
+          <h1>
+            {product.name}
+            <span class="product-title-period">.</span>
+          </h1>
+          <p class="detail-lede">{product.summary}</p>
+          <span class="status-pill detail-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            {product.stage}
+          </span>
+        </div>
+        <div class:list={["detail-symbol-card", `accent-${product.accent}`]}>
+          <span class="detail-symbol-glow"></span>
+          <span class="detail-symbol">
+            <Icon name={product.icon} size={42} strokeWidth={1.35} />
+          </span>
+          <span class="detail-symbol-label">ZEVQIO / EXPLORATION</span>
+          <span class="detail-symbol-orbit orbit-left"></span>
+          <span class="detail-symbol-orbit orbit-right"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product-detail-content section-space compact-top">
+    <div class="shell detail-content-grid">
+      <div class="detail-description">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> About this area
+        </p>
+        <h2>
+          A closer look
+          <br />
+          <span class="text-muted">at the project.</span>
+        </h2>
+        <p>{product.description}</p>
+        <p class="detail-disclaimer">
+          Zevqio is an early-stage, independent software initiative. This page
+          describes work in progress and does not represent a commercial product
+          offer.
+        </p>
+      </div>
+      <aside class="focus-panel">
+        <div class="focus-panel-head">
+          <div>
+            <span class="focus-kicker">CURRENT FOCUS</span>
+            <h2>What we’re exploring</h2>
+          </div>
+          <span class="focus-icon">
+            <Icon name="layers" size={19} />
+          </span>
+        </div>
+        <ul>
+          {product.focus.map((item) => (
+            <li>
+              <span>
+                <Icon name="check" size={14} />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="focus-footer">
+          <span class="status-dot"></span> In development
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="page-cta-section">
+    <div class="shell page-cta-inner">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span> Work with us
+        </p>
+        <h2>Have a useful idea to share?</h2>
+      </div>
+      <a
+        class="button button-primary"
+        href={`mailto:${site.email}?subject=${subject}`}
+      >
+        Start a conversation <Icon name="arrowUpRight" size={16} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>
