@@ -60,7 +60,7 @@ Product names, descriptions, status labels, homepage capabilities, navigation, c
 
 ## Deployment
 
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for GitHub Pages setup. The workflow deploys to the GitHub Pages URL and does not configure a custom domain. This repository is prepared for deployment but has not been connected to a GitHub repository or deployed.
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for GitHub Pages setup. The workflow builds for the existing root custom domain, `https://zevqio.site/`, and deploys through GitHub Actions.
 
 ## Project notes
 
@@ -68,4 +68,4 @@ See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for GitHub Pages setup. The workflo
 - Zevqio is presented as an independent software initiative, without a company suffix or invented credentials.
 - The contact address is a direct `mailto:` link. Messages are not submitted to or stored by this site.
 - The theme preference is stored in browser local storage only.
-- SEO and asset paths adapt to the GitHub Pages repository URL during deployment. The purchased custom domain is not configured.
+- SEO and asset paths use the root custom domain by default. Set `PUBLIC_BASE_PATH` only when intentionally building for a subpath.

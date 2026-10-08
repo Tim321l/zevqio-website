@@ -14,24 +14,10 @@ const routes = [
   "/privacy",
 ];
 
-const [repositoryOwner, repositoryName] = (
-  process.env.GITHUB_REPOSITORY ?? ""
-).split("/");
-const isGitHubPagesBuild =
-  process.env.GITHUB_ACTIONS === "true" &&
-  Boolean(repositoryOwner && repositoryName);
-const configuredBase =
-  process.env.PUBLIC_BASE_PATH ||
-  (isGitHubPagesBuild && repositoryName !== `${repositoryOwner}.github.io`
-    ? `/${repositoryName}`
-    : "");
+const configuredBase = process.env.PUBLIC_BASE_PATH || "/";
 const basePath = configuredBase.replace(/\/$/, "");
-const siteOrigin = new URL(
-  process.env.PUBLIC_SITE_URL ||
-    (isGitHubPagesBuild
-      ? `https://${repositoryOwner}.github.io`
-      : "https://zevqio.site"),
-).origin;
+const siteOrigin = new URL(process.env.PUBLIC_SITE_URL || "https://zevqio.site")
+  .origin;
 const publicPath = (path: string): string =>
   `${basePath}${path === "/" ? "/" : path}`;
 const localRoute = (path: string): string =>
@@ -126,6 +112,62 @@ test("production JavaScript is same-origin for the static content policy", async
     page.locator(`script[src="${publicPath("/site-controls.js")}"]`),
   ).toHaveCount(1);
   await expect(page.locator("script:not([src])")).toHaveCount(0);
+});
+
+test("production CSS and JavaScript assets load from the configured base path", async ({
+  page,
+}) => {
+  const assetResponses: Array<{
+    path: string;
+    type: string;
+    status: number;
+    contentType: string | undefined;
+  }> = [];
+  page.on("response", (response) => {
+    const type = response.request().resourceType();
+    if (type === "stylesheet" || type === "script") {
+      assetResponses.push({
+        path: new URL(response.url()).pathname,
+        type,
+        status: response.status(),
+        contentType: response.headers()["content-type"],
+      });
+    }
+  });
+
+  await page.goto(localRoute("/"));
+
+  const stylesheet = assetResponses.find(
+    (asset) => asset.type === "stylesheet" && asset.path.endsWith(".css"),
+  );
+  expect(stylesheet?.path.startsWith(publicPath("/_astro/"))).toBe(true);
+  expect(stylesheet?.path).not.toContain("/zevqio-website/");
+  expect(stylesheet?.status).toBe(200);
+  expect(stylesheet?.contentType).toContain("text/css");
+
+  const controlsScript = assetResponses.find(
+    (asset) =>
+      asset.type === "script" && asset.path === publicPath("/site-controls.js"),
+  );
+  expect(controlsScript?.status).toBe(200);
+  expect(controlsScript?.contentType).toMatch(/javascript/);
+
+  await expect
+    .poll(() =>
+      page
+        .locator(".hero-layout")
+        .evaluate((element) => getComputedStyle(element).display),
+    )
+    .toBe("grid");
+  expect(
+    await page
+      .locator("body")
+      .evaluate((element) => getComputedStyle(element).margin),
+  ).toBe("0px");
+
+  const logo = await page.locator(".site-header .brand-mark").boundingBox();
+  expect(logo?.width).toBeLessThanOrEqual(34);
+  expect(logo?.height).toBeLessThanOrEqual(34);
 });
 
 test("robots and sitemap files are reachable and use canonical route paths", async ({

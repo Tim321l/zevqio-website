@@ -12,8 +12,8 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
-      PUBLIC_BASE_PATH: ${{ vars.PUBLIC_BASE_PATH }}
+      PUBLIC_SITE_URL: https://zevqio.site
+      PUBLIC_BASE_PATH: /
     steps:
       - name: Check out source
         uses: actions/checkout@v4
