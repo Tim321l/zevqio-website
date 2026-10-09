@@ -30,7 +30,7 @@ export const capabilities = [
     description:
       "Investigate text recognition and extraction workflows for everyday business documents.",
     icon: "braces",
-    href: "/products/document-intelligence",
+    href: "/products/ocr-studio",
   },
   {
     title: "PDF automation",

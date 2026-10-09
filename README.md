@@ -48,6 +48,7 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 - `/products/document-intelligence`
 - `/products/pdf-automation`
 - `/products/workflow-automation`
+- `/products/ocr-studio` — OCR Studio project overview and illustrative interface previews
 - `/products/vidoany`
 - `/products/tokensaver`
 - Homepage selected projects section for game development, web, and original audio work

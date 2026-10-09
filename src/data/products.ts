@@ -1,5 +1,12 @@
 export type ProductStatus = "In Development";
 
+export type ProductInterfacePreview = {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -11,9 +18,51 @@ export type Product = {
   focus: string[];
   icon: "scan" | "file" | "workflow" | "braces";
   accent: string;
+  interfacePreviews?: ProductInterfacePreview[];
 };
 
 export const products: Product[] = [
+  {
+    slug: "ocr-studio",
+    name: "OCR Studio",
+    shortName: "OCR Studio",
+    category: "Documents · OCR",
+    summary:
+      "A focused workspace concept for turning scanned pages into text that is easier to review.",
+    description:
+      "OCR Studio explores a clear document review experience, with the source page and recognized text kept easy to compare. The screens below are original concept previews with sample content; the product is in development and is not available as a public service.",
+    stage: "In Development",
+    focus: [
+      "A clear starting point for scanned documents",
+      "Source pages shown alongside text for review",
+      "An understandable path from document to reviewed text",
+    ],
+    icon: "scan",
+    accent: "cyan",
+    interfacePreviews: [
+      {
+        title: "Workspace",
+        description:
+          "A simple starting point for adding a document and finding recent work.",
+        image: "/images/ocr-studio-workspace.svg",
+        alt: "Illustrative OCR Studio workspace screen with a document intake panel and sample recent files.",
+      },
+      {
+        title: "Text review",
+        description:
+          "Keep a sample source page visible beside the text being reviewed.",
+        image: "/images/ocr-studio-review.svg",
+        alt: "Illustrative OCR Studio review screen showing a sample document page beside recognized text.",
+      },
+      {
+        title: "Document library",
+        description:
+          "Scan a sample document list and its review state at a glance.",
+        image: "/images/ocr-studio-library.svg",
+        alt: "Illustrative OCR Studio document library screen with sample files and review states.",
+      },
+    ],
+  },
   {
     slug: "document-intelligence",
     name: "Document Intelligence",
