@@ -41,8 +41,26 @@ test("homepage presents the brand and working primary actions", async ({
       .locator("#selected-projects")
       .getByRole("heading", { name: /work across code and sound/i }),
   ).toBeVisible();
-  await expect(page.getByText("Godot", { exact: true })).toBeVisible();
-  await expect(page.getByText("Unity", { exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "RimRise · Unity edition" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "RimRise · Browser game" }),
+  ).toBeVisible();
+  await expect(page.getByText("Unity 6.3", { exact: true })).toBeVisible();
+  await expect(page.getByText("Three.js", { exact: true })).toBeVisible();
+  await expect(
+    page
+      .locator("#selected-projects")
+      .getByRole("link", { name: /explore project/i })
+      .nth(0),
+  ).toHaveAttribute("href", publicPath("/projects/rimrise-unity"));
+  await expect(
+    page
+      .locator("#selected-projects")
+      .getByRole("link", { name: /explore project/i })
+      .nth(1),
+  ).toHaveAttribute("href", publicPath("/projects/rimrise-web"));
   await expect(page.getByText("Original audio", { exact: true })).toBeVisible();
   await expect(
     page
