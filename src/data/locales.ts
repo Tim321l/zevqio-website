@@ -525,8 +525,12 @@ const english = {
       ],
       previews: [
         [
-          "Local dashboard and settings",
-          "See input and queue status, upload videos, choose a processing mode, and configure local Ollama models.",
+          "Local analysis dashboard",
+          "The current desktop dashboard brings video intake, processing status, and recent work together.",
+        ],
+        [
+          "Local model settings",
+          "Choose the local Ollama endpoint and text and vision models in the desktop dashboard.",
         ],
         [
           "Recent report library",
@@ -1039,8 +1043,12 @@ const translated = {
         ],
         previews: [
           [
-            "本机控制台与分析设置",
-            "查看输入和队列状态、上传视频、选择分析模式并设定本机 Ollama 模型。",
+            "本机分析控制台",
+            "在当前桌面控制台中查看视频导入、处理状态和近期任务。",
+          ],
+          [
+            "本地模型设置",
+            "在桌面控制台中配置本机 Ollama 地址，以及文本和视觉模型。",
           ],
           [
             "最近报告库",
@@ -1550,8 +1558,12 @@ const translated = {
         ],
         previews: [
           [
-            "本機控制台與分析設定",
-            "查看輸入和佇列狀態、上載影片、選擇分析模式，以及設定本機 Ollama 模型。",
+            "本機分析控制台",
+            "在目前的桌面控制台查看影片匯入、處理狀態和近期工作。",
+          ],
+          [
+            "本機模型設定",
+            "在桌面控制台設定本機 Ollama 位址，以及文字和視覺模型。",
           ],
           [
             "最近報告庫",
@@ -2110,8 +2122,12 @@ const translated = {
         ],
         previews: [
           [
-            "ローカル画面と分析設定",
-            "入力数やキューの確認、動画の追加、分析モードの選択、Ollama モデルの設定を行う画面です。",
+            "ローカル分析ダッシュボード",
+            "動画の追加、処理状況、最近の作業を確認できる現在のデスクトップ画面です。",
+          ],
+          [
+            "ローカルモデル設定",
+            "デスクトップ画面で Ollama の接続先とテキスト・視覚モデルを設定します。",
           ],
           [
             "最近のレポート",
@@ -2671,8 +2687,12 @@ const translated = {
         ],
         previews: [
           [
-            "대시보드와 분석 설정",
-            "입력 및 대기열 상태를 확인하고, 동영상을 추가하며, 분석 모드와 로컬 Ollama 모델을 설정합니다.",
+            "로컬 분석 대시보드",
+            "현재 데스크톱 화면에서 동영상 추가, 처리 상태, 최근 작업을 확인할 수 있습니다.",
+          ],
+          [
+            "로컬 모델 설정",
+            "데스크톱 화면에서 Ollama 주소와 텍스트 및 비전 모델을 설정합니다.",
           ],
           [
             "최근 보고서 라이브러리",

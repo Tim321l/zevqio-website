@@ -296,9 +296,16 @@ export const products: Product[] = [
       {
         title: "Local analysis dashboard",
         description:
-          "The current desktop dashboard shows the input folder, processing mode, upload area, local model settings, and analysis queue.",
+          "The current desktop dashboard brings video intake, processing status, and recent work together.",
         image: "/images/projects/vidoutline-dashboard.png",
         alt: "Screenshot of VidOutline's current Chinese-language local dashboard, showing local Ollama settings and sample input counts.",
+      },
+      {
+        title: "Local model settings",
+        description:
+          "Choose the local Ollama endpoint and text and vision models in the desktop dashboard.",
+        image: "/images/projects/vidoutline-settings.png",
+        alt: "Screenshot of the current dashboard's local analysis settings, with Ollama text and vision model fields.",
       },
       {
         title: "Report library",

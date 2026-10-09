@@ -766,8 +766,8 @@ const previewImage = (image: string) =>
                     previewImage(sourceProduct.interfacePreviews[0].image),
                   )}
                   alt={
-                    "screenshotsLabel" in productCopy
-                      ? productCopy.screenshotsLabel
+                    "previews" in productCopy
+                      ? `${productCopy.name}: ${productCopy.previews[0]?.[0]}`
                       : productCopy.name
                   }
                   width="1440"
@@ -860,30 +860,6 @@ const previewImage = (image: string) =>
           </div>
         </section>
       )}
-      {productCopy && "specifications" in productCopy && (
-        <section class="project-depth-section section-space">
-          <div class="shell">
-            <div class="section-heading heading-split project-depth-heading">
-              <div>
-                <p class="eyebrow">
-                  <span class="eyebrow-line"></span>
-                  {productCopy.specificationsLabel}
-                </p>
-                <h2>{productCopy.specificationsTitle}</h2>
-              </div>
-              <p class="section-intro">{productCopy.specificationsIntro}</p>
-            </div>
-            <div class="project-spec-grid">
-              {productCopy.specifications.map(([label, value]) => (
-                <article class="project-spec-card">
-                  <h3>{label}</h3>
-                  <p>{value}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       <section class="product-detail-content section-space compact-top">
         <div class="shell detail-content-grid">
           <div class="detail-description">
@@ -942,6 +918,30 @@ const previewImage = (image: string) =>
           </aside>
         </div>
       </section>
+      {productCopy && "specifications" in productCopy && (
+        <section class="project-depth-section section-space">
+          <div class="shell">
+            <div class="section-heading heading-split project-depth-heading">
+              <div>
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {productCopy.specificationsLabel}
+                </p>
+                <h2>{productCopy.specificationsTitle}</h2>
+              </div>
+              <p class="section-intro">{productCopy.specificationsIntro}</p>
+            </div>
+            <div class="project-spec-grid">
+              {productCopy.specifications.map(([label, value]) => (
+                <article class="project-spec-card">
+                  <h3>{label}</h3>
+                  <p>{value}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       {story && (
         <section class="project-depth-section section-space">
           <div class="shell">

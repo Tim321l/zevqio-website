@@ -58,7 +58,7 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
           <div class="detail-preview-hero">
             <img
               src={withBase(product.interfacePreviews[0].image)}
-              alt=""
+              alt={product.interfacePreviews[0].alt}
               width="1440"
               height="900"
             />
@@ -128,30 +128,6 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
       </div>
     </section>
   )}
-  {product.specifications && (
-    <section class="project-depth-section section-space">
-      <div class="shell">
-        <div class="section-heading heading-split project-depth-heading">
-          <div>
-            <p class="eyebrow">
-              <span class="eyebrow-line"></span>
-              {product.specificationsLabel}
-            </p>
-            <h2>{product.specificationsTitle}</h2>
-          </div>
-          <p class="section-intro">{product.specificationsIntro}</p>
-        </div>
-        <div class="project-spec-grid">
-          {product.specifications.map((specification) => (
-            <article class="project-spec-card">
-              <h3>{specification.label}</h3>
-              <p>{specification.value}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
   <section class="product-detail-content section-space compact-top">
     <div class="shell detail-content-grid">
       <div class="detail-description">
@@ -209,6 +185,30 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
       </aside>
     </div>
   </section>
+  {product.specifications && (
+    <section class="project-depth-section section-space">
+      <div class="shell">
+        <div class="section-heading heading-split project-depth-heading">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {product.specificationsLabel}
+            </p>
+            <h2>{product.specificationsTitle}</h2>
+          </div>
+          <p class="section-intro">{product.specificationsIntro}</p>
+        </div>
+        <div class="project-spec-grid">
+          {product.specifications.map((specification) => (
+            <article class="project-spec-card">
+              <h3>{specification.label}</h3>
+              <p>{specification.value}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
   {product.story && (
     <section class="project-depth-section section-space">
       <div class="shell">
