@@ -50,6 +50,22 @@ const sourceProject = slug
   : undefined;
 const story =
   productCopy && "story" in productCopy ? productCopy.story : undefined;
+const workflowHeading =
+  story && "workflowTitle" in story
+    ? story.workflowTitle
+    : detail.workflowTitle;
+const workflowIntro =
+  story && "workflowIntro" in story
+    ? story.workflowIntro
+    : detail.workflowIntro;
+const principlesHeading =
+  story && "principlesTitle" in story
+    ? story.principlesTitle
+    : detail.prioritiesTitle;
+const principlesIntro =
+  story && "principlesIntro" in story
+    ? story.principlesIntro
+    : detail.prioritiesIntro;
 const pagePath =
   page === "home"
     ? "/"
@@ -749,12 +765,18 @@ const previewImage = (image: string) =>
                   src={withBase(
                     previewImage(sourceProduct.interfacePreviews[0].image),
                   )}
-                  alt={`${productCopy.name} ${copy.common.concept}`}
+                  alt={
+                    "screenshotsLabel" in productCopy
+                      ? productCopy.screenshotsLabel
+                      : productCopy.name
+                  }
                   width="1440"
                   height="900"
                 />
                 <span class="detail-preview-badge">
-                  OCR STUDIO · {copy.common.concept}
+                  {"previewBadge" in productCopy
+                    ? productCopy.previewBadge
+                    : `${productCopy.name.toUpperCase()} · ${copy.common.concept}`}
                 </span>
               </div>
             ) : (
@@ -793,14 +815,20 @@ const previewImage = (image: string) =>
               <div>
                 <p class="eyebrow">
                   <span class="eyebrow-line"></span>
-                  {detail.screenLabel}
+                  {"screenshotsLabel" in productCopy
+                    ? productCopy.screenshotsLabel
+                    : detail.screenLabel}
                 </p>
                 <h2 id="product-showcase-title">
                   {detail.closer}{" "}
                   <span class="text-muted">{productCopy.name}.</span>
                 </h2>
               </div>
-              <p>{detail.screenDisclaimer}</p>
+              <p>
+                {"screenshotsNote" in productCopy
+                  ? productCopy.screenshotsNote
+                  : detail.screenDisclaimer}
+              </p>
             </div>
             <div class="showcase-preview-grid">
               {sourceProduct.interfacePreviews
@@ -828,6 +856,30 @@ const previewImage = (image: string) =>
                     </figcaption>
                   </figure>
                 ))}
+            </div>
+          </div>
+        </section>
+      )}
+      {productCopy && "specifications" in productCopy && (
+        <section class="project-depth-section section-space">
+          <div class="shell">
+            <div class="section-heading heading-split project-depth-heading">
+              <div>
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {productCopy.specificationsLabel}
+                </p>
+                <h2>{productCopy.specificationsTitle}</h2>
+              </div>
+              <p class="section-intro">{productCopy.specificationsIntro}</p>
+            </div>
+            <div class="project-spec-grid">
+              {productCopy.specifications.map(([label, value]) => (
+                <article class="project-spec-card">
+                  <h3>{label}</h3>
+                  <p>{value}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -900,11 +952,11 @@ const previewImage = (image: string) =>
                   {detail.workflowEyebrow}
                 </p>
                 <h2>
-                  {detail.workflowTitle[0]}{" "}
-                  <span class="text-muted">{detail.workflowTitle[1]}</span>
+                  {workflowHeading[0]}{" "}
+                  <span class="text-muted">{workflowHeading[1]}</span>
                 </h2>
               </div>
-              <p class="section-intro">{detail.workflowIntro}</p>
+              <p class="section-intro">{workflowIntro}</p>
             </div>
             <ol class="project-step-grid">
               {story.workflow.map(([title, description], index) => (
@@ -926,8 +978,8 @@ const previewImage = (image: string) =>
                   <span class="eyebrow-line"></span>
                   {detail.prioritiesEyebrow}
                 </p>
-                <h3>{detail.prioritiesTitle}</h3>
-                <p>{detail.prioritiesIntro}</p>
+                <h3>{principlesHeading}</h3>
+                <p>{principlesIntro}</p>
               </div>
               <div class="project-principles-grid">
                 {story.principles.map(([title, description], index) => (

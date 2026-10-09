@@ -2054,6 +2054,28 @@ svg {
   padding: 0;
   list-style: none;
 }
+.project-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.project-spec-card {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.project-spec-card h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 620;
+}
+.project-spec-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
 .project-step-card {
   min-height: 218px;
   background: var(--surface);
@@ -2973,7 +2995,8 @@ svg {
     padding: 14px 15px 17px;
   }
   .project-step-grid,
-  .project-principles-grid {
+  .project-principles-grid,
+  .project-spec-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }

@@ -63,7 +63,7 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
               height="900"
             />
             <span class="detail-preview-badge">
-              WORKSPACE · CONCEPT PREVIEW
+              {product.previewBadge ?? "WORKSPACE · CONCEPT PREVIEW"}
             </span>
           </div>
         ) : (
@@ -90,15 +90,16 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
         <div class="showcase-heading">
           <div>
             <p class="eyebrow">
-              <span class="eyebrow-line"></span> Interface concept
+              <span class="eyebrow-line"></span>
+              {product.screenshotsLabel ?? "Interface concept"}
             </p>
             <h2 id="product-showcase-title">
               A closer look at <span class="text-muted">{product.name}.</span>
             </h2>
           </div>
           <p>
-            These original screen previews use sample content to show a possible
-            experience. They do not depict a live product.
+            {product.screenshotsNote ??
+              "These original screen previews use sample content to show a possible experience. They do not depict a live product."}
           </p>
         </div>
         <div class="showcase-preview-grid">
@@ -122,6 +123,30 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
                 <p>{preview.description}</p>
               </figcaption>
             </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  {product.specifications && (
+    <section class="project-depth-section section-space">
+      <div class="shell">
+        <div class="section-heading heading-split project-depth-heading">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {product.specificationsLabel}
+            </p>
+            <h2>{product.specificationsTitle}</h2>
+          </div>
+          <p class="section-intro">{product.specificationsIntro}</p>
+        </div>
+        <div class="project-spec-grid">
+          {product.specifications.map((specification) => (
+            <article class="project-spec-card">
+              <h3>{specification.label}</h3>
+              <p>{specification.value}</p>
+            </article>
           ))}
         </div>
       </div>
@@ -193,13 +218,11 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
               <span class="eyebrow-line"></span> Possible workflow
             </p>
             <h2>
-              From a scan to <span class="text-muted">reviewed text.</span>
+              {product.story.workflowTitle[0]}{" "}
+              <span class="text-muted">{product.story.workflowTitle[1]}</span>
             </h2>
           </div>
-          <p class="section-intro">
-            This is the direction being explored for OCR Studio. These steps
-            describe a concept, not a released feature set.
-          </p>
+          <p class="section-intro">{product.story.workflowIntro}</p>
         </div>
         <ol class="project-step-grid">
           {product.story.workflow.map((step, index) => (
@@ -218,11 +241,8 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
             <p class="eyebrow">
               <span class="eyebrow-line"></span> Design priorities
             </p>
-            <h3>Choices shaping the exploration.</h3>
-            <p>
-              The early direction puts legibility and human review ahead of
-              promises about speed or accuracy.
-            </p>
+            <h3>{product.story.principlesTitle}</h3>
+            <p>{product.story.principlesIntro}</p>
           </div>
           <div class="project-principles-grid">
             {product.story.principles.map((principle, index) => (

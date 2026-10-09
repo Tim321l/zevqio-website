@@ -285,7 +285,7 @@ const english = {
   productsPage: {
     title: "Products",
     description:
-      "Explore Zevqio's early-stage software projects and product areas, including OCR Studio, Vidoany, and TokenSaver.",
+      "Explore Zevqio's early-stage software projects and product areas, including OCR Studio, VidOutline, and TokenSaver.",
     eyebrow: "Product portfolio",
     headline: ["Software for work", "that repeats."],
     intro:
@@ -480,17 +480,102 @@ const english = {
       ],
     },
     vidoany: {
-      name: "Vidoany",
-      category: "Zevqio project",
+      name: "VidOutline",
+      category: "Video · Local analysis",
       summary:
-        "Vidoany is an early-stage Zevqio project; its public scope is still being defined.",
+        "A Windows desktop tool that turns video files and folders into categorized summaries and timestamped outlines.",
       description:
-        "Vidoany is part of Zevqio's early-stage project portfolio. Its intended use, audience, and capabilities are still being defined, so this page will be updated as details are approved for public sharing.",
+        "VidOutline is the working public name for the local video analysis project currently labeled Video Agent in its desktop interface. It uses faster-whisper and Ollama for local analysis, with Gemini available as an optional cloud mode that uploads the full video to Google. The tool can analyze individual files or folders, watch an input folder, and export Markdown and JSON reports.",
       focus: [
-        "Define the intended use and audience",
-        "Confirm the project scope and requirements",
-        "Prepare accurate product information for public sharing",
+        "Transcribe speech locally with faster-whisper, then analyze it with Ollama",
+        "Use keyframes with a local vision model when the transcript is too short",
+        "Organize single-file, folder, and watched-folder runs into reports",
       ],
+      previewBadge: "VIDOUTLINE · APP SCREEN",
+      screenshotsLabel: "Screens from the desktop app",
+      screenshotsNote:
+        "These are captures of the current local dashboard. The video names and report text shown are fictional demo content prepared for this page. The app is a local Windows project in development, not a hosted web service.",
+      specificationsLabel: "TECHNICAL OVERVIEW",
+      specificationsTitle: "What the project supports",
+      specificationsIntro:
+        "The details below reflect the current repository and README. They describe a development-stage desktop utility, not a hosted service.",
+      specifications: [
+        ["Platform", "Windows · Python 3.10+ · local Flask dashboard"],
+        [
+          "Video formats",
+          ".mp4 · .mkv · .mov · .avi · .webm · .m4v · .mpeg · .mpg",
+        ],
+        [
+          "Local analysis",
+          "faster-whisper transcription with Ollama text analysis; keyframe fallback with an Ollama vision model",
+        ],
+        [
+          "Cloud option",
+          "Gemini API mode uploads the full video to Google for analysis and attempts to delete the uploaded file afterward.",
+        ],
+        [
+          "Ways to process",
+          "One video · a folder batch · an automatically watched input folder",
+        ],
+        [
+          "Report files",
+          "Markdown summary and structured JSON, with category, tags, pitch, story summary, and timeline chapters",
+        ],
+        ["Media tools", "FFmpeg and ffprobe"],
+      ],
+      previews: [
+        [
+          "Local dashboard and settings",
+          "See input and queue status, upload videos, choose a processing mode, and configure local Ollama models.",
+        ],
+        [
+          "Recent report library",
+          "Browse sample Markdown summaries and download each structured JSON result.",
+        ],
+      ],
+      story: {
+        title: "Turn long video files into useful notes.",
+        workflowTitle: ["From video to", "a timestamped outline."],
+        workflowIntro:
+          "A view of the current analysis flow. Local and cloud modes process video differently, as described in the project details above.",
+        principlesTitle: "Choices for clear analysis and reusable results.",
+        principlesIntro:
+          "The project makes the processing mode visible, preserves timestamps, and keeps reports in portable formats.",
+        problem:
+          "Finding the useful parts of a recording can mean rewatching it, searching through a transcript, and writing timestamps by hand. This project brings speech, scenes, and a structured outline into one repeatable analysis run.",
+        approach:
+          "VidOutline first transcribes audio with faster-whisper. When a usable transcript is available, Ollama analyzes its topics and timeline; when speech is too sparse, the tool samples keyframes for a local vision model. A separate Gemini mode can analyze the full video through Google’s API.",
+        status:
+          "These screens show the current local dashboard with fictional sample video names and reports. VidOutline is in development as a Windows desktop utility, not a hosted web service. Gemini mode uploads the full video to Google; local mode sends a transcript or sampled frames to Ollama on the same computer.",
+        workflow: [
+          [
+            "Choose files and a mode",
+            "Analyze one video, process a folder, or place files in the watched folder. Choose local Ollama processing or Gemini cloud analysis before starting.",
+          ],
+          [
+            "Build a structured outline",
+            "In local mode, speech is transcribed first and short transcripts fall back to keyframe analysis. Results include a category, tags, a short pitch, a story summary, and timestamped chapters.",
+          ],
+          [
+            "Keep the report files",
+            "Save each result as Markdown for reading and JSON for structured reuse. Repeated source names receive numbered report files instead of overwriting an earlier result.",
+          ],
+        ],
+        principles: [
+          [
+            "Make processing mode clear",
+            "Local mode sends transcripts or sampled frames to Ollama on the same computer. Gemini mode uploads the full video to Google, so the choice is visible before processing.",
+          ],
+          [
+            "Keep timestamps with the summary",
+            "Organize findings into timeline chapters so a reader can navigate back to the relevant part of a video.",
+          ],
+          [
+            "Keep results portable",
+            "Store a readable Markdown report alongside structured JSON, in a folder the user can choose.",
+          ],
+        ],
+      },
     },
     tokensaver: {
       name: "TokenSaver",
@@ -735,7 +820,7 @@ const translated = {
     productsPage: {
       title: "产品",
       description:
-        "浏览 Zevqio 早期的软件项目与产品方向，包括 OCR Studio、Vidoany 和 TokenSaver。",
+        "浏览 Zevqio 早期的软件项目与产品方向，包括 OCR Studio、VidOutline 和 TokenSaver。",
       eyebrow: "产品组合",
       headline: ["为重复工作", "打造软件。"],
       intro:
@@ -912,16 +997,99 @@ const translated = {
         ],
       },
       vidoany: {
-        name: "Vidoany",
-        category: "Zevqio 项目",
-        summary: "Vidoany 是 Zevqio 的早期项目，公开范围仍在定义。",
+        name: "VidOutline",
+        category: "视频 · 本地分析",
+        summary:
+          "一款在 Windows 本机运行的桌面工具，可将视频文件或文件夹整理为分类摘要与带时间戳的大纲。",
         description:
-          "Vidoany 属于 Zevqio 的早期项目组合。其用途、受众与能力仍在定义中；获准公开更多信息后，本页会继续更新。",
+          "VidOutline 是这款本地视频分析项目的对外名称；当前桌面界面仍显示为 Video Agent。它使用 faster-whisper 和 Ollama 进行本地分析，也可选用 Gemini 云端模式，将完整视频上传至 Google。工具支持单文件、文件夹批次处理和监视输入文件夹，并导出 Markdown 与 JSON 报告。",
         focus: [
-          "定义预期用途与受众",
-          "确认项目范围与需求",
-          "准备准确的公开产品信息",
+          "先用 faster-whisper 在本机转录语音，再交由 Ollama 分析",
+          "转录内容不足时，使用本机视觉模型分析关键帧",
+          "将单文件、文件夹批次和自动监视任务整理为报告",
         ],
+        previewBadge: "VIDOUTLINE · 应用界面",
+        screenshotsLabel: "桌面应用实机截图",
+        screenshotsNote:
+          "截图来自当前本机控制台。画面中的视频名称和报告文字是专为本页准备的虚构示例。项目仍在开发中，是 Windows 本地桌面工具，并非托管网站服务。",
+        specificationsLabel: "项目规格",
+        specificationsTitle: "项目支持情况",
+        specificationsIntro:
+          "以下信息依据当前代码库和 README 整理，描述的是开发中的桌面工具，不是托管服务。",
+        specifications: [
+          ["运行平台", "Windows · Python 3.10+ · 本机 Flask 控制台"],
+          [
+            "视频格式",
+            ".mp4 · .mkv · .mov · .avi · .webm · .m4v · .mpeg · .mpg",
+          ],
+          [
+            "本地分析",
+            "faster-whisper 转录语音并由 Ollama 文本模型分析；转录不足时改用 Ollama 视觉模型分析关键帧",
+          ],
+          [
+            "云端选项",
+            "Gemini API 模式会将完整视频上传至 Google 进行分析，并在分析后尝试删除上传文件。",
+          ],
+          ["处理方式", "单个视频 · 文件夹批次处理 · 自动监视输入文件夹"],
+          [
+            "报告格式",
+            "Markdown 摘要和结构化 JSON，包含分类、标签、内容简介、故事摘要和时间轴章节",
+          ],
+          ["媒体工具", "FFmpeg 与 ffprobe"],
+        ],
+        previews: [
+          [
+            "本机控制台与分析设置",
+            "查看输入和队列状态、上传视频、选择分析模式并设定本机 Ollama 模型。",
+          ],
+          [
+            "最近报告库",
+            "浏览示例 Markdown 摘要，并下载对应的结构化 JSON 结果。",
+          ],
+        ],
+        story: {
+          title: "把较长的视频转为便于查阅的笔记。",
+          workflowTitle: ["从视频到", "带时间戳的大纲。"],
+          workflowIntro:
+            "以下步骤概述目前的分析流程。本地和云端模式的处理方式不同，详情见上方项目规格。",
+          principlesTitle: "让分析过程清晰，结果便于复用。",
+          principlesIntro:
+            "项目会说明处理模式、保留时间戳，并以便携格式保存报告。",
+          problem:
+            "寻找录制中有用的片段，往往要反复观看、搜索转录文本，再手动记下时间戳。这个项目把语音、画面和结构化大纲放进可重复的分析流程。",
+          approach:
+            "VidOutline 先用 faster-whisper 转录音频。转录内容足够时，由 Ollama 分析主题和时间线；语音太少时，则抽取关键帧交给本机视觉模型。另有 Gemini 模式，可通过 Google API 分析完整视频。",
+          status:
+            "这些截图展示当前本机控制台，视频名称和报告是虚构示例。VidOutline 是开发中的 Windows 桌面工具，并非托管网站服务。Gemini 模式会把完整视频上传至 Google；本地模式则把转录文本或抽取的画面发送给同一台电脑上的 Ollama。",
+          workflow: [
+            [
+              "选择视频和分析模式",
+              "分析单个视频、批次处理文件夹，或把文件放入监视文件夹。开始前选择本机 Ollama 或 Gemini 云端分析。",
+            ],
+            [
+              "生成结构化大纲",
+              "本地模式先转录语音；转录较短时改用关键帧分析。结果包括分类、标签、简短简介、内容摘要和带时间戳的章节。",
+            ],
+            [
+              "保存报告文件",
+              "每项结果都会保存为便于阅读的 Markdown 和便于程序处理的 JSON。同名来源会自动使用序号，避免覆盖旧报告。",
+            ],
+          ],
+          principles: [
+            [
+              "清楚说明分析模式",
+              "本地模式把转录文本或关键帧交给同一台电脑上的 Ollama。Gemini 模式会把完整视频上传至 Google，因此开始前应明确选择。",
+            ],
+            [
+              "摘要保留时间戳",
+              "将发现整理为时间轴章节，方便读者跳回视频中的相关片段。",
+            ],
+            [
+              "让结果便于使用",
+              "Markdown 报告方便阅读，结构化 JSON 则可用于后续处理，并保存到用户可选的文件夹。",
+            ],
+          ],
+        },
       },
       tokensaver: {
         name: "TokenSaver",
@@ -1163,7 +1331,7 @@ const translated = {
     productsPage: {
       title: "產品",
       description:
-        "瀏覽 Zevqio 早期軟件項目與產品方向，包括 OCR Studio、Vidoany 和 TokenSaver。",
+        "瀏覽 Zevqio 早期軟件項目與產品方向，包括 OCR Studio、VidOutline 和 TokenSaver。",
       eyebrow: "產品組合",
       headline: ["為重複工作", "打造軟件。"],
       intro:
@@ -1340,16 +1508,99 @@ const translated = {
         ],
       },
       vidoany: {
-        name: "Vidoany",
-        category: "Zevqio 項目",
-        summary: "Vidoany 是 Zevqio 的早期項目，公開範圍仍在界定。",
+        name: "VidOutline",
+        category: "影片 · 本機分析",
+        summary:
+          "一款在 Windows 本機執行的桌面工具，可將影片檔案或資料夾整理成分類摘要及附時間戳的大綱。",
         description:
-          "Vidoany 屬於 Zevqio 的早期項目組合。其用途、對象與功能仍在界定中；獲准公開更多資料後，本頁會繼續更新。",
+          "VidOutline 是這個本機影片分析項目的對外名稱；目前桌面介面仍顯示為 Video Agent。它使用 faster-whisper 和 Ollama 進行本機分析，亦可選用 Gemini 雲端模式，把完整影片上載至 Google。工具支援單一檔案、資料夾批次處理和監察輸入資料夾，並匯出 Markdown 及 JSON 報告。",
         focus: [
-          "界定預期用途與對象",
-          "確認項目範圍與需求",
-          "準備準確的公開產品資料",
+          "先以 faster-whisper 在本機轉錄語音，再交由 Ollama 分析",
+          "轉錄內容不足時，以本機視覺模型分析關鍵影格",
+          "把單一檔案、資料夾批次和自動監察工作整理成報告",
         ],
+        previewBadge: "VIDOUTLINE · 應用介面",
+        screenshotsLabel: "桌面應用程式實際畫面",
+        screenshotsNote:
+          "截圖來自目前的本機控制台。畫面中的影片名稱和報告文字是專為本頁準備的虛構示例。項目仍在開發中，是 Windows 本機桌面工具，並非託管網站服務。",
+        specificationsLabel: "項目規格",
+        specificationsTitle: "項目支援內容",
+        specificationsIntro:
+          "以下資料根據目前的程式碼庫和 README 整理，描述開發中的桌面工具，並非託管服務。",
+        specifications: [
+          ["執行平台", "Windows · Python 3.10+ · 本機 Flask 控制台"],
+          [
+            "影片格式",
+            ".mp4 · .mkv · .mov · .avi · .webm · .m4v · .mpeg · .mpg",
+          ],
+          [
+            "本機分析",
+            "faster-whisper 轉錄語音，再由 Ollama 文字模型分析；轉錄不足時改用 Ollama 視覺模型分析關鍵影格",
+          ],
+          [
+            "雲端選項",
+            "Gemini API 模式會把完整影片上載至 Google 分析，並在分析後嘗試刪除上載檔案。",
+          ],
+          ["處理方式", "單一影片 · 資料夾批次處理 · 自動監察輸入資料夾"],
+          [
+            "報告格式",
+            "Markdown 摘要和結構化 JSON，包含分類、標籤、內容簡介、故事摘要及時間軸章節",
+          ],
+          ["媒體工具", "FFmpeg 及 ffprobe"],
+        ],
+        previews: [
+          [
+            "本機控制台與分析設定",
+            "查看輸入和佇列狀態、上載影片、選擇分析模式，以及設定本機 Ollama 模型。",
+          ],
+          [
+            "最近報告庫",
+            "瀏覽示例 Markdown 摘要，並下載相應的結構化 JSON 結果。",
+          ],
+        ],
+        story: {
+          title: "把較長影片整理成方便查閱的筆記。",
+          workflowTitle: ["由影片到", "附時間戳的大綱。"],
+          workflowIntro:
+            "以下步驟概述目前的分析流程。本機和雲端模式的處理方式不同，詳情請參閱上方項目規格。",
+          principlesTitle: "讓分析清晰，結果方便重用。",
+          principlesIntro:
+            "項目會說明處理模式、保留時間戳，並以方便攜帶的格式保存報告。",
+          problem:
+            "尋找錄影中的有用片段，往往要反覆觀看、搜尋轉錄文字，再手動記下時間戳。這個項目把語音、畫面和結構化大綱放進可重複的分析流程。",
+          approach:
+            "VidOutline 先用 faster-whisper 轉錄音訊。轉錄內容足夠時，由 Ollama 分析主題和時間軸；語音太少時，則抽取關鍵影格交給本機視覺模型。另有 Gemini 模式，可透過 Google API 分析完整影片。",
+          status:
+            "這些截圖展示目前的本機控制台，影片名稱和報告是虛構示例。VidOutline 是開發中的 Windows 桌面工具，並非託管網站服務。Gemini 模式會把完整影片上載至 Google；本機模式則把轉錄文字或抽取的畫面傳送給同一部電腦上的 Ollama。",
+          workflow: [
+            [
+              "選擇影片與分析模式",
+              "分析單一影片、批次處理資料夾，或把檔案放入監察資料夾。開始前選擇本機 Ollama 或 Gemini 雲端分析。",
+            ],
+            [
+              "建立結構化大綱",
+              "本機模式會先轉錄語音；轉錄內容較短時改用關鍵影格分析。結果包括分類、標籤、簡短簡介、內容摘要和附時間戳的章節。",
+            ],
+            [
+              "保存報告檔案",
+              "每項結果都會保存成方便閱讀的 Markdown 和方便程式處理的 JSON。同名來源會自動加上序號，避免覆蓋舊報告。",
+            ],
+          ],
+          principles: [
+            [
+              "清楚說明分析模式",
+              "本機模式會把轉錄文字或關鍵影格交給同一部電腦上的 Ollama。Gemini 模式會把完整影片上載至 Google，因此開始前應清楚選擇。",
+            ],
+            [
+              "摘要保留時間戳",
+              "把結果整理成時間軸章節，方便讀者跳回影片中的相關片段。",
+            ],
+            [
+              "讓結果方便使用",
+              "Markdown 報告方便閱讀，結構化 JSON 則可供後續處理，並保存到用戶可選的資料夾。",
+            ],
+          ],
+        },
       },
       tokensaver: {
         name: "TokenSaver",
@@ -1623,7 +1874,7 @@ const translated = {
     productsPage: {
       title: "プロダクト",
       description:
-        "OCR Studio、Vidoany、TokenSaver など、Zevqio の初期ソフトウェアプロジェクトをご覧ください。",
+        "OCR Studio、VidOutline、TokenSaver など、Zevqio の初期ソフトウェアプロジェクトをご覧ください。",
       eyebrow: "プロダクト一覧",
       headline: ["繰り返す仕事に", "役立つソフトウェア。"],
       intro:
@@ -1814,17 +2065,102 @@ const translated = {
         ],
       },
       vidoany: {
-        name: "Vidoany",
-        category: "Zevqio プロジェクト",
+        name: "VidOutline",
+        category: "動画 · ローカル分析",
         summary:
-          "Vidoany は初期段階のプロジェクトです。公開範囲を検討しています。",
+          "動画ファイルやフォルダーを分類付きの要約とタイムスタンプ付きアウトラインに整理する、Windows向けデスクトップツールです。",
         description:
-          "Vidoany は Zevqio の初期プロジェクトの一つです。用途、対象者、機能を検討中です。公開できる情報が整い次第、このページを更新します。",
+          "VidOutline は、ローカル動画分析プロジェクトの公開用名称です。現在のデスクトップ画面では Video Agent と表示されています。faster-whisper と Ollama によるローカル分析に加え、動画全体を Google にアップロードして分析する Gemini クラウドモードも選べます。単一ファイル、フォルダー一括処理、監視フォルダーに対応し、Markdown と JSON のレポートを書き出します。",
         focus: [
-          "想定用途と対象者を定める",
-          "プロジェクトの範囲と要件を確認する",
-          "正確な公開情報を準備する",
+          "faster-whisper で音声をローカル文字起こしし、Ollama で分析",
+          "文字起こしが短い場合は、ローカルの視覚モデルでキーフレームを分析",
+          "単一動画、フォルダー一括処理、監視フォルダーの結果をレポート化",
         ],
+        previewBadge: "VIDOUTLINE · アプリ画面",
+        screenshotsLabel: "デスクトップアプリの画面",
+        screenshotsNote:
+          "現在のローカルダッシュボードを撮影した画面です。表示される動画名とレポートは、このページ用に作成した架空のデモデータです。開発中の Windows 向けローカルツールであり、ホスト型ウェブサービスではありません。",
+        specificationsLabel: "仕様と対応内容",
+        specificationsTitle: "現在の対応内容",
+        specificationsIntro:
+          "以下は現在のリポジトリと README に基づく情報です。開発中のデスクトップツールについて説明しています。",
+        specifications: [
+          [
+            "動作環境",
+            "Windows · Python 3.10 以降 · ローカル Flask ダッシュボード",
+          ],
+          [
+            "動画形式",
+            ".mp4 · .mkv · .mov · .avi · .webm · .m4v · .mpeg · .mpg",
+          ],
+          [
+            "ローカル分析",
+            "faster-whisper の文字起こしを Ollama のテキストモデルで分析。短い場合は Ollama の視覚モデルでキーフレームを分析",
+          ],
+          [
+            "クラウド分析",
+            "Gemini API モードでは動画全体を Google にアップロードして分析し、完了後にアップロードしたファイルの削除を試みます。",
+          ],
+          ["処理方法", "単一動画 · フォルダー一括 · 監視フォルダー"],
+          [
+            "レポート形式",
+            "分類、タグ、要点、概要、タイムライン付きの Markdown と構造化 JSON",
+          ],
+          ["メディアツール", "FFmpeg と ffprobe"],
+        ],
+        previews: [
+          [
+            "ローカル画面と分析設定",
+            "入力数やキューの確認、動画の追加、分析モードの選択、Ollama モデルの設定を行う画面です。",
+          ],
+          [
+            "最近のレポート",
+            "サンプル Markdown 要約を一覧し、各結果の JSON をダウンロードできます。",
+          ],
+        ],
+        story: {
+          title: "長い動画を、活用しやすいノートに。",
+          workflowTitle: ["動画から", "タイムスタンプ付きアウトラインへ。"],
+          workflowIntro:
+            "現在の分析フローを紹介します。ローカルとクラウドでは処理方法が異なります。詳しくは上の仕様をご覧ください。",
+          principlesTitle: "処理を明確にし、結果を再利用しやすく。",
+          principlesIntro:
+            "処理モードを明示し、タイムスタンプを残し、持ち出しやすい形式でレポートを保存します。",
+          problem:
+            "録画から必要な場面を探すには、動画を見直し、文字起こしを検索し、タイムスタンプを手で記録することがあります。このプロジェクトは音声、映像、構造化アウトラインを一つの繰り返し可能な分析フローにまとめます。",
+          approach:
+            "VidOutline はまず faster-whisper で音声を文字起こしします。十分なテキストがある場合は Ollama が話題とタイムラインを分析し、音声が少ない場合はキーフレームをローカルの視覚モデルに渡します。Gemini モードでは Google API を通じて動画全体を分析できます。",
+          status:
+            "掲載画面は現在のローカルダッシュボードで、動画名とレポートは架空のサンプルです。VidOutline は開発中の Windows 向けデスクトップツールで、ホスト型ウェブサービスではありません。Gemini モードは動画全体を Google に送信します。ローカルモードでは文字起こしまたはサンプル画像を同じ PC 上の Ollama に送ります。",
+          workflow: [
+            [
+              "動画と分析モードを選ぶ",
+              "動画を1本だけ分析する、フォルダーを一括処理する、監視フォルダーに追加する方法があります。開始前に Ollama のローカル処理か Gemini のクラウド分析を選びます。",
+            ],
+            [
+              "アウトラインを生成する",
+              "ローカルモードでは先に音声を文字起こしし、短い場合はキーフレーム分析に切り替えます。分類、タグ、要点、概要、タイムスタンプ付きの章を生成します。",
+            ],
+            [
+              "レポートを保存する",
+              "結果を読みやすい Markdown と、再利用しやすい JSON で保存します。同じファイル名がある場合は連番を付け、前のレポートを上書きしません。",
+            ],
+          ],
+          principles: [
+            [
+              "処理モードを明確にする",
+              "ローカルモードでは文字起こしやキーフレームを同じ PC 上の Ollama に送ります。Gemini モードでは動画全体を Google にアップロードするため、開始前に選択を明示します。",
+            ],
+            [
+              "要約にタイムスタンプを残す",
+              "結果をタイムラインの章に整理し、動画の該当箇所を探しやすくします。",
+            ],
+            [
+              "持ち出しやすい形式で保存する",
+              "Markdown と構造化 JSON を併せて保存し、後で読み返したり利用したりできるようにします。",
+            ],
+          ],
+        },
       },
       tokensaver: {
         name: "TokenSaver",
@@ -2101,7 +2437,7 @@ const translated = {
     productsPage: {
       title: "제품",
       description:
-        "OCR Studio, Vidoany, TokenSaver를 포함한 Zevqio의 초기 소프트웨어 프로젝트와 제품 분야를 살펴보세요.",
+        "OCR Studio, VidOutline, TokenSaver를 포함한 Zevqio의 초기 소프트웨어 프로젝트와 제품 분야를 살펴보세요.",
       eyebrow: "제품 포트폴리오",
       headline: ["반복되는 업무를 위한", "소프트웨어."],
       intro:
@@ -2293,17 +2629,99 @@ const translated = {
         ],
       },
       vidoany: {
-        name: "Vidoany",
-        category: "Zevqio 프로젝트",
+        name: "VidOutline",
+        category: "동영상 · 로컬 분석",
         summary:
-          "Vidoany는 초기 단계의 Zevqio 프로젝트이며 공개 범위를 정리 중입니다.",
+          "동영상 파일과 폴더를 분류된 요약 및 타임스탬프가 포함된 개요로 정리하는 Windows 데스크톱 도구입니다.",
         description:
-          "Vidoany는 Zevqio의 초기 프로젝트 포트폴리오에 포함됩니다. 용도, 대상, 기능을 정리하고 있으며 공개 정보가 준비되면 이 페이지를 업데이트하겠습니다.",
+          "VidOutline은 로컬 동영상 분석 프로젝트의 공개 이름입니다. 현재 데스크톱 화면에는 Video Agent로 표시됩니다. faster-whisper와 Ollama를 이용한 로컬 분석을 지원하며, 동영상 전체를 Google에 업로드하는 Gemini 클라우드 모드도 선택할 수 있습니다. 단일 파일, 폴더 일괄 처리, 감시 폴더를 지원하고 Markdown 및 JSON 보고서를 내보냅니다.",
         focus: [
-          "예상 용도와 대상 정의",
-          "프로젝트 범위와 요구사항 확인",
-          "정확한 공개 정보 준비",
+          "faster-whisper로 음성을 로컬 전사한 뒤 Ollama로 분석",
+          "전사 내용이 짧으면 로컬 비전 모델로 키프레임 분석",
+          "단일 파일, 폴더 일괄 처리, 감시 폴더 작업을 보고서로 정리",
         ],
+        previewBadge: "VIDOUTLINE · 앱 화면",
+        screenshotsLabel: "데스크톱 앱 실제 화면",
+        screenshotsNote:
+          "현재 로컬 대시보드를 캡처한 화면입니다. 표시된 동영상 이름과 보고서는 이 페이지용으로 만든 가상의 데모 콘텐츠입니다. 개발 중인 Windows 로컬 데스크톱 도구이며 호스팅 웹 서비스가 아닙니다.",
+        specificationsLabel: "사양 및 지원 항목",
+        specificationsTitle: "현재 프로젝트 사양",
+        specificationsIntro:
+          "아래 내용은 현재 코드와 README에 근거합니다. 개발 중인 데스크톱 도구의 기능을 설명합니다.",
+        specifications: [
+          ["플랫폼", "Windows · Python 3.10 이상 · 로컬 Flask 대시보드"],
+          [
+            "동영상 형식",
+            ".mp4 · .mkv · .mov · .avi · .webm · .m4v · .mpeg · .mpg",
+          ],
+          [
+            "로컬 분석",
+            "faster-whisper 전사를 Ollama 텍스트 모델로 분석하고, 전사 내용이 짧으면 Ollama 비전 모델로 키프레임 분석",
+          ],
+          [
+            "클라우드 옵션",
+            "Gemini API 모드는 분석을 위해 동영상 전체를 Google에 업로드하고, 분석 후 업로드 파일 삭제를 시도합니다.",
+          ],
+          ["처리 방법", "동영상 1개 · 폴더 일괄 처리 · 입력 폴더 자동 감시"],
+          [
+            "보고서 형식",
+            "분류, 태그, 핵심 문장, 내용 요약, 타임라인 챕터를 담은 Markdown 및 구조화 JSON",
+          ],
+          ["미디어 도구", "FFmpeg 및 ffprobe"],
+        ],
+        previews: [
+          [
+            "대시보드와 분석 설정",
+            "입력 및 대기열 상태를 확인하고, 동영상을 추가하며, 분석 모드와 로컬 Ollama 모델을 설정합니다.",
+          ],
+          [
+            "최근 보고서 라이브러리",
+            "샘플 Markdown 요약을 살펴보고 각 결과의 구조화 JSON을 다운로드할 수 있습니다.",
+          ],
+        ],
+        story: {
+          title: "긴 동영상을 다시 찾기 쉬운 노트로.",
+          workflowTitle: ["동영상에서", "타임스탬프 개요까지."],
+          workflowIntro:
+            "현재 분석 흐름을 설명합니다. 로컬과 클라우드는 처리 방식이 다르며 자세한 내용은 위 사양에서 확인할 수 있습니다.",
+          principlesTitle: "명확한 처리와 재사용 가능한 결과.",
+          principlesIntro:
+            "처리 모드를 표시하고 타임스탬프를 보존하며 휴대하기 쉬운 형식으로 보고서를 저장합니다.",
+          problem:
+            "녹화본에서 필요한 부분을 찾으려면 영상을 다시 보고, 전사 내용을 검색하고, 타임스탬프를 직접 적어야 할 수 있습니다. 이 프로젝트는 음성, 장면, 구조화된 개요를 반복 가능한 분석 흐름으로 묶습니다.",
+          approach:
+            "VidOutline은 먼저 faster-whisper로 음성을 전사합니다. 전사 내용이 충분하면 Ollama가 주제와 타임라인을 분석하고, 음성이 부족하면 키프레임을 추출해 로컬 비전 모델에 전달합니다. 별도의 Gemini 모드에서는 Google API를 통해 동영상 전체를 분석할 수 있습니다.",
+          status:
+            "화면은 현재 로컬 대시보드이며 동영상 이름과 보고서는 이 페이지용 가상 샘플입니다. VidOutline은 개발 중인 Windows 데스크톱 도구이며 호스팅 웹 서비스가 아닙니다. Gemini 모드는 동영상 전체를 Google에 업로드하고, 로컬 모드는 전사 내용이나 키프레임을 같은 컴퓨터의 Ollama에 보냅니다.",
+          workflow: [
+            [
+              "파일과 모드 선택",
+              "동영상 한 개를 분석하거나 폴더를 일괄 처리하고, 감시 폴더에 파일을 넣을 수 있습니다. 시작 전에 로컬 Ollama 또는 Gemini 클라우드 분석을 선택합니다.",
+            ],
+            [
+              "구조화된 개요 생성",
+              "로컬 모드에서는 먼저 음성을 전사하고 내용이 짧으면 키프레임 분석으로 전환합니다. 분류, 태그, 핵심 문장, 요약, 타임스탬프가 포함된 챕터를 생성합니다.",
+            ],
+            [
+              "보고서 파일 저장",
+              "결과를 읽기 쉬운 Markdown과 재사용 가능한 JSON으로 저장합니다. 같은 파일 이름이 있으면 번호를 붙여 기존 보고서를 덮어쓰지 않습니다.",
+            ],
+          ],
+          principles: [
+            [
+              "처리 모드를 명확히 표시",
+              "로컬 모드는 전사 내용이나 키프레임을 같은 컴퓨터의 Ollama에 보냅니다. Gemini 모드는 동영상 전체를 Google에 업로드하므로 시작 전에 선택을 확인할 수 있습니다.",
+            ],
+            [
+              "요약에 타임스탬프 유지",
+              "결과를 타임라인 챕터로 정리해 동영상의 관련 구간을 다시 찾기 쉽게 합니다.",
+            ],
+            [
+              "결과를 재사용 가능한 형식으로 저장",
+              "Markdown과 구조화된 JSON을 함께 저장해 읽고 후속 처리할 수 있도록 합니다.",
+            ],
+          ],
+        },
       },
       tokensaver: {
         name: "TokenSaver",
