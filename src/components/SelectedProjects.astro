@@ -1,6 +1,7 @@
 ---
 import Icon from "./Icon.astro";
 import { selectedProjects } from "../data/projects";
+import { withBase } from "../utils/paths";
 ---
 
 <section class="selected-projects-section section-space" id="selected-projects">
@@ -17,8 +18,9 @@ import { selectedProjects } from "../data/projects";
         </h2>
       </div>
       <p class="section-intro">
-        A selection of independent work in game development, web, and original
-        audio. Project titles and demos can be added as they’re ready to share.
+        Explore RimRise in two forms: a browser basketball game and a Unity
+        prototype. The portfolio also includes independent web and original
+        audio work.
       </p>
     </div>
     <div class="principle-grid selected-project-grid">
@@ -46,6 +48,14 @@ import { selectedProjects } from "../data/projects";
               <li>{tool}</li>
             ))}
           </ul>
+          {project.href && (
+            <a
+              class="text-link selected-project-link"
+              href={withBase(project.href)}
+            >
+              Explore project <Icon name="arrowUpRight" size={16} />
+            </a>
+          )}
         </article>
       ))}
     </div>

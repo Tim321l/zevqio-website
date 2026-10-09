@@ -44,6 +44,7 @@ const english = {
   common: {
     home: "Home",
     products: "Products",
+    projects: "Projects",
     inDevelopment: "In Development",
     learn: "Explore project",
     screens: "Screen previews",
@@ -86,11 +87,15 @@ const english = {
     selectedLabel: "Selected projects",
     selectedTitle: ["Work across", "code and sound."],
     selectedIntro:
-      "A selection of independent work in game development, web, and original audio. Project titles and demos can be added as they’re ready to share.",
-    selectedNames: ["Game development", "Web development", "Original audio"],
+      "Explore RimRise in two forms: a browser basketball game and a Unity prototype. The portfolio also includes independent web and original audio work.",
+    selectedNames: [
+      "RimRise · Unity edition",
+      "RimRise · Browser game",
+      "Original audio",
+    ],
     selectedDescriptions: [
-      "Independent game projects made with Godot and Unity.",
-      "Independent projects built for the web.",
+      "A Unity 6.3 prototype for full-court 5v5 basketball and career play.",
+      "A browser basketball game with career progression and 3D city play.",
       "Independent audio projects featuring original work.",
     ],
     workflowLabel: "The shape of the work",
@@ -133,7 +138,9 @@ const english = {
     studioLabel: "About Zevqio",
     studioTitle: ["An independent studio, working on", "useful things."],
     studioIntro:
-      "Zevqio is an independent software initiative focused on practical tools for document processing, automation, and business productivity. We combine software engineering with modern AI techniques to explore reliable, efficient solutions for real operational challenges.",
+      "Zevqio is an independent, founder-led software studio, bootstrapped and in an early stage. It explores practical tools for document processing, automation, and business productivity.",
+    studioDetail:
+      "Current work also includes RimRise, an independent basketball game with a browser edition and a Unity prototype, alongside smaller web and original audio projects. We share the work as it develops and make its current stage clear.",
     studioStatus: "Founder-led · Bootstrapped · Early-stage",
     studioLink: "More about Zevqio",
     contactLabel: "Start a conversation",
@@ -149,7 +156,7 @@ const english = {
     eyebrow: "A small independent studio",
     headline: ["Make useful things.", "Make them thoughtfully."],
     intro:
-      "Zevqio is an independent, founder-led software initiative exploring practical tools for document processing, automation, and business productivity.",
+      "Zevqio is an independent, founder-led and bootstrapped software studio in its early stage. It explores practical tools for document work and business workflows, alongside independent game and web projects.",
     storyLabel: "Why Zevqio exists",
     storyTitle: ["Software should make the next step", "easier to see."],
     storyLead:
@@ -157,7 +164,9 @@ const english = {
     story1:
       "Our current areas of interest include document intelligence, OCR and data extraction, PDF automation, business workflows, and developer tools. These are early explorations, and we’ll be clear as products develop and become ready to share.",
     story2:
-      "Zevqio is bootstrapped and early-stage. The work is intentionally focused: understand a real task, find a useful way to reduce friction, and build carefully from there.",
+      "Zevqio is bootstrapped and early-stage. The work starts with a real task or a clear idea, then moves through focused prototypes and careful iteration. We describe what each project can do today and where work is still in progress.",
+    story3:
+      "Alongside OCR Studio, the portfolio includes RimRise, an independent basketball game with both a browser edition and a Unity prototype. The two builds are at different stages, so each project page explains what is available in that version.",
     profile: "ZEVQIO / STUDIO PROFILE",
     structure: "Structure",
     structureValue: "Independent initiative",
@@ -174,6 +183,104 @@ const english = {
     ctaLabel: "Say hello",
     ctaTitle: "What are you working on?",
     ctaButton: "Contact Zevqio",
+  },
+  portfolio: {
+    title: "Projects",
+    screenshotsLabel: "Screens from the project",
+    screenshotsNote:
+      "These screenshots were captured from local RimRise builds. Both editions are works in progress, so screens and features may change.",
+    overviewLabel: "Project overview",
+    toolsLabel: "Built with",
+    sourceLink: "View the project on GitHub",
+    ctaLabel: "Have a project in mind?",
+    ctaTitle: "Let’s make the next step clearer.",
+    ctaButton: "Contact Zevqio",
+    pages: {
+      "rimrise-unity": {
+        name: "RimRise · Unity edition",
+        category: "Basketball game · Unity prototype",
+        summary:
+          "A Unity 6.3 version of RimRise, beginning with a playable full-court 5v5 basketball game and career interface.",
+        stage: "Unity prototype · In development",
+        heroAlt:
+          "RimRise Unity prototype during a five-on-five basketball game.",
+        heroBadge: "UNITY 6.3 · LOCAL PROTOTYPE",
+        overviewTitle: "A focused Unity prototype for basketball on the court.",
+        overview: [
+          "RimRise is a basketball career and city-life game project. The Unity edition starts with the playable court: a full-court five-on-five game with player movement, passing, shooting, defense, AI teammates and opponents, and an in-game scoreboard.",
+          "The prototype also includes a career hub for player stats, training, teams, and season progress. Career data is saved locally. The Unity build is currently single-player; the browser edition still contains additional city, social, and online systems.",
+        ],
+        focusTitle: "What the Unity build covers today",
+        focus: [
+          [
+            "Full-court 5v5",
+            "A playable court loop with movement, ball handling, passing, shooting, defense, and AI players.",
+          ],
+          [
+            "Career dashboard",
+            "A career hub for player profiles, skills, team information, and season progress.",
+          ],
+          [
+            "A staged port",
+            "The Unity edition is an in-progress single-player version. It does not yet include every system in the browser game.",
+          ],
+        ],
+        gallery: [
+          [
+            "Career management screen",
+            "A player overview with season information and development actions.",
+          ],
+          [
+            "Match pause screen",
+            "The in-game pause view with the current match and basic controls.",
+          ],
+        ],
+        stageNote:
+          "Work in progress. The Unity edition is currently a local single-player prototype, and its features are not yet at parity with the browser version.",
+      },
+      "rimrise-web": {
+        name: "RimRise · Browser edition",
+        category: "Browser game · Web development",
+        summary:
+          "A browser basketball career game that brings together season progression, an explorable 3D city, and street basketball.",
+        stage: "Browser game · In development",
+        heroAlt:
+          "RimRise browser game career dashboard with player and season information.",
+        heroBadge: "BROWSER EDITION · SCREEN CAPTURE",
+        overviewTitle: "A basketball world in the browser.",
+        overview: [
+          "The browser edition combines a player career simulation with an explorable 3D city. Players build a fictional career across seasons, develop their skills, and make decisions about teams, training, and life outside the court.",
+          "The project brings its own browser interface, game simulation, and multiplayer room systems together. The city, season screens, and basketball matches are developed as one independent web game, separate from the Unity prototype.",
+        ],
+        focusTitle: "What shapes the browser game",
+        focus: [
+          [
+            "Career and seasons",
+            "Player progression, season schedules, career milestones, and between-season decisions.",
+          ],
+          [
+            "3D city and street play",
+            "An explorable city themed around Taipei, Hong Kong, and Tokyo, with street courts for basketball games.",
+          ],
+          [
+            "Browser game systems",
+            "JavaScript and Three.js power the client; Node.js and WebSocket support rooms and real-time features.",
+          ],
+        ],
+        gallery: [
+          [
+            "3D city exploration",
+            "A browser capture from the city mode, with navigation and the player in the world.",
+          ],
+          [
+            "Street-court game",
+            "A five-on-five basketball match running inside the browser game.",
+          ],
+        ],
+        stageNote:
+          "Work in progress. These are screenshots from a local browser build; live availability and game systems may change as development continues.",
+      },
+    },
   },
   productsPage: {
     title: "Products",
@@ -426,6 +533,7 @@ const translated = {
     common: {
       home: "首页",
       products: "产品",
+      projects: "项目",
       inDevelopment: "开发中",
       learn: "了解项目",
       screens: "界面预览",
@@ -466,11 +574,11 @@ const translated = {
       selectedLabel: "精选项目",
       selectedTitle: ["跨越代码", "与声音的创作。"],
       selectedIntro:
-        "这里展示独立游戏开发、网页和原创音频作品。项目名称与演示内容将在适合公开时补充。",
-      selectedNames: ["游戏开发", "网页开发", "原创音频"],
+        "了解 RimRise 的两种版本：浏览器篮球游戏和 Unity 原型。作品集也包括独立网页与原创音频项目。",
+      selectedNames: ["RimRise · Unity 版", "RimRise · 浏览器版", "原创音频"],
       selectedDescriptions: [
-        "使用 Godot 和 Unity 制作的独立游戏项目。",
-        "面向网页打造的独立项目。",
+        "使用 Unity 6.3 制作的篮球生涯原型，现以全场 5 对 5 为起点。",
+        "包含生涯成长、3D 城市和街头篮球的浏览器游戏。",
         "包含原创作品的独立音频项目。",
       ],
       workflowLabel: "工作流程的形态",
@@ -502,7 +610,9 @@ const translated = {
       studioLabel: "关于 Zevqio",
       studioTitle: ["独立工作室，专注", "打造实用工具。"],
       studioIntro:
-        "Zevqio 是一个独立软件项目，专注探索文档处理、自动化和业务效率工具。我们结合软件工程与现代 AI 技术，为真实运营挑战寻找可靠、高效的方案。",
+        "Zevqio 是一个由创办人主导、自筹资金、处于早期阶段的独立软件工作室，专注探索文档处理、自动化和业务效率工具。",
+      studioDetail:
+        "目前的项目还包括 RimRise 篮球游戏，设有浏览器版本和 Unity 原型，以及其他独立网页与原创音频作品。我们会随着项目进展展示真实画面，并清楚说明仍在开发中的部分。",
       studioStatus: "创办人主导 · 自筹资金 · 早期阶段",
       studioLink: "更多关于 Zevqio",
       contactLabel: "开始交流",
@@ -517,7 +627,7 @@ const translated = {
       eyebrow: "小型独立工作室",
       headline: ["打造实用工具，", "也认真打磨细节。"],
       intro:
-        "Zevqio 是一个由创办人主导的独立软件项目，正在探索文档处理、自动化和业务效率方面的实用工具。",
+        "Zevqio 是一个由创办人主导、自筹资金、处于早期阶段的独立软件工作室，探索文档工作和业务流程工具，也制作独立游戏与网页项目。",
       storyLabel: "Zevqio 的初衷",
       storyTitle: ["软件应让下一步", "更清晰易见。"],
       storyLead:
@@ -525,7 +635,9 @@ const translated = {
       story1:
         "目前关注的方向包括文档智能、OCR 与数据提取、PDF 自动化、业务流程和开发者工具。这些都仍处于早期探索阶段；产品逐步成熟并适合分享时，我们会清楚说明。",
       story2:
-        "Zevqio 处于自筹资金的早期阶段。我们的工作聚焦于理解真实任务、找到减少阻力的实用方法，再从那里谨慎构建。",
+        "Zevqio 处于自筹资金的早期阶段。项目从真实任务或清晰想法出发，再通过专注的原型和迭代逐步完善。我们会说明各项目目前能做什么，以及哪些内容仍在开发中。",
+      story3:
+        "除了 OCR Studio，作品集还包括 RimRise 篮球人生游戏，提供浏览器版本和 Unity 原型。两个版本进度不同，因此各项目页面会说明对应版本的当前情况。",
       profile: "ZEVQIO / 工作室简介",
       structure: "组织形式",
       structureValue: "独立项目",
@@ -541,6 +653,84 @@ const translated = {
       ctaLabel: "欢迎交流",
       ctaTitle: "你正在做什么？",
       ctaButton: "联系 Zevqio",
+    },
+    portfolio: {
+      title: "项目",
+      screenshotsLabel: "项目画面",
+      screenshotsNote:
+        "这些画面截取自本机运行的 RimRise 版本。两个版本都仍在开发中，界面和功能可能调整。",
+      overviewLabel: "项目概览",
+      toolsLabel: "使用技术",
+      sourceLink: "在 GitHub 查看项目",
+      ctaLabel: "有项目想法？",
+      ctaTitle: "一起把下一步做得更清晰。",
+      ctaButton: "联系 Zevqio",
+      pages: {
+        "rimrise-unity": {
+          name: "RimRise · Unity 版",
+          category: "篮球游戏 · Unity 原型",
+          summary:
+            "RimRise 的 Unity 6.3 版本，从可玩的全场 5 对 5 篮球比赛和生涯界面开始。",
+          stage: "Unity 原型 · 开发中",
+          heroAlt: "RimRise Unity 原型中的五对五篮球比赛。",
+          heroBadge: "UNITY 6.3 · 本机原型",
+          overviewTitle: "专注打造篮球场上的 Unity 原型。",
+          overview: [
+            "RimRise 是一个结合篮球生涯与城市生活的游戏项目。Unity 版从可玩的球场开始：全场五对五比赛，包含球员移动、传球、投篮、防守、AI 队友与对手，以及场内计分板。",
+            "原型还包含生涯中心，可查看球员数据、训练、球队和赛季进度。生涯资料保存在本机。Unity 版目前为单人游戏；浏览器版本仍包含其他城市、社交和在线系统。",
+          ],
+          focusTitle: "Unity 当前版本的内容",
+          focus: [
+            [
+              "全场 5 对 5",
+              "可玩的球场流程，包含移动、控球、传球、投篮、防守和 AI 球员。",
+            ],
+            ["生涯界面", "管理球员资料、能力、球队信息和赛季进度的生涯中心。"],
+            [
+              "分阶段移植",
+              "Unity 版仍是开发中的单人版本，目前尚未包含浏览器游戏的所有系统。",
+            ],
+          ],
+          gallery: [
+            ["生涯管理界面", "球员总览、赛季信息和成长操作。"],
+            ["比赛暂停画面", "比赛中的暂停界面及基本操作提示。"],
+          ],
+          stageNote:
+            "项目仍在开发中。Unity 版目前是本机单人原型，功能尚未与浏览器版本完全一致。",
+        },
+        "rimrise-web": {
+          name: "RimRise · 浏览器版",
+          category: "浏览器游戏 · 网页开发",
+          summary:
+            "一款浏览器篮球生涯游戏，结合赛季成长、可探索的 3D 城市和街头篮球。",
+          stage: "浏览器游戏 · 开发中",
+          heroAlt: "RimRise 浏览器游戏的球员生涯界面。",
+          heroBadge: "浏览器版本 · 实际截屏",
+          overviewTitle: "在浏览器中展开篮球世界。",
+          overview: [
+            "浏览器版把球员生涯模拟与可探索的 3D 城市结合起来。玩家可以跨赛季经营虚构球员生涯、提升能力，并作出球队、训练和球场外生活的选择。",
+            "项目把浏览器界面、游戏模拟和多人房间系统结合为一个独立网页游戏。城市、赛季界面和篮球比赛共同构成网页版本，与 Unity 原型分开开发。",
+          ],
+          focusTitle: "浏览器游戏的组成",
+          focus: [
+            ["生涯与赛季", "球员成长、赛程、生涯里程碑和赛季之间的决定。"],
+            [
+              "3D 城市与街头篮球",
+              "以台北、香港和东京为主题的可探索城市，以及街头篮球场。",
+            ],
+            [
+              "浏览器游戏系统",
+              "客户端使用 JavaScript 与 Three.js；Node.js 和 WebSocket 支持房间与实时功能。",
+            ],
+          ],
+          gallery: [
+            ["探索 3D 城市", "浏览器城市模式截屏，展示导航和游戏角色。"],
+            ["街头篮球比赛", "在浏览器游戏中进行的五对五篮球比赛。"],
+          ],
+          stageNote:
+            "项目仍在开发中。这些画面截取自本机浏览器版本；在线可用状态和游戏系统可能随开发进度调整。",
+        },
+      },
     },
     productsPage: {
       title: "产品",
@@ -771,6 +961,7 @@ const translated = {
     common: {
       home: "首頁",
       products: "產品",
+      projects: "項目",
       inDevelopment: "開發中",
       learn: "了解項目",
       screens: "介面預覽",
@@ -811,11 +1002,11 @@ const translated = {
       selectedLabel: "精選項目",
       selectedTitle: ["跨越程式碼", "與聲音的創作。"],
       selectedIntro:
-        "展示獨立遊戲開發、網頁和原創音訊作品。項目名稱與示範內容會在適合公開時補上。",
-      selectedNames: ["遊戲開發", "網頁開發", "原創音訊"],
+        "展示 RimRise 的兩個版本：瀏覽器籃球遊戲和 Unity 原型。作品集亦包括獨立網頁與原創音訊項目。",
+      selectedNames: ["RimRise · Unity 版", "RimRise · 瀏覽器版", "原創音訊"],
       selectedDescriptions: [
-        "使用 Godot 和 Unity 製作的獨立遊戲項目。",
-        "為網頁打造的獨立項目。",
+        "使用 Unity 6.3 製作的籃球生涯原型，現以全場 5 對 5 為起點。",
+        "包含生涯成長、3D 城市和街頭籃球的瀏覽器遊戲。",
         "包含原創作品的獨立音訊項目。",
       ],
       workflowLabel: "工作流程的構想",
@@ -847,7 +1038,9 @@ const translated = {
       studioLabel: "關於 Zevqio",
       studioTitle: ["獨立工作室，專注", "打造實用工具。"],
       studioIntro:
-        "Zevqio 是一個獨立軟件項目，專注探索文件處理、自動化和業務效率工具。我們結合軟件工程與現代 AI 技術，為真實營運挑戰尋找可靠、高效的方案。",
+        "Zevqio 是一個由創辦人主導、自資、處於早期階段的獨立軟件工作室，專注探索文件處理、自動化和業務效率工具。",
+      studioDetail:
+        "目前的項目還包括 RimRise 籃球遊戲，設有瀏覽器版本和 Unity 原型，以及其他獨立網頁與原創音訊作品。我們會隨項目進展展示實際畫面，並清楚說明仍在開發中的部分。",
       studioStatus: "創辦人主導 · 自資 · 早期階段",
       studioLink: "更多關於 Zevqio",
       contactLabel: "開始交流",
@@ -862,7 +1055,7 @@ const translated = {
       eyebrow: "小型獨立工作室",
       headline: ["打造實用工具，", "也用心打磨細節。"],
       intro:
-        "Zevqio 是一個由創辦人主導的獨立軟件項目，正在探索文件處理、自動化和業務效率方面的實用工具。",
+        "Zevqio 是一個由創辦人主導、自資、處於早期階段的獨立軟件工作室，探索文件工作和業務流程工具，也製作獨立遊戲與網頁項目。",
       storyLabel: "Zevqio 的初衷",
       storyTitle: ["軟件應令下一步", "更清晰易見。"],
       storyLead:
@@ -870,7 +1063,9 @@ const translated = {
       story1:
         "目前關注的方向包括文件智能、OCR 與資料擷取、PDF 自動化、業務流程和開發者工具。這些仍處於早期探索階段；產品逐步成熟並適合分享時，我們會清楚說明。",
       story2:
-        "Zevqio 處於自資的早期階段。我們聚焦了解真實任務、尋找減少阻力的實用方法，再從那裏謹慎打造。",
+        "Zevqio 處於自資的早期階段。項目從真實任務或清晰構想出發，再透過專注的原型和迭代逐步完善。我們會說明各項目目前能做到甚麼，以及哪些內容仍在開發中。",
+      story3:
+        "除了 OCR Studio，作品集亦包括 RimRise 籃球人生遊戲，提供瀏覽器版本和 Unity 原型。兩個版本進度不同，因此各項目頁面會說明對應版本的現況。",
       profile: "ZEVQIO / 工作室簡介",
       structure: "組織形式",
       structureValue: "獨立項目",
@@ -886,6 +1081,84 @@ const translated = {
       ctaLabel: "歡迎交流",
       ctaTitle: "你正在做甚麼？",
       ctaButton: "聯絡 Zevqio",
+    },
+    portfolio: {
+      title: "項目",
+      screenshotsLabel: "項目畫面",
+      screenshotsNote:
+        "這些畫面截取自本機運行的 RimRise 版本。兩個版本都仍在開發中，介面和功能可能調整。",
+      overviewLabel: "項目概覽",
+      toolsLabel: "使用技術",
+      sourceLink: "在 GitHub 查看項目",
+      ctaLabel: "有項目構想？",
+      ctaTitle: "一起令下一步更清晰。",
+      ctaButton: "聯絡 Zevqio",
+      pages: {
+        "rimrise-unity": {
+          name: "RimRise · Unity 版",
+          category: "籃球遊戲 · Unity 原型",
+          summary:
+            "RimRise 的 Unity 6.3 版本，從可玩的全場 5 對 5 籃球比賽和生涯介面開始。",
+          stage: "Unity 原型 · 開發中",
+          heroAlt: "RimRise Unity 原型中的五對五籃球比賽。",
+          heroBadge: "UNITY 6.3 · 本機原型",
+          overviewTitle: "專注打造球場籃球體驗的 Unity 原型。",
+          overview: [
+            "RimRise 是一個結合籃球生涯與城市生活的遊戲項目。Unity 版從可玩的球場開始：全場五對五比賽，包含球員移動、傳球、投籃、防守、AI 隊友與對手，以及場內計分板。",
+            "原型亦包含生涯中心，可查看球員數據、訓練、球隊和賽季進度。生涯資料儲存在本機。Unity 版目前是單人遊戲；瀏覽器版本仍包含其他城市、社交和線上系統。",
+          ],
+          focusTitle: "Unity 目前版本的內容",
+          focus: [
+            [
+              "全場 5 對 5",
+              "可玩的球場流程，包含移動、控球、傳球、投籃、防守和 AI 球員。",
+            ],
+            ["生涯介面", "管理球員資料、能力、球隊資訊和賽季進度的生涯中心。"],
+            [
+              "分階段移植",
+              "Unity 版仍是開發中的單人版本，目前尚未包含瀏覽器遊戲的所有系統。",
+            ],
+          ],
+          gallery: [
+            ["生涯管理介面", "球員總覽、賽季資訊和成長操作。"],
+            ["比賽暫停畫面", "比賽中的暫停介面及基本操作提示。"],
+          ],
+          stageNote:
+            "項目仍在開發中。Unity 版目前是本機單人原型，功能尚未與瀏覽器版本完全一致。",
+        },
+        "rimrise-web": {
+          name: "RimRise · 瀏覽器版",
+          category: "瀏覽器遊戲 · 網頁開發",
+          summary:
+            "一款瀏覽器籃球生涯遊戲，結合賽季成長、可探索的 3D 城市和街頭籃球。",
+          stage: "瀏覽器遊戲 · 開發中",
+          heroAlt: "RimRise 瀏覽器遊戲的球員生涯介面。",
+          heroBadge: "瀏覽器版本 · 實際截圖",
+          overviewTitle: "在瀏覽器中展開籃球世界。",
+          overview: [
+            "瀏覽器版把球員生涯模擬與可探索的 3D 城市結合。玩家可以跨賽季經營虛構球員生涯、提升能力，並作出球隊、訓練和球場外生活的選擇。",
+            "項目把瀏覽器介面、遊戲模擬和多人房間系統結合成一個獨立網頁遊戲。城市、賽季介面和籃球比賽共同構成網頁版本，並與 Unity 原型分開開發。",
+          ],
+          focusTitle: "瀏覽器遊戲的組成",
+          focus: [
+            ["生涯與賽季", "球員成長、賽程、生涯里程碑和賽季之間的決定。"],
+            [
+              "3D 城市與街頭籃球",
+              "以台北、香港和東京為主題的可探索城市，以及街頭籃球場。",
+            ],
+            [
+              "瀏覽器遊戲系統",
+              "客戶端使用 JavaScript 與 Three.js；Node.js 和 WebSocket 支援房間與即時功能。",
+            ],
+          ],
+          gallery: [
+            ["探索 3D 城市", "瀏覽器城市模式截圖，展示導航和遊戲角色。"],
+            ["街頭籃球比賽", "在瀏覽器遊戲中進行的五對五籃球比賽。"],
+          ],
+          stageNote:
+            "項目仍在開發中。這些畫面截取自本機瀏覽器版本；線上可用狀態和遊戲系統可能隨開發進度調整。",
+        },
+      },
     },
     productsPage: {
       title: "產品",
@@ -1116,6 +1389,7 @@ const translated = {
     common: {
       home: "ホーム",
       products: "プロダクト",
+      projects: "プロジェクト",
       inDevelopment: "開発中",
       learn: "プロジェクトを見る",
       screens: "画面プレビュー",
@@ -1158,11 +1432,15 @@ const translated = {
       selectedLabel: "主なプロジェクト",
       selectedTitle: ["コードと", "音でつくる。"],
       selectedIntro:
-        "ゲーム開発、ウェブ、オリジナル音源に関する独立した取り組みを紹介します。公開できる段階になった作品名やデモは順次追加します。",
-      selectedNames: ["ゲーム開発", "ウェブ開発", "オリジナル音源"],
+        "ブラウザー版のバスケットボールゲームとUnityプロトタイプ、RimRiseの2つの形を紹介します。独立したウェブやオリジナル音源の作品も掲載しています。",
+      selectedNames: [
+        "RimRise · Unity版",
+        "RimRise · ブラウザー版",
+        "オリジナル音源",
+      ],
       selectedDescriptions: [
-        "Godot と Unity で制作するインディーゲーム。",
-        "ウェブ向けに制作する独立プロジェクト。",
+        "Unity 6.3で開発中のバスケットボールキャリアゲーム。まずは5対5の試合から。",
+        "キャリア進行、3D都市、ストリートバスケを組み合わせたブラウザーゲーム。",
         "オリジナル作品を含む音声プロジェクト。",
       ],
       workflowLabel: "仕事の流れ",
@@ -1204,7 +1482,9 @@ const translated = {
       studioLabel: "Zevqioについて",
       studioTitle: ["独立したスタジオとして", "役立つものをつくる。"],
       studioIntro:
-        "Zevqio は、文書処理、自動化、業務効率化のための実用的なツールを探る独立系ソフトウェアプロジェクトです。ソフトウェアエンジニアリングと現代のAI技術を組み合わせ、実際の業務課題に対する信頼性と効率性を探っています。",
+        "Zevqio は創業者主導で自己資金により進める、初期段階の独立ソフトウェアスタジオです。文書処理、自動化、業務効率化に役立つツールを検討しています。",
+      studioDetail:
+        "現在は、ブラウザー版とUnityプロトタイプを持つ独立バスケットボールゲーム「RimRise」や、小規模なウェブ・オリジナル音源プロジェクトにも取り組んでいます。進捗に合わせて実際の画面を紹介し、開発中の範囲を明確にします。",
       studioStatus: "創業者主導 · 自己資金 · 初期段階",
       studioLink: "Zevqioについて詳しく",
       contactLabel: "相談する",
@@ -1220,7 +1500,7 @@ const translated = {
       eyebrow: "小さな独立系スタジオ",
       headline: ["役立つものをつくる。", "細部まで丁寧に。"],
       intro:
-        "Zevqio は、文書処理、自動化、業務効率化に役立つツールを探る、創業者主導の独立系ソフトウェアプロジェクトです。",
+        "Zevqio は創業者主導で自己資金により進める初期段階の独立ソフトウェアスタジオです。文書業務や業務フローのツールを検討するほか、独立したゲームやウェブのプロジェクトにも取り組んでいます。",
       storyLabel: "Zevqio が目指すこと",
       storyTitle: ["ソフトウェアで次の一歩を", "見えやすくする。"],
       storyLead:
@@ -1228,7 +1508,9 @@ const translated = {
       story1:
         "現在は文書インテリジェンス、OCRとデータ抽出、PDF自動化、業務ワークフロー、開発者向けツールに関心を持っています。いずれも初期の検討段階です。プロダクトが進み、共有できる段階になったら明確にお知らせします。",
       story2:
-        "Zevqio は自己資金で進める初期段階のプロジェクトです。実際の作業を理解し、手間を減らす方法を見つけ、そこから丁寧につくることに集中しています。",
+        "Zevqio は自己資金で進める初期段階の取り組みです。実際の作業や明確なアイデアを起点に、対象を絞ったプロトタイプと反復を通じて形にします。各プロジェクトで現在できることと、開発中の範囲を説明します。",
+      story3:
+        "OCR Studio に加えて、ブラウザー版とUnityプロトタイプを持つバスケットボールゲーム「RimRise」にも取り組んでいます。2つのバージョンは開発段階が異なるため、それぞれのページで現状を説明します。",
       profile: "ZEVQIO / スタジオ概要",
       structure: "形態",
       structureValue: "独立した取り組み",
@@ -1245,6 +1527,98 @@ const translated = {
       ctaLabel: "お気軽にどうぞ",
       ctaTitle: "今、何に取り組んでいますか？",
       ctaButton: "Zevqioに連絡",
+    },
+    portfolio: {
+      title: "プロジェクト",
+      screenshotsLabel: "プロジェクト画面",
+      screenshotsNote:
+        "画面はローカルで動かしたRimRiseから撮影しました。どちらのバージョンも開発中のため、画面や機能は変更される場合があります。",
+      overviewLabel: "プロジェクト概要",
+      toolsLabel: "使用技術",
+      sourceLink: "GitHubでプロジェクトを見る",
+      ctaLabel: "アイデアをお聞かせください",
+      ctaTitle: "次の一歩を一緒に明確にしませんか。",
+      ctaButton: "Zevqioに連絡",
+      pages: {
+        "rimrise-unity": {
+          name: "RimRise · Unity版",
+          category: "バスケットボールゲーム · Unityプロトタイプ",
+          summary:
+            "RimRiseのUnity 6.3版です。プレイ可能なフルコート5対5とキャリア画面から開発を進めています。",
+          stage: "Unityプロトタイプ · 開発中",
+          heroAlt: "RimRiseのUnityプロトタイプで行われる5対5の試合。",
+          heroBadge: "UNITY 6.3 · ローカルプロトタイプ",
+          overviewTitle:
+            "コートでのバスケットボールに焦点を当てたUnityプロトタイプ。",
+          overview: [
+            "RimRiseは、バスケットボールのキャリアと都市生活を組み合わせたゲームプロジェクトです。Unity版ではプレイ可能なコートから着手し、移動、パス、シュート、ディフェンス、AIの味方と対戦相手、ゲーム内スコアボードを備えたフルコート5対5を作っています。",
+            "プロトタイプには選手データ、トレーニング、チーム、シーズンの進行状況を確認できるキャリアハブもあります。キャリアデータはローカルに保存されます。Unity版は現在シングルプレイヤーで、ブラウザー版にある都市、ソーシャル、オンライン機能はまだすべて移植されていません。",
+          ],
+          focusTitle: "現在のUnityビルドに含まれる内容",
+          focus: [
+            [
+              "フルコート5対5",
+              "移動、ボール操作、パス、シュート、ディフェンス、AI選手を含むプレイ可能な試合。",
+            ],
+            [
+              "キャリア画面",
+              "選手プロフィール、スキル、チーム情報、シーズンの進行を確認する画面。",
+            ],
+            [
+              "段階的な移植",
+              "Unity版は開発中のシングルプレイヤー版です。ブラウザーゲームのすべてのシステムはまだ含まれていません。",
+            ],
+          ],
+          gallery: [
+            ["キャリア管理画面", "選手概要、シーズン情報、育成メニュー。"],
+            ["試合のポーズ画面", "試合中に表示されるポーズ画面と基本操作。"],
+          ],
+          stageNote:
+            "開発中です。Unity版は現在ローカルのシングルプレイヤープロトタイプで、ブラウザー版と機能はまだ同等ではありません。",
+        },
+        "rimrise-web": {
+          name: "RimRise · ブラウザー版",
+          category: "ブラウザーゲーム · ウェブ開発",
+          summary:
+            "シーズンの成長、探索できる3D都市、ストリートバスケを組み合わせたブラウザーゲームです。",
+          stage: "ブラウザーゲーム · 開発中",
+          heroAlt:
+            "選手とシーズン情報を表示するRimRiseのブラウザー版キャリア画面。",
+          heroBadge: "ブラウザー版 · 実際の画面",
+          overviewTitle: "ブラウザーで広がるバスケットボールの世界。",
+          overview: [
+            "ブラウザー版では選手のキャリアシミュレーションと、探索できる3D都市を組み合わせています。プレイヤーは複数のシーズンにわたって架空のキャリアを築き、スキルを伸ばし、チーム、トレーニング、コート外の生活について選択します。",
+            "ブラウザー用のインターフェース、ゲームシミュレーション、マルチプレイヤーのルーム機能を一つの独立したウェブゲームにまとめています。都市、シーズン画面、バスケットボールの試合を含み、Unityプロトタイプとは別に開発しています。",
+          ],
+          focusTitle: "ブラウザーゲームの構成",
+          focus: [
+            [
+              "キャリアとシーズン",
+              "選手の成長、シーズン日程、キャリアの節目、シーズン間の選択。",
+            ],
+            [
+              "3D都市とストリートプレイ",
+              "台北、香港、東京をテーマにした探索可能な都市と、ストリートバスケのコート。",
+            ],
+            [
+              "ブラウザーゲームの仕組み",
+              "クライアントはJavaScriptとThree.jsで動作し、Node.jsとWebSocketがルームやリアルタイム機能を支えます。",
+            ],
+          ],
+          gallery: [
+            [
+              "3D都市の探索",
+              "ナビゲーションとプレイヤーを表示する都市モードの画面。",
+            ],
+            [
+              "ストリートコートの試合",
+              "ブラウザーゲーム内でプレイする5対5の試合。",
+            ],
+          ],
+          stageNote:
+            "開発中です。画面はローカルのブラウザー版から撮影しました。開発に伴い、オンラインでの提供状況やゲームシステムは変更される場合があります。",
+        },
+      },
     },
     productsPage: {
       title: "プロダクト",
@@ -1491,6 +1865,7 @@ const translated = {
     common: {
       home: "홈",
       products: "제품",
+      projects: "프로젝트",
       inDevelopment: "개발 중",
       learn: "프로젝트 살펴보기",
       screens: "화면 미리보기",
@@ -1533,11 +1908,15 @@ const translated = {
       selectedLabel: "주요 프로젝트",
       selectedTitle: ["코드와", "사운드를 넘나들며."],
       selectedIntro:
-        "게임 개발, 웹, 오리지널 오디오 분야의 독립 작업을 소개합니다. 공개할 준비가 되면 프로젝트 이름과 데모를 추가합니다.",
-      selectedNames: ["게임 개발", "웹 개발", "오리지널 오디오"],
+        "브라우저 농구 게임과 Unity 프로토타입, RimRise의 두 가지 버전을 소개합니다. 독립 웹 및 오리지널 오디오 작업도 포함합니다.",
+      selectedNames: [
+        "RimRise · Unity 에디션",
+        "RimRise · 브라우저 게임",
+        "오리지널 오디오",
+      ],
       selectedDescriptions: [
-        "Godot와 Unity로 만드는 독립 게임 프로젝트입니다.",
-        "웹을 위해 제작하는 독립 프로젝트입니다.",
+        "Unity 6.3 농구 커리어 프로토타입으로, 풀코트 5대5부터 구현하고 있습니다.",
+        "커리어 성장, 3D 도시, 길거리 농구를 담은 브라우저 게임입니다.",
         "오리지널 작업을 담은 독립 오디오 프로젝트입니다.",
       ],
       workflowLabel: "업무의 흐름",
@@ -1579,7 +1958,9 @@ const translated = {
       studioLabel: "Zevqio 소개",
       studioTitle: ["독립 스튜디오로서", "유용한 것을 만듭니다."],
       studioIntro:
-        "Zevqio는 문서 처리, 자동화, 비즈니스 생산성을 위한 실용적인 도구를 탐색하는 독립 소프트웨어 프로젝트입니다. 소프트웨어 엔지니어링과 현대 AI 기술을 결합해 실제 운영 과제에 신뢰할 수 있고 효율적인 해결책을 찾습니다.",
+        "Zevqio는 창업자가 이끌고 자체 자금으로 운영하는 초기 단계의 독립 소프트웨어 스튜디오입니다. 문서 처리, 자동화, 비즈니스 생산성을 위한 도구를 탐색합니다.",
+      studioDetail:
+        "현재 작업에는 브라우저 버전과 Unity 프로토타입으로 나뉜 독립 농구 게임 RimRise, 소규모 웹 및 오리지널 오디오 프로젝트가 있습니다. 진행 과정에서 실제 화면을 공유하고 개발 중인 범위를 분명하게 알립니다.",
       studioStatus: "창업자 주도 · 자체 자금 · 초기 단계",
       studioLink: "Zevqio 자세히 보기",
       contactLabel: "대화 시작하기",
@@ -1595,7 +1976,7 @@ const translated = {
       eyebrow: "작은 독립 스튜디오",
       headline: ["유용한 것을 만들고,", "세심하게 다듬습니다."],
       intro:
-        "Zevqio는 문서 처리, 자동화, 비즈니스 생산성을 위한 실용적인 도구를 탐색하는 창업자 주도의 독립 소프트웨어 프로젝트입니다.",
+        "Zevqio는 창업자가 이끌고 자체 자금으로 운영하는 초기 단계의 독립 소프트웨어 스튜디오입니다. 문서 업무와 비즈니스 흐름을 위한 도구를 탐색하며 독립 게임 및 웹 프로젝트도 만듭니다.",
       storyLabel: "Zevqio가 존재하는 이유",
       storyTitle: ["소프트웨어는 다음 단계를", "더 쉽게 보여줘야 합니다."],
       storyLead:
@@ -1603,7 +1984,9 @@ const translated = {
       story1:
         "현재 관심 분야는 문서 인텔리전스, OCR 및 데이터 추출, PDF 자동화, 비즈니스 업무 흐름, 개발자 도구입니다. 모두 초기 탐색 단계이며, 제품이 발전해 공유할 준비가 되면 명확히 알리겠습니다.",
       story2:
-        "Zevqio는 자체 자금으로 운영하는 초기 단계 프로젝트입니다. 실제 업무를 이해하고, 불편을 줄이는 방법을 찾고, 그 지점부터 신중하게 만드는 데 집중합니다.",
+        "Zevqio는 자체 자금으로 운영하는 초기 단계 프로젝트입니다. 실제 업무나 명확한 아이디어에서 출발해 범위를 좁힌 프로토타입과 반복 작업으로 발전시킵니다. 각 프로젝트에서 현재 가능한 것과 개발 중인 부분을 설명합니다.",
+      story3:
+        "OCR Studio와 함께 브라우저 버전과 Unity 프로토타입을 갖춘 농구 게임 RimRise도 개발하고 있습니다. 두 버전의 진행 단계가 다르므로 각 프로젝트 페이지에서 현재 상태를 설명합니다.",
       profile: "ZEVQIO / 스튜디오 소개",
       structure: "형태",
       structureValue: "독립 프로젝트",
@@ -1620,6 +2003,100 @@ const translated = {
       ctaLabel: "편하게 인사해 주세요",
       ctaTitle: "무엇을 만들고 계신가요?",
       ctaButton: "Zevqio에 문의",
+    },
+    portfolio: {
+      title: "프로젝트",
+      screenshotsLabel: "프로젝트 화면",
+      screenshotsNote:
+        "화면은 로컬에서 실행한 RimRise 빌드에서 캡처했습니다. 두 버전 모두 개발 중이므로 화면과 기능은 바뀔 수 있습니다.",
+      overviewLabel: "프로젝트 개요",
+      toolsLabel: "사용 기술",
+      sourceLink: "GitHub에서 프로젝트 보기",
+      ctaLabel: "프로젝트 아이디어가 있나요?",
+      ctaTitle: "다음 단계를 함께 더 명확하게 만들어 봐요.",
+      ctaButton: "Zevqio에 문의",
+      pages: {
+        "rimrise-unity": {
+          name: "RimRise · Unity 에디션",
+          category: "농구 게임 · Unity 프로토타입",
+          summary:
+            "플레이 가능한 풀코트 5대5 농구와 커리어 화면부터 시작하는 RimRise의 Unity 6.3 버전입니다.",
+          stage: "Unity 프로토타입 · 개발 중",
+          heroAlt: "RimRise Unity 프로토타입에서 진행 중인 5대5 농구 경기.",
+          heroBadge: "UNITY 6.3 · 로컬 프로토타입",
+          overviewTitle: "코트 위 농구에 집중한 Unity 프로토타입.",
+          overview: [
+            "RimRise는 농구 커리어와 도시 생활을 결합한 게임 프로젝트입니다. Unity 버전은 플레이 가능한 코트부터 시작합니다. 선수 이동, 패스, 슛, 수비, AI 팀원과 상대, 경기 점수판을 포함한 풀코트 5대5 게임입니다.",
+            "프로토타입에는 선수 기록, 훈련, 팀, 시즌 진행 상황을 보는 커리어 허브도 있습니다. 커리어 데이터는 로컬에 저장됩니다. Unity 빌드는 현재 싱글 플레이어이며, 브라우저 버전의 도시·소셜·온라인 시스템은 아직 모두 옮기지 않았습니다.",
+          ],
+          focusTitle: "현재 Unity 빌드의 구성",
+          focus: [
+            [
+              "풀코트 5대5",
+              "이동, 볼 핸들링, 패스, 슛, 수비, AI 선수가 포함된 플레이 가능한 경기 흐름.",
+            ],
+            [
+              "커리어 대시보드",
+              "선수 프로필, 기술, 팀 정보, 시즌 진행 상황을 확인하는 허브.",
+            ],
+            [
+              "단계별 포팅",
+              "Unity 에디션은 개발 중인 싱글 플레이어 버전이며, 브라우저 게임의 모든 시스템을 아직 포함하지 않습니다.",
+            ],
+          ],
+          gallery: [
+            [
+              "커리어 관리 화면",
+              "선수 개요, 시즌 정보, 성장 메뉴를 보여줍니다.",
+            ],
+            [
+              "경기 일시 정지 화면",
+              "경기 중 일시 정지 메뉴와 기본 조작 안내입니다.",
+            ],
+          ],
+          stageNote:
+            "개발 중입니다. Unity 에디션은 현재 로컬 싱글 플레이어 프로토타입이며 브라우저 버전과 기능이 아직 동일하지 않습니다.",
+        },
+        "rimrise-web": {
+          name: "RimRise · 브라우저 에디션",
+          category: "브라우저 게임 · 웹 개발",
+          summary:
+            "시즌 성장, 탐험 가능한 3D 도시, 길거리 농구를 결합한 브라우저 농구 커리어 게임입니다.",
+          stage: "브라우저 게임 · 개발 중",
+          heroAlt:
+            "선수와 시즌 정보를 보여주는 RimRise 브라우저 커리어 대시보드.",
+          heroBadge: "브라우저 버전 · 실제 화면 캡처",
+          overviewTitle: "브라우저에서 펼쳐지는 농구 세계.",
+          overview: [
+            "브라우저 버전은 선수 커리어 시뮬레이션과 탐험 가능한 3D 도시를 결합합니다. 플레이어는 여러 시즌에 걸쳐 가상의 커리어를 만들고 기술을 키우며 팀, 훈련, 코트 밖 생활에 관한 결정을 내립니다.",
+            "브라우저 인터페이스, 게임 시뮬레이션, 멀티플레이어 룸 시스템을 하나의 독립 웹 게임으로 묶었습니다. 도시, 시즌 화면, 농구 경기가 포함되며 Unity 프로토타입과는 별도로 개발합니다.",
+          ],
+          focusTitle: "브라우저 게임을 이루는 요소",
+          focus: [
+            [
+              "커리어와 시즌",
+              "선수 성장, 시즌 일정, 커리어의 주요 순간, 시즌 사이의 선택.",
+            ],
+            [
+              "3D 도시와 길거리 농구",
+              "타이베이, 홍콩, 도쿄를 테마로 한 탐험형 도시와 길거리 코트.",
+            ],
+            [
+              "브라우저 게임 시스템",
+              "클라이언트는 JavaScript와 Three.js로 만들고 Node.js 및 WebSocket으로 룸과 실시간 기능을 지원합니다.",
+            ],
+          ],
+          gallery: [
+            ["3D 도시 탐험", "이동 안내와 플레이어를 보여주는 도시 모드 화면."],
+            [
+              "길거리 코트 경기",
+              "브라우저 게임 안에서 진행되는 5대5 농구 경기.",
+            ],
+          ],
+          stageNote:
+            "개발 중입니다. 화면은 로컬 브라우저 빌드에서 캡처했으며, 개발이 진행되면서 온라인 제공 상태와 게임 시스템이 바뀔 수 있습니다.",
+        },
+      },
     },
     productsPage: {
       title: "제품",

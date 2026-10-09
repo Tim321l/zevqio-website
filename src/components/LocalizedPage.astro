@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
 import { products } from "../data/products";
-import { selectedProjects } from "../data/projects";
+import { projectPages, selectedProjects } from "../data/projects";
 import { site } from "../data/site";
 import {
   getCapabilityTranslations,
@@ -16,7 +16,14 @@ import { withBase } from "../utils/paths";
 
 interface Props {
   locale: Locale;
-  page: "home" | "about" | "contact" | "privacy" | "products" | "product";
+  page:
+    | "home"
+    | "about"
+    | "contact"
+    | "privacy"
+    | "products"
+    | "product"
+    | "project";
   slug?: string;
 }
 
@@ -25,6 +32,7 @@ const copy = getLocaleContent(locale);
 const home = copy.home;
 const about = copy.about;
 const productsPage = copy.productsPage;
+const portfolio = copy.portfolio;
 const contact = copy.contact;
 const privacy = copy.privacy;
 const detail = copy.detail;
@@ -34,6 +42,12 @@ const productCopy = slug
 const sourceProduct = slug
   ? products.find((item) => item.slug === slug)
   : undefined;
+const projectCopy = slug
+  ? portfolio.pages[slug as keyof typeof portfolio.pages]
+  : undefined;
+const sourceProject = slug
+  ? projectPages.find((item) => item.slug === slug)
+  : undefined;
 const story =
   productCopy && "story" in productCopy ? productCopy.story : undefined;
 const pagePath =
@@ -41,9 +55,11 @@ const pagePath =
     ? "/"
     : page === "product"
       ? `/products/${slug ?? ""}`
-      : page === "products"
-        ? "/products"
-        : `/${page}`;
+      : page === "project"
+        ? `/projects/${slug ?? ""}`
+        : page === "products"
+          ? "/products"
+          : `/${page}`;
 const localizedPath = localeHref(locale, pagePath);
 const pageTitle =
   page === "home"
@@ -56,7 +72,9 @@ const pageTitle =
           ? privacy.title
           : page === "products"
             ? productsPage.title
-            : (productCopy?.name ?? "Zevqio");
+            : page === "project"
+              ? (projectCopy?.name ?? portfolio.title)
+              : (productCopy?.name ?? "Zevqio");
 const pageDescription =
   page === "home"
     ? home.description
@@ -68,7 +86,9 @@ const pageDescription =
           ? privacy.description
           : page === "products"
             ? productsPage.description
-            : (productCopy?.summary ?? site.description);
+            : page === "project"
+              ? (projectCopy?.summary ?? site.description)
+              : (productCopy?.summary ?? site.description);
 const capabilities = getCapabilityTranslations(locale);
 const earlyStageNote = getEarlyStageNote(locale);
 const studioLabels = getStudioLabels(locale);
@@ -292,6 +312,14 @@ const previewImage = (image: string) =>
                     <li>{tool}</li>
                   ))}
                 </ul>
+                {project.href && (
+                  <a
+                    class="text-link selected-project-link"
+                    href={withBase(localeHref(locale, project.href))}
+                  >
+                    {copy.common.learn} <Icon name="arrowUpRight" size={16} />
+                  </a>
+                )}
               </article>
             ))}
           </div>
@@ -434,6 +462,7 @@ const previewImage = (image: string) =>
               <span class="text-gradient">{home.studioTitle[1]}</span>
             </h2>
             <p>{home.studioIntro}</p>
+            <p>{home.studioDetail}</p>
             <p class="studio-note">
               <span class="status-dot"></span>
               {home.studioStatus}
@@ -502,6 +531,7 @@ const previewImage = (image: string) =>
             <p class="large-body">{about.storyLead}</p>
             <p>{about.story1}</p>
             <p>{about.story2}</p>
+            <p>{about.story3}</p>
           </div>
           <aside class="about-stage-card">
             <span class="stage-card-eyebrow">{about.profile}</span>
@@ -926,6 +956,169 @@ const previewImage = (image: string) =>
             href={mailUrl(`${detail.questionSubject}: ${productCopy.name}`)}
           >
             {detail.ctaButton} <Icon name="arrowUpRight" size={16} />
+          </a>
+        </div>
+      </section>
+    </>
+  )}
+
+  {page === "project" && projectCopy && sourceProject && (
+    <>
+      <section class="product-detail-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
+            <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
+            <Icon name="chevronRight" size={13} />
+            <span>{portfolio.title}</span>
+            <Icon name="chevronRight" size={13} />
+            <span aria-current="page">{projectCopy.name}</span>
+          </nav>
+          <div class="product-detail-grid">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {projectCopy.category}
+              </p>
+              <h1>
+                {projectCopy.name}
+                <span class="product-title-period">.</span>
+              </h1>
+              <p class="detail-lede">{projectCopy.summary}</p>
+              <div class="detail-meta">
+                <span class="status-pill detail-status">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  {projectCopy.stage}
+                </span>
+                <a class="text-link" href="#project-screenshots">
+                  {portfolio.screenshotsLabel}{" "}
+                  <Icon name="arrowRight" size={15} />
+                </a>
+              </div>
+            </div>
+            <div class="detail-preview-hero">
+              <img
+                src={withBase(sourceProject.heroImage)}
+                alt={projectCopy.heroAlt}
+                width="1440"
+                height="900"
+              />
+              <span class="detail-preview-badge">{projectCopy.heroBadge}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="product-showcase-section section-space"
+        id="project-screenshots"
+        aria-labelledby="project-showcase-title"
+      >
+        <div class="shell">
+          <div class="showcase-heading">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {portfolio.screenshotsLabel}
+              </p>
+              <h2 id="project-showcase-title">{projectCopy.name}</h2>
+            </div>
+            <p>{portfolio.screenshotsNote}</p>
+          </div>
+          <div class="showcase-preview-grid">
+            {sourceProject.screenshots.map((image, index) => {
+              const caption = projectCopy.gallery[index];
+              return (
+                <figure class="showcase-preview-card">
+                  <div class="showcase-image-frame">
+                    <img
+                      src={withBase(image)}
+                      alt={`${projectCopy.name}: ${caption?.[0] ?? projectCopy.name}`}
+                      width="1440"
+                      height="900"
+                      loading="lazy"
+                    />
+                    <span class="showcase-image-index" aria-hidden="true">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <figcaption>
+                    <span class="showcase-screen-label">
+                      {copy.common.screen} 0{index + 1}
+                    </span>
+                    <h3>{caption?.[0]}</h3>
+                    <p>{caption?.[1]}</p>
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section class="product-detail-content section-space compact-top">
+        <div class="shell detail-content-grid">
+          <div class="detail-description">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {portfolio.overviewLabel}
+            </p>
+            <h2>{projectCopy.overviewTitle}</h2>
+            {projectCopy.overview.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+            <p class="detail-disclaimer">{projectCopy.stageNote}</p>
+          </div>
+          <aside class="focus-panel">
+            <div class="focus-panel-head">
+              <div>
+                <span class="focus-kicker">{portfolio.toolsLabel}</span>
+                <h2>{projectCopy.focusTitle}</h2>
+              </div>
+              <span class="focus-icon">
+                <Icon name="layers" size={19} />
+              </span>
+            </div>
+            <ul>
+              {projectCopy.focus.map(([title, description]) => (
+                <li>
+                  <span>
+                    <Icon name="check" size={14} />
+                  </span>
+                  <strong>{title}</strong> — {description}
+                </li>
+              ))}
+            </ul>
+            <ul class="selected-project-tags" aria-label={portfolio.toolsLabel}>
+              {sourceProject.tools.map((tool) => (
+                <li>{tool}</li>
+              ))}
+            </ul>
+            <a
+              class="text-link project-source-link"
+              href={sourceProject.githubUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {portfolio.sourceLink} <Icon name="arrowUpRight" size={16} />
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page-cta-section">
+        <div class="shell page-cta-inner">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {portfolio.ctaLabel}
+            </p>
+            <h2>{portfolio.ctaTitle}</h2>
+          </div>
+          <a
+            class="button button-primary"
+            href={mailUrl(`${portfolio.ctaLabel}: ${projectCopy.name}`)}
+          >
+            {portfolio.ctaButton} <Icon name="arrowUpRight" size={16} />
           </a>
         </div>
       </section>

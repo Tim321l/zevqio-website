@@ -1336,6 +1336,14 @@ svg {
   font-size: 10px;
   line-height: 1.2;
 }
+.selected-project-link {
+  align-self: flex-start;
+  margin-top: 13px;
+  font-size: 11px;
+}
+.project-source-link {
+  margin-top: 18px;
+}
 
 /* Studio intro */
 .studio-section {

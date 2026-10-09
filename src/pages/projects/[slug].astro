@@ -1,0 +1,15 @@
+---
+import LocalizedPage from "../../components/LocalizedPage.astro";
+import { projectPages } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projectPages.map(({ slug }) => ({
+    params: { slug },
+    props: { slug },
+  }));
+}
+
+const { slug } = Astro.props as { slug: string };
+---
+
+<LocalizedPage locale="en" page="project" {slug} />
