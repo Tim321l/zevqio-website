@@ -131,18 +131,31 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
     <div class="shell detail-content-grid">
       <div class="detail-description">
         <p class="eyebrow">
-          <span class="eyebrow-line"></span> About this area
+          <span class="eyebrow-line"></span>
+          {product.story ? "Project overview" : "About this area"}
         </p>
         <h2>
-          A closer look
-          <br />
-          <span class="text-muted">at the project.</span>
+          {product.story ? (
+            product.story.overviewTitle
+          ) : (
+            <>
+              A closer look
+              <br />
+              <span class="text-muted">at the project.</span>
+            </>
+          )}
         </h2>
-        <p>{product.description}</p>
+        {product.story ? (
+          <>
+            <p>{product.story.problem}</p>
+            <p>{product.story.approach}</p>
+          </>
+        ) : (
+          <p>{product.description}</p>
+        )}
         <p class="detail-disclaimer">
-          Zevqio is an early-stage, independent software initiative. This page
-          describes work in progress and does not represent a commercial product
-          offer.
+          {product.story?.statusNote ??
+            "Zevqio is an early-stage, independent software initiative. This page describes work in progress and does not represent a commercial product offer."}
         </p>
       </div>
       <aside class="focus-panel">
@@ -171,6 +184,59 @@ const subject = encodeURIComponent(`Question about ${product.name}`);
       </aside>
     </div>
   </section>
+  {product.story && (
+    <section class="project-depth-section section-space">
+      <div class="shell">
+        <div class="section-heading heading-split project-depth-heading">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span> Possible workflow
+            </p>
+            <h2>
+              From a scan to <span class="text-muted">reviewed text.</span>
+            </h2>
+          </div>
+          <p class="section-intro">
+            This is the direction being explored for OCR Studio. These steps
+            describe a concept, not a released feature set.
+          </p>
+        </div>
+        <ol class="project-step-grid">
+          {product.story.workflow.map((step, index) => (
+            <li class="principle-card project-step-card">
+              <div class="principle-top">
+                <span class="project-step-kicker">POSSIBLE STEP</span>
+                <span>0{index + 1}</span>
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </li>
+          ))}
+        </ol>
+        <div class="project-principles">
+          <div class="project-principles-intro">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span> Design priorities
+            </p>
+            <h3>Choices shaping the exploration.</h3>
+            <p>
+              The early direction puts legibility and human review ahead of
+              promises about speed or accuracy.
+            </p>
+          </div>
+          <div class="project-principles-grid">
+            {product.story.principles.map((principle, index) => (
+              <article class="project-principle-card">
+                <span>0{index + 1}</span>
+                <h4>{principle.title}</h4>
+                <p>{principle.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
   <section class="page-cta-section">
     <div class="shell page-cta-inner">
       <div>

@@ -7,6 +7,15 @@ export type ProductInterfacePreview = {
   alt: string;
 };
 
+export type ProductStory = {
+  overviewTitle: string;
+  problem: string;
+  approach: string;
+  workflow: { title: string; description: string }[];
+  principles: { title: string; description: string }[];
+  statusNote: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -19,6 +28,7 @@ export type Product = {
   icon: "scan" | "file" | "workflow" | "braces";
   accent: string;
   interfacePreviews?: ProductInterfacePreview[];
+  story?: ProductStory;
 };
 
 export const products: Product[] = [
@@ -28,17 +38,60 @@ export const products: Product[] = [
     shortName: "OCR Studio",
     category: "Documents · OCR",
     summary:
-      "A focused workspace concept for turning scanned pages into text that is easier to review.",
+      "A workspace concept for turning scanned pages into reviewable text, with the source kept close to the result.",
     description:
-      "OCR Studio explores a clear document review experience, with the source page and recognized text kept easy to compare. The screens below are original concept previews with sample content; the product is in development and is not available as a public service.",
+      "OCR Studio explores a review-first experience for scanned documents. It considers how the original page and recognized text can stay together while a person checks the result. The project is in development, and the interface previews are concepts rather than a public service.",
     stage: "In Development",
     focus: [
-      "A clear starting point for scanned documents",
-      "Source pages shown alongside text for review",
-      "An understandable path from document to reviewed text",
+      "Make the source page and recognized text easy to compare",
+      "Keep text review visible in the main workflow",
+      "Explore clear next steps for reviewed text",
     ],
     icon: "scan",
     accent: "cyan",
+    story: {
+      overviewTitle: "Scanned pages need more than recognition.",
+      problem:
+        "Getting text from a scan is only one part of the job. Names, numbers, and page structure can be misread, so people may need to check the result against the original before using it.",
+      approach:
+        "OCR Studio is exploring a workspace that keeps the source page beside the recognized text. The aim is to make review understandable and keep a person in control while the product scope is being defined.",
+      workflow: [
+        {
+          title: "Start with a scan",
+          description:
+            "Bring a scanned document into the workspace. Supported file types and intake rules are still being explored.",
+        },
+        {
+          title: "Compare page and text",
+          description:
+            "Review recognized words alongside the source page so details can be checked in context.",
+        },
+        {
+          title: "Confirm the result",
+          description:
+            "Consider how someone could correct text and finish a review. Export and storage choices have not been finalized.",
+        },
+      ],
+      principles: [
+        {
+          title: "Keep the source close",
+          description:
+            "Make it easy to compare recognized text with the scanned page without losing context.",
+        },
+        {
+          title: "Make review clear",
+          description:
+            "Treat checking and correcting text as part of the experience, because recognition may need a human look.",
+        },
+        {
+          title: "Keep next steps simple",
+          description:
+            "Focus the early concept on a clear path from scan to reviewed text before defining later outputs.",
+        },
+      ],
+      statusNote:
+        "These screens are static concepts with fictional sample documents. The OCR engine, supported formats, correction behavior, export options, storage, and release timing have not been finalized.",
+    },
     interfacePreviews: [
       {
         title: "Workspace",
