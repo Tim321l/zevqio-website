@@ -56,6 +56,13 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 - `/contact`
 - `/privacy`
 - `/404` — branded not-found page
+- Localized versions of the homepage, product pages, about, contact, and privacy pages:
+  - `/zh-cn/` — Simplified Chinese
+  - `/zh-hk/` — Traditional Chinese
+  - `/ja/` — Japanese
+  - `/ko/` — Korean
+
+The language menu keeps the current page when switching languages. OCR Studio's concept preview screens are localized as well.
 
 Product names, descriptions, status labels, homepage capabilities, navigation, contact details, and SEO helpers are kept in `src/data/` and `src/utils/`.
 

@@ -25,7 +25,11 @@ const setTheme = (theme, persist = false) => {
   if (themeButton) {
     themeButton.setAttribute(
       "aria-label",
-      theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
+      theme === "dark"
+        ? themeButton.getAttribute("data-theme-label-light") ||
+            "Switch to light theme"
+        : themeButton.getAttribute("data-theme-label-dark") ||
+            "Switch to dark theme",
     );
     themeButton.setAttribute("aria-pressed", String(theme === "light"));
     const darkIcon = themeButton.querySelector("[data-theme-icon-dark]");
@@ -58,7 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButton.setAttribute("aria-expanded", String(isOpen));
     menuButton.setAttribute(
       "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu",
+      isOpen
+        ? menuButton.getAttribute("data-menu-label-close") ||
+            "Close navigation menu"
+        : menuButton.getAttribute("data-menu-label-open") ||
+            "Open navigation menu",
     );
     navigation.classList.toggle("is-open", isOpen);
     if (openIcon) openIcon.hidden = isOpen;
@@ -69,7 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", () => {
       if (!menuButton || !navigation) return;
       menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "Open navigation menu");
+      menuButton.setAttribute(
+        "aria-label",
+        menuButton.getAttribute("data-menu-label-open") ||
+          "Open navigation menu",
+      );
       navigation.classList.remove("is-open");
       if (openIcon) openIcon.hidden = false;
       if (closeIcon) closeIcon.hidden = true;
@@ -86,7 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation menu");
+    menuButton.setAttribute(
+      "aria-label",
+      menuButton.getAttribute("data-menu-label-open") || "Open navigation menu",
+    );
     navigation.classList.remove("is-open");
     if (openIcon) openIcon.hidden = false;
     if (closeIcon) closeIcon.hidden = true;

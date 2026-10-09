@@ -195,6 +195,62 @@ svg {
   align-items: center;
   gap: 30px;
 }
+.language-switcher {
+  position: relative;
+  flex: 0 0 auto;
+}
+.language-switcher summary {
+  display: inline-flex;
+  min-height: 39px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--text-soft);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 620;
+  list-style: none;
+}
+.language-switcher summary::-webkit-details-marker {
+  display: none;
+}
+.language-switcher summary:hover {
+  border-color: var(--line-strong);
+  color: var(--cyan);
+}
+.language-menu {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + 9px);
+  right: 0;
+  display: grid;
+  min-width: 154px;
+  gap: 2px;
+  padding: 5px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.language-menu a {
+  display: flex;
+  min-height: 37px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+.language-menu a:hover,
+.language-menu a[aria-current="page"] {
+  color: var(--text);
+  background: var(--surface-2);
+}
 .nav-links {
   margin-inline: auto;
 }
@@ -404,6 +460,41 @@ svg {
       transparent 70%
     ),
     var(--page);
+}
+.locale-hero .hero-layout {
+  grid-template-columns: 0.88fr 1.12fr;
+}
+.locale-hero-visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+}
+.locale-hero-visual::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(140deg, transparent 55%, rgba(7, 13, 24, 0.35));
+  content: "";
+  pointer-events: none;
+}
+.locale-hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+  object-position: left top;
+}
+.locale-hero-visual .detail-preview-badge {
+  right: 14px;
+  bottom: 14px;
+  left: auto;
+  max-width: calc(100% - 28px);
+  font-size: 8px;
 }
 .hero-grid-bg {
   position: absolute;
@@ -2441,6 +2532,12 @@ svg {
     grid-template-columns: 0.92fr 1.08fr;
     gap: 16px;
   }
+  .locale-hero .hero-layout {
+    grid-template-columns: 0.92fr 1.08fr;
+  }
+  .locale-hero-visual img {
+    min-height: 300px;
+  }
   .hero-content h1 {
     font-size: clamp(51px, 6.7vw, 70px);
   }
@@ -2593,6 +2690,14 @@ svg {
     grid-template-columns: 1fr;
     gap: 5px;
     padding-block: 61px 40px;
+  }
+  .locale-hero .hero-layout {
+    grid-template-columns: 1fr;
+  }
+  .locale-hero-visual img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
   }
   .hero-content {
     padding: 0;
@@ -2935,6 +3040,24 @@ svg {
   .back-to-top {
     display: none;
   }
+}
+
+html[lang^="zh"] h1,
+html[lang^="zh"] h2,
+html[lang^="zh"] h3,
+html[lang^="ja"] h1,
+html[lang^="ja"] h2,
+html[lang^="ja"] h3,
+html[lang^="ko"] h1,
+html[lang^="ko"] h2,
+html[lang^="ko"] h3 {
+  letter-spacing: 0;
+}
+
+html[lang^="zh"] .locale-hero .hero-content h1,
+html[lang^="ja"] .locale-hero .hero-content h1,
+html[lang^="ko"] .locale-hero .hero-content h1 {
+  font-size: clamp(40px, 5.2vw, 54px);
 }
 
 @media (max-width: 380px) {

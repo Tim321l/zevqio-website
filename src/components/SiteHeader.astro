@@ -2,16 +2,71 @@
 import { site } from "../data/site";
 import Icon from "./Icon.astro";
 import { withBase } from "../utils/paths";
+import {
+  getLocaleContent,
+  getLocaleFromPath,
+  localeHref,
+  localeOptions,
+  stripLocaleFromPath,
+  type Locale,
+} from "../data/locales";
 
 const currentPath = Astro.url.pathname;
+const { locale = getLocaleFromPath(currentPath) } = Astro.props as {
+  locale?: Locale;
+};
+const copy = getLocaleContent(locale);
+const unlocalizedPath = stripLocaleFromPath(currentPath);
+const languagePath = unlocalizedPath === "/404" ? "/" : unlocalizedPath;
+const interactionCopy = {
+  en: {
+    main: "Main navigation",
+    open: "Open navigation menu",
+    close: "Close navigation menu",
+    light: "Switch to light theme",
+    dark: "Switch to dark theme",
+  },
+  "zh-cn": {
+    main: "主导航",
+    open: "打开导航菜单",
+    close: "关闭导航菜单",
+    light: "切换至浅色主题",
+    dark: "切换至深色主题",
+  },
+  "zh-hk": {
+    main: "主要導覽",
+    open: "開啟導覽選單",
+    close: "關閉導覽選單",
+    light: "切換至淺色主題",
+    dark: "切換至深色主題",
+  },
+  ja: {
+    main: "メインナビゲーション",
+    open: "ナビゲーションを開く",
+    close: "ナビゲーションを閉じる",
+    light: "ライトテーマに切り替え",
+    dark: "ダークテーマに切り替え",
+  },
+  ko: {
+    main: "기본 탐색",
+    open: "탐색 메뉴 열기",
+    close: "탐색 메뉴 닫기",
+    light: "라이트 테마로 전환",
+    dark: "다크 테마로 전환",
+  },
+}[locale];
 ---
 
 <a class="skip-link" href="#main">
-  Skip to content
+  {copy.nav.skip}
 </a>
 <header class="site-header">
   <div class="shell nav-shell">
-    <a class="brand" href={withBase("/")} aria-label="Zevqio home">
+    <a
+      class="brand"
+      href={withBase(localeHref(locale, "/"))}
+      aria-label={`Zevqio ${copy.common.home}`}
+    >
       <svg
         class="brand-mark"
         width="33"
@@ -42,9 +97,11 @@ const currentPath = Astro.url.pathname;
     <button
       class="icon-button menu-toggle"
       type="button"
-      aria-label="Open navigation menu"
+      aria-label={copy.nav.menu}
       aria-controls="primary-navigation"
       aria-expanded="false"
+      data-menu-label-open={interactionCopy.open}
+      data-menu-label-close={interactionCopy.close}
       data-menu-toggle
     >
       <span data-menu-icon>
@@ -58,30 +115,61 @@ const currentPath = Astro.url.pathname;
     <nav
       class="primary-navigation"
       id="primary-navigation"
-      aria-label="Main navigation"
+      aria-label={interactionCopy.main}
       data-navigation
     >
       <div class="nav-links">
-        {site.navigation.map((item) => {
+        {site.navigation.map((item, index) => {
+          const labels = [
+            copy.nav.products,
+            copy.nav.solutions,
+            copy.nav.projects,
+            copy.nav.about,
+            copy.nav.contact,
+          ];
+          const href = localeHref(locale, item.href);
+          const activePath = href.split("#")[0];
+          const normalizedCurrent = stripLocaleFromPath(currentPath);
           const isActive =
-            !item.href.startsWith("/#") && currentPath === withBase(item.href);
+            !item.href.startsWith("/#") && normalizedCurrent === activePath;
           return (
             <a
               class:list={["nav-link", { active: isActive }]}
-              href={withBase(item.href)}
+              href={withBase(href)}
               aria-current={isActive ? "page" : undefined}
             >
-              {item.label}
+              {labels[index]}
             </a>
           );
         })}
       </div>
       <div class="nav-actions">
+        <details class="language-switcher">
+          <summary aria-label={copy.nav.language}>
+            {localeOptions.find((option) => option.code === locale)?.tag ??
+              "EN"}
+            <Icon name="chevronDown" size={13} />
+          </summary>
+          <div class="language-menu" aria-label={copy.nav.language}>
+            {localeOptions.map((option) => (
+              <a
+                href={withBase(localeHref(option.code, languagePath))}
+                lang={option.lang}
+                aria-current={option.code === locale ? "page" : undefined}
+              >
+                <span>{option.label}</span>
+                {option.code === locale && <span aria-hidden="true">✓</span>}
+              </a>
+            ))}
+          </div>
+        </details>
         <button
           class="icon-button theme-toggle"
           type="button"
           data-theme-toggle
-          aria-label="Switch to light theme"
+          aria-label={interactionCopy.light}
+          data-theme-label-light={interactionCopy.light}
+          data-theme-label-dark={interactionCopy.dark}
         >
           <span data-theme-icon-dark>
             <Icon name="sun" size={17} />
@@ -92,9 +180,9 @@ const currentPath = Astro.url.pathname;
         </button>
         <a
           class="button button-small button-outline nav-cta"
-          href={withBase("/contact")}
+          href={withBase(localeHref(locale, "/contact"))}
         >
-          Get in touch <Icon name="arrowUpRight" size={15} />
+          {copy.nav.cta} <Icon name="arrowUpRight" size={15} />
         </a>
       </div>
     </nav>

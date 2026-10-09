@@ -1,0 +1,396 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1440"
+  height="900"
+  viewBox="0 0 1440 900"
+  fill="none"
+>
+  <title>OCR Studio illustrative workspace screen</title>
+  <desc>
+    A dark sample interface concept with document intake, a review flow, and
+    recent sample files.
+  </desc>
+  <defs>
+    <linearGradient
+      id="bg"
+      x1="720"
+      y1="0"
+      x2="720"
+      y2="900"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#111927" />
+      <stop offset="1" stop-color="#0A1019" />
+    </linearGradient>
+    <linearGradient
+      id="glow"
+      x1="450"
+      y1="175"
+      x2="1060"
+      y2="530"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#365A92" stop-opacity=".22" />
+      <stop offset="1" stop-color="#2CA7B6" stop-opacity=".04" />
+    </linearGradient>
+    <style>
+      text {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+    </style>
+  </defs>
+  <rect width="1440" height="900" rx="26" fill="url(#bg)" />
+  <rect
+    x="1"
+    y="1"
+    width="1438"
+    height="898"
+    rx="25"
+    stroke="#263245"
+    stroke-width="2"
+  />
+  <path d="M1 72H1439" stroke="#263245" stroke-width="2" />
+  <rect x="25" y="19" width="34" height="34" rx="11" fill="#1A2D40" />
+  <path
+    d="M34 29h16M34 36h11M34 43h7"
+    stroke="#71DDE3"
+    stroke-width="2.6"
+    stroke-linecap="round"
+  />
+  <text
+    x="72"
+    y="42"
+    fill="#EDF4FB"
+    font-size="20"
+    font-weight="650"
+    letter-spacing="-.5"
+  >
+    OCR STUDIO
+  </text>
+  <rect
+    x="1088"
+    y="20"
+    width="147"
+    height="32"
+    rx="9"
+    fill="#131F2D"
+    stroke="#29384A"
+  />
+  <circle cx="1105" cy="36" r="4" fill="#70D8C5" />
+  <text x="1117" y="40" fill="#B9C8D8" font-size="12" font-weight="550">
+    示例工作区
+  </text>
+  <circle cx="1295" cy="36" r="16" fill="#263B52" />
+  <text x="1288" y="40" fill="#DDE9F4" font-size="11" font-weight="650">
+    ZV
+  </text>
+  <path d="M220 73V899" stroke="#263245" stroke-width="2" />
+  <text
+    x="30"
+    y="112"
+    fill="#74869C"
+    font-size="10"
+    font-weight="700"
+    letter-spacing="1.8"
+  >
+    工作区
+  </text>
+  <rect x="22" y="133" width="178" height="42" rx="9" fill="#18283A" />
+  <rect x="22" y="133" width="3" height="42" rx="1.5" fill="#6BD6DE" />
+  <rect
+    x="39"
+    y="147"
+    width="14"
+    height="12"
+    rx="3"
+    stroke="#7DDCE4"
+    stroke-width="1.7"
+  />
+  <path
+    d="M42 143v7M50 143v7"
+    stroke="#7DDCE4"
+    stroke-width="1.7"
+    stroke-linecap="round"
+  />
+  <text x="64" y="158" fill="#E4EFF8" font-size="13" font-weight="600">
+    概览
+  </text>
+  <rect
+    x="40"
+    y="198"
+    width="14"
+    height="16"
+    rx="3"
+    stroke="#7F91A7"
+    stroke-width="1.6"
+  />
+  <path
+    d="M44 203h6M44 207h6"
+    stroke="#7F91A7"
+    stroke-width="1.4"
+    stroke-linecap="round"
+  />
+  <text x="64" y="211" fill="#99A9BB" font-size="13">文档</text>
+  <rect
+    x="39"
+    y="247"
+    width="15"
+    height="15"
+    rx="7.5"
+    stroke="#7F91A7"
+    stroke-width="1.6"
+  />
+  <circle cx="46.5" cy="254.5" r="2.4" fill="#7F91A7" />
+  <text x="64" y="260" fill="#99A9BB" font-size="13">设置</text>
+  <path d="M24 806H198" stroke="#263245" stroke-width="2" />
+  <rect x="39" y="829" width="33" height="33" rx="10" fill="#1B2D40" />
+  <text x="48" y="850" fill="#8DDDE4" font-size="11" font-weight="700">Z</text>
+  <text x="82" y="843" fill="#CBD6E2" font-size="12" font-weight="600">
+    Zevqio
+  </text>
+  <text x="82" y="859" fill="#74869C" font-size="10">概念预览</text>
+
+  <text
+    x="264"
+    y="116"
+    fill="#7DDCE4"
+    font-size="10"
+    font-weight="700"
+    letter-spacing="2"
+  >
+    文档工作区
+  </text>
+  <text
+    x="264"
+    y="157"
+    fill="#F1F6FC"
+    font-size="29"
+    font-weight="630"
+    letter-spacing="-1.2"
+  >
+    更清晰地审核文档。
+  </text>
+  <text x="264" y="184" fill="#91A2B7" font-size="14">
+    从示例文件开始，同时查看原文与识别文字。
+  </text>
+  <rect x="1241" y="127" width="151" height="43" rx="10" fill="#B9F2EE" />
+  <path
+    d="M1261 148h14M1268 141v14"
+    stroke="#0E2530"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <text x="1284" y="153" fill="#102330" font-size="12" font-weight="650">
+    添加文档
+  </text>
+
+  <rect
+    x="264"
+    y="214"
+    width="791"
+    height="250"
+    rx="15"
+    fill="url(#glow)"
+    stroke="#33475D"
+    stroke-width="2"
+  />
+  <rect
+    x="283"
+    y="231"
+    width="753"
+    height="216"
+    rx="11"
+    stroke="#425B73"
+    stroke-width="2"
+    stroke-dasharray="7 8"
+  />
+  <circle cx="660" cy="285" r="27" fill="#183044" />
+  <path
+    d="M660 270v21m-9-9 9-9 9 9m-24 13v7h30v-7"
+    stroke="#78DFE2"
+    stroke-width="2.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <text
+    x="660"
+    y="343"
+    fill="#ECF3FA"
+    font-size="17"
+    font-weight="600"
+    text-anchor="middle"
+  >
+    将文档添加到工作区
+  </text>
+  <text x="660" y="369" fill="#91A2B7" font-size="12" text-anchor="middle">
+    选择示例文件，开始审核流程。
+  </text>
+  <rect
+    x="607"
+    y="391"
+    width="106"
+    height="34"
+    rx="8"
+    fill="#182A3C"
+    stroke="#3D566D"
+  />
+  <text
+    x="660"
+    y="413"
+    fill="#C9D9E7"
+    font-size="11"
+    font-weight="600"
+    text-anchor="middle"
+  >
+    浏览文件
+  </text>
+
+  <rect
+    x="1074"
+    y="214"
+    width="318"
+    height="250"
+    rx="15"
+    fill="#101A27"
+    stroke="#29384A"
+    stroke-width="2"
+  />
+  <text
+    x="1097"
+    y="247"
+    fill="#7C8FA5"
+    font-size="9"
+    font-weight="700"
+    letter-spacing="1.6"
+  >
+    简单的审核流程
+  </text>
+  <text x="1097" y="275" fill="#E9F0F7" font-size="16" font-weight="620">
+    从页面到文字
+  </text>
+  <circle cx="1110" cy="318" r="11" fill="#1E3846" stroke="#66D6D8" />
+  <text x="1107" y="322" fill="#9AE7E4" font-size="10" font-weight="700">
+    1
+  </text>
+  <text x="1134" y="316" fill="#DCE7F0" font-size="12" font-weight="580">
+    选择原始页面
+  </text>
+  <text x="1134" y="333" fill="#7E91A6" font-size="10">
+    查看扫描页面。
+  </text>
+  <path d="M1110 335v21" stroke="#34495B" stroke-width="2" />
+  <circle cx="1110" cy="372" r="11" fill="#1A2634" stroke="#3D5969" />
+  <text x="1107" y="376" fill="#A7B8C8" font-size="10" font-weight="700">
+    2
+  </text>
+  <text x="1134" y="370" fill="#DCE7F0" font-size="12" font-weight="580">
+    审核识别文字
+  </text>
+  <text x="1134" y="387" fill="#7E91A6" font-size="10">
+    与原文进行对照。
+  </text>
+  <path d="M1110 389v20" stroke="#34495B" stroke-width="2" />
+  <circle cx="1110" cy="425" r="11" fill="#1A2634" stroke="#3D5969" />
+  <text x="1107" y="429" fill="#A7B8C8" font-size="10" font-weight="700">
+    3
+  </text>
+  <text x="1134" y="429" fill="#DCE7F0" font-size="12" font-weight="580">
+    继续使用审核后的文字
+  </text>
+
+  <text x="264" y="518" fill="#DDE7F1" font-size="14" font-weight="620">
+    最近的示例文档
+  </text>
+  <text x="264" y="540" fill="#7F91A6" font-size="10">
+    示例文件 · 概念内容
+  </text>
+  <rect
+    x="264"
+    y="560"
+    width="1128"
+    height="220"
+    rx="13"
+    fill="#101A27"
+    stroke="#29384A"
+    stroke-width="2"
+  />
+  <path
+    d="M264 615H1392M264 670H1392M264 725H1392"
+    stroke="#253446"
+    stroke-width="2"
+  />
+  <text
+    x="292"
+    y="593"
+    fill="#75879C"
+    font-size="9"
+    font-weight="700"
+    letter-spacing="1.3"
+  >
+    文档
+  </text>
+  <text
+    x="835"
+    y="593"
+    fill="#75879C"
+    font-size="9"
+    font-weight="700"
+    letter-spacing="1.3"
+  >
+    类型
+  </text>
+  <text
+    x="1050"
+    y="593"
+    fill="#75879C"
+    font-size="9"
+    font-weight="700"
+    letter-spacing="1.3"
+  >
+    审核状态
+  </text>
+  <rect x="292" y="632" width="29" height="34" rx="6" fill="#24364A" />
+  <path
+    d="M300 640h13M300 645h13M300 650h8"
+    stroke="#83DCE0"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+  <text x="335" y="646" fill="#DAE5F0" font-size="12" font-weight="580">
+    sample-invoice.pdf
+  </text>
+  <text x="335" y="661" fill="#7D90A6" font-size="9">示例内容</text>
+  <text x="835" y="650" fill="#A9B8C8" font-size="11">扫描文档</text>
+  <rect x="1050" y="635" width="113" height="23" rx="11.5" fill="#19313A" />
+  <circle cx="1064" cy="646.5" r="3" fill="#7DDAC8" />
+  <text x="1074" y="650" fill="#A7D9D1" font-size="9" font-weight="600">
+    待审核
+  </text>
+  <rect x="292" y="687" width="29" height="34" rx="6" fill="#24364A" />
+  <path
+    d="M300 695h13M300 700h13M300 705h8"
+    stroke="#83DCE0"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+  <text x="335" y="701" fill="#DAE5F0" font-size="12" font-weight="580">
+    archive-page-01.pdf
+  </text>
+  <text x="335" y="716" fill="#7D90A6" font-size="9">示例内容</text>
+  <text x="835" y="705" fill="#A9B8C8" font-size="11">扫描文档</text>
+  <rect x="1050" y="690" width="108" height="23" rx="11.5" fill="#1B2A3E" />
+  <circle cx="1064" cy="701.5" r="3" fill="#7DAFFF" />
+  <text x="1074" y="705" fill="#B4C9E4" font-size="9" font-weight="600">
+    工作区中
+  </text>
+  <text x="292" y="758" fill="#798BA0" font-size="10">
+    界面示意 · 文件均为虚构样例。
+  </text>
+</svg>

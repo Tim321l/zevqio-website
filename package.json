@@ -6,7 +6,9 @@
   "description": "A static, production-ready website for Zevqio.",
   "scripts": {
     "dev": "astro dev",
+    "predev": "node scripts/generate-localized-ocr-previews.mjs",
     "build": "astro build",
+    "prebuild": "node scripts/generate-localized-ocr-previews.mjs",
     "preview": "astro preview",
     "social:render": "node scripts/render-social-card.mjs",
     "typecheck": "astro check",

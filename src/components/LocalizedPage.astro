@@ -1,0 +1,1044 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "./Icon.astro";
+import { products } from "../data/products";
+import { selectedProjects } from "../data/projects";
+import { site } from "../data/site";
+import {
+  getCapabilityTranslations,
+  getEarlyStageNote,
+  getLocaleContent,
+  getStudioLabels,
+  localeHref,
+  type Locale,
+} from "../data/locales";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  locale: Locale;
+  page: "home" | "about" | "contact" | "privacy" | "products" | "product";
+  slug?: string;
+}
+
+const { locale, page, slug } = Astro.props;
+const copy = getLocaleContent(locale);
+const home = copy.home;
+const about = copy.about;
+const productsPage = copy.productsPage;
+const contact = copy.contact;
+const privacy = copy.privacy;
+const detail = copy.detail;
+const productCopy = slug
+  ? copy.products[slug as keyof typeof copy.products]
+  : undefined;
+const sourceProduct = slug
+  ? products.find((item) => item.slug === slug)
+  : undefined;
+const story =
+  productCopy && "story" in productCopy ? productCopy.story : undefined;
+const pagePath =
+  page === "home"
+    ? "/"
+    : page === "product"
+      ? `/products/${slug ?? ""}`
+      : page === "products"
+        ? "/products"
+        : `/${page}`;
+const localizedPath = localeHref(locale, pagePath);
+const pageTitle =
+  page === "home"
+    ? home.title
+    : page === "about"
+      ? about.title
+      : page === "contact"
+        ? contact.title
+        : page === "privacy"
+          ? privacy.title
+          : page === "products"
+            ? productsPage.title
+            : (productCopy?.name ?? "Zevqio");
+const pageDescription =
+  page === "home"
+    ? home.description
+    : page === "about"
+      ? about.description
+      : page === "contact"
+        ? contact.description
+        : page === "privacy"
+          ? privacy.description
+          : page === "products"
+            ? productsPage.description
+            : (productCopy?.summary ?? site.description);
+const capabilities = getCapabilityTranslations(locale);
+const earlyStageNote = getEarlyStageNote(locale);
+const studioLabels = getStudioLabels(locale);
+const capabilityPaths = [
+  "/products/document-intelligence",
+  "/products/ocr-studio",
+  "/products/pdf-automation",
+  "/products/workflow-automation",
+  "/products",
+];
+const productUrl = (productSlug: string) =>
+  withBase(localeHref(locale, `/products/${productSlug}`));
+const mailUrl = (subject: string) =>
+  `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
+const previewImage = (image: string) =>
+  locale === "en"
+    ? image
+    : image.replace(
+        /\/ocr-studio-(workspace|review|library)\.svg$/,
+        `/ocr-studio-${locale}-$1.svg`,
+      );
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  path={localizedPath}
+  {locale}
+>
+  {page === "home" && (
+    <>
+      <section class="hero-section locale-hero" id="top">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="shell hero-layout">
+          <div class="hero-content">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {home.eyebrow}
+            </p>
+            <h1>
+              {home.headline[0]}
+              <br />
+              <span>{home.headline[1]}</span>
+            </h1>
+            <p class="hero-lede">{home.lead}</p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href={withBase(localeHref(locale, "/products"))}
+              >
+                {home.productsCta} <Icon name="arrowUpRight" size={16} />
+              </a>
+              <a
+                class="button button-quiet"
+                href={withBase(localeHref(locale, "/contact"))}
+              >
+                {home.contactCta} <Icon name="arrowRight" size={16} />
+              </a>
+            </div>
+            <div class="hero-footnote">
+              <span class="footnote-mark">
+                <Icon name="sparkles" size={14} />
+              </span>
+              <span>{home.footnote}</span>
+            </div>
+          </div>
+          <div class="locale-hero-visual">
+            <img
+              src={withBase(previewImage("/images/ocr-studio-review.svg"))}
+              alt=""
+              width="1440"
+              height="900"
+              fetchpriority="high"
+            />
+            <span class="detail-preview-badge">
+              OCR STUDIO · {copy.common.concept}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities-section section-space" id="solutions">
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {home.capabilitiesLabel}
+              </p>
+              <h2>
+                {home.capabilitiesTitle[0]}
+                <br />
+                <span class="text-muted">{home.capabilitiesTitle[1]}</span>
+              </h2>
+            </div>
+            <p class="section-intro">{home.capabilitiesIntro}</p>
+          </div>
+          <div class="capability-grid">
+            {capabilities.map(([title, description], index) => (
+              <a
+                class="capability-card"
+                href={withBase(
+                  localeHref(locale, capabilityPaths[index] ?? "/products"),
+                )}
+              >
+                <div class="capability-top">
+                  <span class="capability-index">0{index + 1}</span>
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <span class="capability-arrow" aria-hidden="true">
+                  <Icon name="arrowUpRight" size={16} />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section section-space" id="products">
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {home.productsLabel}
+              </p>
+              <h2>
+                {home.productsTitle[0]}
+                <br />
+                <span class="text-muted">{home.productsTitle[1]}</span>
+              </h2>
+            </div>
+            <div class="section-intro-block">
+              <p class="section-intro">{home.productsIntro}</p>
+              <a
+                class="text-link"
+                href={withBase(localeHref(locale, "/products"))}
+              >
+                {home.allProducts} <Icon name="arrowRight" size={16} />
+              </a>
+            </div>
+          </div>
+          <div class="product-grid">
+            {products.map((product) => {
+              const text =
+                copy.products[product.slug as keyof typeof copy.products];
+              return (
+                <article
+                  class:list={["product-card", `accent-${product.accent}`]}
+                >
+                  <div class="product-card-top">
+                    <span class="product-icon">
+                      <Icon name={product.icon} size={23} />
+                    </span>
+                    <span class="status-pill">
+                      <span class="status-dot" aria-hidden="true"></span>
+                      {copy.common.inDevelopment}
+                    </span>
+                  </div>
+                  <p class="card-category">{text.category}</p>
+                  <h3>
+                    <a href={productUrl(product.slug)}>{text.name}</a>
+                  </h3>
+                  <p class="product-card-copy">{text.summary}</p>
+                  <a
+                    class="text-link"
+                    href={productUrl(product.slug)}
+                    aria-label={`${copy.common.learn}: ${text.name}`}
+                  >
+                    {copy.common.learn} <Icon name="arrowUpRight" size={16} />
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="selected-projects-section section-space"
+        id="selected-projects"
+      >
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {home.selectedLabel}
+              </p>
+              <h2>
+                {home.selectedTitle[0]}
+                <br />
+                <span class="text-muted">{home.selectedTitle[1]}</span>
+              </h2>
+            </div>
+            <p class="section-intro">{home.selectedIntro}</p>
+          </div>
+          <div class="principle-grid selected-project-grid">
+            {selectedProjects.map((project, index) => (
+              <article
+                class:list={[
+                  "principle-card",
+                  "selected-project-card",
+                  `accent-${project.accent}`,
+                ]}
+              >
+                <div class="principle-top">
+                  <span class="principle-icon">
+                    <Icon name={project.icon} size={22} />
+                  </span>
+                  <span>0{index + 1}</span>
+                </div>
+                <h3>{home.selectedNames[index]}</h3>
+                <p>{home.selectedDescriptions[index]}</p>
+                <ul
+                  class="selected-project-tags"
+                  aria-label={`${home.selectedNames[index]} tools`}
+                >
+                  {project.tools.map((tool) => (
+                    <li>{tool}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow-section section-space">
+        <div class="shell workflow-layout">
+          <div class="workflow-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {home.workflowLabel}
+            </p>
+            <h2>
+              {home.workflowTitle[0]}
+              <br />
+              <span class="text-gradient">{home.workflowTitle[1]}</span>
+            </h2>
+            <p>{home.workflowIntro}</p>
+            <a
+              class="text-link"
+              href={withBase(
+                localeHref(locale, "/products/document-intelligence"),
+              )}
+            >
+              {home.workflowLink} <Icon name="arrowRight" size={16} />
+            </a>
+          </div>
+          <div class="workflow-board">
+            <div class="board-head">
+              <span>{home.workflowBoard}</span>
+              <span class="board-state">
+                <i class="status-dot"></i>
+                {copy.common.exampleOnly}
+              </span>
+            </div>
+            <div class="workflow-steps">
+              {home.workflowSteps.map(([title, description], index) => (
+                <div class="workflow-step">
+                  <span class="step-icon">
+                    <Icon
+                      name={
+                        (
+                          [
+                            "file",
+                            "scan",
+                            "check",
+                            "user-check",
+                            "braces",
+                          ] as const
+                        )[index]
+                      }
+                      size={18}
+                    />
+                  </span>
+                  <span class="step-copy">
+                    <b>{title}</b>
+                    <small>{description}</small>
+                  </span>
+                  <span class="step-number">0{index + 1}</span>
+                </div>
+              ))}
+            </div>
+            <p class="board-note">
+              <Icon name="sparkles" size={14} /> {home.workflowNote}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles-section section-space">
+        <div class="shell">
+          <div class="section-heading heading-center">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {home.principlesLabel}
+              <span class="eyebrow-line"></span>
+            </p>
+            <h2>
+              {home.principlesTitle[0]}{" "}
+              <span class="text-muted">{home.principlesTitle[1]}</span>
+            </h2>
+            <p class="section-intro">{home.principlesIntro}</p>
+          </div>
+          <div class="principle-grid">
+            {home.principles.map(([title, description], index) => (
+              <article class="principle-card">
+                <div class="principle-top">
+                  <span class="principle-icon">
+                    <Icon
+                      name={
+                        (
+                          [
+                            "shield",
+                            "user-check",
+                            "blocks",
+                            "sparkles",
+                          ] as const
+                        )[index]
+                      }
+                      size={22}
+                    />
+                  </span>
+                  <span>0{index + 1}</span>
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="studio-section section-space">
+        <div class="shell studio-layout">
+          <div class="studio-art" aria-hidden="true">
+            <div class="studio-graphic">
+              <span class="graphic-ring ring-a"></span>
+              <span class="graphic-ring ring-b"></span>
+              <span class="graphic-ring ring-c"></span>
+              <span class="graphic-center">
+                <span>Z</span>
+              </span>
+              <span class="graphic-dot dot-a"></span>
+              <span class="graphic-dot dot-b"></span>
+              <span class="graphic-dot dot-c"></span>
+              <span class="graphic-caption caption-a">ZEVQIO / STUDIO</span>
+              <span class="graphic-caption caption-b">
+                INDEPENDENT / SOFTWARE
+              </span>
+            </div>
+          </div>
+          <div class="studio-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {home.studioLabel}
+            </p>
+            <h2>
+              {home.studioTitle[0]}{" "}
+              <span class="text-gradient">{home.studioTitle[1]}</span>
+            </h2>
+            <p>{home.studioIntro}</p>
+            <p class="studio-note">
+              <span class="status-dot"></span>
+              {home.studioStatus}
+            </p>
+            <a class="text-link" href={withBase(localeHref(locale, "/about"))}>
+              {home.studioLink} <Icon name="arrowRight" size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-band">
+        <div class="contact-band-glow" aria-hidden="true"></div>
+        <div class="shell contact-band-inner">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {home.contactLabel}
+            </p>
+            <h2>{home.contactTitle}</h2>
+            <p>{home.contactIntro}</p>
+          </div>
+          <a class="button button-light" href={mailUrl(home.mailSubject)}>
+            <Icon name="mail" size={17} /> {site.email}{" "}
+            <Icon name="arrowUpRight" size={16} />
+          </a>
+        </div>
+      </section>
+    </>
+  )}
+
+  {page === "about" && (
+    <>
+      <section class="page-hero about-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
+            <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
+            <Icon name="chevronRight" size={13} />
+            <span aria-current="page">{about.title}</span>
+          </nav>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            {about.eyebrow}
+          </p>
+          <div class="page-hero-row">
+            <h1>
+              {about.headline[0]}
+              <br />
+              <span class="text-gradient">{about.headline[1]}</span>
+            </h1>
+            <p>{about.intro}</p>
+          </div>
+        </div>
+      </section>
+      <section class="about-story-section section-space compact-top">
+        <div class="shell about-story-grid">
+          <div class="about-story-main">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {about.storyLabel}
+            </p>
+            <h2>
+              {about.storyTitle[0]}{" "}
+              <span class="text-gradient">{about.storyTitle[1]}</span>
+            </h2>
+            <p class="large-body">{about.storyLead}</p>
+            <p>{about.story1}</p>
+            <p>{about.story2}</p>
+          </div>
+          <aside class="about-stage-card">
+            <span class="stage-card-eyebrow">{about.profile}</span>
+            <div class="stage-card-mark">
+              <span>Z</span>
+              <i></i>
+            </div>
+            <dl>
+              <div>
+                <dt>{about.structure}</dt>
+                <dd>{about.structureValue}</dd>
+              </div>
+              <div>
+                <dt>{about.stage}</dt>
+                <dd>
+                  <span class="status-dot"></span>
+                  {studioLabels.stage}
+                </dd>
+              </div>
+              <div>
+                <dt>{about.focus}</dt>
+                <dd>{about.focusValue}</dd>
+              </div>
+              <div>
+                <dt>{about.approach}</dt>
+                <dd>{about.approachValue}</dd>
+              </div>
+            </dl>
+            <p class="stage-card-foot">{about.cardFoot}</p>
+          </aside>
+        </div>
+      </section>
+      <section class="about-principles section-space">
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {about.principlesLabel}
+              </p>
+              <h2>
+                {about.principlesTitle[0]}
+                <br />
+                <span class="text-muted">{about.principlesTitle[1]}</span>
+              </h2>
+            </div>
+            <p class="section-intro">{about.principlesIntro}</p>
+          </div>
+          <div class="principle-grid">
+            {home.principles.map(([title, description], index) => (
+              <article class="principle-card">
+                <div class="principle-top">
+                  <span class="principle-icon">
+                    <Icon
+                      name={
+                        (
+                          [
+                            "shield",
+                            "user-check",
+                            "blocks",
+                            "sparkles",
+                          ] as const
+                        )[index]
+                      }
+                      size={22}
+                    />
+                  </span>
+                  <span>0{index + 1}</span>
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section class="page-cta-section">
+        <div class="shell page-cta-inner">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {about.ctaLabel}
+            </p>
+            <h2>{about.ctaTitle}</h2>
+          </div>
+          <a class="button button-primary" href={mailUrl(`Hello, Zevqio`)}>
+            {about.ctaButton} <Icon name="arrowUpRight" size={16} />
+          </a>
+        </div>
+      </section>
+    </>
+  )}
+
+  {page === "products" && (
+    <>
+      <section class="page-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
+            <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
+            <Icon name="chevronRight" size={13} />
+            <span aria-current="page">{productsPage.title}</span>
+          </nav>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            {productsPage.eyebrow}
+          </p>
+          <div class="page-hero-row">
+            <h1>
+              {productsPage.headline[0]}
+              <br />
+              <span class="text-gradient">{productsPage.headline[1]}</span>
+            </h1>
+            <p>{productsPage.intro}</p>
+          </div>
+        </div>
+      </section>
+      <section class="page-content-section section-space compact-top">
+        <div class="shell">
+          <div class="product-grid product-grid-page">
+            {products.map((product) => {
+              const text =
+                copy.products[product.slug as keyof typeof copy.products];
+              return (
+                <article
+                  class:list={["product-card", `accent-${product.accent}`]}
+                >
+                  <div class="product-card-top">
+                    <span class="product-icon">
+                      <Icon name={product.icon} size={23} />
+                    </span>
+                    <span class="status-pill">
+                      <span class="status-dot" aria-hidden="true"></span>
+                      {copy.common.inDevelopment}
+                    </span>
+                  </div>
+                  <p class="card-category">{text.category}</p>
+                  <h3>
+                    <a href={productUrl(product.slug)}>{text.name}</a>
+                  </h3>
+                  <p class="product-card-copy">{text.summary}</p>
+                  <a class="text-link" href={productUrl(product.slug)}>
+                    {copy.common.learn} <Icon name="arrowUpRight" size={16} />
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+          <div class="portfolio-note">
+            <span class="note-mark">
+              <Icon name="sparkles" size={16} />
+            </span>
+            <p>{productsPage.note}</p>
+          </div>
+        </div>
+      </section>
+      <section class="page-cta-section">
+        <div class="shell page-cta-inner">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {productsPage.ctaLabel}
+            </p>
+            <h2>{productsPage.ctaTitle}</h2>
+          </div>
+          <a
+            class="button button-primary"
+            href={withBase(localeHref(locale, "/contact"))}
+          >
+            {productsPage.ctaButton} <Icon name="arrowUpRight" size={16} />
+          </a>
+        </div>
+      </section>
+    </>
+  )}
+
+  {page === "product" && productCopy && sourceProduct && (
+    <>
+      <section class="product-detail-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
+            <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
+            <Icon name="chevronRight" size={13} />
+            <a href={withBase(localeHref(locale, "/products"))}>
+              {copy.common.products}
+            </a>
+            <Icon name="chevronRight" size={13} />
+            <span aria-current="page">{productCopy.name}</span>
+          </nav>
+          <div class="product-detail-grid">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {productCopy.category}
+              </p>
+              <h1>
+                {productCopy.name}
+                <span class="product-title-period">.</span>
+              </h1>
+              <p class="detail-lede">{productCopy.summary}</p>
+              <div class="detail-meta">
+                <span class="status-pill detail-status">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  {copy.common.inDevelopment}
+                </span>
+                {sourceProduct.interfacePreviews && (
+                  <a class="text-link" href="#interface-previews">
+                    {copy.common.screens} <Icon name="arrowRight" size={15} />
+                  </a>
+                )}
+              </div>
+            </div>
+            {sourceProduct.interfacePreviews?.[0] ? (
+              <div class="detail-preview-hero">
+                <img
+                  src={withBase(
+                    previewImage(sourceProduct.interfacePreviews[0].image),
+                  )}
+                  alt={`${productCopy.name} ${copy.common.concept}`}
+                  width="1440"
+                  height="900"
+                />
+                <span class="detail-preview-badge">
+                  OCR STUDIO · {copy.common.concept}
+                </span>
+              </div>
+            ) : (
+              <div
+                class:list={[
+                  "detail-symbol-card",
+                  `accent-${sourceProduct.accent}`,
+                ]}
+              >
+                <span class="detail-symbol-glow"></span>
+                <span class="detail-symbol">
+                  <Icon
+                    name={sourceProduct.icon}
+                    size={42}
+                    strokeWidth={1.35}
+                  />
+                </span>
+                <span class="detail-symbol-label">
+                  {studioLabels.exploration}
+                </span>
+                <span class="detail-symbol-orbit orbit-left"></span>
+                <span class="detail-symbol-orbit orbit-right"></span>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      {sourceProduct.interfacePreviews && "previews" in productCopy && (
+        <section
+          class="product-showcase-section section-space"
+          id="interface-previews"
+          aria-labelledby="product-showcase-title"
+        >
+          <div class="shell">
+            <div class="showcase-heading">
+              <div>
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {detail.screenLabel}
+                </p>
+                <h2 id="product-showcase-title">
+                  {detail.closer}{" "}
+                  <span class="text-muted">{productCopy.name}.</span>
+                </h2>
+              </div>
+              <p>{detail.screenDisclaimer}</p>
+            </div>
+            <div class="showcase-preview-grid">
+              {sourceProduct.interfacePreviews
+                .slice(1)
+                .map((preview, index) => (
+                  <figure class="showcase-preview-card">
+                    <div class="showcase-image-frame">
+                      <img
+                        src={withBase(previewImage(preview.image))}
+                        alt={`${productCopy.name}: ${productCopy.previews[index + 1]?.[0] ?? preview.title}`}
+                        width="1440"
+                        height="900"
+                        loading="lazy"
+                      />
+                      <span class="showcase-image-index" aria-hidden="true">
+                        0{index + 2}
+                      </span>
+                    </div>
+                    <figcaption>
+                      <span class="showcase-screen-label">
+                        {copy.common.screen} 0{index + 2}
+                      </span>
+                      <h3>{productCopy.previews[index + 1]?.[0]}</h3>
+                      <p>{productCopy.previews[index + 1]?.[1]}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
+          </div>
+        </section>
+      )}
+      <section class="product-detail-content section-space compact-top">
+        <div class="shell detail-content-grid">
+          <div class="detail-description">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {story ? detail.overviewLabel : detail.aboutLabel}
+            </p>
+            <h2>
+              {story
+                ? story.title
+                : detail.fallbackTitle.map((line, index) => (
+                    <>
+                      {index > 0 && <br />}
+                      {index === 1 ? (
+                        <span class="text-muted">{line}</span>
+                      ) : (
+                        line
+                      )}
+                    </>
+                  ))}
+            </h2>
+            {story ? (
+              <>
+                <p>{story.problem}</p>
+                <p>{story.approach}</p>
+              </>
+            ) : (
+              <p>{productCopy.description}</p>
+            )}
+            <p class="detail-disclaimer">{story?.status ?? earlyStageNote}</p>
+          </div>
+          <aside class="focus-panel">
+            <div class="focus-panel-head">
+              <div>
+                <span class="focus-kicker">{detail.focusKicker}</span>
+                <h2>{detail.focusTitle}</h2>
+              </div>
+              <span class="focus-icon">
+                <Icon name="layers" size={19} />
+              </span>
+            </div>
+            <ul>
+              {productCopy.focus.map((item) => (
+                <li>
+                  <span>
+                    <Icon name="check" size={14} />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="focus-footer">
+              <span class="status-dot"></span>
+              {detail.inDevelopment}
+            </div>
+          </aside>
+        </div>
+      </section>
+      {story && (
+        <section class="project-depth-section section-space">
+          <div class="shell">
+            <div class="section-heading heading-split project-depth-heading">
+              <div>
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {detail.workflowEyebrow}
+                </p>
+                <h2>
+                  {detail.workflowTitle[0]}{" "}
+                  <span class="text-muted">{detail.workflowTitle[1]}</span>
+                </h2>
+              </div>
+              <p class="section-intro">{detail.workflowIntro}</p>
+            </div>
+            <ol class="project-step-grid">
+              {story.workflow.map(([title, description], index) => (
+                <li class="principle-card project-step-card">
+                  <div class="principle-top">
+                    <span class="project-step-kicker">
+                      {copy.common.possibleStep}
+                    </span>
+                    <span>0{index + 1}</span>
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </li>
+              ))}
+            </ol>
+            <div class="project-principles">
+              <div class="project-principles-intro">
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {detail.prioritiesEyebrow}
+                </p>
+                <h3>{detail.prioritiesTitle}</h3>
+                <p>{detail.prioritiesIntro}</p>
+              </div>
+              <div class="project-principles-grid">
+                {story.principles.map(([title, description], index) => (
+                  <article class="project-principle-card">
+                    <span>0{index + 1}</span>
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+      <section class="page-cta-section">
+        <div class="shell page-cta-inner">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {detail.ctaLabel}
+            </p>
+            <h2>{detail.ctaTitle}</h2>
+          </div>
+          <a
+            class="button button-primary"
+            href={mailUrl(`${detail.questionSubject}: ${productCopy.name}`)}
+          >
+            {detail.ctaButton} <Icon name="arrowUpRight" size={16} />
+          </a>
+        </div>
+      </section>
+    </>
+  )}
+
+  {page === "contact" && (
+    <>
+      <section class="page-hero contact-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
+            <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
+            <Icon name="chevronRight" size={13} />
+            <span aria-current="page">{contact.title}</span>
+          </nav>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            {contact.eyebrow}
+          </p>
+          <div class="page-hero-row">
+            <h1>
+              {contact.headline[0]}
+              <br />
+              <span class="text-gradient">{contact.headline[1]}</span>
+            </h1>
+            <p>{contact.intro}</p>
+          </div>
+        </div>
+      </section>
+      <section class="contact-content section-space compact-top">
+        <div class="shell contact-content-grid">
+          <div class="contact-email-card">
+            <span class="contact-icon">
+              <Icon name="mail" size={24} />
+            </span>
+            <p class="contact-card-label">{contact.email}</p>
+            <h2>{contact.cardTitle}</h2>
+            <p>{contact.cardBody}</p>
+            <a class="contact-address" href={`mailto:${site.email}`}>
+              {site.email} <Icon name="arrowUpRight" size={16} />
+            </a>
+          </div>
+          <aside class="contact-guidance">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              {contact.guidanceLabel}
+            </p>
+            <h2>{contact.guidanceTitle}</h2>
+            <p>{contact.guidanceIntro}</p>
+            <ul>
+              {contact.prompts.map((item) => (
+                <li>
+                  <span>
+                    <Icon name="check" size={14} />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="contact-privacy-note">{contact.privacy}</p>
+          </aside>
+        </div>
+      </section>
+    </>
+  )}
+
+  {page === "privacy" && (
+    <>
+      <section class="page-hero legal-hero">
+        <div class="shell">
+          <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
+            <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
+            <Icon name="chevronRight" size={13} />
+            <span aria-current="page">{privacy.title}</span>
+          </nav>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            {privacy.eyebrow}
+          </p>
+          <div class="page-hero-row">
+            <h1>
+              {privacy.headline[0]}
+              <br />
+              <span class="text-gradient">{privacy.headline[1]}</span>
+            </h1>
+            <p>{privacy.intro}</p>
+          </div>
+        </div>
+      </section>
+      <section class="legal-content section-space compact-top">
+        <div class="shell legal-layout">
+          <aside class="legal-aside">
+            <span class="legal-date-label">{privacy.updated}</span>
+            <time datetime="2026-10-08">{privacy.date}</time>
+            <span class="legal-aside-rule"></span>
+            <p>{privacy.aside}</p>
+          </aside>
+          <article class="legal-article">
+            <p class="legal-intro">{privacy.lead}</p>
+            {privacy.sections.map(([title, body], index) => (
+              <section>
+                <h2>{title}</h2>
+                <p>{body}</p>
+                {index === 2 && (
+                  <p>
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </p>
+                )}
+              </section>
+            ))}
+          </article>
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>

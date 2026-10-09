@@ -1,0 +1,17 @@
+---
+import LocalizedPage from "../../components/LocalizedPage.astro";
+import { localeOptions, type Locale } from "../../data/locales";
+
+export function getStaticPaths() {
+  return localeOptions
+    .filter(({ code }) => code !== "en")
+    .map(({ code }) => ({
+      params: { locale: code },
+      props: { locale: code },
+    }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+---
+
+<LocalizedPage {locale} page="contact" />
