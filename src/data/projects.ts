@@ -10,6 +10,21 @@ export type SelectedProject = {
   href?: string;
 };
 
+export const projectImageSizes: Record<string, [number, number]> = {
+  "/images/projects/bigdeal-gameplay.png": [1440, 1000],
+  "/images/projects/bigdeal-landing.png": [420, 322],
+  "/images/projects/bigdeal-waiting-room.png": [480, 852],
+  "/images/projects/song-guess-create-room.png": [1000, 1000],
+  "/images/projects/song-guess-elimination.png": [1000, 1000],
+  "/images/projects/song-guess-join-room.png": [1000, 1000],
+  "/images/projects/rimrise-unity-career.webp": [1280, 720],
+  "/images/projects/rimrise-unity-gameplay.webp": [1280, 720],
+  "/images/projects/rimrise-unity-pause.webp": [1280, 720],
+  "/images/projects/rimrise-web-career.webp": [1440, 960],
+  "/images/projects/rimrise-web-city.webp": [1440, 960],
+  "/images/projects/rimrise-web-gameplay.webp": [1440, 960],
+};
+
 export type ProjectDetailCopy = {
   name: string;
   category: string;

@@ -25,6 +25,90 @@ const localRoute = (path: string): string =>
 const canonicalFor = (path: string): string =>
   `${siteOrigin}${publicPath(path)}`;
 
+test("new game pages keep translated content and original image links in each language", async ({
+  page,
+}) => {
+  const categories = {
+    "zh-hk": ["香港地產卡牌遊戲 · 多人原型", "多人音樂猜歌 · 房間制遊戲"],
+    "zh-cn": ["香港地产卡牌游戏 · 多人原型", "多人音乐猜歌 · 房间制游戏"],
+    ja: [
+      "香港の不動産カードゲーム · マルチプレイヤー試作",
+      "音楽クイズ · マルチプレイヤーゲーム",
+    ],
+    ko: [
+      "홍콩 부동산 카드 게임 · 멀티플레이어 프로토타입",
+      "음악 퀴즈 · 멀티플레이어 게임",
+    ],
+  };
+  for (const [locale, labels] of Object.entries(categories)) {
+    for (const [index, slug] of ["bigdeal", "song-guess"].entries()) {
+      await page.goto(localRoute(`/${locale}/projects/${slug}`));
+      await expect(
+        page.getByText(labels[index], { exact: true }),
+      ).toBeVisible();
+      await expect(page.locator("main")).not.toContainText(
+        /Local prototype|Room entry screen|Elimination settings/,
+      );
+      await expect(page.locator(".game-image-link")).toHaveCount(3);
+      await expect(page.locator(".game-switcher a")).toHaveCount(4);
+      await expect(
+        page.locator(".game-switcher a[aria-current='page']"),
+      ).toHaveAttribute("href", publicPath(`/${locale}/projects/${slug}`));
+      for (const imageLink of await page.locator(".game-image-link").all()) {
+        const imagePath = await imageLink.getAttribute("href");
+        expect(imagePath).toMatch(/\/images\/projects\//);
+        expect((await page.request.get(imagePath!)).status()).toBe(200);
+      }
+    }
+  }
+});
+
+for (const slug of ["rimrise-unity", "rimrise-web", "bigdeal", "song-guess"]) {
+  test(`${slug} game detail is accessible and fits mobile screens`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto(localRoute(`/zh-hk/projects/${slug}`));
+    for (const theme of ["light", "dark"]) {
+      await page.evaluate(
+        (value) => document.documentElement.setAttribute("data-theme", value),
+        theme,
+      );
+      await page.setViewportSize({ width: 375, height: 812 });
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= window.innerWidth,
+        ),
+      ).toBe(true);
+      await expect(page.locator(".game-image-link")).toHaveCount(3);
+      const results = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+        .analyze();
+      expect(results.violations).toEqual([]);
+    }
+    if (slug === "bigdeal" || slug === "song-guess") {
+      await page.setViewportSize({ width: 1440, height: 1000 });
+      await page.evaluate(() =>
+        document.documentElement.setAttribute("data-theme", "light"),
+      );
+      for (const image of await page.locator(".game-project-page img").all()) {
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).toHaveJSProperty("complete", true);
+        expect(
+          await image.evaluate(
+            (node) => (node as HTMLImageElement).naturalWidth,
+          ),
+        ).toBeGreaterThan(0);
+      }
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.screenshot({
+        path: `test-results/${slug}-redesigned.png`,
+        fullPage: true,
+      });
+    }
+  });
+}
+
 test("homepage presents the brand and working primary actions", async ({
   page,
 }) => {

@@ -2,8 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
 import { products } from "../data/products";
-import { projectPages, selectedProjects } from "../data/projects";
+import {
+  projectPages,
+  selectedProjects,
+  projectImageSizes,
+} from "../data/projects";
 import { site } from "../data/site";
+import { getGameDetail, gameLabels } from "../data/game-details";
 import {
   getCapabilityTranslations,
   getEarlyStageNote,
@@ -45,8 +50,10 @@ const sourceProduct = slug
 const sourceProject = slug
   ? projectPages.find((item) => item.slug === slug)
   : undefined;
+const gameUI = gameLabels[locale];
 const projectCopy = slug
-  ? (portfolio.pages[slug as keyof typeof portfolio.pages] ??
+  ? (getGameDetail(locale, slug) ??
+    portfolio.pages[slug as keyof typeof portfolio.pages] ??
     sourceProject?.details)
   : undefined;
 const story =
@@ -152,6 +159,10 @@ const previewImage = (image: string) =>
             </h1>
             <p class="hero-lede">{home.lead}</p>
             <div class="hero-actions">
+              <a class="button button-quiet" href="#selected-projects">
+                {gameUI.games}
+                <Icon name="gamepad" size={18} />
+              </a>
               <a
                 class="button button-primary"
                 href={withBase(localeHref(locale, "/products"))}
@@ -310,6 +321,7 @@ const previewImage = (image: string) =>
                 class:list={[
                   "principle-card",
                   "selected-project-card",
+                  `selected-project-card--${project.href?.split("/").at(-1) ?? "audio"}`,
                   `accent-${project.accent}`,
                 ]}
               >
@@ -1037,7 +1049,9 @@ const previewImage = (image: string) =>
   )}
 
   {page === "project" && projectCopy && sourceProject && (
-    <>
+    <div
+      class:list={["game-project-page", `game-project--${sourceProject.slug}`]}
+    >
       <section
         class:list={[
           "product-detail-hero",
@@ -1087,8 +1101,8 @@ const previewImage = (image: string) =>
               <img
                 src={withBase(sourceProject.heroImage)}
                 alt={projectCopy.heroAlt}
-                width={sourceProject.imageAspect === "square" ? 1000 : 1440}
-                height={sourceProject.imageAspect === "square" ? 1000 : 900}
+                width={projectImageSizes[sourceProject.heroImage]?.[0]}
+                height={projectImageSizes[sourceProject.heroImage]?.[1]}
               />
               <span class="detail-preview-badge">{projectCopy.heroBadge}</span>
             </div>
@@ -1096,74 +1110,40 @@ const previewImage = (image: string) =>
         </div>
       </section>
 
-      <section
-        class:list={[
-          "product-showcase-section",
-          "section-space",
-          "game-gallery-section",
-          `game-gallery--${sourceProject?.slug ?? slug ?? ""}`,
-        ]}
-        id="project-screenshots"
-        aria-labelledby="project-showcase-title"
-      >
-        <div class="shell">
-          <div class="showcase-heading">
-            <div>
-              <p class="eyebrow">
-                <span class="eyebrow-line"></span>
-                {portfolio.screenshotsLabel}
-              </p>
-              <h2 id="project-showcase-title">{projectCopy.name}</h2>
-            </div>
-            <p>{portfolio.screenshotsNote}</p>
-          </div>
-          <div class="showcase-preview-grid">
-            {sourceProject.screenshots.map((image, index) => {
-              const caption = projectCopy.gallery[index];
-              return (
-                <figure class="showcase-preview-card">
-                  <div
-                    class:list={[
-                      "showcase-image-frame",
-                      sourceProject.imageAspect === "square" &&
-                        "showcase-image-frame--square",
-                    ]}
-                  >
-                    <img
-                      src={withBase(image)}
-                      alt={`${projectCopy.name}: ${caption?.[0] ?? projectCopy.name}`}
-                      width={
-                        sourceProject.imageAspect === "square" ? 1000 : 1440
-                      }
-                      height={
-                        sourceProject.imageAspect === "square" ? 1000 : 900
-                      }
-                      loading="lazy"
-                    />
-                    <span class="showcase-image-index" aria-hidden="true">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <figcaption>
-                    <span class="showcase-screen-label">
-                      {copy.common.screen} 0{index + 1}
-                    </span>
-                    <h3>{caption?.[0]}</h3>
-                    <p>{caption?.[1]}</p>
-                  </figcaption>
-                </figure>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <nav class="game-switcher shell" aria-label={gameUI.games}>
+        {selectedProjects
+          .filter((item) => item.href)
+          .map((item) => {
+            const index = selectedProjects.indexOf(item);
+            return (
+              <a
+                href={withBase(localeHref(locale, item.href!))}
+                aria-current={
+                  item.href === "/projects/" + sourceProject.slug
+                    ? "page"
+                    : undefined
+                }
+              >
+                {home.selectedNames[index]}
+              </a>
+            );
+          })}
+      </nav>
+      <nav class="game-section-nav shell" aria-label={portfolio.title}>
+        <a href="#game-background">{gameUI.background}</a>
+        <a href="#project-screenshots">{gameUI.images}</a>
+        <a href="#all-game-projects">{gameUI.others}</a>
+      </nav>
 
-      <section class="product-detail-content section-space compact-top">
+      <section
+        class="product-detail-content section-space game-background-section"
+        id="game-background"
+      >
         <div class="shell detail-content-grid">
           <div class="detail-description">
             <p class="eyebrow">
               <span class="eyebrow-line"></span>
-              {portfolio.overviewLabel}
+              {gameUI.background}
             </p>
             <h2>{projectCopy.overviewTitle}</h2>
             {projectCopy.overview.map((paragraph) => (
@@ -1174,7 +1154,7 @@ const previewImage = (image: string) =>
           <aside class="focus-panel">
             <div class="focus-panel-head">
               <div>
-                <span class="focus-kicker">{portfolio.toolsLabel}</span>
+                <span class="focus-kicker">{gameUI.features}</span>
                 <h2>{projectCopy.focusTitle}</h2>
               </div>
               <span class="focus-icon">
@@ -1208,6 +1188,133 @@ const previewImage = (image: string) =>
         </div>
       </section>
 
+      <section
+        class:list={[
+          "product-showcase-section",
+          "section-space",
+          "game-gallery-section",
+          `game-gallery--${sourceProject?.slug ?? slug ?? ""}`,
+        ]}
+        id="project-screenshots"
+        aria-labelledby="project-showcase-title"
+      >
+        <div class="shell">
+          <div class="showcase-heading">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {portfolio.screenshotsLabel}
+              </p>
+              <h2 id="project-showcase-title">{gameUI.images}</h2>
+            </div>
+            <p>
+              {gameUI.imageNote} {portfolio.screenshotsNote}
+            </p>
+          </div>
+          <div class="showcase-preview-grid">
+            {[sourceProject.heroImage, ...sourceProject.screenshots].map(
+              (image, index) => {
+                const caption =
+                  index === 0
+                    ? [projectCopy.name, projectCopy.heroAlt]
+                    : projectCopy.gallery[index - 1];
+                return (
+                  <figure
+                    class:list={[
+                      "showcase-preview-card",
+                      index === 0 && "showcase-preview-card--main",
+                    ]}
+                  >
+                    <a
+                      href={withBase(image)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${gameUI.enlarge}: ${caption?.[0]}`}
+                      class:list={[
+                        "showcase-image-frame",
+                        "game-image-link",
+                        sourceProject.imageAspect === "square" &&
+                          "showcase-image-frame--square",
+                      ]}
+                    >
+                      <img
+                        src={withBase(image)}
+                        alt={
+                          index === 0
+                            ? projectCopy.heroAlt
+                            : `${projectCopy.name}: ${caption?.[1]}`
+                        }
+                        width={projectImageSizes[image]?.[0]}
+                        height={projectImageSizes[image]?.[1]}
+                        loading="lazy"
+                      />
+                      <span class="showcase-image-index" aria-hidden="true">
+                        0{index + 1}
+                      </span>
+                    </a>
+                    <figcaption>
+                      <span class="showcase-screen-label">
+                        {copy.common.screen} 0{index + 1}
+                      </span>
+                      <h3>{caption?.[0]}</h3>
+                      <p>{caption?.[1]}</p>
+                      <a
+                        class="text-link"
+                        href={withBase(image)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {gameUI.enlarge}
+                        <Icon name="arrowUpRight" size={16} />
+                      </a>
+                    </figcaption>
+                  </figure>
+                );
+              },
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="game-catalogue-section section-space"
+        id="all-game-projects"
+      >
+        <div class="shell">
+          <p class="eyebrow">{gameUI.stage}</p>
+          <h2>{gameUI.others}</h2>
+          <div class="game-catalogue-grid">
+            {selectedProjects
+              .filter((item) => item.href)
+              .map((item) => {
+                const index = selectedProjects.indexOf(item);
+                return (
+                  <a
+                    class="game-catalogue-card"
+                    href={withBase(localeHref(locale, item.href!))}
+                  >
+                    <img
+                      src={withBase(item.image!)}
+                      alt=""
+                      loading="lazy"
+                      width="720"
+                      height="450"
+                    />
+                    <div>
+                      <h3>{home.selectedNames[index]}</h3>
+                      <p>{home.selectedDescriptions[index]}</p>
+                      <span class="text-link">
+                        {copy.common.learn}
+                        <Icon name="arrowUpRight" size={16} />
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
+          </div>
+        </div>
+      </section>
+
       <section class="page-cta-section">
         <div class="shell page-cta-inner">
           <div>
@@ -1225,7 +1332,7 @@ const previewImage = (image: string) =>
           </a>
         </div>
       </section>
-    </>
+    </div>
   )}
 
   {page === "contact" && (

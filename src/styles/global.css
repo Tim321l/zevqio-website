@@ -3392,3 +3392,267 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Game portfolio: readable screens, distinct project palettes and short navigation. */
+.game-project-page {
+  --game-tint: 62 132 208;
+}
+.game-project--bigdeal {
+  --game-tint: 185 65 69;
+}
+.game-project--song-guess {
+  --game-tint: 124 88 207;
+}
+.game-project--rimrise-web {
+  --game-tint: 30 151 163;
+}
+.game-project-page .game-detail-hero,
+.game-project-page .game-gallery-section,
+.game-project-page .game-catalogue-section {
+  background:
+    radial-gradient(
+      ellipse at 85% 12%,
+      rgb(var(--game-tint) / 0.17),
+      transparent 65%
+    ),
+    var(--page-raised);
+}
+.game-project-page .game-detail-hero {
+  padding-bottom: 48px;
+}
+.game-project-page .game-detail-grid .detail-preview-hero img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.game-project-page .game-detail-grid .detail-preview-hero {
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.16);
+}
+.game-project-page .detail-preview-hero::after {
+  display: none;
+}
+.game-project-page .game-detail-grid .detail-preview-hero--square {
+  max-width: 680px;
+}
+.game-project--bigdeal .game-detail-grid .detail-preview-hero img,
+.game-project--bigdeal .showcase-preview-card--main .showcase-image-frame img {
+  aspect-ratio: 2.45;
+  object-fit: cover;
+  object-position: top;
+}
+.game-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 28px;
+}
+.game-switcher a {
+  padding: 8px 12px;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+}
+.game-switcher a[aria-current="page"] {
+  color: var(--text);
+  border-color: var(--cyan);
+  font-weight: 650;
+}
+.game-switcher a:hover {
+  color: var(--text);
+}
+.game-section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.game-section-nav a {
+  padding: 10px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--surface);
+  font-size: 14px;
+}
+.game-section-nav a:hover {
+  border-color: var(--cyan);
+}
+.game-background-section {
+  background: var(--page);
+}
+.game-background-section .detail-content-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 36px;
+}
+.game-background-section .detail-description {
+  max-width: 900px;
+}
+.game-background-section .detail-description p {
+  font-size: 16px;
+  line-height: 1.95;
+}
+.game-background-section .focus-panel {
+  padding: 30px;
+}
+.game-background-section .focus-panel > ul:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.game-background-section .focus-panel > ul:first-of-type li {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-2);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.game-background-section .focus-panel .selected-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 18px;
+}
+.game-background-section .focus-panel .selected-project-tags li {
+  display: block;
+  width: auto;
+  margin: 0;
+  padding: 5px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  font-size: 12px;
+}
+.game-project-page .showcase-preview-grid {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+.game-project-page .showcase-preview-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  align-items: center;
+  background: var(--surface);
+}
+.game-project-page .showcase-preview-card:hover {
+  transform: none;
+}
+.game-project-page .showcase-image-frame {
+  min-height: 0;
+  padding: 18px;
+  border-bottom: 0;
+  background:
+    linear-gradient(135deg, rgb(var(--game-tint) / 0.18), transparent),
+    var(--surface-2);
+}
+.game-project-page .showcase-image-frame img {
+  width: auto;
+  max-width: 100%;
+  max-height: 720px;
+}
+.game-project-page .showcase-preview-card figcaption {
+  padding: 30px;
+}
+.game-project-page .showcase-preview-card figcaption p {
+  font-size: 15px;
+  line-height: 1.85;
+}
+.game-project-page .showcase-preview-card figcaption .text-link {
+  margin-top: 20px;
+}
+.game-image-link:hover img {
+  outline: 2px solid var(--cyan);
+}
+.game-catalogue-section h2 {
+  margin-bottom: 28px;
+  font-size: clamp(28px, 4vw, 42px);
+}
+.game-catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.game-catalogue-card {
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.game-catalogue-card img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background: var(--surface-2);
+}
+.game-catalogue-card > div {
+  padding: 24px;
+}
+.game-catalogue-card h3 {
+  color: var(--text);
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+.game-catalogue-card p {
+  color: var(--muted);
+  margin: 0 0 18px;
+  font-size: 15px;
+}
+.game-catalogue-card:hover {
+  border-color: var(--cyan);
+}
+.selected-project-card .selected-project-preview {
+  height: 280px;
+  aspect-ratio: auto;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+}
+.selected-project-card .selected-project-preview img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.selected-project-card--bigdeal .selected-project-preview img {
+  object-fit: cover;
+  object-position: top;
+}
+.selected-project-card.selected-project-card--bigdeal {
+  background:
+    linear-gradient(145deg, rgba(185, 65, 69, 0.1), transparent 65%),
+    var(--surface);
+}
+.selected-project-card.selected-project-card--song-guess {
+  background:
+    linear-gradient(145deg, rgba(124, 88, 207, 0.13), transparent 65%),
+    var(--surface);
+}
+@media (max-width: 720px) {
+  .game-project-page .showcase-preview-card,
+  .game-background-section .focus-panel > ul:first-of-type,
+  .game-catalogue-grid {
+    grid-template-columns: 1fr;
+  }
+  .game-background-section .focus-panel {
+    padding: 18px;
+  }
+  .game-project-page .showcase-preview-card figcaption {
+    padding: 22px;
+  }
+  .game-project-page .showcase-image-frame {
+    padding: 10px;
+  }
+  .game-section-nav {
+    gap: 8px;
+  }
+  .game-section-nav a {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+}

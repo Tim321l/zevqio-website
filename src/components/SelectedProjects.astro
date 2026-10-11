@@ -29,6 +29,7 @@ import { withBase } from "../utils/paths";
           class:list={[
             "principle-card",
             "selected-project-card",
+            `selected-project-card--${project.href?.split("/").at(-1) ?? "audio"}`,
             `accent-${project.accent}`,
           ]}
         >

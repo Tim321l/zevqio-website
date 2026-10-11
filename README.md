@@ -52,6 +52,10 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 - `/products/vidoany`
 - `/products/tokensaver`
 - Homepage selected projects section for game development, web, and original audio work
+- `/projects/rimrise-unity` — Unity basketball prototype
+- `/projects/rimrise-web` — browser basketball career project
+- `/projects/bigdeal` — Hong Kong property card game prototype
+- `/projects/song-guess` — multiplayer music quiz interface prototype
 - `/about`
 - `/contact`
 - `/privacy`
@@ -62,7 +66,7 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
   - `/ja/` — Japanese
   - `/ko/` — Korean
 
-The language menu keeps the current page when switching languages. OCR Studio's concept preview screens are localized as well.
+The language menu keeps the current page when switching languages. Game descriptions, screenshot captions, and navigation are localized in every supported language. Each game page includes its background, current features, three local captures with original-size image links, and navigation to all four game projects. The captured game interfaces retain the language of their source builds. OCR Studio's concept preview screens are localized as well.
 
 Product names, descriptions, status labels, homepage capabilities, navigation, contact details, and SEO helpers are kept in `src/data/` and `src/utils/`.
 
