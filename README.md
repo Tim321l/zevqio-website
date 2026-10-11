@@ -39,20 +39,17 @@ Playwright requires its Chromium browser to be installed once on a new machine:
 npx playwright install chromium
 ```
 
-The browser suite reviews all 75 content routes across five languages in both themes at 320, 375, 768, and 1440 pixels. It checks accessibility, image loading, page anchors, active navigation, and the game pages' language, theme, keyboard, and screenshot controls. Review captures are saved under the ignored `test-results/` directory. On a busy local computer, use `npm run test:e2e -- --workers=4` to reduce browser resource use. These checks run in Chromium; they do not certify other browsers or replace testing with real users.
+The browser suite reviews all 60 content routes across five languages in both themes at 320, 375, 768, and 1440 pixels. It checks accessibility, image loading, page anchors, active navigation, and the game pages' language, theme, keyboard, and screenshot controls. Review captures are saved under the ignored `test-results/` directory. On a busy local computer, use `npm run test:e2e -- --workers=4` to reduce browser resource use. These checks run in Chromium; they do not certify other browsers or replace testing with real users.
 
 After editing the social preview source SVG, regenerate its PNG with `npm run social:render`.
 
 ## Pages
 
-- `/` — studio overview and illustrative workflow
+- `/` — studio overview and local prompt preparation workflow
 - `/products` — product portfolio
-- `/products/document-intelligence`
-- `/products/pdf-automation`
-- `/products/workflow-automation`
-- `/products/ocr-studio` — OCR Studio project overview and illustrative interface previews
 - `/products/vidoany`
-- `/products/tokensaver`
+- `/products/tokensaver` — Promptwell local prompt preparation, four real captures
+- `/products/monitor` — local Windows resource dashboard and real capture
 - Homepage selected projects section for game development, web, and original audio work
 - `/projects/rimrise-unity` — Unity basketball prototype
 - `/projects/rimrise-web` — browser basketball career project
@@ -68,7 +65,7 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
   - `/ja/` — Japanese
   - `/ko/` — Korean
 
-The language menu keeps the current page when switching languages. Game descriptions, screenshot captions, and navigation are localized in every supported language. Each game page includes its background, current features, three local captures with original-size image links, and navigation to all four game projects. The captured game interfaces retain the language of their source builds. OCR Studio's concept preview screens are localized as well.
+The language menu keeps the current page when switching languages. Game descriptions, screenshot captions, and navigation are localized in every supported language. Each game page includes its background, current features, three local captures with original-size image links, and navigation to all four game projects. The captured game interfaces retain the language of their source builds. Concept-only products are hidden. Tool descriptions and captions are translated; the real app captures retain their source interface language.
 
 Product names, descriptions, status labels, homepage capabilities, navigation, contact details, and SEO helpers are kept in `src/data/` and `src/utils/`.
 

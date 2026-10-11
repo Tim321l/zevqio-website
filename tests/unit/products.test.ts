@@ -25,7 +25,13 @@ describe("product configuration", () => {
   });
 
   it("finds a product by its route slug", () => {
-    expect(getProduct("pdf-automation")?.name).toBe("PDF Automation");
+    expect(getProduct("pdf-automation")).toBeUndefined();
+    expect(getProduct("monitor")?.name).toBe("Monitor");
+    expect(products.map((product) => product.slug)).toEqual([
+      "vidoany",
+      "tokensaver",
+      "monitor",
+    ]);
     expect(getProduct("vidoany")?.name).toBe("VidOutline");
     expect(getProduct("tokensaver")?.name).toBe("TokenSaver");
     expect(getProduct("unknown-product")).toBeUndefined();

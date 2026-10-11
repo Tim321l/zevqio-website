@@ -3,6 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
 import { products } from "../data/products";
 import {
+  getLocalToolCopy,
+  fullImageLabel,
+  toolPortfolioIntro,
+} from "../data/local-tools";
+import {
   projectPages,
   selectedProjects,
   projectImageSizes,
@@ -10,7 +15,6 @@ import {
 import { site } from "../data/site";
 import { getGameDetail, gameLabels } from "../data/game-details";
 import {
-  getCapabilityTranslations,
   getEarlyStageNote,
   getLocaleContent,
   getStudioLabels,
@@ -36,13 +40,22 @@ const { locale, page, slug } = Astro.props;
 const copy = getLocaleContent(locale);
 const home = copy.home;
 const about = copy.about;
-const productsPage = copy.productsPage;
+const productsPage = {
+  ...copy.productsPage,
+  intro: toolPortfolioIntro[locale],
+  description: toolPortfolioIntro[locale],
+  note: getEarlyStageNote(locale),
+};
 const portfolio = copy.portfolio;
 const contact = copy.contact;
 const privacy = copy.privacy;
 const detail = copy.detail;
 const productCopy = slug
-  ? copy.products[slug as keyof typeof copy.products]
+  ? (getLocalToolCopy(
+      locale,
+      slug,
+      products.find((item) => item.slug === slug)?.name ?? slug,
+    ) ?? copy.products[slug as keyof typeof copy.products])
   : undefined;
 const sourceProduct = slug
   ? products.find((item) => item.slug === slug)
@@ -113,15 +126,19 @@ const pageDescription =
             : page === "project"
               ? (projectCopy?.summary ?? site.description)
               : (productCopy?.summary ?? site.description);
-const capabilities = getCapabilityTranslations(locale);
+const capabilities = products.map((product) => {
+  const text =
+    getLocalToolCopy(locale, product.slug, product.name) ??
+    copy.products[product.slug as keyof typeof copy.products];
+  return [text.category, text.summary];
+});
+const promptStory = getLocalToolCopy(locale, "tokensaver", "TokenSaver")!.story;
 const earlyStageNote = getEarlyStageNote(locale);
 const studioLabels = getStudioLabels(locale);
 const capabilityPaths = [
-  "/products/document-intelligence",
-  "/products/ocr-studio",
-  "/products/pdf-automation",
-  "/products/workflow-automation",
-  "/products",
+  "/products/vidoany",
+  "/products/tokensaver",
+  "/products/monitor",
 ];
 const productUrl = (productSlug: string) =>
   withBase(localeHref(locale, `/products/${productSlug}`));
@@ -185,14 +202,20 @@ const previewImage = (image: string) =>
           </div>
           <div class="locale-hero-visual">
             <img
-              src={withBase(previewImage("/images/ocr-studio-review.svg"))}
-              alt=""
-              width="1440"
-              height="900"
+              src={withBase("/images/projects/tokensaver-workspace.jpg")}
+              alt={
+                getLocalToolCopy(locale, "tokensaver", "TokenSaver")!
+                  .previews[0][1]
+              }
+              width="1905"
+              height="938"
               fetchpriority="high"
             />
             <span class="detail-preview-badge">
-              OCR STUDIO · {copy.common.concept}
+              {
+                getLocalToolCopy(locale, "tokensaver", "TokenSaver")!
+                  .previewBadge
+              }
             </span>
           </div>
         </div>
@@ -212,7 +235,7 @@ const previewImage = (image: string) =>
                 <span class="text-muted">{home.capabilitiesTitle[1]}</span>
               </h2>
             </div>
-            <p class="section-intro">{home.capabilitiesIntro}</p>
+            <p class="section-intro">{toolPortfolioIntro[locale]}</p>
           </div>
           <div class="capability-grid">
             {capabilities.map(([title, description], index) => (
@@ -263,6 +286,7 @@ const previewImage = (image: string) =>
           <div class="product-grid">
             {products.map((product) => {
               const text =
+                getLocalToolCopy(locale, product.slug, product.name) ??
                 copy.products[product.slug as keyof typeof copy.products];
               return (
                 <article
@@ -384,30 +408,28 @@ const previewImage = (image: string) =>
               {home.workflowLabel}
             </p>
             <h2>
-              {home.workflowTitle[0]}
+              {promptStory.workflowTitle[0]}
               <br />
-              <span class="text-gradient">{home.workflowTitle[1]}</span>
+              <span class="text-gradient">{promptStory.workflowTitle[1]}</span>
             </h2>
-            <p>{home.workflowIntro}</p>
+            <p>{promptStory.workflowIntro}</p>
             <a
               class="text-link"
-              href={withBase(
-                localeHref(locale, "/products/document-intelligence"),
-              )}
+              href={withBase(localeHref(locale, "/products/tokensaver"))}
             >
-              {home.workflowLink} <Icon name="arrowRight" size={16} />
+              TokenSaver <Icon name="arrowRight" size={16} />
             </a>
           </div>
           <div class="workflow-board">
             <div class="board-head">
-              <span>{home.workflowBoard}</span>
+              <span>TokenSaver · Promptwell</span>
               <span class="board-state">
                 <i class="status-dot"></i>
                 {copy.common.exampleOnly}
               </span>
             </div>
             <div class="workflow-steps">
-              {home.workflowSteps.map(([title, description], index) => (
+              {promptStory.workflow.map(([title, description], index) => (
                 <div class="workflow-step">
                   <span class="step-icon">
                     <Icon
@@ -434,7 +456,7 @@ const previewImage = (image: string) =>
               ))}
             </div>
             <p class="board-note">
-              <Icon name="sparkles" size={14} /> {home.workflowNote}
+              <Icon name="sparkles" size={14} /> {promptStory.status}
             </p>
           </div>
         </div>
@@ -703,6 +725,7 @@ const previewImage = (image: string) =>
           <div class="product-grid product-grid-page">
             {products.map((product) => {
               const text =
+                getLocalToolCopy(locale, product.slug, product.name) ??
                 copy.products[product.slug as keyof typeof copy.products];
               return (
                 <article
@@ -759,7 +782,13 @@ const previewImage = (image: string) =>
 
   {page === "product" && productCopy && sourceProduct && (
     <>
-      <section class="product-detail-hero">
+      <section
+        class:list={[
+          "product-detail-hero",
+          "tool-detail-hero",
+          { "tool-detail-hero--portrait": slug === "monitor" },
+        ]}
+      >
         <div class="shell">
           <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
             <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
@@ -804,8 +833,8 @@ const previewImage = (image: string) =>
                       ? `${productCopy.name}: ${productCopy.previews[0]?.[0]}`
                       : productCopy.name
                   }
-                  width="1440"
-                  height="900"
+                  width={sourceProduct.interfacePreviews[0].width ?? 1440}
+                  height={sourceProduct.interfacePreviews[0].height ?? 900}
                 />
                 <span class="detail-preview-badge">
                   {"previewBadge" in productCopy
@@ -840,7 +869,10 @@ const previewImage = (image: string) =>
       </section>
       {sourceProduct.interfacePreviews && "previews" in productCopy && (
         <section
-          class="product-showcase-section section-space"
+          class:list={[
+            "product-showcase-section section-space tool-gallery",
+            { "tool-gallery--portrait": slug === "monitor" },
+          ]}
           id="interface-previews"
           aria-labelledby="product-showcase-title"
         >
@@ -865,31 +897,38 @@ const previewImage = (image: string) =>
               </p>
             </div>
             <div class="showcase-preview-grid">
-              {sourceProduct.interfacePreviews
-                .slice(1)
-                .map((preview, index) => (
-                  <figure class="showcase-preview-card">
-                    <div class="showcase-image-frame">
-                      <img
-                        src={withBase(previewImage(preview.image))}
-                        alt={`${productCopy.name}: ${productCopy.previews[index + 1]?.[0] ?? preview.title}`}
-                        width="1440"
-                        height="900"
-                        loading="lazy"
-                      />
-                      <span class="showcase-image-index" aria-hidden="true">
-                        0{index + 2}
-                      </span>
-                    </div>
-                    <figcaption>
-                      <span class="showcase-screen-label">
-                        {copy.common.screen} 0{index + 2}
-                      </span>
-                      <h3>{productCopy.previews[index + 1]?.[0]}</h3>
-                      <p>{productCopy.previews[index + 1]?.[1]}</p>
-                    </figcaption>
-                  </figure>
-                ))}
+              {sourceProduct.interfacePreviews.map((preview, index) => (
+                <figure class="showcase-preview-card">
+                  <div class="showcase-image-frame">
+                    <img
+                      src={withBase(previewImage(preview.image))}
+                      alt={`${productCopy.name}: ${productCopy.previews[index]?.[0] ?? preview.title}`}
+                      width={preview.width ?? 1440}
+                      height={preview.height ?? 900}
+                      loading="lazy"
+                    />
+                    <span class="showcase-image-index" aria-hidden="true">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <figcaption>
+                    <span class="showcase-screen-label">
+                      {copy.common.screen} 0{index + 1}
+                    </span>
+                    <h3>{productCopy.previews[index]?.[0]}</h3>
+                    <p>{productCopy.previews[index]?.[1]}</p>
+                    <a
+                      class="text-link tool-image-link"
+                      href={withBase(preview.image)}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {fullImageLabel(locale)}{" "}
+                      <Icon name="arrowUpRight" size={16} />
+                    </a>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>

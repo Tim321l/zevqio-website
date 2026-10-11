@@ -1,0 +1,721 @@
+{
+  "en": {
+    "monitor": {
+      "category": "Windows · Hardware dashboard",
+      "summary": "A compact, always-on-top Windows dashboard for CPU, GPU, memory and network activity.",
+      "description": "Monitor runs locally as Hardware Monitor Pro. Its Python desktop interface keeps live resource readings in one narrow window, so system activity remains visible beside other work.",
+      "focus": [
+        "CPU and GPU utilization, GPU temperature and VRAM usage",
+        "System memory and total upload/download rates",
+        "Active applications ranked by network connection count"
+      ],
+      "previews": [
+        [
+          "Live hardware dashboard",
+          "The real Windows window shows resource meters, temperature availability, network rates and active applications. Values are a snapshot of the capture computer."
+        ]
+      ],
+      "screenshotsNote": "Actual capture of the running local Windows app. Hardware names and the 64 GB RAM label are fixed in the current source. Readings vary by computer and driver; the image does not demonstrate universal hardware detection.",
+      "specifications": [
+        [
+          "Platform",
+          "Windows desktop · Python · Tkinter / ttk; a local executable is present."
+        ],
+        [
+          "CPU and memory",
+          "psutil supplies utilization and memory readings. CPU temperature depends on accessible sensor sources."
+        ],
+        [
+          "GPU",
+          "NVIDIA NVML supplies utilization, temperature and VRAM readings when supported."
+        ],
+        [
+          "Network",
+          "Upload and download rates come from changes in system-wide network counters."
+        ],
+        [
+          "Active applications",
+          "The list ranks processes by netstat connection counts, not by per-application bandwidth."
+        ],
+        [
+          "Current limits",
+          "Fixed hardware labels; unavailable temperatures display N/A. No hosted service or public download is offered here."
+        ]
+      ],
+      "title": "Keep system activity within view.",
+      "problem": "When a game or application feels slow, opening several system tools interrupts the task. A small panel gives a quick view of which resources are busy.",
+      "approach": "The current implementation combines local process and memory counters, NVIDIA GPU readings and network counters. The window stays above other windows and refreshes its readings while open.",
+      "workflowTitle": ["Open the panel,", "watch the readings."],
+      "workflow": [
+        [
+          "Launch locally",
+          "Open the Windows executable or Python app on the same computer you want to observe."
+        ],
+        [
+          "Read the meters",
+          "Compare CPU, GPU, memory and network activity. An unavailable temperature is explicitly shown as N/A."
+        ],
+        [
+          "Check active applications",
+          "Use the connection-count list as a clue to network activity; it is not a measurement of each app’s traffic."
+        ]
+      ],
+      "principles": [
+        [
+          "Compact viewing",
+          "A narrow vertical window keeps several system readings together."
+        ],
+        [
+          "Show missing readings",
+          "Sensor access and driver support affect which readings are available."
+        ],
+        [
+          "Explain labels",
+          "Some hardware labels are currently fixed in source and need adjustment for other machines."
+        ]
+      ],
+      "status": "A working local development project. This page documents the current implementation and its limits; it does not promise support for every computer."
+    },
+    "tokensaver": {
+      "category": "Local tools · Prompt preparation",
+      "summary": "Turn a rough idea into a structured prompt, with project context, token estimates and saved versions.",
+      "description": "TokenSaver’s local app is currently named Promptwell v3.1. It prepares prompts using offline rules: clarify the goal, add context, define outputs and constraints, and state how completion will be checked.",
+      "focus": [
+        "Five guided questions and editable requirements",
+        "Markdown context, prompt budgets and copy/export controls",
+        "Saved versions, comparison and JSON backup/restore"
+      ],
+      "previews": [
+        [
+          "Prompt preparation workspace",
+          "The real Promptwell interface begins with local planning and optional settings. No AI task was executed for these captures."
+        ],
+        [
+          "Guided requirements",
+          "Five questions collect the goal, background, deliverable, constraints and completion criteria. The visible game brief is fictional demonstration input."
+        ],
+        [
+          "Generated prompt",
+          "Local rules assemble an editable working brief with context and acceptance criteria. Token values are rough estimates, not measured savings or execution limits."
+        ],
+        [
+          "Saved versions and export",
+          "Save a prompt snapshot with its settings and selected context, then view or restore it. The local history keeps up to eight versions; Markdown export and JSON backups support reuse."
+        ]
+      ],
+      "screenshotsNote": "Actual captures of the running offline frontend, using a fictional song-game brief. The app’s interface retains its source language. No coding task was sent, and these screens do not demonstrate a live account or AI integration.",
+      "specifications": [
+        [
+          "Platform",
+          "HTML, CSS and JavaScript frontend; prompt preparation works locally without an AI request."
+        ],
+        [
+          "Requirements",
+          "Goal · context · deliverable · constraints · completion conditions, with direct editing and task templates."
+        ],
+        [
+          "Project background",
+          "Import Markdown files and choose full or budget-focused context for the prompt."
+        ],
+        [
+          "Length controls",
+          "Configurable prompt budgets, response length and compact writing; counts are character-based estimates."
+        ],
+        [
+          "Reuse",
+          "Copy prompts, export Markdown, save up to eight versions, compare drafts, and export/import JSON backups."
+        ],
+        [
+          "Optional execution",
+          "A separate localhost service can use an installed, logged-in coding CLI after explicit confirmation. Sending a task can use account quota and transmit selected context."
+        ]
+      ],
+      "title": "Clarify the work before sending a prompt.",
+      "problem": "A quick instruction can leave the desired result, background or finish conditions unclear. Repeating those details in later messages makes work harder to follow.",
+      "approach": "Promptwell collects a concise brief, adds selected Markdown context and generates structured instructions with local rules. Review and copying work independently of the optional execution service.",
+      "workflowTitle": ["From a rough idea", "to a reusable prompt."],
+      "workflow": [
+        [
+          "Describe the task",
+          "Answer the five questions or edit the brief directly; choose a template when useful."
+        ],
+        [
+          "Review and refine",
+          "Check completion criteria, selected context and estimated length before copying or exporting."
+        ],
+        [
+          "Keep a version",
+          "Save a snapshot or backup for later comparison. Optional CLI execution is a separate, confirmed action."
+        ]
+      ],
+      "principles": [
+        [
+          "Local preparation",
+          "The planning stage uses deterministic local rules and does not spend AI quota."
+        ],
+        [
+          "Estimates stay estimates",
+          "Prompt counts omit tool output, extra conversation and internal model computation."
+        ],
+        [
+          "Review before sending",
+          "A generated prompt can be copied without running a task. Execution requires the local service and confirmation."
+        ]
+      ],
+      "status": "A working local development project, currently branded Promptwell. Screens show offline prompt preparation with fictional input; no public hosted app, measured savings or endorsed integration is claimed."
+    }
+  },
+  "zh-hk": {
+    "monitor": {
+      "category": "Windows · 硬件監察面板",
+      "summary": "置頂的精簡 Windows 面板，一眼查看 CPU、GPU、記憶體及網絡活動。",
+      "description": "Monitor 的本機介面名為 Hardware Monitor Pro。Python 桌面程式將即時資源數據集中在窄身視窗，方便在遊戲或工作旁邊查看。",
+      "focus": [
+        "CPU、GPU 使用率、GPU 溫度及顯示記憶體",
+        "系統記憶體與整體上下載速率",
+        "按網絡連線數排列活躍程式"
+      ],
+      "previews": [
+        [
+          "即時硬件面板",
+          "實際 Windows 視窗包含資源數值、溫度可用狀態、網絡速率及活躍程式。畫面數值只反映截圖當刻的電腦。"
+        ]
+      ],
+      "screenshotsNote": "實際本機程式截圖。目前原始碼的硬件名稱及 64 GB 記憶體標籤是固定文字。讀數受電腦和驅動程式影響，並不代表已支援自動辨認所有硬件。",
+      "specifications": [
+        [
+          "平台",
+          "Windows 桌面 · Python · Tkinter / ttk；本機資料夾已有可執行檔。"
+        ],
+        [
+          "CPU 與記憶體",
+          "psutil 提供使用率及記憶體讀數；CPU 溫度取決於可存取的感應器。"
+        ],
+        ["GPU", "支援時由 NVIDIA NVML 讀取使用率、溫度及顯示記憶體。"],
+        ["網絡", "以系統整體網絡計數器的變化計算上下載速率。"],
+        ["活躍程式", "以 netstat 連線數排列程式，並非各程式的頻寬使用量。"],
+        [
+          "目前限制",
+          "硬件標籤固定；無法讀取的溫度顯示 N/A。此頁沒有提供雲端服務或公開下載。"
+        ]
+      ],
+      "title": "讓系統活動留在視線範圍。",
+      "problem": "遊戲或程式變慢時，逐一開啟不同工具會打斷操作。精簡面板方便快速查看哪些資源正忙碌。",
+      "approach": "目前程式結合本機程序、記憶體、NVIDIA 顯示卡及網絡數據。視窗保持置頂，開啟期間持續更新讀數。",
+      "workflowTitle": ["開啟面板，", "查看即時讀數。"],
+      "workflow": [
+        ["在本機開啟", "在需要監察的 Windows 電腦執行程式或 Python 原始碼。"],
+        [
+          "比較資源數值",
+          "查看 CPU、GPU、記憶體及網絡活動；讀不到的溫度會顯示 N/A。"
+        ],
+        [
+          "查看活躍程式",
+          "連線數列表提供網絡活動線索，但不量度每個程式的實際流量。"
+        ]
+      ],
+      "principles": [
+        ["精簡查看", "窄身直向視窗集中顯示多項系統資料。"],
+        ["顯示缺少的讀數", "感應器權限及驅動程式會影響可取得的數據。"],
+        [
+          "清楚交代標籤",
+          "部分硬件標籤目前固定在原始碼中，其他電腦可能需要調整。"
+        ]
+      ],
+      "status": "已有本機實作，仍在開發中。此頁說明目前功能及限制，不保證適用於所有電腦。"
+    },
+    "tokensaver": {
+      "category": "本機工具 · 提示詞整理",
+      "summary": "把初步想法整理成工作提示詞，加入專案背景、詞元估算及版本保存。",
+      "description": "TokenSaver 的本機程式目前名為 Promptwell v3.1。它使用離線規則，協助整理目標、背景、交付內容、限制及完成條件。",
+      "focus": [
+        "五個引導問題及可直接修改的需求",
+        "Markdown 背景、提示詞預算及複製／匯出",
+        "版本保存、比較及 JSON 備份還原"
+      ],
+      "previews": [
+        [
+          "提示詞工作台",
+          "實際 Promptwell 介面，由本機整理需求開始，設定按需要展開。截圖期間沒有執行 AI 工作。"
+        ],
+        [
+          "逐步整理需求",
+          "五個問題收集目標、背景、交付內容、限制及驗收條件。畫面的猜歌遊戲需求是虛構示範。"
+        ],
+        [
+          "產生工作提示詞",
+          "本機規則組合背景與完成條件。詞元數值只是粗略估算，不代表已量度的節省或執行上限。"
+        ],
+        [
+          "版本與匯出",
+          "保存提示詞、設定及已選背景的快照，再查看或還原。本機最多保存八個版本，另支援 Markdown 匯出及 JSON 備份。"
+        ]
+      ],
+      "screenshotsNote": "離線前端的實際截圖，使用虛構猜歌遊戲需求。程式畫面保留原有語言。沒有送出編程工作，亦沒有展示已連線帳戶或即時 AI 整合。",
+      "specifications": [
+        [
+          "平台",
+          "HTML、CSS、JavaScript 前端；本機整理提示詞毋須發出 AI 請求。"
+        ],
+        [
+          "需求整理",
+          "目標、背景、交付內容、限制及完成條件，支援直接編輯與工作範本。"
+        ],
+        ["專案背景", "匯入 Markdown，選擇完整文件或按預算摘錄的背景。"],
+        [
+          "長度設定",
+          "設定提示詞預算、回覆長度與精簡寫法；詞元數按字元規則估算。"
+        ],
+        [
+          "重用",
+          "複製、Markdown 匯出、最多八個版本、草稿比較及 JSON 備份匯入／匯出。"
+        ],
+        [
+          "選配執行",
+          "另一個本機服務可在確認後呼叫已安裝及登入的編程 CLI。送出工作可能使用帳戶額度並傳送已選背景。"
+        ]
+      ],
+      "title": "送出提示詞前，先說清楚工作。",
+      "problem": "簡短指令可能遺漏預期成果、背景及完成條件。在後續對話逐次補充，會令工作較難跟進。",
+      "approach": "Promptwell 收集需求及已選 Markdown，以本機規則產生結構清楚的指令。檢查與複製提示詞可獨立使用，不需要啟動執行服務。",
+      "workflowTitle": ["從初步想法", "到可重用的提示詞。"],
+      "workflow": [
+        ["描述工作", "回答五個問題，或直接修改需求；按需要選擇範本。"],
+        ["檢查及修改", "複製或匯出前，確認驗收條件、背景及估算長度。"],
+        ["保存版本", "保存快照或備份以便比較；CLI 執行是需要另行確認的步驟。"]
+      ],
+      "principles": [
+        ["本機整理", "規劃階段採用本機規則，不消耗 AI 額度。"],
+        [
+          "估算不等於實際用量",
+          "詞元估算不包括工具輸出、額外對話及模型內部運算。"
+        ],
+        ["送出前確認", "可只複製提示詞；執行工作需要本機服務及確認。"]
+      ],
+      "status": "已有本機實作，仍在開發中；程式目前使用 Promptwell 名稱。截圖只展示虛構需求的離線整理，不宣稱公開服務、實測節省或官方認可的整合。"
+    }
+  },
+  "ja": {
+    "monitor": {
+      "category": "Windows · ハードウェア監視",
+      "summary": "CPU、GPU、メモリ、ネットワークの状態を最前面の小さなウィンドウで確認。",
+      "description": "Monitor のローカル画面名は Hardware Monitor Pro です。Python のデスクトップ画面に各リソースの読み取り値をまとめます。",
+      "focus": [
+        "CPU・GPU 使用率、GPU 温度と VRAM",
+        "メモリとシステム全体の送受信速度",
+        "接続数で並べたアプリ一覧"
+      ],
+      "previews": [
+        [
+          "実際の監視画面",
+          "Windows アプリの実画面です。値は撮影時の環境を示し、温度が取得できない場合は N/A と表示されます。"
+        ]
+      ],
+      "screenshotsNote": "実行中のローカルアプリを撮影。ハードウェア名と 64 GB の表示は現在のソースで固定されています。すべての機器を自動検出する証拠ではありません。",
+      "specifications": [
+        [
+          "環境",
+          "Windows · Python · Tkinter / ttk。ローカル実行ファイルがあります。"
+        ],
+        [
+          "CPU とメモリ",
+          "psutil の読み取り値を使用。CPU 温度は利用可能なセンサーに依存します。"
+        ],
+        ["GPU", "対応環境では NVIDIA NVML で使用率、温度、VRAM を取得。"],
+        [
+          "ネットワーク",
+          "システム全体のカウンターの差分から送受信速度を計算。"
+        ],
+        [
+          "アプリ一覧",
+          "netstat の接続数で順位付け。アプリ別帯域の測定ではありません。"
+        ],
+        [
+          "制限",
+          "機器名は固定。取得できない温度は N/A。公開サービスやダウンロードはありません。"
+        ]
+      ],
+      "title": "作業中もシステムの状態を確認。",
+      "problem": "動作が遅いとき、複数のシステムツールを開くと作業が中断されます。小さなパネルで負荷を確認できます。",
+      "approach": "ローカルの CPU、メモリ、NVIDIA GPU、ネットワークの値を最前面の画面に集約し、開いている間に更新します。",
+      "workflowTitle": ["パネルを開き、", "状態を見る。"],
+      "workflow": [
+        [
+          "ローカルで起動",
+          "監視したい Windows PC で実行ファイルまたは Python アプリを開きます。"
+        ],
+        [
+          "値を比較",
+          "CPU、GPU、メモリ、ネットワークを確認。取得不能な温度は N/A です。"
+        ],
+        [
+          "接続一覧を確認",
+          "アプリの接続数は活動の手がかりであり、個別の通信量ではありません。"
+        ]
+      ],
+      "principles": [
+        ["小さな画面", "縦長のウィンドウに必要な情報をまとめます。"],
+        [
+          "欠測を明示",
+          "センサーのアクセス権とドライバーにより値が異なります。"
+        ],
+        ["ラベルを明示", "固定の機器名は別の PC では修正が必要です。"]
+      ],
+      "status": "ローカル実装がある開発中のプロジェクトです。すべての PC での動作を保証しません。"
+    },
+    "tokensaver": {
+      "category": "ローカルツール · プロンプト作成",
+      "summary": "アイデアを構造化した指示にまとめ、背景、トークン推定、保存版を管理。",
+      "description": "TokenSaver のローカルアプリ名は Promptwell v3.1 です。オフラインのルールで目標、背景、成果物、制約、完了条件を整理します。",
+      "focus": [
+        "5 つの質問と直接編集",
+        "Markdown の背景と長さの設定",
+        "保存版の比較と JSON バックアップ"
+      ],
+      "previews": [
+        [
+          "作成ワークスペース",
+          "実際の Promptwell 画面です。撮影時に AI 作業は実行していません。"
+        ],
+        [
+          "要件の整理",
+          "目標、背景、成果物、制約、完了条件を順番に入力。音楽ゲームの内容は架空の例です。"
+        ],
+        [
+          "生成された指示",
+          "ローカルルールで背景と検収条件を組み立てます。トークン数は概算で、実測の削減量ではありません。"
+        ],
+        [
+          "保存版と出力",
+          "設定と背景を含む版を最大 8 件保存。閲覧、復元、Markdown 出力、JSON バックアップに対応。"
+        ]
+      ],
+      "screenshotsNote": "架空の音楽ゲーム要件を使ったオフライン画面の実写です。画面の言語は元の実装のままです。AI への送信やアカウント接続は示していません。",
+      "specifications": [
+        [
+          "環境",
+          "HTML、CSS、JavaScript。プロンプト整理は AI リクエストなしで動作。"
+        ],
+        [
+          "要件",
+          "目標、背景、成果物、制約、完了条件。直接編集とテンプレートに対応。"
+        ],
+        ["背景", "Markdown を読み込み、全文または予算に合わせた抜粋を選択。"],
+        [
+          "長さ",
+          "予算、回答の長さ、簡潔な書式を設定。トークン数は文字による推定。"
+        ],
+        ["再利用", "コピー、Markdown、最大 8 版、比較、JSON 入出力。"],
+        [
+          "任意の実行",
+          "別のローカルサービスは確認後にインストール済みのログイン済み CLI を使用できます。実行は利用枠を消費し、選択した背景を送信する可能性があります。"
+        ]
+      ],
+      "title": "送信する前に作業を明確に。",
+      "problem": "短い指示では成果や条件が曖昧になり、後から説明を繰り返すことがあります。",
+      "approach": "要件と Markdown を集め、ローカルルールで構造化した指示を作ります。確認とコピーは実行サービスなしで利用できます。",
+      "workflowTitle": ["アイデアから", "再利用できる指示へ。"],
+      "workflow": [
+        ["作業を説明", "5 つの質問に回答するか直接編集します。"],
+        ["内容を確認", "完了条件、背景、推定長を確認してコピーまたは出力。"],
+        ["版を保存", "比較用の版を保存。CLI 実行には別の確認が必要です。"]
+      ],
+      "principles": [
+        [
+          "ローカルで準備",
+          "整理段階はローカルルールで動き、AI 利用枠を消費しません。"
+        ],
+        ["概算を区別", "ツール出力、追加会話、モデル内部計算は含みません。"],
+        [
+          "送信前に確認",
+          "コピーだけでも利用可能。実行にはサービスと確認が必要です。"
+        ]
+      ],
+      "status": "Promptwell という名前でローカル実装がある開発中のプロジェクトです。公開サービス、実測の削減量、公式の承認は主張しません。"
+    }
+  },
+  "ko": {
+    "monitor": {
+      "category": "Windows · 하드웨어 모니터",
+      "summary": "항상 위에 표시되는 작은 창에서 CPU, GPU, 메모리와 네트워크를 확인합니다.",
+      "description": "Monitor의 로컬 화면 이름은 Hardware Monitor Pro입니다. Python 데스크톱 앱이 리소스 수치를 좁은 창에 모아 보여 줍니다.",
+      "focus": [
+        "CPU·GPU 사용률, GPU 온도와 VRAM",
+        "메모리와 시스템 전체 업로드·다운로드",
+        "네트워크 연결 수로 정렬한 앱"
+      ],
+      "previews": [
+        [
+          "실제 모니터 화면",
+          "실행 중인 Windows 앱의 화면입니다. 수치는 촬영한 컴퓨터의 상태이며 읽을 수 없는 온도는 N/A로 표시됩니다."
+        ]
+      ],
+      "screenshotsNote": "로컬 앱을 실제로 촬영했습니다. 현재 소스의 하드웨어 이름과 64 GB 메모리 표시는 고정값입니다. 모든 하드웨어의 자동 인식을 입증하지 않습니다.",
+      "specifications": [
+        [
+          "환경",
+          "Windows · Python · Tkinter / ttk. 로컬 실행 파일이 있습니다."
+        ],
+        [
+          "CPU와 메모리",
+          "psutil 수치를 사용하며 CPU 온도는 접근 가능한 센서에 따라 달라집니다."
+        ],
+        ["GPU", "지원 환경에서 NVIDIA NVML로 사용률, 온도와 VRAM을 읽습니다."],
+        [
+          "네트워크",
+          "시스템 전체 카운터의 변화로 업로드·다운로드 속도를 계산합니다."
+        ],
+        [
+          "앱 목록",
+          "netstat 연결 수로 순위를 매깁니다. 앱별 대역폭 측정이 아닙니다."
+        ],
+        [
+          "현재 제한",
+          "하드웨어 이름은 고정이며 읽지 못한 온도는 N/A입니다. 공개 서비스나 다운로드는 제공하지 않습니다."
+        ]
+      ],
+      "title": "작업하면서 시스템 상태를 확인하세요.",
+      "problem": "앱이나 게임이 느려질 때 여러 도구를 열면 작업이 끊깁니다. 작은 패널에서 바쁜 리소스를 확인할 수 있습니다.",
+      "approach": "로컬 CPU, 메모리, NVIDIA GPU와 네트워크 수치를 모으고, 창이 열린 동안 계속 갱신합니다.",
+      "workflowTitle": ["패널을 열고", "수치를 살펴보세요."],
+      "workflow": [
+        [
+          "로컬 실행",
+          "확인할 Windows 컴퓨터에서 실행 파일이나 Python 앱을 엽니다."
+        ],
+        [
+          "수치 비교",
+          "CPU, GPU, 메모리와 네트워크를 확인합니다. 없는 온도는 N/A입니다."
+        ],
+        [
+          "연결 목록 확인",
+          "연결 수는 활동의 단서이며 앱별 트래픽 수치가 아닙니다."
+        ]
+      ],
+      "principles": [
+        ["작은 화면", "세로 창에 여러 리소스를 함께 표시합니다."],
+        ["누락 표시", "센서 권한과 드라이버에 따라 수치가 달라집니다."],
+        [
+          "이름 설명",
+          "고정된 하드웨어 이름은 다른 컴퓨터에서 수정이 필요합니다."
+        ]
+      ],
+      "status": "로컬 구현이 있는 개발 중 프로젝트입니다. 모든 컴퓨터 지원을 보장하지 않습니다."
+    },
+    "tokensaver": {
+      "category": "로컬 도구 · 프롬프트 정리",
+      "summary": "아이디어를 구조화한 작업 지시로 만들고 배경, 토큰 추정과 저장 버전을 관리합니다.",
+      "description": "TokenSaver의 로컬 앱 이름은 Promptwell v3.1입니다. 오프라인 규칙으로 목표, 배경, 결과물, 제약과 완료 조건을 정리합니다.",
+      "focus": [
+        "다섯 질문과 직접 편집",
+        "Markdown 배경과 길이 설정",
+        "버전 비교와 JSON 백업"
+      ],
+      "previews": [
+        [
+          "프롬프트 작업 공간",
+          "실제 Promptwell 화면입니다. 촬영 중 AI 작업을 실행하지 않았습니다."
+        ],
+        [
+          "요구 사항 정리",
+          "목표, 배경, 결과물, 제약과 완료 조건을 입력합니다. 음악 게임 요구 사항은 가상의 예시입니다."
+        ],
+        [
+          "생성된 지시",
+          "로컬 규칙으로 배경과 완료 조건을 조합합니다. 토큰 수는 추정치이며 실측 절감량이 아닙니다."
+        ],
+        [
+          "저장 버전과 내보내기",
+          "설정과 선택한 배경을 포함해 최대 8개 버전을 저장합니다. 보기, 복원, Markdown 내보내기와 JSON 백업을 지원합니다."
+        ]
+      ],
+      "screenshotsNote": "가상의 음악 게임 요구 사항으로 촬영한 오프라인 앱 화면입니다. 원래 앱 언어를 유지합니다. AI 작업 전송이나 계정 연결을 보여 주지 않습니다.",
+      "specifications": [
+        [
+          "환경",
+          "HTML, CSS, JavaScript. AI 요청 없이 로컬에서 프롬프트를 정리합니다."
+        ],
+        [
+          "요구 사항",
+          "목표, 배경, 결과물, 제약, 완료 조건. 직접 편집과 템플릿을 제공합니다."
+        ],
+        [
+          "배경",
+          "Markdown을 가져와 전체 내용이나 예산에 맞춘 발췌를 선택합니다."
+        ],
+        [
+          "길이",
+          "예산, 답변 길이와 간결한 형식을 설정합니다. 토큰 수는 문자 기반 추정입니다."
+        ],
+        [
+          "재사용",
+          "복사, Markdown, 최대 8개 버전, 비교와 JSON 가져오기·내보내기."
+        ],
+        [
+          "선택 실행",
+          "별도 로컬 서비스는 확인 후 설치 및 로그인된 코딩 CLI를 사용할 수 있습니다. 실행은 계정 사용량과 선택한 배경 전송을 발생시킬 수 있습니다."
+        ]
+      ],
+      "title": "보내기 전에 작업을 명확히 하세요.",
+      "problem": "짧은 지시는 결과와 완료 조건을 빠뜨릴 수 있어 나중에 설명을 반복하게 됩니다.",
+      "approach": "요구 사항과 Markdown을 모아 로컬 규칙으로 지시를 생성합니다. 검토와 복사는 실행 서비스 없이 사용할 수 있습니다.",
+      "workflowTitle": ["아이디어에서", "재사용할 지시까지."],
+      "workflow": [
+        ["작업 설명", "다섯 질문에 답하거나 요구 사항을 직접 편집합니다."],
+        [
+          "내용 검토",
+          "완료 조건, 배경과 추정 길이를 확인하고 복사 또는 내보냅니다."
+        ],
+        [
+          "버전 저장",
+          "비교할 버전을 저장합니다. CLI 실행은 별도 확인이 필요합니다."
+        ]
+      ],
+      "principles": [
+        [
+          "로컬 준비",
+          "정리 단계는 로컬 규칙을 사용하며 AI 사용량을 소모하지 않습니다."
+        ],
+        [
+          "추정 구분",
+          "도구 출력, 추가 대화와 모델 내부 계산은 포함하지 않습니다."
+        ],
+        [
+          "전송 전 검토",
+          "복사만 할 수 있으며 실행에는 서비스와 확인이 필요합니다."
+        ]
+      ],
+      "status": "Promptwell이라는 이름으로 로컬 구현이 있는 개발 중 프로젝트입니다. 공개 서비스, 실측 절감량이나 공식 승인을 주장하지 않습니다."
+    }
+  },
+  "zh-cn": {
+    "monitor": {
+      "category": "Windows · 硬件监察面板",
+      "summary": "置顶的精简 Windows 面板，一眼查看 CPU、GPU、内存及网络活动。",
+      "description": "Monitor 的本机界面名为 Hardware Monitor Pro。Python 桌面程序将即时资源数据集中在窄身窗口，方便在游戏或工作旁边查看。",
+      "focus": [
+        "CPU、GPU 使用率、GPU 温度及显存",
+        "系统内存与整体上传下载速率",
+        "按网络连接数排列活跃程序"
+      ],
+      "previews": [
+        [
+          "即时硬件面板",
+          "实际 Windows 窗口包含资源数值、温度可用状态、网络速率及活跃程序。画面数值只反映截图当刻的电脑。"
+        ]
+      ],
+      "screenshotsNote": "实际本机程序截图。目前源代码的硬件名称及 64 GB 内存标签是固定文字。读数受电脑和驱动程序影响，并不代表已支持自动辨认所有硬件。",
+      "specifications": [
+        [
+          "平台",
+          "Windows 桌面 · Python · Tkinter / ttk；本机文件夹已有可执行文件。"
+        ],
+        [
+          "CPU 与内存",
+          "psutil 提供使用率及内存读数；CPU 温度取决于可存取的感应器。"
+        ],
+        ["GPU", "支持时由 NVIDIA NVML 读取使用率、温度及显存。"],
+        ["网络", "以系统整体网络计数器的变化计算上传下载速率。"],
+        ["活跃程序", "以 netstat 连接数排列程序，并非各程序的带宽使用量。"],
+        [
+          "目前限制",
+          "硬件标签固定；无法读取的温度显示 N/A。此页没有提供云端服务或公开下载。"
+        ]
+      ],
+      "title": "让系统活动留在视线范围。",
+      "problem": "游戏或程序变慢时，逐一开启不同工具会打断操作。精简面板方便快速查看哪些资源正忙碌。",
+      "approach": "目前程序结合本机程序、内存、NVIDIA 显示卡及网络数据。窗口保持置顶，开启期间持续更新读数。",
+      "workflowTitle": ["开启面板，", "查看即时读数。"],
+      "workflow": [
+        ["在本机开启", "在需要监察的 Windows 电脑执行程序或 Python 源代码。"],
+        [
+          "比较资源数值",
+          "查看 CPU、GPU、内存及网络活动；读不到的温度会显示 N/A。"
+        ],
+        [
+          "查看活跃程序",
+          "连接数列表提供网络活动线索，但不量度每个程序的实际流量。"
+        ]
+      ],
+      "principles": [
+        ["精简查看", "窄身直向窗口集中显示多项系统资料。"],
+        ["显示缺少的读数", "感应器权限及驱动程序会影响可取得的数据。"],
+        [
+          "清楚交代标签",
+          "部分硬件标签目前固定在源代码中，其他电脑可能需要调整。"
+        ]
+      ],
+      "status": "已有本机实现，仍在开发中。此页说明目前功能及限制，不保证适用于所有电脑。"
+    },
+    "tokensaver": {
+      "category": "本机工具 · 提示词整理",
+      "summary": "把初步想法整理成工作提示词，加入项目背景、词元估算及版本保存。",
+      "description": "TokenSaver 的本机程序目前名为 Promptwell v3.1。它使用离线规则，协助整理目标、背景、交付内容、限制及完成条件。",
+      "focus": [
+        "五个引导问题及可直接修改的需求",
+        "Markdown 背景、提示词预算及复制／导出",
+        "版本保存、比较及 JSON 备份还原"
+      ],
+      "previews": [
+        [
+          "提示词工作台",
+          "实际 Promptwell 界面，由本机整理需求开始，设定按需要展开。截图期间没有执行 AI 工作。"
+        ],
+        [
+          "逐步整理需求",
+          "五个问题收集目标、背景、交付内容、限制及验收条件。画面的猜歌游戏需求是虚构示范。"
+        ],
+        [
+          "产生工作提示词",
+          "本机规则组合背景与完成条件。词元数值只是粗略估算，不代表已量度的节省或执行上限。"
+        ],
+        [
+          "版本与导出",
+          "保存提示词、设定及已选背景的快照，再查看或还原。本机最多保存八个版本，另支持 Markdown 导出及 JSON 备份。"
+        ]
+      ],
+      "screenshotsNote": "离线前端的实际截图，使用虚构猜歌游戏需求。程序画面保留原有语言。没有送出编程工作，亦没有展示已连线账户或即时 AI 整合。",
+      "specifications": [
+        [
+          "平台",
+          "HTML、CSS、JavaScript 前端；本机整理提示词无需发出 AI 请求。"
+        ],
+        [
+          "需求整理",
+          "目标、背景、交付内容、限制及完成条件，支持直接编辑与工作范本。"
+        ],
+        ["项目背景", "导入 Markdown，选择完整文件或按预算摘录的背景。"],
+        [
+          "长度设定",
+          "设定提示词预算、回复长度与精简写法；词元数按字元规则估算。"
+        ],
+        [
+          "重用",
+          "复制、Markdown 导出、最多八个版本、草稿比较及 JSON 备份导入／导出。"
+        ],
+        [
+          "选配执行",
+          "另一个本机服务可在确认后呼叫已安装及登入的编程 CLI。送出工作可能使用账户额度并传送已选背景。"
+        ]
+      ],
+      "title": "送出提示词前，先说清楚工作。",
+      "problem": "简短指令可能遗漏预期成果、背景及完成条件。在后续对话逐次补充，会令工作较难跟进。",
+      "approach": "Promptwell 收集需求及已选 Markdown，以本机规则产生结构清楚的指令。检查与复制提示词可独立使用，不需要启动执行服务。",
+      "workflowTitle": ["从初步想法", "到可重用的提示词。"],
+      "workflow": [
+        ["描述工作", "回答五个问题，或直接修改需求；按需要选择范本。"],
+        ["检查及修改", "复制或导出前，确认验收条件、背景及估算长度。"],
+        ["保存版本", "保存快照或备份以便比较；CLI 执行是需要另行确认的步骤。"]
+      ],
+      "principles": [
+        ["本机整理", "规划阶段采用本机规则，不消耗 AI 额度。"],
+        [
+          "估算不等于实际用量",
+          "词元估算不包括工具输出、额外对话及模型内部运算。"
+        ],
+        ["送出前确认", "可只复制提示词；执行工作需要本机服务及确认。"]
+      ],
+      "status": "已有本机实现，仍在开发中；程序目前使用 Promptwell 名称。截图只展示虚构需求的离线整理，不宣称公开服务、实测节省或官方认可的整合。"
+    }
+  }
+}

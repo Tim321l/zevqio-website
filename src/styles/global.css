@@ -480,16 +480,15 @@ svg {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(140deg, transparent 55%, rgba(7, 13, 24, 0.35));
   content: "";
   pointer-events: none;
 }
 .locale-hero-visual img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 350px;
-  object-fit: cover;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
   object-position: left top;
 }
 .locale-hero-visual .detail-preview-badge {
@@ -889,7 +888,7 @@ svg {
 }
 .capability-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -2183,6 +2182,63 @@ svg {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+.tool-gallery .showcase-preview-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+}
+.tool-gallery .showcase-preview-card {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+  align-items: center;
+}
+.tool-gallery .showcase-image-frame {
+  min-height: 0;
+  padding: 16px;
+  border-bottom: 0;
+}
+.tool-gallery .showcase-image-frame img,
+.tool-detail-hero .detail-preview-hero img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.tool-gallery .showcase-preview-card figcaption {
+  padding: 28px;
+}
+.tool-gallery .showcase-preview-card h3 {
+  font-size: clamp(20px, 2vw, 27px);
+}
+.tool-gallery .showcase-preview-card figcaption p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.tool-gallery .tool-image-link {
+  margin-top: 20px;
+}
+.tool-gallery--portrait .showcase-image-frame img {
+  width: min(100%, 352px);
+}
+.tool-detail-hero--portrait .detail-preview-hero {
+  width: min(100%, 240px);
+  justify-self: center;
+}
+.tool-detail-hero .detail-preview-badge {
+  position: static;
+  display: block;
+  border-radius: 0;
+  text-align: center;
+}
+.tool-detail-hero .detail-preview-hero::after {
+  display: none;
+}
+@media (max-width: 767px) {
+  .tool-gallery .showcase-preview-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tool-gallery .showcase-preview-card figcaption {
+    padding: 22px;
+  }
 }
 .showcase-preview-card {
   min-width: 0;

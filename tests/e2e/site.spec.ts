@@ -4,11 +4,9 @@ import AxeBuilder from "@axe-core/playwright";
 const routes = [
   "/",
   "/products",
-  "/products/document-intelligence",
-  "/products/pdf-automation",
-  "/products/workflow-automation",
   "/products/vidoany",
   "/products/tokensaver",
+  "/products/monitor",
   "/about",
   "/contact",
   "/privacy",

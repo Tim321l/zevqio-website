@@ -85,7 +85,7 @@ const english = {
       "We’re building with care and sharing progress honestly. Each product area is currently in development.",
     allProducts: "View all product areas",
     selectedLabel: "Selected projects",
-    selectedTitle: ["A portfolio of", "games and experiments."],
+    selectedTitle: ["Games and independent", "creative work."],
     selectedIntro:
       "Explore four game builds across basketball, property strategy, and music trivia, alongside independent web and original audio projects.",
     selectedNames: [
@@ -170,7 +170,7 @@ const english = {
     story2:
       "Zevqio is bootstrapped and early-stage. The work starts with a real task or a clear idea, then moves through focused prototypes and careful iteration. We describe what each project can do today and where work is still in progress.",
     story3:
-      "Alongside OCR Studio, the portfolio includes four game builds: RimRise in browser and Unity versions, BigDeal HK, and Song Guess Online. Each project page describes the current prototype and its development stage.",
+      "Alongside Monitor, the portfolio includes four game builds: RimRise in browser and Unity versions, BigDeal HK, and Song Guess Online. Each project page describes the current prototype and its development stage.",
     profile: "ZEVQIO / STUDIO PROFILE",
     structure: "Structure",
     structureValue: "Independent initiative",
@@ -738,7 +738,7 @@ const translated = {
       story2:
         "Zevqio 处于自筹资金的早期阶段。项目从真实任务或清晰想法出发，再通过专注的原型和迭代逐步完善。我们会说明各项目目前能做什么，以及哪些内容仍在开发中。",
       story3:
-        "除了 OCR Studio，作品集还包括四个游戏版本：RimRise 浏览器版与 Unity 版、BigDeal HK 和 Song Guess Online。每个项目页面都会介绍原型当前的开发阶段。",
+        "除了 Monitor，作品集还包括四个游戏版本：RimRise 浏览器版与 Unity 版、BigDeal HK 和 Song Guess Online。每个项目页面都会介绍原型当前的开发阶段。",
       profile: "ZEVQIO / 工作室简介",
       structure: "组织形式",
       structureValue: "独立项目",
@@ -1261,7 +1261,7 @@ const translated = {
       story2:
         "Zevqio 處於自資的早期階段。項目從真實任務或清晰構想出發，再透過專注的原型和迭代逐步完善。我們會說明各項目目前能做到甚麼，以及哪些內容仍在開發中。",
       story3:
-        "除了 OCR Studio，作品集亦包括四個遊戲版本：RimRise 瀏覽器版與 Unity 版、BigDeal HK 和 Song Guess Online。每個項目頁面都會介紹原型目前的開發階段。",
+        "除了 Monitor，作品集亦包括四個遊戲版本：RimRise 瀏覽器版與 Unity 版、BigDeal HK 和 Song Guess Online。每個項目頁面都會介紹原型目前的開發階段。",
       profile: "ZEVQIO / 工作室簡介",
       structure: "組織形式",
       structureValue: "獨立項目",
@@ -1797,7 +1797,7 @@ const translated = {
       story2:
         "Zevqio は自己資金で進める初期段階の取り組みです。実際の作業や明確なアイデアを起点に、対象を絞ったプロトタイプと反復を通じて形にします。各プロジェクトで現在できることと、開発中の範囲を説明します。",
       story3:
-        "OCR Studioに加えて、RimRiseのブラウザー版とUnity版、BigDeal HK、Song Guess Onlineの4つのゲームビルドを掲載しています。各ページでプロトタイプの現在の開発段階を説明します。",
+        "Monitorに加えて、RimRiseのブラウザー版とUnity版、BigDeal HK、Song Guess Onlineの4つのゲームビルドを掲載しています。各ページでプロトタイプの現在の開発段階を説明します。",
       profile: "ZEVQIO / スタジオ概要",
       structure: "形態",
       structureValue: "独立した取り組み",
@@ -2366,7 +2366,7 @@ const translated = {
       story2:
         "Zevqio는 자체 자금으로 운영하는 초기 단계 프로젝트입니다. 실제 업무나 명확한 아이디어에서 출발해 범위를 좁힌 프로토타입과 반복 작업으로 발전시킵니다. 각 프로젝트에서 현재 가능한 것과 개발 중인 부분을 설명합니다.",
       story3:
-        "OCR Studio와 함께 RimRise 브라우저 및 Unity 버전, BigDeal HK, Song Guess Online 등 네 가지 게임 빌드도 소개합니다. 각 페이지에서 프로토타입의 현재 개발 단계를 설명합니다.",
+        "Monitor와 함께 RimRise 브라우저 및 Unity 버전, BigDeal HK, Song Guess Online 등 네 가지 게임 빌드도 소개합니다. 각 페이지에서 프로토타입의 현재 개발 단계를 설명합니다.",
       profile: "ZEVQIO / 스튜디오 소개",
       structure: "형태",
       structureValue: "독립 프로젝트",

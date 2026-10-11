@@ -71,12 +71,9 @@ for (const width of [375, 1440]) {
 const pages = [
   "",
   "products",
-  "products/document-intelligence",
-  "products/pdf-automation",
-  "products/workflow-automation",
-  "products/ocr-studio",
   "products/vidoany",
   "products/tokensaver",
+  "products/monitor",
   "projects/rimrise-unity",
   "projects/rimrise-web",
   "projects/bigdeal",
