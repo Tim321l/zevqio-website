@@ -121,7 +121,7 @@ svg {
   background: linear-gradient(
     104deg,
     var(--blue) 0%,
-    #63b3f7 48%,
+    color-mix(in srgb, var(--blue) 70%, var(--cyan)) 48%,
     var(--cyan) 100%
   );
   -webkit-background-clip: text;
@@ -535,7 +535,7 @@ svg {
   display: inline-block;
   padding-top: 7px;
   color: transparent;
-  background: linear-gradient(105deg, #79a8ff, #71dfe2);
+  background: linear-gradient(105deg, var(--blue), var(--cyan));
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -1581,6 +1581,7 @@ svg {
   color: #83dfeb;
 }
 .contact-band h2 {
+  color: #f0f6fd;
   font-size: clamp(33px, 4vw, 47px);
 }
 .contact-band-inner > div > p:last-child {

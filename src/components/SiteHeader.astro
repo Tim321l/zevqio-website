@@ -128,10 +128,13 @@ const interactionCopy = {
             copy.nav.contact,
           ];
           const href = localeHref(locale, item.href);
-          const activePath = href.split("#")[0];
           const normalizedCurrent = stripLocaleFromPath(currentPath);
           const isActive =
-            !item.href.startsWith("/#") && normalizedCurrent === activePath;
+            (!item.href.startsWith("/#") &&
+              (normalizedCurrent === item.href ||
+                normalizedCurrent.startsWith(`${item.href}/`))) ||
+            (item.href === "/#selected-projects" &&
+              normalizedCurrent.startsWith("/projects/"));
           return (
             <a
               class:list={["nav-link", { active: isActive }]}

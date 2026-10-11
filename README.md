@@ -39,6 +39,8 @@ Playwright requires its Chromium browser to be installed once on a new machine:
 npx playwright install chromium
 ```
 
+The browser suite reviews all 75 content routes across five languages in both themes at 320, 375, 768, and 1440 pixels. It checks accessibility, image loading, page anchors, active navigation, and the game pages' language, theme, keyboard, and screenshot controls. Review captures are saved under the ignored `test-results/` directory. On a busy local computer, use `npm run test:e2e -- --workers=4` to reduce browser resource use. These checks run in Chromium; they do not certify other browsers or replace testing with real users.
+
 After editing the social preview source SVG, regenerate its PNG with `npm run social:render`.
 
 ## Pages

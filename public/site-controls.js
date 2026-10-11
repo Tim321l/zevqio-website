@@ -53,6 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const openIcon = menuButton?.querySelector("[data-menu-icon]");
   const closeIcon = menuButton?.querySelector("[data-close-icon]");
   const themeButton = document.querySelector("[data-theme-toggle]");
+  const languageSwitcher = document.querySelector(".language-switcher");
+
+  document.addEventListener("click", (event) => {
+    if (languageSwitcher?.open && !languageSwitcher.contains(event.target)) {
+      languageSwitcher.open = false;
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && languageSwitcher?.open) {
+      event.stopImmediatePropagation();
+      languageSwitcher.open = false;
+      languageSwitcher.querySelector("summary")?.focus();
+    }
+  });
 
   setTheme(currentTheme);
 
