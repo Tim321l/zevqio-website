@@ -1132,8 +1132,12 @@ const previewImage = (image: string) =>
                     <img
                       src={withBase(image)}
                       alt={`${projectCopy.name}: ${caption?.[0] ?? projectCopy.name}`}
-                      width={sourceProject.imageAspect === "square" ? 1000 : 1440}
-                      height={sourceProject.imageAspect === "square" ? 1000 : 900}
+                      width={
+                        sourceProject.imageAspect === "square" ? 1000 : 1440
+                      }
+                      height={
+                        sourceProject.imageAspect === "square" ? 1000 : 900
+                      }
                       loading="lazy"
                     />
                     <span class="showcase-image-index" aria-hidden="true">

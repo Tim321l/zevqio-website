@@ -1304,7 +1304,11 @@ svg {
 .selected-projects-section {
   border-block: 1px solid var(--line);
   background:
-    radial-gradient(ellipse at 16% 8%, rgba(61, 109, 174, 0.08), transparent 34%),
+    radial-gradient(
+      ellipse at 16% 8%,
+      rgba(61, 109, 174, 0.08),
+      transparent 34%
+    ),
     var(--page-raised);
 }
 .selected-project-grid {
@@ -1325,7 +1329,11 @@ svg {
   border: 1px solid var(--line);
   border-radius: 10px;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(86, 144, 203, 0.18), transparent 62%),
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(86, 144, 203, 0.18),
+      transparent 62%
+    ),
     #0b1018;
 }
 .selected-project-preview img {
@@ -1349,7 +1357,11 @@ svg {
 .selected-project-preview--square {
   min-height: 350px;
   background:
-    radial-gradient(ellipse at 50% 36%, rgba(85, 71, 190, 0.38), transparent 64%),
+    radial-gradient(
+      ellipse at 50% 36%,
+      rgba(85, 71, 190, 0.38),
+      transparent 64%
+    ),
     linear-gradient(145deg, #171638, #10182b);
 }
 .selected-project-card .principle-icon {
@@ -1389,8 +1401,16 @@ svg {
   font-size: 12px;
 }
 .selected-project-link:hover {
-  border-color: color-mix(in srgb, var(--product-accent, var(--cyan)) 65%, var(--line));
-  background: color-mix(in srgb, var(--product-accent, var(--cyan)) 10%, var(--surface));
+  border-color: color-mix(
+    in srgb,
+    var(--product-accent, var(--cyan)) 65%,
+    var(--line)
+  );
+  background: color-mix(
+    in srgb,
+    var(--product-accent, var(--cyan)) 10%,
+    var(--surface)
+  );
 }
 .project-source-link {
   margin-top: 18px;
@@ -1765,8 +1785,16 @@ svg {
 }
 .game-detail-hero {
   background:
-    radial-gradient(ellipse 56% 52% at 86% 30%, rgba(64, 116, 181, 0.2), transparent 72%),
-    radial-gradient(ellipse 55% 62% at 13% 100%, rgba(51, 91, 146, 0.1), transparent 76%),
+    radial-gradient(
+      ellipse 56% 52% at 86% 30%,
+      rgba(64, 116, 181, 0.2),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 55% 62% at 13% 100%,
+      rgba(51, 91, 146, 0.1),
+      transparent 76%
+    ),
     var(--page);
 }
 .game-detail-hero::after {
@@ -1774,26 +1802,58 @@ svg {
 }
 .game-detail-hero.game-detail--bigdeal {
   background:
-    radial-gradient(ellipse 54% 58% at 85% 31%, rgba(198, 38, 67, 0.23), transparent 72%),
-    radial-gradient(ellipse 48% 52% at 14% 96%, rgba(196, 146, 40, 0.13), transparent 72%),
+    radial-gradient(
+      ellipse 54% 58% at 85% 31%,
+      rgba(198, 38, 67, 0.23),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 48% 52% at 14% 96%,
+      rgba(196, 146, 40, 0.13),
+      transparent 72%
+    ),
     var(--page);
 }
 .game-detail-hero.game-detail--song-guess {
   background:
-    radial-gradient(ellipse 54% 60% at 82% 28%, rgba(117, 77, 218, 0.27), transparent 72%),
-    radial-gradient(ellipse 44% 50% at 14% 98%, rgba(31, 176, 202, 0.13), transparent 72%),
+    radial-gradient(
+      ellipse 54% 60% at 82% 28%,
+      rgba(117, 77, 218, 0.27),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 44% 50% at 14% 98%,
+      rgba(31, 176, 202, 0.13),
+      transparent 72%
+    ),
     var(--page);
 }
 .game-detail-hero.game-detail--rimrise-unity {
   background:
-    radial-gradient(ellipse 58% 58% at 86% 24%, rgba(69, 132, 214, 0.23), transparent 72%),
-    radial-gradient(ellipse 45% 52% at 12% 98%, rgba(39, 165, 169, 0.13), transparent 72%),
+    radial-gradient(
+      ellipse 58% 58% at 86% 24%,
+      rgba(69, 132, 214, 0.23),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 45% 52% at 12% 98%,
+      rgba(39, 165, 169, 0.13),
+      transparent 72%
+    ),
     var(--page);
 }
 .game-detail-hero.game-detail--rimrise-web {
   background:
-    radial-gradient(ellipse 58% 58% at 84% 26%, rgba(25, 157, 191, 0.2), transparent 72%),
-    radial-gradient(ellipse 48% 55% at 11% 98%, rgba(72, 111, 199, 0.16), transparent 72%),
+    radial-gradient(
+      ellipse 58% 58% at 84% 26%,
+      rgba(25, 157, 191, 0.2),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 48% 55% at 11% 98%,
+      rgba(72, 111, 199, 0.16),
+      transparent 72%
+    ),
     var(--page);
 }
 .game-detail-grid {
@@ -1822,7 +1882,11 @@ svg {
   width: min(100%, 780px);
   justify-self: center;
   background:
-    radial-gradient(ellipse at 50% 35%, rgba(117, 77, 218, 0.4), transparent 68%),
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(117, 77, 218, 0.4),
+      transparent 68%
+    ),
     #171638;
 }
 .game-detail-grid .detail-preview-hero--square img {
@@ -2070,13 +2134,21 @@ svg {
 }
 .game-gallery--song-guess {
   background:
-    radial-gradient(ellipse at 88% 6%, rgba(110, 73, 203, 0.15), transparent 38%),
+    radial-gradient(
+      ellipse at 88% 6%,
+      rgba(110, 73, 203, 0.15),
+      transparent 38%
+    ),
     var(--page-raised);
 }
 .game-gallery--rimrise-unity,
 .game-gallery--rimrise-web {
   background:
-    radial-gradient(ellipse at 82% 3%, rgba(56, 121, 183, 0.12), transparent 39%),
+    radial-gradient(
+      ellipse at 82% 3%,
+      rgba(56, 121, 183, 0.12),
+      transparent 39%
+    ),
     var(--page-raised);
 }
 .showcase-heading {
@@ -2156,17 +2228,29 @@ svg {
 }
 .game-gallery-section .showcase-image-frame {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(99, 145, 203, 0.16), transparent 66%),
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(99, 145, 203, 0.16),
+      transparent 66%
+    ),
     var(--surface-2);
 }
 .game-gallery--bigdeal .showcase-image-frame {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(199, 46, 68, 0.19), transparent 66%),
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(199, 46, 68, 0.19),
+      transparent 66%
+    ),
     linear-gradient(150deg, #171820, #17151a);
 }
 .game-gallery--song-guess .showcase-image-frame {
   background:
-    radial-gradient(ellipse at 50% 12%, rgba(117, 77, 218, 0.28), transparent 70%),
+    radial-gradient(
+      ellipse at 50% 12%,
+      rgba(117, 77, 218, 0.28),
+      transparent 70%
+    ),
     #15152d;
 }
 .game-gallery-section .showcase-image-frame img {

@@ -47,9 +47,7 @@ test("homepage presents the brand and working primary actions", async ({
   await expect(
     page.getByRole("heading", { name: "RimRise · Browser game" }),
   ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "BigDeal HK" }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "BigDeal HK" })).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Song Guess Online" }),
   ).toBeVisible();
