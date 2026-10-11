@@ -88,6 +88,9 @@ body {
     background-color 180ms ease,
     color 180ms ease;
 }
+main {
+  overflow-wrap: anywhere;
+}
 ::selection {
   color: #06111d;
   background: #75e0ed;
@@ -1780,7 +1783,7 @@ svg {
 }
 .product-detail-grid {
   display: grid;
-  grid-template-columns: 1fr 0.63fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.63fr);
   align-items: center;
   gap: 60px;
 }
@@ -3224,7 +3227,7 @@ svg {
     font-size: 10px;
   }
   .product-detail-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 25px;
   }
   .detail-lede {
