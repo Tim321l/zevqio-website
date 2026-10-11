@@ -85,17 +85,21 @@ const english = {
       "We’re building with care and sharing progress honestly. Each product area is currently in development.",
     allProducts: "View all product areas",
     selectedLabel: "Selected projects",
-    selectedTitle: ["Work across", "code and sound."],
+    selectedTitle: ["A portfolio of", "games and experiments."],
     selectedIntro:
-      "Explore RimRise in two forms: a browser basketball game and a Unity prototype. The portfolio also includes independent web and original audio work.",
+      "Explore four game builds across basketball, property strategy, and music trivia, alongside independent web and original audio projects.",
     selectedNames: [
       "RimRise · Unity edition",
       "RimRise · Browser game",
+      "BigDeal HK",
+      "Song Guess Online",
       "Original audio",
     ],
     selectedDescriptions: [
       "A Unity 6.3 prototype for full-court 5v5 basketball and career play.",
       "A browser basketball game with career progression and 3D city play.",
+      "A Hong Kong-themed property card game with multiplayer rooms, bots, and changing events.",
+      "A multiplayer music quiz with timed rounds, configurable rooms, and team modes.",
       "Independent audio projects featuring original work.",
     ],
     workflowLabel: "The shape of the work",
@@ -140,7 +144,7 @@ const english = {
     studioIntro:
       "Zevqio is an independent, founder-led software studio, bootstrapped and in an early stage. It explores practical tools for document processing, automation, and business productivity.",
     studioDetail:
-      "Current work also includes RimRise, an independent basketball game with a browser edition and a Unity prototype, alongside smaller web and original audio projects. We share the work as it develops and make its current stage clear.",
+      "Current work also includes RimRise in browser and Unity versions, BigDeal HK, and Song Guess Online, alongside smaller web and original audio projects. These independent game projects are in development, and we share their current stage as they evolve.",
     studioStatus: "Founder-led · Bootstrapped · Early-stage",
     studioLink: "More about Zevqio",
     contactLabel: "Start a conversation",
@@ -166,7 +170,7 @@ const english = {
     story2:
       "Zevqio is bootstrapped and early-stage. The work starts with a real task or a clear idea, then moves through focused prototypes and careful iteration. We describe what each project can do today and where work is still in progress.",
     story3:
-      "Alongside OCR Studio, the portfolio includes RimRise, an independent basketball game with both a browser edition and a Unity prototype. The two builds are at different stages, so each project page explains what is available in that version.",
+      "Alongside OCR Studio, the portfolio includes four game builds: RimRise in browser and Unity versions, BigDeal HK, and Song Guess Online. Each project page describes the current prototype and its development stage.",
     profile: "ZEVQIO / STUDIO PROFILE",
     structure: "Structure",
     structureValue: "Independent initiative",
@@ -188,7 +192,7 @@ const english = {
     title: "Projects",
     screenshotsLabel: "Screens from the project",
     screenshotsNote:
-      "These screenshots were captured from local RimRise builds. Both editions are works in progress, so screens and features may change.",
+      "Screens shown here were captured from local project builds. Projects are in development, so screens and features may change.",
     overviewLabel: "Project overview",
     toolsLabel: "Built with",
     sourceLink: "View the project on GitHub",
@@ -661,13 +665,21 @@ const translated = {
         "我们认真构建并如实分享进展。目前每个产品方向都仍在开发中。",
       allProducts: "查看所有产品方向",
       selectedLabel: "精选项目",
-      selectedTitle: ["跨越代码", "与声音的创作。"],
+      selectedTitle: ["游戏与", "独立创作项目。"],
       selectedIntro:
-        "了解 RimRise 的两种版本：浏览器篮球游戏和 Unity 原型。作品集也包括独立网页与原创音频项目。",
-      selectedNames: ["RimRise · Unity 版", "RimRise · 浏览器版", "原创音频"],
+        "浏览篮球、地产策略与音乐竞猜题材的四款游戏版本，以及独立网页和原创音频项目。",
+      selectedNames: [
+        "RimRise · Unity 版",
+        "RimRise · 浏览器版",
+        "BigDeal HK",
+        "Song Guess Online",
+        "原创音频",
+      ],
       selectedDescriptions: [
         "使用 Unity 6.3 制作的篮球生涯原型，现以全场 5 对 5 为起点。",
         "包含生涯成长、3D 城市和街头篮球的浏览器游戏。",
+        "以香港为主题的地产卡牌游戏，包含多人房间、机器人对手和动态事件。",
+        "支持计时回合、房间设置和团队玩法的多人音乐竞猜游戏。",
         "包含原创作品的独立音频项目。",
       ],
       workflowLabel: "工作流程的形态",
@@ -701,7 +713,7 @@ const translated = {
       studioIntro:
         "Zevqio 是一个由创办人主导、自筹资金、处于早期阶段的独立软件工作室，专注探索文档处理、自动化和业务效率工具。",
       studioDetail:
-        "目前的项目还包括 RimRise 篮球游戏，设有浏览器版本和 Unity 原型，以及其他独立网页与原创音频作品。我们会随着项目进展展示真实画面，并清楚说明仍在开发中的部分。",
+        "目前的游戏项目包括 RimRise 的浏览器版与 Unity 版、BigDeal HK 和 Song Guess Online，此外还有独立网页与原创音频作品。游戏仍在开发中，我们会随着进展分享画面并说明当前阶段。",
       studioStatus: "创办人主导 · 自筹资金 · 早期阶段",
       studioLink: "更多关于 Zevqio",
       contactLabel: "开始交流",
@@ -726,7 +738,7 @@ const translated = {
       story2:
         "Zevqio 处于自筹资金的早期阶段。项目从真实任务或清晰想法出发，再通过专注的原型和迭代逐步完善。我们会说明各项目目前能做什么，以及哪些内容仍在开发中。",
       story3:
-        "除了 OCR Studio，作品集还包括 RimRise 篮球人生游戏，提供浏览器版本和 Unity 原型。两个版本进度不同，因此各项目页面会说明对应版本的当前情况。",
+        "除了 OCR Studio，作品集还包括四个游戏版本：RimRise 浏览器版与 Unity 版、BigDeal HK 和 Song Guess Online。每个项目页面都会介绍原型当前的开发阶段。",
       profile: "ZEVQIO / 工作室简介",
       structure: "组织形式",
       structureValue: "独立项目",
@@ -747,7 +759,7 @@ const translated = {
       title: "项目",
       screenshotsLabel: "项目画面",
       screenshotsNote:
-        "这些画面截取自本机运行的 RimRise 版本。两个版本都仍在开发中，界面和功能可能调整。",
+        "这些画面截取自本机运行的项目版本。项目仍在开发中，界面和功能可能调整。",
       overviewLabel: "项目概览",
       toolsLabel: "使用技术",
       sourceLink: "在 GitHub 查看项目",
@@ -1176,13 +1188,21 @@ const translated = {
         "我們認真打造並如實分享進度。目前每個產品方向都仍在開發中。",
       allProducts: "查看所有產品方向",
       selectedLabel: "精選項目",
-      selectedTitle: ["跨越程式碼", "與聲音的創作。"],
+      selectedTitle: ["遊戲與", "獨立創作項目。"],
       selectedIntro:
-        "展示 RimRise 的兩個版本：瀏覽器籃球遊戲和 Unity 原型。作品集亦包括獨立網頁與原創音訊項目。",
-      selectedNames: ["RimRise · Unity 版", "RimRise · 瀏覽器版", "原創音訊"],
+        "瀏覽籃球、地產策略與音樂猜歌題材的四款遊戲版本，以及獨立網頁和原創音訊項目。",
+      selectedNames: [
+        "RimRise · Unity 版",
+        "RimRise · 瀏覽器版",
+        "BigDeal HK",
+        "Song Guess Online",
+        "原創音訊",
+      ],
       selectedDescriptions: [
         "使用 Unity 6.3 製作的籃球生涯原型，現以全場 5 對 5 為起點。",
         "包含生涯成長、3D 城市和街頭籃球的瀏覽器遊戲。",
+        "以香港為主題的地產卡牌遊戲，包含多人房間、機械人對手和動態事件。",
+        "設有計時回合、房間設定和團隊玩法的多人音樂猜歌遊戲。",
         "包含原創作品的獨立音訊項目。",
       ],
       workflowLabel: "工作流程的構想",
@@ -1216,7 +1236,7 @@ const translated = {
       studioIntro:
         "Zevqio 是一個由創辦人主導、自資、處於早期階段的獨立軟件工作室，專注探索文件處理、自動化和業務效率工具。",
       studioDetail:
-        "目前的項目還包括 RimRise 籃球遊戲，設有瀏覽器版本和 Unity 原型，以及其他獨立網頁與原創音訊作品。我們會隨項目進展展示實際畫面，並清楚說明仍在開發中的部分。",
+        "目前的遊戲項目包括 RimRise 的瀏覽器版與 Unity 版、BigDeal HK 和 Song Guess Online，另有獨立網頁與原創音訊作品。遊戲仍在開發中，我們會隨進度分享畫面並說明目前階段。",
       studioStatus: "創辦人主導 · 自資 · 早期階段",
       studioLink: "更多關於 Zevqio",
       contactLabel: "開始交流",
@@ -1241,7 +1261,7 @@ const translated = {
       story2:
         "Zevqio 處於自資的早期階段。項目從真實任務或清晰構想出發，再透過專注的原型和迭代逐步完善。我們會說明各項目目前能做到甚麼，以及哪些內容仍在開發中。",
       story3:
-        "除了 OCR Studio，作品集亦包括 RimRise 籃球人生遊戲，提供瀏覽器版本和 Unity 原型。兩個版本進度不同，因此各項目頁面會說明對應版本的現況。",
+        "除了 OCR Studio，作品集亦包括四個遊戲版本：RimRise 瀏覽器版與 Unity 版、BigDeal HK 和 Song Guess Online。每個項目頁面都會介紹原型目前的開發階段。",
       profile: "ZEVQIO / 工作室簡介",
       structure: "組織形式",
       structureValue: "獨立項目",
@@ -1262,7 +1282,7 @@ const translated = {
       title: "項目",
       screenshotsLabel: "項目畫面",
       screenshotsNote:
-        "這些畫面截取自本機運行的 RimRise 版本。兩個版本都仍在開發中，介面和功能可能調整。",
+        "這些畫面截取自本機運行的項目版本。項目仍在開發中，介面和功能可能調整。",
       overviewLabel: "項目概覽",
       toolsLabel: "使用技術",
       sourceLink: "在 GitHub 查看項目",
@@ -1693,17 +1713,21 @@ const translated = {
         "丁寧につくり、進捗を正直に共有します。各プロダクト領域は現在開発中です。",
       allProducts: "すべての領域を見る",
       selectedLabel: "主なプロジェクト",
-      selectedTitle: ["コードと", "音でつくる。"],
+      selectedTitle: ["ゲームと", "個人制作プロジェクト。"],
       selectedIntro:
-        "ブラウザー版のバスケットボールゲームとUnityプロトタイプ、RimRiseの2つの形を紹介します。独立したウェブやオリジナル音源の作品も掲載しています。",
+        "バスケットボール、物件カード、音楽クイズの4つのゲームビルドと、独立したウェブ・音楽プロジェクトを紹介します。",
       selectedNames: [
         "RimRise · Unity版",
         "RimRise · ブラウザー版",
+        "BigDeal HK",
+        "Song Guess Online",
         "オリジナル音源",
       ],
       selectedDescriptions: [
         "Unity 6.3で開発中のバスケットボールキャリアゲーム。まずは5対5の試合から。",
         "キャリア進行、3D都市、ストリートバスケを組み合わせたブラウザーゲーム。",
+        "香港をテーマにした物件カードゲーム。マルチプレイのルーム、ボット、イベントを実装中。",
+        "タイマー付きラウンド、ルーム設定、チーム戦に対応するマルチプレイ音楽クイズ。",
         "オリジナル作品を含む音声プロジェクト。",
       ],
       workflowLabel: "仕事の流れ",
@@ -1747,7 +1771,7 @@ const translated = {
       studioIntro:
         "Zevqio は創業者主導で自己資金により進める、初期段階の独立ソフトウェアスタジオです。文書処理、自動化、業務効率化に役立つツールを検討しています。",
       studioDetail:
-        "現在は、ブラウザー版とUnityプロトタイプを持つ独立バスケットボールゲーム「RimRise」や、小規模なウェブ・オリジナル音源プロジェクトにも取り組んでいます。進捗に合わせて実際の画面を紹介し、開発中の範囲を明確にします。",
+        "ゲーム制作では、ブラウザー版とUnity版のRimRise、BigDeal HK、Song Guess Onlineに取り組んでいます。独立したウェブやオリジナル音源のプロジェクトもあります。ゲームは開発中で、進捗に合わせて現在の段階を紹介します。",
       studioStatus: "創業者主導 · 自己資金 · 初期段階",
       studioLink: "Zevqioについて詳しく",
       contactLabel: "相談する",
@@ -1773,7 +1797,7 @@ const translated = {
       story2:
         "Zevqio は自己資金で進める初期段階の取り組みです。実際の作業や明確なアイデアを起点に、対象を絞ったプロトタイプと反復を通じて形にします。各プロジェクトで現在できることと、開発中の範囲を説明します。",
       story3:
-        "OCR Studio に加えて、ブラウザー版とUnityプロトタイプを持つバスケットボールゲーム「RimRise」にも取り組んでいます。2つのバージョンは開発段階が異なるため、それぞれのページで現状を説明します。",
+        "OCR Studioに加えて、RimRiseのブラウザー版とUnity版、BigDeal HK、Song Guess Onlineの4つのゲームビルドを掲載しています。各ページでプロトタイプの現在の開発段階を説明します。",
       profile: "ZEVQIO / スタジオ概要",
       structure: "形態",
       structureValue: "独立した取り組み",
@@ -1795,7 +1819,7 @@ const translated = {
       title: "プロジェクト",
       screenshotsLabel: "プロジェクト画面",
       screenshotsNote:
-        "画面はローカルで動かしたRimRiseから撮影しました。どちらのバージョンも開発中のため、画面や機能は変更される場合があります。",
+        "画面はローカルで動かしたプロジェクトビルドから撮影しました。開発中のため、画面や機能は変更される場合があります。",
       overviewLabel: "プロジェクト概要",
       toolsLabel: "使用技術",
       sourceLink: "GitHubでプロジェクトを見る",
@@ -2258,17 +2282,21 @@ const translated = {
         "신중하게 만들고 진행 상황을 솔직하게 공유합니다. 모든 제품 분야는 현재 개발 중입니다.",
       allProducts: "모든 제품 분야 보기",
       selectedLabel: "주요 프로젝트",
-      selectedTitle: ["코드와", "사운드를 넘나들며."],
+      selectedTitle: ["게임과", "독립 제작 프로젝트."],
       selectedIntro:
-        "브라우저 농구 게임과 Unity 프로토타입, RimRise의 두 가지 버전을 소개합니다. 독립 웹 및 오리지널 오디오 작업도 포함합니다.",
+        "농구, 부동산 카드 전략, 음악 퀴즈를 아우르는 네 가지 게임 빌드와 독립 웹·오디오 프로젝트를 소개합니다.",
       selectedNames: [
         "RimRise · Unity 에디션",
         "RimRise · 브라우저 게임",
+        "BigDeal HK",
+        "Song Guess Online",
         "오리지널 오디오",
       ],
       selectedDescriptions: [
         "Unity 6.3 농구 커리어 프로토타입으로, 풀코트 5대5부터 구현하고 있습니다.",
         "커리어 성장, 3D 도시, 길거리 농구를 담은 브라우저 게임입니다.",
+        "홍콩 테마의 부동산 카드 게임으로 멀티플레이어 방, 봇, 이벤트를 개발 중입니다.",
+        "시간 제한 라운드, 방 설정, 팀전을 지원하는 멀티플레이어 음악 퀴즈입니다.",
         "오리지널 작업을 담은 독립 오디오 프로젝트입니다.",
       ],
       workflowLabel: "업무의 흐름",
@@ -2312,7 +2340,7 @@ const translated = {
       studioIntro:
         "Zevqio는 창업자가 이끌고 자체 자금으로 운영하는 초기 단계의 독립 소프트웨어 스튜디오입니다. 문서 처리, 자동화, 비즈니스 생산성을 위한 도구를 탐색합니다.",
       studioDetail:
-        "현재 작업에는 브라우저 버전과 Unity 프로토타입으로 나뉜 독립 농구 게임 RimRise, 소규모 웹 및 오리지널 오디오 프로젝트가 있습니다. 진행 과정에서 실제 화면을 공유하고 개발 중인 범위를 분명하게 알립니다.",
+        "현재 게임 프로젝트에는 브라우저 및 Unity 버전의 RimRise, BigDeal HK, Song Guess Online이 있습니다. 독립 웹과 오리지널 오디오 작업도 함께 진행합니다. 게임은 개발 중이며 진행 상황과 현재 단계를 공유합니다.",
       studioStatus: "창업자 주도 · 자체 자금 · 초기 단계",
       studioLink: "Zevqio 자세히 보기",
       contactLabel: "대화 시작하기",
@@ -2338,7 +2366,7 @@ const translated = {
       story2:
         "Zevqio는 자체 자금으로 운영하는 초기 단계 프로젝트입니다. 실제 업무나 명확한 아이디어에서 출발해 범위를 좁힌 프로토타입과 반복 작업으로 발전시킵니다. 각 프로젝트에서 현재 가능한 것과 개발 중인 부분을 설명합니다.",
       story3:
-        "OCR Studio와 함께 브라우저 버전과 Unity 프로토타입을 갖춘 농구 게임 RimRise도 개발하고 있습니다. 두 버전의 진행 단계가 다르므로 각 프로젝트 페이지에서 현재 상태를 설명합니다.",
+        "OCR Studio와 함께 RimRise 브라우저 및 Unity 버전, BigDeal HK, Song Guess Online 등 네 가지 게임 빌드도 소개합니다. 각 페이지에서 프로토타입의 현재 개발 단계를 설명합니다.",
       profile: "ZEVQIO / 스튜디오 소개",
       structure: "형태",
       structureValue: "독립 프로젝트",
@@ -2360,7 +2388,7 @@ const translated = {
       title: "프로젝트",
       screenshotsLabel: "프로젝트 화면",
       screenshotsNote:
-        "화면은 로컬에서 실행한 RimRise 빌드에서 캡처했습니다. 두 버전 모두 개발 중이므로 화면과 기능은 바뀔 수 있습니다.",
+        "화면은 로컬 프로젝트 빌드에서 캡처했습니다. 개발 중인 프로젝트이므로 화면과 기능은 바뀔 수 있습니다.",
       overviewLabel: "프로젝트 개요",
       toolsLabel: "사용 기술",
       sourceLink: "GitHub에서 프로젝트 보기",

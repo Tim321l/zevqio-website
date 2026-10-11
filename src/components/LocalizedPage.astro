@@ -42,11 +42,12 @@ const productCopy = slug
 const sourceProduct = slug
   ? products.find((item) => item.slug === slug)
   : undefined;
-const projectCopy = slug
-  ? portfolio.pages[slug as keyof typeof portfolio.pages]
-  : undefined;
 const sourceProject = slug
   ? projectPages.find((item) => item.slug === slug)
+  : undefined;
+const projectCopy = slug
+  ? (portfolio.pages[slug as keyof typeof portfolio.pages] ??
+    sourceProject?.details)
   : undefined;
 const story =
   productCopy && "story" in productCopy ? productCopy.story : undefined;
@@ -312,6 +313,27 @@ const previewImage = (image: string) =>
                   `accent-${project.accent}`,
                 ]}
               >
+                {project.image && (
+                  <div
+                    class:list={[
+                      "selected-project-preview",
+                      project.imageAspect === "square" &&
+                        "selected-project-preview--square",
+                      project.imageAspect === "cinema" &&
+                        "selected-project-preview--cinema",
+                      project.imagePosition === "top" &&
+                        "selected-project-preview--top",
+                    ]}
+                  >
+                    <img
+                      src={withBase(project.image)}
+                      alt=""
+                      width={project.imageAspect === "square" ? 1000 : 1440}
+                      height={project.imageAspect === "square" ? 1000 : 900}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <div class="principle-top">
                   <span class="principle-icon">
                     <Icon name={project.icon} size={22} />
@@ -1016,7 +1038,13 @@ const previewImage = (image: string) =>
 
   {page === "project" && projectCopy && sourceProject && (
     <>
-      <section class="product-detail-hero">
+      <section
+        class:list={[
+          "product-detail-hero",
+          "game-detail-hero",
+          `game-detail--${sourceProject.slug}`,
+        ]}
+      >
         <div class="shell">
           <nav class="breadcrumbs" aria-label={copy.common.breadcrumb}>
             <a href={withBase(localeHref(locale, "/"))}>{copy.common.home}</a>
@@ -1025,7 +1053,7 @@ const previewImage = (image: string) =>
             <Icon name="chevronRight" size={13} />
             <span aria-current="page">{projectCopy.name}</span>
           </nav>
-          <div class="product-detail-grid">
+          <div class="product-detail-grid game-detail-grid">
             <div>
               <p class="eyebrow">
                 <span class="eyebrow-line"></span>
@@ -1047,12 +1075,20 @@ const previewImage = (image: string) =>
                 </a>
               </div>
             </div>
-            <div class="detail-preview-hero">
+            <div
+              class:list={[
+                "detail-preview-hero",
+                sourceProject.imageAspect === "square" &&
+                  "detail-preview-hero--square",
+                sourceProject.imageAspect === "cinema" &&
+                  "detail-preview-hero--cinema",
+              ]}
+            >
               <img
                 src={withBase(sourceProject.heroImage)}
                 alt={projectCopy.heroAlt}
-                width="1440"
-                height="900"
+                width={sourceProject.imageAspect === "square" ? 1000 : 1440}
+                height={sourceProject.imageAspect === "square" ? 1000 : 900}
               />
               <span class="detail-preview-badge">{projectCopy.heroBadge}</span>
             </div>
@@ -1061,7 +1097,12 @@ const previewImage = (image: string) =>
       </section>
 
       <section
-        class="product-showcase-section section-space"
+        class:list={[
+          "product-showcase-section",
+          "section-space",
+          "game-gallery-section",
+          `game-gallery--${sourceProject?.slug ?? slug ?? ""}`,
+        ]}
         id="project-screenshots"
         aria-labelledby="project-showcase-title"
       >
@@ -1081,12 +1122,18 @@ const previewImage = (image: string) =>
               const caption = projectCopy.gallery[index];
               return (
                 <figure class="showcase-preview-card">
-                  <div class="showcase-image-frame">
+                  <div
+                    class:list={[
+                      "showcase-image-frame",
+                      sourceProject.imageAspect === "square" &&
+                        "showcase-image-frame--square",
+                    ]}
+                  >
                     <img
                       src={withBase(image)}
                       alt={`${projectCopy.name}: ${caption?.[0] ?? projectCopy.name}`}
-                      width="1440"
-                      height="900"
+                      width={sourceProject.imageAspect === "square" ? 1000 : 1440}
+                      height={sourceProject.imageAspect === "square" ? 1000 : 900}
                       loading="lazy"
                     />
                     <span class="showcase-image-index" aria-hidden="true">

@@ -12,15 +12,15 @@ import { withBase } from "../utils/paths";
           <span class="eyebrow-line"></span> Selected projects
         </p>
         <h2>
-          Work across
+          Games and independent
           <br />
-          <span class="text-muted">code and sound.</span>
+          <span class="text-muted">creative work.</span>
         </h2>
       </div>
       <p class="section-intro">
-        Explore RimRise in two forms: a browser basketball game and a Unity
-        prototype. The portfolio also includes independent web and original
-        audio work.
+        Explore four game builds: RimRise in browser and Unity versions, BigDeal
+        HK, and Song Guess Online. The portfolio also includes independent web
+        and original audio work.
       </p>
     </div>
     <div class="principle-grid selected-project-grid">
@@ -32,6 +32,27 @@ import { withBase } from "../utils/paths";
             `accent-${project.accent}`,
           ]}
         >
+          {project.image && (
+            <div
+              class:list={[
+                "selected-project-preview",
+                project.imageAspect === "square" &&
+                  "selected-project-preview--square",
+                project.imageAspect === "cinema" &&
+                  "selected-project-preview--cinema",
+                project.imagePosition === "top" &&
+                  "selected-project-preview--top",
+              ]}
+            >
+              <img
+                src={withBase(project.image)}
+                alt=""
+                width={project.imageAspect === "square" ? 1000 : 1440}
+                height={project.imageAspect === "square" ? 1000 : 900}
+                loading="lazy"
+              />
+            </div>
+          )}
           <div class="principle-top">
             <span class="principle-icon">
               <Icon name={project.icon} size={22} />

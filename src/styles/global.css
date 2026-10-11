@@ -1303,12 +1303,54 @@ svg {
 }
 .selected-projects-section {
   border-block: 1px solid var(--line);
-  background: var(--page-raised);
+  background:
+    radial-gradient(ellipse at 16% 8%, rgba(61, 109, 174, 0.08), transparent 34%),
+    var(--page-raised);
+}
+.selected-project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 .selected-project-card {
   display: flex;
-  min-height: 225px;
+  min-height: 0;
   flex-direction: column;
+}
+.selected-project-preview {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(86, 144, 203, 0.18), transparent 62%),
+    #0b1018;
+}
+.selected-project-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.selected-project-preview--top img {
+  object-position: center top;
+}
+.selected-project-preview--cinema img {
+  aspect-ratio: 2.5;
+}
+.selected-project-preview--square img {
+  width: min(100%, 350px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: transparent;
+}
+.selected-project-preview--square {
+  min-height: 350px;
+  background:
+    radial-gradient(ellipse at 50% 36%, rgba(85, 71, 190, 0.38), transparent 64%),
+    linear-gradient(145deg, #171638, #10182b);
 }
 .selected-project-card .principle-icon {
   color: var(--product-accent, var(--cyan));
@@ -1338,8 +1380,17 @@ svg {
 }
 .selected-project-link {
   align-self: flex-start;
-  margin-top: 13px;
-  font-size: 11px;
+  min-height: 39px;
+  margin-top: 16px;
+  padding: 0 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--surface-2) 76%, transparent);
+  font-size: 12px;
+}
+.selected-project-link:hover {
+  border-color: color-mix(in srgb, var(--product-accent, var(--cyan)) 65%, var(--line));
+  background: color-mix(in srgb, var(--product-accent, var(--cyan)) 10%, var(--surface));
 }
 .project-source-link {
   margin-top: 18px;
@@ -1712,6 +1763,73 @@ svg {
   align-items: center;
   gap: 60px;
 }
+.game-detail-hero {
+  background:
+    radial-gradient(ellipse 56% 52% at 86% 30%, rgba(64, 116, 181, 0.2), transparent 72%),
+    radial-gradient(ellipse 55% 62% at 13% 100%, rgba(51, 91, 146, 0.1), transparent 76%),
+    var(--page);
+}
+.game-detail-hero::after {
+  opacity: 0.55;
+}
+.game-detail-hero.game-detail--bigdeal {
+  background:
+    radial-gradient(ellipse 54% 58% at 85% 31%, rgba(198, 38, 67, 0.23), transparent 72%),
+    radial-gradient(ellipse 48% 52% at 14% 96%, rgba(196, 146, 40, 0.13), transparent 72%),
+    var(--page);
+}
+.game-detail-hero.game-detail--song-guess {
+  background:
+    radial-gradient(ellipse 54% 60% at 82% 28%, rgba(117, 77, 218, 0.27), transparent 72%),
+    radial-gradient(ellipse 44% 50% at 14% 98%, rgba(31, 176, 202, 0.13), transparent 72%),
+    var(--page);
+}
+.game-detail-hero.game-detail--rimrise-unity {
+  background:
+    radial-gradient(ellipse 58% 58% at 86% 24%, rgba(69, 132, 214, 0.23), transparent 72%),
+    radial-gradient(ellipse 45% 52% at 12% 98%, rgba(39, 165, 169, 0.13), transparent 72%),
+    var(--page);
+}
+.game-detail-hero.game-detail--rimrise-web {
+  background:
+    radial-gradient(ellipse 58% 58% at 84% 26%, rgba(25, 157, 191, 0.2), transparent 72%),
+    radial-gradient(ellipse 48% 55% at 11% 98%, rgba(72, 111, 199, 0.16), transparent 72%),
+    var(--page);
+}
+.game-detail-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+.game-detail-grid > div:first-child {
+  max-width: 800px;
+}
+.game-detail-grid .detail-preview-hero {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.34),
+    0 0 70px rgba(69, 132, 214, 0.12);
+}
+.game-detail-grid .detail-preview-hero img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
+}
+.game-detail-grid .detail-preview-hero--cinema img {
+  aspect-ratio: 2.5;
+}
+.game-detail-grid .detail-preview-hero--square {
+  width: min(100%, 780px);
+  justify-self: center;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(117, 77, 218, 0.4), transparent 68%),
+    #171638;
+}
+.game-detail-grid .detail-preview-hero--square img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+}
 .product-detail-grid h1 {
   max-width: 710px;
   font-size: clamp(49px, 6.2vw, 75px);
@@ -1756,6 +1874,16 @@ svg {
   height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+.detail-preview-hero--square {
+  background: #171638;
+}
+.detail-preview-hero--square::after {
+  display: none;
+}
+.detail-preview-hero--square img {
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 .detail-preview-badge {
   position: absolute;
@@ -1935,6 +2063,22 @@ svg {
   border-block: 1px solid var(--line);
   background: var(--page-raised);
 }
+.game-gallery--bigdeal {
+  background:
+    radial-gradient(ellipse at 12% 6%, rgba(190, 42, 65, 0.1), transparent 35%),
+    var(--page-raised);
+}
+.game-gallery--song-guess {
+  background:
+    radial-gradient(ellipse at 88% 6%, rgba(110, 73, 203, 0.15), transparent 38%),
+    var(--page-raised);
+}
+.game-gallery--rimrise-unity,
+.game-gallery--rimrise-web {
+  background:
+    radial-gradient(ellipse at 82% 3%, rgba(56, 121, 183, 0.12), transparent 39%),
+    var(--page-raised);
+}
 .showcase-heading {
   display: grid;
   grid-template-columns: 1fr 0.62fr;
@@ -1983,6 +2127,9 @@ svg {
 }
 .showcase-image-frame {
   position: relative;
+  display: grid;
+  min-height: 330px;
+  place-items: center;
   padding: 9px;
   border-bottom: 1px solid var(--line);
   background:
@@ -2001,6 +2148,35 @@ svg {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 7px;
   background: #0b1018;
+}
+.showcase-image-frame--square img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #171638;
+}
+.game-gallery-section .showcase-image-frame {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(99, 145, 203, 0.16), transparent 66%),
+    var(--surface-2);
+}
+.game-gallery--bigdeal .showcase-image-frame {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(199, 46, 68, 0.19), transparent 66%),
+    linear-gradient(150deg, #171820, #17151a);
+}
+.game-gallery--song-guess .showcase-image-frame {
+  background:
+    radial-gradient(ellipse at 50% 12%, rgba(117, 77, 218, 0.28), transparent 70%),
+    #15152d;
+}
+.game-gallery-section .showcase-image-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
 }
 .showcase-image-index {
   position: absolute;

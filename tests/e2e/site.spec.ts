@@ -39,13 +39,19 @@ test("homepage presents the brand and working primary actions", async ({
   await expect(
     page
       .locator("#selected-projects")
-      .getByRole("heading", { name: /work across code and sound/i }),
+      .getByRole("heading", { name: /games and independent creative work/i }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "RimRise · Unity edition" }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "RimRise · Browser game" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "BigDeal HK" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Song Guess Online" }),
   ).toBeVisible();
   await expect(page.getByText("Unity 6.3", { exact: true })).toBeVisible();
   await expect(page.getByText("Three.js", { exact: true })).toBeVisible();
@@ -61,6 +67,18 @@ test("homepage presents the brand and working primary actions", async ({
       .getByRole("link", { name: /explore project/i })
       .nth(1),
   ).toHaveAttribute("href", publicPath("/projects/rimrise-web"));
+  await expect(
+    page
+      .locator("#selected-projects")
+      .getByRole("link", { name: /explore project/i })
+      .nth(2),
+  ).toHaveAttribute("href", publicPath("/projects/bigdeal"));
+  await expect(
+    page
+      .locator("#selected-projects")
+      .getByRole("link", { name: /explore project/i })
+      .nth(3),
+  ).toHaveAttribute("href", publicPath("/projects/song-guess"));
   await expect(page.getByText("Original audio", { exact: true })).toBeVisible();
   await expect(
     page
