@@ -42,8 +42,8 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     previews: [
       [
-        "From scan to reviewed record",
-        "A source-based process diagram, not a screenshot: add files, choose settings, process locally, review and export.",
+        "The real DocuPass desktop screen",
+        "A live capture from the running macOS app: the New job workspace, document-type controls and local CPU processing status.",
       ],
       [
         "CPU and NVIDIA GPU setup",
@@ -54,9 +54,9 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
         "The Flutter app pairs with the desktop over a local network. The desktop performs final OCR and returns results to the phone.",
       ],
     ],
-    screenshotsLabel: "How DocuPass works",
+    screenshotsLabel: "Real app screen and product flow",
     screenshotsNote:
-      "These are workflow diagrams based on the local source code, not screenshots of the app. The project source does not include publishable interface captures.",
+      "The first image is a live capture of the working DocuPass app on macOS. The hardware and phone panels are diagrams based on the local source code.",
     specificationsLabel: "TECHNICAL OVERVIEW",
     specificationsTitle: "What the current source supports",
     specificationsIntro:
@@ -79,7 +79,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
       "DocuPass batches local OCR, identifies common Hong Kong document types, extracts structured fields, and shows each result beside its source for a human check. Hardware checks and per-file progress make larger runs easier to plan.",
     workflowTitle: ["From a scan", "to a checked export."],
     workflowIntro:
-      "The diagrams show the implemented desktop flow and the companion-phone handoff. They are illustrations from source behavior, not product screenshots.",
+      "These diagrams explain the desktop flow and companion-phone handoff. The showcase above includes a live capture from the working desktop app.",
     workflow: [
       ["Choose files and pages", "Add images, PDFs or folders; select the PDF pages and document mode to process."],
       ["Check hardware and model", "Select language and model tier. The app checks CPU, memory and supported NVIDIA runtime before recommending parallel workers."],
@@ -113,13 +113,13 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
       "匯出 Excel、CSV 或 JSON，亦支援會計匯入、vCard、搜尋歷史及監察資料夾。",
     ],
     previews: [
-      ["由掃描到覆核記錄", "根據原始碼整理的流程圖，並非程式截圖：加入檔案、選擇設定、本機處理、覆核後匯出。"],
+      ["DocuPass 桌面程式實際畫面", "macOS 上運行中的真實截圖：顯示新工作頁面、文件類型選項及本機 CPU 處理狀態。"],
       ["CPU 與 NVIDIA GPU 設定", "展示硬件檢查如何影響 OCR 執行環境。GPU 需要相容 NVIDIA 驅動及 GPU 版本；macOS 使用 CPU。"],
       ["手機與桌面伴侶 App", "Flutter 手機 App 透過本地網絡配對桌面程式；最終 OCR 由桌面執行，再把結果傳回手機。"],
     ],
-    screenshotsLabel: "DocuPass 的運作方式",
+    screenshotsLabel: "實際程式畫面與流程",
     screenshotsNote:
-      "這些是按本機原始碼整理的流程圖，並非程式畫面截圖。專案原始碼沒有可供發布的介面截圖。",
+      "第一張是 macOS 上實際運行的 DocuPass 程式截圖；硬件及手機部分則是根據本機原始碼繪製的流程圖。",
     specificationsLabel: "技術概覽",
     specificationsTitle: "目前原始碼支援的內容",
     specificationsIntro: "根據本機專案 README、桌面程式及 Flutter 伴侶 App 原始碼核實。",
@@ -141,7 +141,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
       "DocuPass 在本機批次執行 OCR，識別常見香港文件類別並抽取欄位，再把結果與原頁並列，方便人手確認。硬件檢查及逐檔進度亦有助安排大型批次。",
     workflowTitle: ["由一張掃描", "到已核對的匯出檔。"],
     workflowIntro:
-      "流程圖展示已實作的桌面流程及手機伴侶傳送方式；它們是按程式行為繪製的示意圖，並非產品截圖。",
+      "流程圖說明桌面處理流程及手機伴侶傳送方式；上方的展示區亦包括實際運行中的桌面程式截圖。",
     workflow: [
       ["選擇檔案及頁面", "加入圖片、PDF 或資料夾，選擇要處理的 PDF 頁面和文件模式。"],
       ["檢查硬件及模型", "選擇語言和模型；程式會檢查 CPU、記憶體及相容 NVIDIA 環境，再建議並行數量。"],
@@ -173,12 +173,12 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
       "导出 Excel、CSV 或 JSON，并支持会计导入、vCard、可搜索历史和监控文件夹。",
     ],
     previews: [
-      ["从扫描到复核记录", "根据源代码整理的流程图，并非程序截图：添加文件、选择设置、本机处理、复核后导出。"],
+      ["DocuPass 桌面程序实机画面", "macOS 上运行中的真实截图：显示新建任务界面、文档类型选项和本机 CPU 处理状态。"],
       ["CPU 与 NVIDIA GPU 设置", "展示硬件检查如何影响 OCR 运行环境。GPU 需要兼容 NVIDIA 驱动和 GPU 版本；macOS 使用 CPU。"],
       ["手机和桌面伴侣 App", "Flutter 手机 App 通过本地网络配对桌面程序；最终 OCR 由桌面执行，再把结果传回手机。"],
     ],
-    screenshotsLabel: "DocuPass 的工作方式",
-    screenshotsNote: "这些是根据本机源代码整理的流程图，并非程序界面截图。项目源代码没有可发布的界面截图。",
+    screenshotsLabel: "真实应用界面与处理流程",
+    screenshotsNote: "第一张是 DocuPass 在 macOS 上运行时的实机截图；硬件和手机部分是根据本机源代码绘制的流程图。",
     specificationsLabel: "技术概览",
     specificationsTitle: "当前源代码支持的内容",
     specificationsIntro: "根据本机项目 README、桌面程序和 Flutter 伴侣 App 源代码核实。",
@@ -197,7 +197,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     problem: "商业记录来自扫描件、照片、PDF 和付款确认页面。逐项手动输入耗时，未复核的 OCR 也可能把错误带入账目。",
     approach: "DocuPass 在本机批量运行 OCR，识别常见香港文档类型并抽取字段，再把结果与原页面并列，方便人工确认。硬件检查和逐文件进度也有助于安排大批量处理。",
     workflowTitle: ["从扫描件", "到已核对的导出文件。"],
-    workflowIntro: "流程图展示已实现的桌面流程和手机伴侣传输方式；它们是依据程序行为绘制的示意图，并非产品截图。",
+    workflowIntro: "流程图说明桌面处理流程和手机伴侣传输方式；上方的展示区也包含实际运行中的桌面程序截图。",
     workflow: [
       ["选择文件和页面", "添加图片、PDF 或文件夹，选择需要处理的 PDF 页面和文档模式。"],
       ["检查硬件和模型", "选择语言和模型；程序会检查 CPU、内存和兼容 NVIDIA 环境，再推荐并行数量。"],
@@ -227,12 +227,12 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
       "Excel、CSV、JSON に出力し、会計ソフト用データ、vCard、履歴検索、監視フォルダーも利用できます。",
     ],
     previews: [
-      ["スキャンから確認済み記録へ", "ソースコードに基づく処理図です。画面キャプチャではなく、追加、設定、ローカル処理、確認、出力を示します。"],
+      ["DocuPass デスクトップの実画面", "macOSで実際に動作しているアプリを撮影した画面です。新規ジョブ、書類種別、ローカルCPU処理状態を表示します。"],
       ["CPU と NVIDIA GPU の設定", "ハードウェア確認とOCR環境の関係を示します。GPUには対応ドライバーとGPU版ランタイムが必要です。macOSはCPUを使用します。"],
       ["スマートフォンとデスクトップ", "Flutterアプリはローカルネットワーク経由でデスクトップとペアリングし、最終OCRはデスクトップで実行します。"],
     ],
-    screenshotsLabel: "DocuPass の処理フロー",
-    screenshotsNote: "ローカルソースコードに基づく処理図であり、アプリの画面キャプチャではありません。公開可能なUIキャプチャはソースにありません。",
+    screenshotsLabel: "実際のアプリ画面と処理フロー",
+    screenshotsNote: "最初の画像はmacOSで動作中のDocuPassを撮影した画面です。ハードウェアとスマートフォンの図はローカルソースに基づいています。",
     specificationsLabel: "技術概要",
     specificationsTitle: "現在のソースが対応する内容",
     specificationsIntro: "ローカルのREADME、デスクトップコード、Flutter連携アプリのソースで確認しました。",
@@ -251,7 +251,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     problem: "業務記録はスキャン、写真、PDF、決済確認画面などで届きます。手入力には時間がかかり、確認しないOCR結果は会計記録に誤りを残す可能性があります。",
     approach: "DocuPassはローカルでOCRをまとめて実行し、香港でよく使われる書類の種類と項目を抽出します。元ページの横で結果を確認でき、ハードウェア確認と進捗表示で大きな処理も計画できます。",
     workflowTitle: ["スキャンから", "確認済みの出力へ。"],
-    workflowIntro: "処理図は実装済みのデスクトップ手順とスマートフォン連携を示すイラストで、製品画面のキャプチャではありません。",
+    workflowIntro: "処理図はデスクトップの手順とスマートフォン連携を説明します。上のショーケースには実際に動作するデスクトップ画面も掲載しています。",
     workflow: [
       ["ファイルとページを選択", "画像、PDF、フォルダーを追加し、PDFの対象ページと書類モードを選びます。"],
       ["ハードウェアとモデルを確認", "言語とモデルを選ぶと、CPU、メモリ、対応NVIDIA環境を確認してワーカー数を提案します。"],
@@ -281,12 +281,12 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
       "Excel, CSV, JSON 내보내기와 회계 가져오기, vCard, 검색 기록, 감시 폴더를 지원합니다.",
     ],
     previews: [
-      ["스캔에서 검토된 기록까지", "소스 코드 기반 흐름도입니다. 앱 스크린샷이 아니라 파일 추가, 설정, 로컬 처리, 검토, 내보내기 순서를 보여줍니다."],
+      ["실제 DocuPass 데스크톱 화면", "macOS에서 실행 중인 앱을 캡처했습니다. 새 작업 화면, 문서 유형 선택과 로컬 CPU 처리 상태를 보여줍니다."],
       ["CPU 및 NVIDIA GPU 설정", "하드웨어 확인이 OCR 런타임 선택에 미치는 영향을 표시합니다. GPU에는 호환 드라이버와 GPU 빌드가 필요하며 macOS는 CPU를 사용합니다."],
       ["휴대폰과 데스크톱 연동", "Flutter 앱이 로컬 네트워크로 데스크톱과 페어링됩니다. 최종 OCR은 데스크톱에서 실행합니다."],
     ],
-    screenshotsLabel: "DocuPass 작동 방식",
-    screenshotsNote: "로컬 소스 코드 기반 흐름도이며 앱 화면 캡처가 아닙니다. 프로젝트 소스에는 공개용 인터페이스 캡처가 없습니다.",
+    screenshotsLabel: "실제 앱 화면과 작업 흐름",
+    screenshotsNote: "첫 이미지는 macOS에서 실제 실행 중인 DocuPass 캡처입니다. 하드웨어와 휴대폰 그림은 로컬 소스 코드를 바탕으로 만들었습니다.",
     specificationsLabel: "기술 개요",
     specificationsTitle: "현재 소스가 지원하는 항목",
     specificationsIntro: "로컬 README, 데스크톱 코드, Flutter 동반 앱 소스로 확인했습니다.",
@@ -305,7 +305,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     problem: "업무 기록은 스캔, 사진, PDF, 결제 확인 화면으로 들어옵니다. 직접 입력은 시간이 걸리고 검토하지 않은 OCR은 회계 기록에 오류를 남길 수 있습니다.",
     approach: "DocuPass는 로컬에서 OCR을 일괄 실행하고 홍콩 문서 유형과 필드를 추출한 뒤 원본 페이지 옆에 결과를 표시합니다. 하드웨어 확인과 파일별 진행률로 큰 작업도 계획할 수 있습니다.",
     workflowTitle: ["스캔에서", "검토된 내보내기까지."],
-    workflowIntro: "흐름도는 구현된 데스크톱 절차와 휴대폰 연동을 보여주는 설명 그림이며 제품 화면 캡처가 아닙니다.",
+    workflowIntro: "흐름도는 데스크톱 작업과 휴대폰 연동을 설명합니다. 위 쇼케이스에는 실제 실행 중인 데스크톱 앱 화면도 있습니다.",
     workflow: [
       ["파일과 페이지 선택", "이미지, PDF, 폴더를 추가하고 처리할 PDF 페이지와 문서 모드를 선택합니다."],
       ["하드웨어와 모델 확인", "언어와 모델을 선택하면 CPU, 메모리, 호환 NVIDIA 환경을 확인해 작업자 수를 권장합니다."],

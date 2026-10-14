@@ -55,7 +55,7 @@ const images = {
     "tokensaver-versions.jpg",
   ],
   docupass: [
-    "docupass-workflow.svg",
+    "docupass-app-home.png",
     "docupass-hardware.svg",
     "docupass-phone.svg",
   ],
@@ -66,7 +66,7 @@ export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
     const text = docupassCopy[locale];
     return {
       ...text,
-      previewBadge: `${text.name.toUpperCase()} · SOURCE-BASED DIAGRAMS`,
+      previewBadge: `${text.name.toUpperCase()} · REAL APP SCREEN + DIAGRAMS`,
       screenshotsLabel: text.screenshotsLabel,
       specificationsLabel: text.specificationsLabel,
       specificationsTitle: text.specificationsTitle,
