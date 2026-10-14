@@ -61,7 +61,6 @@ export type ProjectPage = {
   heroImage: string;
   screenshots: string[];
   tools: string[];
-  githubUrl: string;
   imageAspect?: "cinema" | "square";
   specifications?: [ProjectSpecKey, string][];
   details?: ProjectDetailCopy;
@@ -97,8 +96,6 @@ export const projectPages: ProjectPage[] = [
         "Unity 3D · quality and frame-rate options · keyboard, controller and touch layouts",
       ],
     ],
-    githubUrl:
-      "https://github.com/Tim321l/hardwood-career/tree/codex/unity-city-continuation-20261006/unity",
   },
   {
     slug: "rimrise-web",
@@ -129,7 +126,6 @@ export const projectPages: ProjectPage[] = [
         "Three.js/WebGL · adapter and acceleration status · software-rendering warning and fallback",
       ],
     ],
-    githubUrl: "https://github.com/Tim321l/hardwood-career",
   },
   {
     slug: "bigdeal",
@@ -147,7 +143,6 @@ export const projectPages: ProjectPage[] = [
       ["multiplayer", "Socket.IO rooms · bots · spectator seats"],
       ["matchFlow", "Room-based matches · mode-specific win goals"],
     ],
-    githubUrl: "https://github.com/Tim321l/bigdeal",
     imageAspect: "cinema",
     details: {
       name: "BigDeal HK",
@@ -231,7 +226,6 @@ export const projectPages: ProjectPage[] = [
       ["timer", "1 s · 5 s · 10 s answer timer"],
       ["roomAccess", "Public/private rooms · room-code join"],
     ],
-    githubUrl: "https://github.com/Tim321l/song-guess",
     imageAspect: "square",
     details: {
       name: "Song Guess Online",

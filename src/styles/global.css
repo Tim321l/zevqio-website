@@ -1549,10 +1549,6 @@ svg {
     var(--surface)
   );
 }
-.project-source-link {
-  margin-top: 18px;
-}
-
 /* Studio intro */
 .studio-section {
   overflow: hidden;
@@ -4133,30 +4129,6 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
 }
 .project-evidence-card .selected-project-tags {
   margin: 1.3rem 0;
-}
-.project-evidence-sources {
-  display: grid;
-  gap: 0.55rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-.project-evidence-sources > span {
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-.project-evidence-sources a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: fit-content;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  color: var(--cyan);
-  font-size: 0.88rem;
-}
-.project-evidence-sources svg {
-  flex-shrink: 0;
 }
 .project-tour {
   margin-top: 2rem;

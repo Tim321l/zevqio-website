@@ -1,5 +1,4 @@
 ---
-import Icon from "./Icon.astro";
 import { projectShowcases, showcaseLabels } from "../data/project-showcase";
 import {
   projectImageSizes,
@@ -176,19 +175,6 @@ const tour =
               <li>{skill}</li>
             ))}
           </ul>
-          <div class="project-evidence-sources">
-            <span>{ui.source}</span>
-            {evidence.files.map((file) => (
-              <a
-                href={showcase.sourceRoot + file}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {file.split("/").at(-1)}
-                <Icon name="arrowUpRight" size={14} />
-              </a>
-            ))}
-          </div>
         </article>
       ))}
     </div>

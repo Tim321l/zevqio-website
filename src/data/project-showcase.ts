@@ -24,11 +24,11 @@ export const showcaseLabels = {
     "프로젝트 데모",
   ),
   demoIntro: l(
-    "Watch a feature in use, then explore the implementation below.",
-    "先看看功能如何運作，再了解下方的程式實作。",
-    "先看看功能如何运作，再了解下方的代码实现。",
-    "機能の動きを見てから、下の実装を確認できます。",
-    "기능이 작동하는 모습을 보고 아래에서 구현을 확인하세요.",
+    "Watch a feature in use, then learn what skills and systems support it.",
+    "先看看功能如何運作，再了解背後運用的技術和系統。",
+    "先看看功能如何运作，再了解背后运用的技术和系统。",
+    "機能の動きを見てから、それを支える技術やシステムを確認できます。",
+    "기능이 작동하는 모습을 보고 이를 뒷받침하는 기술과 시스템을 알아보세요.",
   ),
   engineering: l(
     "Skills demonstrated",
@@ -38,18 +38,11 @@ export const showcaseLabels = {
     "프로젝트가 보여 주는 기술",
   ),
   engineeringIntro: l(
-    "The visible experience is supported by these systems. Each example links to the actual source used for this showcase.",
-    "這些系統支援畫面中的體驗。每個例子都連結到本次展示所參考的實際原始碼。",
-    "这些系统支持画面中的体验。每个例子都链接到本次展示参考的实际源代码。",
-    "画面の体験を支えるシステムを紹介します。各例から今回確認した実際のソースを参照できます。",
-    "화면의 경험을 만드는 시스템입니다. 각 예시는 이번 소개에 사용한 실제 소스로 연결됩니다.",
-  ),
-  source: l(
-    "Inspect the implementation",
-    "查看程式實作",
-    "查看代码实现",
-    "実装を見る",
-    "구현 살펴보기",
+    "These highlights explain the systems behind each demo and the skills each project brings together.",
+    "以下重點會介紹各項示範背後的系統，以及每個項目所運用的技術能力。",
+    "以下重点会介绍各项演示背后的系统，以及每个项目所运用的技术能力。",
+    "各デモを支えるシステムと、プロジェクトで活用している技術を紹介します。",
+    "각 데모를 뒷받침하는 시스템과 프로젝트에서 활용한 기술을 소개합니다.",
   ),
   tour: l(
     "Explore the Unity workflow",
@@ -85,7 +78,6 @@ type Evidence = {
   title: Record<Locale, string>;
   description: Record<Locale, string>;
   skills: string[];
-  files: string[];
 };
 type Demo = {
   video: string;
@@ -93,12 +85,10 @@ type Demo = {
   title: Record<Locale, string>;
   description: Record<Locale, string>;
 };
-type Showcase = { sourceRoot: string; evidence: Evidence[]; demos: Demo[] };
+type Showcase = { evidence: Evidence[]; demos: Demo[] };
 
 export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
   "rimrise-unity": {
-    sourceRoot:
-      "https://github.com/Tim321l/hardwood-career/blob/5d5f693c8c746cab988bac33c1df926eaae714b4/",
     demos: [],
     evidence: [
       {
@@ -117,10 +107,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "C# 모델이 선수와 시즌 상태를 관리합니다. 허브는 임시 JSON 파일을 거쳐 저장하고 백업을 남겨 관리 화면과 지속되는 진행도를 연결합니다.",
         ),
         skills: ["C#", "JSON", "Unity"],
-        files: [
-          "unity/Assets/HardwoodCareer/Scripts/CareerHub.cs",
-          "unity/Assets/HardwoodCareer/Scripts/CareerProfile.cs",
-        ],
       },
       {
         title: l(
@@ -138,10 +124,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "키보드와 컨트롤러는 공통 입력 어댑터를 사용합니다. 경기 로직이 터치 입력, AI 이동, 볼 소유, 슛 타이밍과 점수판을 연결합니다.",
         ),
         skills: ["C#", "Unity Input", "AI"],
-        files: [
-          "unity/Assets/HardwoodCareer/Scripts/CareerInput.cs",
-          "unity/Assets/HardwoodCareer/Scripts/BasketballGame.cs",
-        ],
       },
       {
         title: l(
@@ -159,16 +141,10 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "도시 월드가 이동과 상호작용을 조율하고 교통과 보행자 동작은 별도 모듈이 맡습니다. 커리어 저장 시 도시 진행도 함께 기록합니다.",
         ),
         skills: ["C#", "Unity 3D"],
-        files: [
-          "unity/Assets/HardwoodCareer/Scripts/CareerCityWorld.cs",
-          "unity/Assets/HardwoodCareer/Scripts/CareerCityTraffic.cs",
-        ],
       },
     ],
   },
   "rimrise-web": {
-    sourceRoot:
-      "https://github.com/Tim321l/hardwood-career/blob/31d317b267eac17613384988a885bb90e90c09d2/",
     demos: [
       {
         video: "/videos/rimrise-career-to-city.webm",
@@ -224,7 +200,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "Three.js가 고성능 WebGL을 요청하고 GPU 정보로 소프트웨어 렌더링을 감지합니다. 대체 설정은 해상도와 프레임 속도를 낮춰 조작을 유지합니다.",
         ),
         skills: ["JavaScript", "Three.js", "WebGL"],
-        files: ["public/js/world.js"],
       },
       {
         title: l(
@@ -242,7 +217,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "코트 모듈이 볼 소유, AI 판단, 슛, 리바운드와 경기 상태를 처리합니다. 3D 장면은 게임 루프가 계산한 결과를 렌더링합니다.",
         ),
         skills: ["JavaScript", "AI", "Three.js"],
-        files: ["public/js/court5.js"],
       },
       {
         title: l(
@@ -260,13 +234,10 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "브라우저 저장 데이터는 저장 전에 해석하고 검증합니다. 불러올 때 기본 저장과 백업을 차례로 시도하며 손상된 데이터가 정상 백업을 덮어쓰지 않도록 합니다.",
         ),
         skills: ["JavaScript", "JSON", "localStorage"],
-        files: ["public/js/storage.js"],
       },
     ],
   },
   bigdeal: {
-    sourceRoot:
-      "https://github.com/Tim321l/bigdeal/blob/8c14ffe9b77209464d929d6ead442aea5d09f1e3/",
     demos: [
       {
         video: "/videos/bigdeal-room-to-turn.webm",
@@ -304,7 +275,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "React 클라이언트의 액션을 타입이 정의된 게임 엔진에 전달합니다. 서버가 턴 규칙을 적용하고 결과를 전송해 방 상호작용과 규칙 계산을 분리합니다.",
         ),
         skills: ["TypeScript", "React", "Socket.IO"],
-        files: ["src/engine/stateManager.ts", "src/server/socketServer.ts"],
       },
       {
         title: l(
@@ -322,7 +292,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "방 관리가 좌석, 준비 상태와 재접속 토큰을 추적합니다. 봇이 가능한 액션을 판단하므로 사람을 모두 모으지 않아도 경기를 시연할 수 있습니다.",
         ),
         skills: ["Node.js", "Socket.IO", "TypeScript"],
-        files: ["src/server/roomManager.ts", "src/engine/bot.ts"],
       },
       {
         title: l(
@@ -340,13 +309,10 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "서버는 플레이어별 상태를 만듭니다. 자신의 손패만 공개하고 다른 손패는 장수로 바꾸며 덱 순서와 난수 시드는 전송 전에 제거합니다.",
         ),
         skills: ["TypeScript", "Client / server"],
-        files: ["src/server/sanitize.ts"],
       },
     ],
   },
   "song-guess": {
-    sourceRoot:
-      "https://github.com/Tim321l/song-guess/blob/747759c81df68c2b33e5f62342d351bcc76ae9a3/",
     demos: [
       {
         video: "/videos/song-guess-settings.webm",
@@ -384,7 +350,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "모드를 바꾸면 필요한 입력이 바뀝니다. 탈락 모드는 시작 하트, 다른 모드는 라운드를 표시하고 로비 코드가 선택한 설정을 방 생성 요청에 전달합니다.",
         ),
         skills: ["JavaScript", "DOM", "Socket.IO"],
-        files: ["src/main.js", "src/client/lobby.js"],
       },
       {
         title: l(
@@ -402,7 +367,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "서버는 참가자 준비를 기다린 뒤 라운드를 시작하고 답변과 시각을 기록해 결과를 전송합니다. 멀티플레이 퀴즈의 동기화 로직을 보여 줍니다.",
         ),
         skills: ["Node.js", "Socket.IO"],
-        files: ["src/server/gameplay.js"],
       },
       {
         title: l(
@@ -420,7 +384,6 @@ export const projectShowcases: Record<ProjectPage["slug"], Showcase> = {
           "클라이언트는 로비와 게임 화면, 서버는 방 상태와 데이터 모델을 담당합니다. 사용자, 팀과 플레이리스트의 MongoDB 모델이 있으며 서비스 사용에는 별도 설정이 필요합니다.",
         ),
         skills: ["JavaScript", "Express", "MongoDB"],
-        files: ["src/client/gameplay.js", "src/server/models.js"],
       },
     ],
   },
