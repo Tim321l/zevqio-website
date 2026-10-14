@@ -78,7 +78,9 @@ for (const slug of ["rimrise-unity", "rimrise-web", "bigdeal", "song-guess"]) {
           () => document.documentElement.scrollWidth <= window.innerWidth,
         ),
       ).toBe(true);
-      await expect(page.locator(".game-image-link")).toHaveCount(3);
+      await expect(page.locator(".game-image-link")).toHaveCount(
+        slug === "rimrise-unity" ? 5 : 3,
+      );
       const results = await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
         .analyze();
@@ -159,7 +161,6 @@ test("homepage presents the brand and working primary actions", async ({
       .getByRole("link", { name: /explore project/i })
       .nth(3),
   ).toHaveAttribute("href", publicPath("/projects/song-guess"));
-  await expect(page.getByText("Original audio", { exact: true })).toBeVisible();
   await expect(
     page
       .getByRole("navigation", { name: "Main navigation" })

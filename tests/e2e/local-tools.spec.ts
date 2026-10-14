@@ -8,10 +8,12 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
   }) => {
     const language = locale === "en" ? "" : `${locale}/`;
     await page.goto(`${language}products`);
-    await expect(page.locator(".product-card h3")).toHaveText([
+    const productGrid = page.locator(".product-grid-page").first();
+    await expect(productGrid.locator(".product-card h3")).toHaveText([
       "VidOutline",
       "TokenSaver",
       "Monitor",
+      "DocuPass",
     ]);
     await expect(page.locator("main")).not.toContainText(
       /OCR Studio|Document Intelligence|PDF Automation|Workflow Automation/,
