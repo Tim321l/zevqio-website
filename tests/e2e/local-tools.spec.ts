@@ -8,10 +8,19 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
   }) => {
     const language = locale === "en" ? "" : `${locale}/`;
     await page.goto(`${language}products`);
-    await expect(page.locator(".product-card h3")).toHaveText([
-      "VidOutline",
-      "TokenSaver",
-      "Monitor",
+    const productGrid = page.locator(".product-grid-page").first();
+    const listedProductSlugs = await productGrid
+      .locator(".product-card h3 a")
+      .evaluateAll((links) =>
+        links.map((link) =>
+          (link as HTMLAnchorElement).pathname.split("/").filter(Boolean).pop(),
+        ),
+      );
+    expect(listedProductSlugs).toEqual([
+      "vidoany",
+      "tokensaver",
+      "monitor",
+      "docupass",
     ]);
     await expect(page.locator("main")).not.toContainText(
       /OCR Studio|Document Intelligence|PDF Automation|Workflow Automation/,

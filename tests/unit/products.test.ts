@@ -31,6 +31,7 @@ describe("product configuration", () => {
       "vidoany",
       "tokensaver",
       "monitor",
+      "docupass",
     ]);
     expect(getProduct("vidoany")?.name).toBe("VidOutline");
     expect(getProduct("tokensaver")?.name).toBe("TokenSaver");

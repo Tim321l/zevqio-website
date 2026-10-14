@@ -10,50 +10,12 @@ export const site = {
   socialImage: "/images/social-card.png",
   navigation: [
     { label: "Products", href: "/products" },
-    { label: "Solutions", href: "/#solutions" },
+    { label: "DocuPass", href: "/products/docupass" },
     { label: "Projects", href: "/#selected-projects" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
 } as const;
-
-export const capabilities = [
-  {
-    title: "Document intelligence",
-    description:
-      "Explore ways to turn digital and scanned documents into clear, structured information.",
-    icon: "scan",
-    href: "/products/document-intelligence",
-  },
-  {
-    title: "OCR & data extraction",
-    description:
-      "Investigate text recognition and extraction workflows for everyday business documents.",
-    icon: "braces",
-    href: "/products/ocr-studio",
-  },
-  {
-    title: "PDF automation",
-    description:
-      "Design practical approaches to creating, processing, and organizing PDF documents.",
-    icon: "file",
-    href: "/products/pdf-automation",
-  },
-  {
-    title: "Workflow automation",
-    description:
-      "Map repetitive operations into understandable steps with room for human review.",
-    icon: "workflow",
-    href: "/products/workflow-automation",
-  },
-  {
-    title: "Developer tools",
-    description:
-      "Build toward useful integrations and developer-friendly ways to connect business tools.",
-    icon: "code",
-    href: "/products",
-  },
-] as const;
 
 export const engineeringPrinciples = [
   {

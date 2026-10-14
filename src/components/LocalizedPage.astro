@@ -1,12 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
-import { products } from "../data/products";
-import {
-  getLocalToolCopy,
-  fullImageLabel,
-  toolPortfolioIntro,
-} from "../data/local-tools";
+import { products, allProducts } from "../data/products";
+import { getLocalToolCopy, fullImageLabel } from "../data/local-tools";
 import {
   projectPages,
   selectedProjects,
@@ -40,12 +36,7 @@ const { locale, page, slug } = Astro.props;
 const copy = getLocaleContent(locale);
 const home = copy.home;
 const about = copy.about;
-const productsPage = {
-  ...copy.productsPage,
-  intro: toolPortfolioIntro[locale],
-  description: toolPortfolioIntro[locale],
-  note: getEarlyStageNote(locale),
-};
+const productsPage = copy.productsPage;
 const portfolio = copy.portfolio;
 const contact = copy.contact;
 const privacy = copy.privacy;
@@ -55,10 +46,12 @@ const productCopy = slug
       locale,
       slug,
       products.find((item) => item.slug === slug)?.name ?? slug,
-    ) ?? copy.products[slug as keyof typeof copy.products])
+    ) ??
+    copy.products[slug as keyof typeof copy.products] ??
+    undefined)
   : undefined;
 const sourceProduct = slug
-  ? products.find((item) => item.slug === slug)
+  ? allProducts.find((item) => item.slug === slug)
   : undefined;
 const sourceProject = slug
   ? projectPages.find((item) => item.slug === slug)
@@ -69,6 +62,63 @@ const projectCopy = slug
     portfolio.pages[slug as keyof typeof portfolio.pages] ??
     sourceProject?.details)
   : undefined;
+const projectWorkflow =
+  sourceProject && projectCopy
+    ? (() => {
+        const imageStep = (
+          image: string,
+          title: string,
+          description: string,
+        ) => ({ image, title, description });
+        const galleryStep = (
+          index: number,
+          image = sourceProject.screenshots[index],
+        ) =>
+          imageStep(
+            image,
+            projectCopy.gallery[index][0],
+            projectCopy.gallery[index][1],
+          );
+        const featureStep = (image: string, index: number) =>
+          imageStep(
+            image,
+            projectCopy.focus[index][0],
+            projectCopy.focus[index][1],
+          );
+        if (sourceProject.slug === "rimrise-unity") {
+          return sourceProject.screenshots.map((_, index) =>
+            galleryStep(index),
+          );
+        }
+        if (sourceProject.slug === "rimrise-web") {
+          return [
+            imageStep(
+              sourceProject.heroImage,
+              projectCopy.focus[1][0],
+              projectCopy.overview[0],
+            ),
+            galleryStep(0),
+            galleryStep(1),
+          ];
+        }
+        if (sourceProject.slug === "bigdeal") {
+          return [
+            galleryStep(0),
+            galleryStep(1),
+            featureStep(sourceProject.heroImage, 0),
+          ];
+        }
+        return [
+          imageStep(
+            sourceProject.heroImage,
+            projectCopy.overviewTitle,
+            projectCopy.heroAlt,
+          ),
+          galleryStep(1),
+          galleryStep(0),
+        ];
+      })()
+    : [];
 const story =
   productCopy && "story" in productCopy ? productCopy.story : undefined;
 const workflowHeading =
@@ -126,31 +176,24 @@ const pageDescription =
             : page === "project"
               ? (projectCopy?.summary ?? site.description)
               : (productCopy?.summary ?? site.description);
-const capabilities = products.map((product) => {
-  const text =
-    getLocalToolCopy(locale, product.slug, product.name) ??
-    copy.products[product.slug as keyof typeof copy.products];
-  return [text.category, text.summary];
-});
-const promptStory = getLocalToolCopy(locale, "tokensaver", "TokenSaver")!.story;
+const docuPassStory = getLocalToolCopy(locale, "docupass", "DocuPass")!.story;
 const earlyStageNote = getEarlyStageNote(locale);
 const studioLabels = getStudioLabels(locale);
-const capabilityPaths = [
-  "/products/vidoany",
-  "/products/tokensaver",
-  "/products/monitor",
-];
 const productUrl = (productSlug: string) =>
   withBase(localeHref(locale, `/products/${productSlug}`));
+const projectUrl = (projectSlug: string) =>
+  withBase(localeHref(locale, `/projects/${projectSlug}`));
 const mailUrl = (subject: string) =>
   `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
-const previewImage = (image: string) =>
-  locale === "en"
-    ? image
-    : image.replace(
-        /\/ocr-studio-(workspace|review|library)\.svg$/,
-        `/ocr-studio-${locale}-$1.svg`,
-      );
+const getHomeProjectCopy = (href?: string) => {
+  const projectSlug = href?.split("/").at(-1);
+  if (!projectSlug) return undefined;
+  return (
+    getGameDetail(locale, projectSlug) ??
+    portfolio.pages[projectSlug as keyof typeof portfolio.pages] ??
+    projectPages.find((project) => project.slug === projectSlug)?.details
+  );
+};
 ---
 
 <BaseLayout
@@ -221,44 +264,6 @@ const previewImage = (image: string) =>
         </div>
       </section>
 
-      <section class="capabilities-section section-space" id="solutions">
-        <div class="shell">
-          <div class="section-heading heading-split">
-            <div>
-              <p class="eyebrow">
-                <span class="eyebrow-line"></span>
-                {home.capabilitiesLabel}
-              </p>
-              <h2>
-                {home.capabilitiesTitle[0]}
-                <br />
-                <span class="text-muted">{home.capabilitiesTitle[1]}</span>
-              </h2>
-            </div>
-            <p class="section-intro">{toolPortfolioIntro[locale]}</p>
-          </div>
-          <div class="capability-grid">
-            {capabilities.map(([title, description], index) => (
-              <a
-                class="capability-card"
-                href={withBase(
-                  localeHref(locale, capabilityPaths[index] ?? "/products"),
-                )}
-              >
-                <div class="capability-top">
-                  <span class="capability-index">0{index + 1}</span>
-                </div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <span class="capability-arrow" aria-hidden="true">
-                  <Icon name="arrowUpRight" size={16} />
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section class="products-section section-space" id="products">
         <div class="shell">
           <div class="section-heading heading-split">
@@ -288,10 +293,31 @@ const previewImage = (image: string) =>
               const text =
                 getLocalToolCopy(locale, product.slug, product.name) ??
                 copy.products[product.slug as keyof typeof copy.products];
+              const preview = product.interfacePreviews?.[0];
               return (
                 <article
-                  class:list={["product-card", `accent-${product.accent}`]}
+                  class:list={[
+                    "product-card",
+                    "home-product-card",
+                    `accent-${product.accent}`,
+                  ]}
                 >
+                  {preview && (
+                    <div class="product-card-preview">
+                      <img
+                        src={withBase(preview.image)}
+                        alt={preview.alt}
+                        width={preview.width ?? 1440}
+                        height={preview.height ?? 900}
+                        loading="lazy"
+                      />
+                      <span class="product-card-preview-badge">
+                        {"previewBadge" in text
+                          ? text.previewBadge
+                          : `${text.name.toUpperCase()} · ${copy.common.screens}`}
+                      </span>
+                    </div>
+                  )}
                   <div class="product-card-top">
                     <span class="product-icon">
                       <Icon name={product.icon} size={23} />
@@ -306,6 +332,14 @@ const previewImage = (image: string) =>
                     <a href={productUrl(product.slug)}>{text.name}</a>
                   </h3>
                   <p class="product-card-copy">{text.summary}</p>
+                  <ul class="home-product-highlights">
+                    {text.focus.slice(0, 4).map((highlight) => (
+                      <li>
+                        <Icon name="check" size={14} />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <a
                     class="text-link"
                     href={productUrl(product.slug)}
@@ -340,62 +374,94 @@ const previewImage = (image: string) =>
             <p class="section-intro">{home.selectedIntro}</p>
           </div>
           <div class="principle-grid selected-project-grid">
-            {selectedProjects.map((project, index) => (
-              <article
-                class:list={[
-                  "principle-card",
-                  "selected-project-card",
-                  `selected-project-card--${project.href?.split("/").at(-1) ?? "audio"}`,
-                  `accent-${project.accent}`,
-                ]}
-              >
-                {project.image && (
-                  <div
-                    class:list={[
-                      "selected-project-preview",
-                      project.imageAspect === "square" &&
-                        "selected-project-preview--square",
-                      project.imageAspect === "cinema" &&
-                        "selected-project-preview--cinema",
-                      project.imagePosition === "top" &&
-                        "selected-project-preview--top",
-                    ]}
-                  >
-                    <img
-                      src={withBase(project.image)}
-                      alt=""
-                      width={project.imageAspect === "square" ? 1000 : 1440}
-                      height={project.imageAspect === "square" ? 1000 : 900}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div class="principle-top">
-                  <span class="principle-icon">
-                    <Icon name={project.icon} size={22} />
-                  </span>
-                  <span>0{index + 1}</span>
-                </div>
-                <h3>{home.selectedNames[index]}</h3>
-                <p>{home.selectedDescriptions[index]}</p>
-                <ul
-                  class="selected-project-tags"
-                  aria-label={`${home.selectedNames[index]} tools`}
+            {selectedProjects.map((project, index) => {
+              const projectCopy = getHomeProjectCopy(project.href);
+              return (
+                <article
+                  class:list={[
+                    "principle-card",
+                    "selected-project-card",
+                    `selected-project-card--${project.href?.split("/").at(-1) ?? "project"}`,
+                    `accent-${project.accent}`,
+                  ]}
                 >
-                  {project.tools.map((tool) => (
-                    <li>{tool}</li>
-                  ))}
-                </ul>
-                {project.href && (
-                  <a
-                    class="text-link selected-project-link"
-                    href={withBase(localeHref(locale, project.href))}
+                  {project.image && (
+                    <div
+                      class:list={[
+                        "selected-project-preview",
+                        project.imageAspect === "square" &&
+                          "selected-project-preview--square",
+                        project.imageAspect === "cinema" &&
+                          "selected-project-preview--cinema",
+                        project.imagePosition === "top" &&
+                          "selected-project-preview--top",
+                      ]}
+                    >
+                      <img
+                        src={withBase(project.image)}
+                        alt={projectCopy?.heroAlt ?? ""}
+                        width={project.imageAspect === "square" ? 1000 : 1440}
+                        height={project.imageAspect === "square" ? 1000 : 900}
+                        loading="lazy"
+                      />
+                      {projectCopy && (
+                        <span class="selected-project-capture">
+                          {projectCopy.heroBadge}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  <div class="principle-top">
+                    <span class="principle-icon">
+                      <Icon name={project.icon} size={22} />
+                    </span>
+                    <span>0{index + 1}</span>
+                  </div>
+                  {projectCopy && (
+                    <div class="selected-project-meta">
+                      <span>{projectCopy.category}</span>
+                      <span class="selected-project-stage">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        {projectCopy.stage}
+                      </span>
+                    </div>
+                  )}
+                  <h3>{home.selectedNames[index]}</h3>
+                  <p>{home.selectedDescriptions[index]}</p>
+                  {projectCopy && (
+                    <ul
+                      class="selected-project-highlights"
+                      aria-label={gameUI.highlights}
+                    >
+                      {projectCopy.focus
+                        .slice(0, 3)
+                        .map(([title, description]) => (
+                          <li>
+                            <strong>{title}</strong>
+                            <span>{description}</span>
+                          </li>
+                        ))}
+                    </ul>
+                  )}
+                  <ul
+                    class="selected-project-tags"
+                    aria-label={`${home.selectedNames[index]} ${portfolio.toolsLabel}`}
                   >
-                    {copy.common.learn} <Icon name="arrowUpRight" size={16} />
-                  </a>
-                )}
-              </article>
-            ))}
+                    {project.tools.map((tool) => (
+                      <li>{tool}</li>
+                    ))}
+                  </ul>
+                  {project.href && (
+                    <a
+                      class="text-link selected-project-link"
+                      href={withBase(localeHref(locale, project.href))}
+                    >
+                      {copy.common.learn} <Icon name="arrowUpRight" size={16} />
+                    </a>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -408,28 +474,30 @@ const previewImage = (image: string) =>
               {home.workflowLabel}
             </p>
             <h2>
-              {promptStory.workflowTitle[0]}
+              {docuPassStory.workflowTitle[0]}
               <br />
-              <span class="text-gradient">{promptStory.workflowTitle[1]}</span>
+              <span class="text-gradient">
+                {docuPassStory.workflowTitle[1]}
+              </span>
             </h2>
-            <p>{promptStory.workflowIntro}</p>
+            <p>{docuPassStory.workflowIntro}</p>
             <a
               class="text-link"
-              href={withBase(localeHref(locale, "/products/tokensaver"))}
+              href={withBase(localeHref(locale, "/products/docupass"))}
             >
-              TokenSaver <Icon name="arrowRight" size={16} />
+              {home.workflowLink} <Icon name="arrowRight" size={16} />
             </a>
           </div>
           <div class="workflow-board">
             <div class="board-head">
-              <span>TokenSaver · Promptwell</span>
+              <span>DocuPass · local OCR</span>
               <span class="board-state">
                 <i class="status-dot"></i>
-                {copy.common.exampleOnly}
+                {home.workflowBoard}
               </span>
             </div>
             <div class="workflow-steps">
-              {promptStory.workflow.map(([title, description], index) => (
+              {docuPassStory.workflow.map(([title, description], index) => (
                 <div class="workflow-step">
                   <span class="step-icon">
                     <Icon
@@ -456,7 +524,7 @@ const previewImage = (image: string) =>
               ))}
             </div>
             <p class="board-note">
-              <Icon name="sparkles" size={14} /> {promptStory.status}
+              <Icon name="sparkles" size={14} /> {home.workflowNote}
             </p>
           </div>
         </div>
@@ -727,10 +795,31 @@ const previewImage = (image: string) =>
               const text =
                 getLocalToolCopy(locale, product.slug, product.name) ??
                 copy.products[product.slug as keyof typeof copy.products];
+              const preview = product.interfacePreviews?.[0];
               return (
                 <article
-                  class:list={["product-card", `accent-${product.accent}`]}
+                  class:list={[
+                    "product-card",
+                    "product-listing-card",
+                    `accent-${product.accent}`,
+                  ]}
                 >
+                  {preview && (
+                    <div class="product-card-preview">
+                      <img
+                        src={withBase(preview.image)}
+                        alt={preview.alt}
+                        width={preview.width ?? 1440}
+                        height={preview.height ?? 900}
+                        loading="lazy"
+                      />
+                      <span class="product-card-preview-badge">
+                        {"previewBadge" in text
+                          ? text.previewBadge
+                          : `${text.name.toUpperCase()} · ${copy.common.screens}`}
+                      </span>
+                    </div>
+                  )}
                   <div class="product-card-top">
                     <span class="product-icon">
                       <Icon name={product.icon} size={23} />
@@ -745,6 +834,14 @@ const previewImage = (image: string) =>
                     <a href={productUrl(product.slug)}>{text.name}</a>
                   </h3>
                   <p class="product-card-copy">{text.summary}</p>
+                  <ul class="home-product-highlights">
+                    {text.focus.slice(0, 4).map((highlight) => (
+                      <li>
+                        <Icon name="check" size={14} />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <a class="text-link" href={productUrl(product.slug)}>
                     {copy.common.learn} <Icon name="arrowUpRight" size={16} />
                   </a>
@@ -752,6 +849,86 @@ const previewImage = (image: string) =>
               );
             })}
           </div>
+          <section
+            class="product-areas-list"
+            aria-labelledby="game-projects-title"
+          >
+            <div class="section-heading heading-split">
+              <div>
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {gameUI.games}
+                </p>
+                <h2 id="game-projects-title">{portfolio.title}</h2>
+              </div>
+              <p class="section-intro">{gameUI.imageNote}</p>
+            </div>
+            <div class="product-grid product-grid-page">
+              {projectPages.map((project) => {
+                const text =
+                  getGameDetail(locale, project.slug) ??
+                  copy.portfolio.pages[
+                    project.slug as keyof typeof copy.portfolio.pages
+                  ] ??
+                  project.details;
+                if (!text) return null;
+                const [width, height] = projectImageSizes[
+                  project.heroImage
+                ] ?? [1440, 900];
+                const href = projectUrl(project.slug);
+                return (
+                  <article
+                    class:list={[
+                      "product-card",
+                      "product-listing-card",
+                      `accent-${project.accent}`,
+                    ]}
+                  >
+                    <div class="product-card-preview">
+                      <img
+                        src={withBase(project.heroImage)}
+                        alt={text.heroAlt}
+                        {width}
+                        {height}
+                        loading="lazy"
+                      />
+                      <span class="product-card-preview-badge">
+                        {text.heroBadge}
+                      </span>
+                    </div>
+                    <div class="product-card-top">
+                      <span class="product-icon">
+                        <Icon name={project.icon} size={23} />
+                      </span>
+                      <span class="status-pill">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        {copy.common.inDevelopment}
+                      </span>
+                    </div>
+                    <p class="card-category">{text.category}</p>
+                    <h3>
+                      <a {href}>{text.name}</a>
+                    </h3>
+                    <p class="product-card-copy">{text.summary}</p>
+                    <ul class="home-product-highlights">
+                      {text.focus.slice(0, 3).map(([title, description]) => (
+                        <li>
+                          <Icon name="check" size={14} />
+                          <span>
+                            <strong>{title}.</strong> {description}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p class="card-category">{project.tools.join(" · ")}</p>
+                    <a class="text-link" {href}>
+                      {copy.common.learn} <Icon name="arrowUpRight" size={16} />
+                    </a>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
           <div class="portfolio-note">
             <span class="note-mark">
               <Icon name="sparkles" size={16} />
@@ -821,13 +998,22 @@ const previewImage = (image: string) =>
                   </a>
                 )}
               </div>
+              <div class="product-hero-focus">
+                <span class="focus-kicker">{detail.focusKicker}</span>
+                <div class="product-hero-highlights">
+                  {productCopy.focus.slice(0, 3).map((highlight, index) => (
+                    <article>
+                      <span>0{index + 1}</span>
+                      <p>{highlight}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
             {sourceProduct.interfacePreviews?.[0] ? (
               <div class="detail-preview-hero">
                 <img
-                  src={withBase(
-                    previewImage(sourceProduct.interfacePreviews[0].image),
-                  )}
+                  src={withBase(sourceProduct.interfacePreviews[0].image)}
                   alt={
                     "previews" in productCopy
                       ? `${productCopy.name}: ${productCopy.previews[0]?.[0]}`
@@ -901,7 +1087,7 @@ const previewImage = (image: string) =>
                 <figure class="showcase-preview-card">
                   <div class="showcase-image-frame">
                     <img
-                      src={withBase(previewImage(preview.image))}
+                      src={withBase(preview.image)}
                       alt={`${productCopy.name}: ${productCopy.previews[index]?.[0] ?? preview.title}`}
                       width={preview.width ?? 1440}
                       height={preview.height ?? 900}
@@ -1032,18 +1218,44 @@ const previewImage = (image: string) =>
               <p class="section-intro">{workflowIntro}</p>
             </div>
             <ol class="project-step-grid">
-              {story.workflow.map(([title, description], index) => (
-                <li class="principle-card project-step-card">
-                  <div class="principle-top">
-                    <span class="project-step-kicker">
-                      {copy.common.possibleStep}
-                    </span>
-                    <span>0{index + 1}</span>
-                  </div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </li>
-              ))}
+              {story.workflow.map(([title, description], index) => {
+                const previewIndex =
+                  sourceProduct?.workflowPreviewIndexes?.[index];
+                const preview =
+                  previewIndex == null
+                    ? undefined
+                    : sourceProduct?.interfacePreviews?.[previewIndex];
+                return (
+                  <li class="principle-card project-step-card">
+                    {preview && (
+                      <a
+                        class="project-step-preview-link"
+                        href={withBase(preview.image)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${fullImageLabel(locale)}: ${preview.title}`}
+                      >
+                        <img
+                          class="project-step-preview"
+                          src={withBase(preview.image)}
+                          alt={`${preview.title}: ${preview.description}`}
+                          width={preview.width ?? 1440}
+                          height={preview.height ?? 900}
+                          loading="lazy"
+                        />
+                      </a>
+                    )}
+                    <div class="principle-top">
+                      <span class="project-step-kicker">
+                        {copy.common.possibleStep}
+                      </span>
+                      <span>0{index + 1}</span>
+                    </div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </li>
+                );
+              })}
             </ol>
             <div class="project-principles">
               <div class="project-principles-intro">
@@ -1127,6 +1339,17 @@ const previewImage = (image: string) =>
                   <Icon name="arrowRight" size={15} />
                 </a>
               </div>
+              <div class="game-hero-highlights" aria-label={gameUI.highlights}>
+                {projectCopy.focus
+                  .slice(0, 3)
+                  .map(([title, description], index) => (
+                    <article class="game-hero-highlight">
+                      <span>0{index + 1}</span>
+                      <h2>{title}</h2>
+                      <p>{description}</p>
+                    </article>
+                  ))}
+              </div>
             </div>
             <div
               class:list={[
@@ -1170,6 +1393,11 @@ const previewImage = (image: string) =>
       </nav>
       <nav class="game-section-nav shell" aria-label={portfolio.title}>
         <a href="#game-background">{gameUI.background}</a>
+        <a href="#game-process">{gameUI.process}</a>
+        <a href="#game-specs">{gameUI.specs}</a>
+        {slug === "rimrise-web" && (
+          <a href="#gameplay-demo">{gameUI.gameplay}</a>
+        )}
         <a href="#project-screenshots">{gameUI.images}</a>
         <a href="#all-game-projects">{gameUI.others}</a>
       </nav>
@@ -1226,6 +1454,110 @@ const previewImage = (image: string) =>
           </aside>
         </div>
       </section>
+
+      <section
+        class="game-process-section section-space"
+        id="game-process"
+        aria-labelledby="game-process-title"
+      >
+        <div class="shell">
+          <div class="showcase-heading">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {gameUI.process}
+              </p>
+              <h2 id="game-process-title">{projectCopy.overviewTitle}</h2>
+            </div>
+          </div>
+          <div class="game-process-grid">
+            {projectWorkflow.map((step, index) => (
+              <article class="game-process-card">
+                <a
+                  class="game-process-image"
+                  href={withBase(step.image)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${gameUI.enlarge}: ${step.title}`}
+                >
+                  <img
+                    src={withBase(step.image)}
+                    alt={`${step.title}: ${step.description}`}
+                    width={projectImageSizes[step.image]?.[0]}
+                    height={projectImageSizes[step.image]?.[1]}
+                    loading="lazy"
+                  />
+                </a>
+                <div class="game-process-copy">
+                  <span class="game-process-number">0{index + 1}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {sourceProject.specifications && (
+        <section
+          class="game-specs-section section-space"
+          id="game-specs"
+          aria-labelledby="game-specs-title"
+        >
+          <div class="shell">
+            <div class="showcase-heading">
+              <div>
+                <p class="eyebrow">
+                  <span class="eyebrow-line"></span>
+                  {gameUI.specs}
+                </p>
+                <h2 id="game-specs-title">{projectCopy.name}</h2>
+              </div>
+            </div>
+            <dl class="game-spec-grid">
+              {sourceProject.specifications.map(([key, value]) => (
+                <div class="game-spec-card">
+                  <dt>{gameUI[key]}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
+      {slug === "rimrise-web" && (
+        <section
+          class="gameplay-demo-section section-space"
+          id="gameplay-demo"
+          aria-labelledby="gameplay-demo-title"
+        >
+          <div class="shell gameplay-demo-layout">
+            <div class="gameplay-demo-copy">
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {gameUI.gameplay}
+              </p>
+              <h2 id="gameplay-demo-title">{projectCopy.focus[2][0]}</h2>
+              <p>{gameUI.gameplayNote}</p>
+              <p>{projectCopy.focus[2][1]}</p>
+            </div>
+            <video
+              class="gameplay-demo-video"
+              src={withBase("/videos/rimrise-web-gameplay.webm")}
+              poster={withBase(sourceProject.heroImage)}
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              aria-label={gameUI.gameplay}
+            ></video>
+          </div>
+        </section>
+      )}
 
       <section
         class:list={[
