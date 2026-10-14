@@ -1,0 +1,136 @@
+{
+  "sample": "Synthetic SUNNY CAFE receipt",
+  "ocr_success": true,
+  "full_text": "SUNNY CAFE LIMITED\nRECEIPT NO: R-2468\nDATE: 12/09/2026\nMILK TEA\n28.00\nTOAST\n32.00\nNOODLES\n28.50\nTOTAL\n88.50\nCASH\n100.00\nCHANGE\n11.50\nTHANK YOU",
+  "document": {
+    "doc_type": "receipt",
+    "fields": {
+      "merchant": {
+        "value": "SUNNY CAFE LIMITED",
+        "text": "SUNNY CAFE LIMITED",
+        "confidence": 0.938,
+        "box": [
+          [34.0, 45.0],
+          [376.0, 45.0],
+          [376.0, 86.0],
+          [34.0, 86.0]
+        ],
+        "note": "company name at the top",
+        "needs_review": false
+      },
+      "date": {
+        "value": "2026-09-12",
+        "text": "DATE: 12/09/2026",
+        "confidence": 0.996,
+        "box": [
+          [34.0, 158.0],
+          [317.0, 158.0],
+          [317.0, 198.0],
+          [34.0, 198.0]
+        ],
+        "note": "",
+        "needs_review": false
+      },
+      "receipt_no": {
+        "value": "R-2468",
+        "text": "RECEIPT NO: R-2468",
+        "confidence": 0.998,
+        "box": [
+          [34.0, 102.0],
+          [352.0, 102.0],
+          [352.0, 142.0],
+          [34.0, 142.0]
+        ],
+        "note": "",
+        "needs_review": false
+      },
+      "change": {
+        "value": "11.50",
+        "text": "CHANGE 11.50",
+        "confidence": 1.0,
+        "box": [
+          [32.0, 605.0],
+          [333.0, 605.0],
+          [333.0, 648.0],
+          [32.0, 648.0]
+        ],
+        "note": "",
+        "needs_review": false
+      },
+      "total": {
+        "value": "88.50",
+        "text": "TOTAL 88.50",
+        "confidence": 1.0,
+        "box": [
+          [30.0, 491.0],
+          [310.0, 491.0],
+          [310.0, 534.0],
+          [30.0, 534.0]
+        ],
+        "note": "matches amount paid minus change; matches the sum of the items",
+        "needs_review": false
+      },
+      "payment_method": {
+        "value": "Cash",
+        "text": "CASH 100.00",
+        "confidence": 1.0,
+        "box": [
+          [32.0, 549.0],
+          [311.0, 549.0],
+          [311.0, 590.0],
+          [32.0, 590.0]
+        ],
+        "note": "",
+        "needs_review": false
+      }
+    },
+    "items": [
+      {
+        "description": "MILK TEA",
+        "quantity": 1,
+        "amount": "28.00",
+        "box": [
+          [33.0, 270.0],
+          [328.0, 270.0],
+          [328.0, 311.0],
+          [33.0, 311.0]
+        ],
+        "confidence": 0.976
+      },
+      {
+        "description": "TOAST",
+        "quantity": 1,
+        "amount": "32.00",
+        "box": [
+          [32.0, 326.0],
+          [313.0, 326.0],
+          [313.0, 366.0],
+          [32.0, 366.0]
+        ],
+        "confidence": 1.0
+      },
+      {
+        "description": "NOODLES",
+        "quantity": 1,
+        "amount": "28.50",
+        "box": [
+          [32.0, 383.0],
+          [346.0, 383.0],
+          [346.0, 423.0],
+          [32.0, 423.0]
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "warnings": [],
+    "needs_review": false,
+    "detected_scores": {
+      "card": -3.0,
+      "cheque": 0.0,
+      "invoice": 1.0,
+      "receipt": 6.0,
+      "sick_leave": 0.0
+    }
+  },
+  "scope": "Local source CPU OCR, English, Balanced PP-OCRv6, 2026-10-14. Synthetic example; not an accuracy benchmark."
+}

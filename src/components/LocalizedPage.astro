@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
 import ProjectShowcase from "./ProjectShowcase.astro";
+import DocuPassShowcase from "./DocuPassShowcase.astro";
+import docuShowcaseCopy from "../data/docupass-showcase.json";
 import { showcaseLabels } from "../data/project-showcase";
 import { products, allProducts } from "../data/products";
 import { getLocalToolCopy, fullImageLabel } from "../data/local-tools";
@@ -792,6 +794,48 @@ const getHomeProjectCopy = (href?: string) => {
       </section>
       <section class="page-content-section section-space compact-top">
         <div class="shell">
+          <article class="portfolio-feature">
+            <div class="portfolio-feature-copy">
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {docuShowcaseCopy[locale].eyebrow} · DocuPass
+              </p>
+              <h2>{docuShowcaseCopy[locale].title}</h2>
+              <p>{docuShowcaseCopy[locale].intro}</p>
+              <div class="portfolio-feature-steps">
+                {[
+                  docuShowcaseCopy[locale].add,
+                  docuShowcaseCopy[locale].review,
+                  docuShowcaseCopy[locale].export,
+                ].map((step, index) => (
+                  <span>
+                    <b>0{index + 1}</b>
+                    {step}
+                  </span>
+                ))}
+              </div>
+              <a
+                class="button button-primary"
+                href={productUrl("docupass") + "#docupass-demo"}
+              >
+                {docuShowcaseCopy[locale].watch}
+                <Icon name="arrowRight" size={16} />
+              </a>
+            </div>
+            <a
+              class="portfolio-feature-image"
+              href={productUrl("docupass") + "#ocr-results"}
+              aria-label={docuShowcaseCopy[locale].results}
+            >
+              <img
+                src={withBase("/images/projects/docupass-review.png")}
+                alt={docuShowcaseCopy[locale].review}
+                width="2880"
+                height="1560"
+                loading="lazy"
+              />
+            </a>
+          </article>
           <div class="product-grid product-grid-page">
             {products.map((product) => {
               const text =
@@ -965,7 +1009,10 @@ const getHomeProjectCopy = (href?: string) => {
         class:list={[
           "product-detail-hero",
           "tool-detail-hero",
-          { "tool-detail-hero--portrait": slug === "monitor" },
+          {
+            "tool-detail-hero--portrait": slug === "monitor",
+            "docu-detail-hero": slug === "docupass",
+          },
         ]}
       >
         <div class="shell">
@@ -1000,10 +1047,28 @@ const getHomeProjectCopy = (href?: string) => {
                   </a>
                 )}
               </div>
+              {slug === "docupass" && (
+                <div class="docu-hero-actions">
+                  <a class="button button-primary" href="#docupass-demo">
+                    {docuShowcaseCopy[locale].watch}
+                    <Icon name="arrowRight" size={16} />
+                  </a>
+                  <a class="button button-secondary" href="#ocr-results">
+                    {docuShowcaseCopy[locale].results}
+                  </a>
+                </div>
+              )}
               <div class="product-hero-focus">
                 <span class="focus-kicker">{detail.focusKicker}</span>
                 <div class="product-hero-highlights">
-                  {productCopy.focus.slice(0, 3).map((highlight, index) => (
+                  {(slug === "docupass"
+                    ? [
+                        docuShowcaseCopy[locale].add,
+                        docuShowcaseCopy[locale].review,
+                        docuShowcaseCopy[locale].export,
+                      ]
+                    : productCopy.focus.slice(0, 3)
+                  ).map((highlight, index) => (
                     <article>
                       <span>0{index + 1}</span>
                       <p>{highlight}</p>
@@ -1055,6 +1120,7 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </div>
       </section>
+      {slug === "docupass" && <DocuPassShowcase {locale} />}
       {sourceProduct.interfacePreviews && "previews" in productCopy && (
         <section
           class:list={[
@@ -1223,10 +1289,27 @@ const getHomeProjectCopy = (href?: string) => {
               {story.workflow.map(([title, description], index) => {
                 const previewIndex =
                   sourceProduct?.workflowPreviewIndexes?.[index];
+                const docuFile = [
+                  "docupass-new-job.png",
+                  "docupass-recognition.png",
+                  undefined,
+                  "docupass-review.png",
+                  "docupass-export.png",
+                ][index];
                 const preview =
-                  previewIndex == null
-                    ? undefined
-                    : sourceProduct?.interfacePreviews?.[previewIndex];
+                  slug === "docupass"
+                    ? docuFile
+                      ? {
+                          image: `/images/projects/${docuFile}`,
+                          title,
+                          description,
+                          width: index === 4 ? 1360 : 2880,
+                          height: index === 4 ? 1416 : 1560,
+                        }
+                      : undefined
+                    : previewIndex == null
+                      ? undefined
+                      : sourceProduct?.interfacePreviews?.[previewIndex];
                 return (
                   <li class="principle-card project-step-card">
                     {preview && (

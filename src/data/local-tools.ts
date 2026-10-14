@@ -1,5 +1,6 @@
 import content from "./local-tool-content.json";
 import { docupassCopy } from "./docupass-content";
+import docuShowcaseCopy from "./docupass-showcase.json";
 import type { Product, ProductStory } from "./products";
 import type { Locale } from "./locales";
 
@@ -55,7 +56,7 @@ const images = {
     "tokensaver-versions.jpg",
   ],
   docupass: [
-    "docupass-app-home.png",
+    "docupass-review.png",
     "docupass-hardware.svg",
     "docupass-phone.svg",
   ],
@@ -84,12 +85,16 @@ export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
         status: text.status,
       },
       interfacePreviews: text.previews.map(([title, description], index) => ({
-        title,
-        description,
-        alt: `${title}: ${description}`,
+        title: index === 0 ? docuShowcaseCopy[locale].review : title,
+        description:
+          index === 0 ? docuShowcaseCopy[locale].reviewNote : description,
+        alt:
+          index === 0
+            ? docuShowcaseCopy[locale].review
+            : `${title}: ${description}`,
         image: `/images/projects/${images.docupass[index]}`,
-        width: 1440,
-        height: 900,
+        width: index === 0 ? 2880 : 1440,
+        height: index === 0 ? 1560 : 900,
       })),
     };
   }

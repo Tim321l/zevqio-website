@@ -4314,3 +4314,427 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
     font-size: 13px;
   }
 }
+
+/* Product evidence: readable screens, clear steps and scan-to-record comparison. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+.product-card,
+.project-spec-card {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.product-card:hover,
+.project-spec-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+}
+.product-card-preview {
+  border-radius: 12px;
+}
+.product-card-preview img {
+  object-fit: contain;
+}
+.showcase-heading h2 {
+  max-width: 760px;
+  letter-spacing: -0.035em;
+}
+.docu-detail-hero {
+  background:
+    radial-gradient(
+      ellipse at 78% 35%,
+      color-mix(in srgb, var(--mint) 9%, transparent),
+      transparent 55%
+    ),
+    var(--page);
+}
+.docu-detail-hero .product-detail-grid {
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
+.docu-detail-hero .detail-preview-hero {
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 32px 100px #0003;
+  transform: none;
+}
+.docu-detail-hero .detail-preview-hero img {
+  aspect-ratio: 2880/1560;
+  object-fit: contain;
+}
+.docu-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.docu-film {
+  margin: 0 0 28px;
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.docu-film video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2880/1560;
+  background: #101828;
+}
+.docu-film figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 28px;
+}
+.docu-film figcaption div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+.docu-film figcaption p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 680px;
+  font-size: 14px;
+}
+.docu-screens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.docu-screen {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.docu-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.docu-screen figcaption {
+  display: flex;
+  gap: 18px;
+  padding: 24px;
+}
+.docu-stage {
+  color: var(--mint);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding-top: 4px;
+}
+.docu-screen h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.docu-screen p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.docu-screen .text-link {
+  min-height: 44px;
+}
+.docu-evidence {
+  background: var(--page-raised);
+  border-block: 1px solid var(--line);
+}
+.docu-comparison {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1.15fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.docu-scan,
+.docu-output,
+.docu-test {
+  margin: 0;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  min-width: 0;
+}
+.docu-scan figcaption {
+  font-weight: 650;
+  margin-bottom: 16px;
+}
+.docu-scan img {
+  display: block;
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.docu-output dl {
+  margin: 36px 0;
+}
+.docu-output dl div {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.docu-output dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+.docu-output dd {
+  margin: 8px 0 0;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.docu-output .docu-total dd {
+  color: var(--mint);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.docu-review-note {
+  display: flex;
+  gap: 8px;
+  color: var(--mint);
+  font-size: 14px;
+}
+.docu-review-note svg,
+.docu-test li svg {
+  flex-shrink: 0;
+}
+.docu-raw {
+  display: grid;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--page);
+}
+.docu-raw span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.docu-raw code {
+  font-size: 14px;
+}
+.docu-test h3 {
+  margin: 14px 0;
+  font-size: 30px;
+}
+.docu-test > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.docu-test ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  display: grid;
+  gap: 14px;
+}
+.docu-test li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.docu-test li svg {
+  color: var(--mint);
+}
+.docu-test .docu-test-note {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.docu-test .button {
+  margin-top: 16px;
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .docu-detail-hero .product-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .docu-comparison {
+    grid-template-columns: 1fr 1fr;
+  }
+  .docu-test {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 600px) {
+  .docu-screens,
+  .docu-comparison {
+    grid-template-columns: 1fr;
+  }
+  .docu-test {
+    grid-column: auto;
+  }
+  .docu-film figcaption {
+    display: block;
+    padding: 20px;
+  }
+  .docu-film figcaption p {
+    margin-top: 12px;
+  }
+  .docu-scan,
+  .docu-output,
+  .docu-test {
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .project-spec-card {
+    transition: none;
+  }
+}
+.docu-screen > a {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 2880/1560;
+  background: #101828;
+}
+.docu-screen > a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 350px;
+}
+.portfolio-feature {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 36px;
+  margin-bottom: 32px;
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      ellipse at 90% 10%,
+      color-mix(in srgb, var(--mint) 10%, transparent),
+      transparent 65%
+    ),
+    var(--surface);
+}
+.portfolio-feature h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 16px 0;
+}
+.portfolio-feature-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  max-width: 480px;
+}
+.portfolio-feature-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0;
+}
+.portfolio-feature-steps span {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+.portfolio-feature-steps b {
+  color: var(--mint);
+}
+.portfolio-feature-image {
+  display: block;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.portfolio-feature-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .portfolio-feature {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+.docu-detail-hero .product-hero-highlights {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.docu-detail-hero .product-hero-highlights article {
+  padding: 14px;
+}
+.docu-detail-hero .product-hero-highlights p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.product-card-copy {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.product-card .text-link {
+  font-size: 13px;
+  min-height: 44px;
+}
+.docu-field-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: -12px;
+}
+.docu-field-details div {
+  display: grid;
+  gap: 6px;
+}
+.docu-field-details span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.docu-field-details strong {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.docu-items {
+  margin-top: 22px;
+  border-block: 1px solid var(--line);
+  padding: 6px 0;
+}
+.docu-items summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+.docu-items ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.docu-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.docu-items p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.docu-excel-link {
+  min-height: 44px;
+  margin-top: 12px;
+}

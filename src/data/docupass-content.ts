@@ -42,8 +42,8 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     previews: [
       [
-        "The real DocuPass desktop screen",
-        "A live capture from the running macOS app: the New job workspace, document-type controls and local CPU processing status.",
+        "Review a real OCR result",
+        "A real review workspace with a synthetic receipt, OCR boxes, a merchant field crop and a human confirmation step.",
       ],
       [
         "CPU and NVIDIA GPU setup",
@@ -56,7 +56,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     screenshotsLabel: "Real app screen and product flow",
     screenshotsNote:
-      "The first image is a live capture of the working DocuPass app on macOS. The hardware and phone panels are diagrams based on the local source code.",
+      "The first image shows the real DocuPass review workspace with a synthetic receipt on macOS. The hardware and phone panels are diagrams based on the local source code.",
     specificationsLabel: "TECHNICAL OVERVIEW",
     specificationsTitle: "What the current source supports",
     specificationsIntro:
@@ -161,8 +161,8 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     previews: [
       [
-        "DocuPass 桌面程式實際畫面",
-        "macOS 上運行中的真實截圖：顯示新工作頁面、文件類型選項及本機 CPU 處理狀態。",
+        "覆核真實 OCR 結果",
+        "真實覆核工作區：顯示合成收據、OCR 方框、商戶欄位裁切及人手確認步驟。",
       ],
       [
         "CPU 與 NVIDIA GPU 設定",
@@ -175,7 +175,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     screenshotsLabel: "實際程式畫面與流程",
     screenshotsNote:
-      "第一張是 macOS 上實際運行的 DocuPass 程式截圖；硬件及手機部分則是根據本機原始碼繪製的流程圖。",
+      "第一張是 macOS 上真實 DocuPass 覆核工作區的合成收據截圖；硬件及手機部分則是根據本機原始碼繪製的流程圖。",
     specificationsLabel: "技術概覽",
     specificationsTitle: "目前原始碼支援的內容",
     specificationsIntro:
@@ -267,8 +267,8 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     previews: [
       [
-        "DocuPass 桌面程序实机画面",
-        "macOS 上运行中的真实截图：显示新建任务界面、文档类型选项和本机 CPU 处理状态。",
+        "复核真实 OCR 结果",
+        "真实复核工作区：显示合成收据、OCR 方框、商户字段裁切及人工确认步骤。",
       ],
       [
         "CPU 与 NVIDIA GPU 设置",
@@ -281,7 +281,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     screenshotsLabel: "真实应用界面与处理流程",
     screenshotsNote:
-      "第一张是 DocuPass 在 macOS 上运行时的实机截图；硬件和手机部分是根据本机源代码绘制的流程图。",
+      "第一张是 macOS 上真实 DocuPass 复核工作区的合成收据截图；硬件和手机部分是根据本机源代码绘制的流程图。",
     specificationsLabel: "技术概览",
     specificationsTitle: "当前源代码支持的内容",
     specificationsIntro:
@@ -374,8 +374,8 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     previews: [
       [
-        "DocuPass デスクトップの実画面",
-        "macOSで実際に動作しているアプリを撮影した画面です。新規ジョブ、書類種別、ローカルCPU処理状態を表示します。",
+        "実際のOCR結果を確認",
+        "実際の確認画面です。合成レシート、OCRの枠、店舗名の切り出しと人による確認を表示します。",
       ],
       [
         "CPU と NVIDIA GPU の設定",
@@ -388,7 +388,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     screenshotsLabel: "実際のアプリ画面と処理フロー",
     screenshotsNote:
-      "最初の画像はmacOSで動作中のDocuPassを撮影した画面です。ハードウェアとスマートフォンの図はローカルソースに基づいています。",
+      "最初の画像はmacOS上のDocuPassで合成レシートを確認する実画面です。ハードウェアとスマートフォンの図はローカルソースに基づいています。",
     specificationsLabel: "技術概要",
     specificationsTitle: "現在のソースが対応する内容",
     specificationsIntro:
@@ -490,8 +490,8 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     previews: [
       [
-        "실제 DocuPass 데스크톱 화면",
-        "macOS에서 실행 중인 앱을 캡처했습니다. 새 작업 화면, 문서 유형 선택과 로컬 CPU 처리 상태를 보여줍니다.",
+        "실제 OCR 결과 검토",
+        "실제 검토 화면입니다. 합성 영수증, OCR 상자, 상호 영역과 사람의 확인 단계를 보여줍니다.",
       ],
       [
         "CPU 및 NVIDIA GPU 설정",
@@ -504,7 +504,7 @@ export const docupassCopy: Record<Locale, DocuPassCopy> = {
     ],
     screenshotsLabel: "실제 앱 화면과 작업 흐름",
     screenshotsNote:
-      "첫 이미지는 macOS에서 실제 실행 중인 DocuPass 캡처입니다. 하드웨어와 휴대폰 그림은 로컬 소스 코드를 바탕으로 만들었습니다.",
+      "첫 이미지는 macOS에서 합성 영수증을 검토하는 실제 DocuPass 화면입니다. 하드웨어와 휴대폰 그림은 로컬 소스 코드를 바탕으로 만들었습니다.",
     specificationsLabel: "기술 개요",
     specificationsTitle: "현재 소스가 지원하는 항목",
     specificationsIntro:
