@@ -189,7 +189,11 @@ const docuPassStory = (
     };
   }
 ).story;
-const tokenSaverCopy = getLocalToolCopy(locale, "tokensaver", "TokenSaver")! as {
+const tokenSaverCopy = getLocalToolCopy(
+  locale,
+  "tokensaver",
+  "TokenSaver",
+)! as {
   previews: [string, string][];
   previewBadge: string;
 };
@@ -262,17 +266,13 @@ const getHomeProjectCopy = (href?: string) => {
           <div class="locale-hero-visual">
             <img
               src={withBase("/images/projects/tokensaver-workspace.jpg")}
-              alt={
-                tokenSaverCopy.previews[0][1]
-              }
+              alt={tokenSaverCopy.previews[0][1]}
               width="1905"
               height="938"
               fetchpriority="high"
             />
             <span class="detail-preview-badge">
-              {
-                tokenSaverCopy.previewBadge
-              }
+              {tokenSaverCopy.previewBadge}
             </span>
           </div>
         </div>

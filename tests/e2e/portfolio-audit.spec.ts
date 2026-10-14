@@ -107,7 +107,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
           ? `${locale === "en" ? "/" : ""}#selected-projects`
           : route === "products/docupass"
             ? `/${route}`
-          : `/${route.split("/")[0]}`;
+            : `/${route.split("/")[0]}`;
         await expect(activeLink).toHaveAttribute(
           "href",
           `${(process.env.PUBLIC_BASE_PATH || "").replace(/\/$/, "")}${prefix}${target}`,
