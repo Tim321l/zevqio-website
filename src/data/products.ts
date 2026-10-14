@@ -1,4 +1,5 @@
 import { buildLocalTool } from "./local-tools";
+import { docupassCopy } from "./docupass-content";
 export type ProductStatus = "In Development";
 
 export type ProductInterfacePreview = {
@@ -35,6 +36,7 @@ export type Product = {
   icon: "scan" | "file" | "workflow" | "braces";
   accent: string;
   interfacePreviews?: ProductInterfacePreview[];
+  workflowPreviewIndexes?: (number | null)[];
   previewBadge?: string;
   screenshotsLabel?: string;
   screenshotsNote?: string;
@@ -57,12 +59,15 @@ export const products: Product[] = [
       "VidOutline is the working public name for the local video analysis project currently labeled Video Agent in its desktop interface. It uses faster-whisper and Ollama for local analysis, with Gemini available as an optional cloud mode that uploads the full video to Google. The tool can analyze individual files or folders, watch an input folder, and export Markdown and JSON reports.",
     stage: "In Development",
     focus: [
-      "Transcribe speech locally with faster-whisper, then analyze it with Ollama",
-      "Use keyframes with a local vision model when the transcript is too short",
-      "Organize single-file, folder, and watched-folder runs into reports",
+      "Transcribe speech with faster-whisper, then use Ollama to identify topics and build a timestamped outline",
+      "When speech is too sparse, sample video keyframes for analysis with a local vision model",
+      "Run one video, process a folder batch, or watch an input folder for new files",
+      "Export category, tags, pitch, story summary and timeline chapters as Markdown and JSON",
+      "Choose Gemini cloud analysis when needed; that mode uploads the full video to Google",
     ],
     icon: "file",
     accent: "blue",
+    workflowPreviewIndexes: [0, 1, 2],
     previewBadge: "VIDOUTLINE · APP SCREEN",
     screenshotsLabel: "Screens from the desktop app",
     screenshotsNote:
@@ -116,14 +121,14 @@ export const products: Product[] = [
         "The project makes the processing mode visible, preserves timestamps, and keeps reports in portable formats.",
       workflow: [
         {
-          title: "Choose files and a mode",
+          title: "Choose videos and a mode",
           description:
-            "Analyze a single video, process a folder, or place files in the watched folder. Choose local Ollama processing or Gemini cloud analysis before starting.",
+            "Analyze one video, process a folder, or watch an input folder. Choose local Ollama processing or Gemini cloud analysis before starting.",
         },
         {
-          title: "Build a structured outline",
+          title: "Select models and process",
           description:
-            "In local mode, speech is transcribed first and short transcripts fall back to keyframe analysis. The analysis produces a category, tags, a short pitch, a story summary, and timestamped chapters.",
+            "Choose the local text and vision models, then start the run. Speech is transcribed first; videos with sparse speech can fall back to sampled keyframes.",
         },
         {
           title: "Keep the report files",
@@ -183,6 +188,7 @@ export const products: Product[] = [
     stage: "In Development",
     icon: "braces",
     accent: "violet",
+    workflowPreviewIndexes: [1, 2, 3],
   },
   {
     ...buildLocalTool("monitor"),
@@ -193,7 +199,63 @@ export const products: Product[] = [
     icon: "workflow",
     accent: "cyan",
   },
+  {
+    slug: "docupass",
+    name: "DocuPass",
+    shortName: "DocuPass",
+    category: docupassCopy.en.category,
+    summary: docupassCopy.en.summary,
+    description: docupassCopy.en.description,
+    stage: "In Development",
+    focus: docupassCopy.en.focus,
+    icon: "scan",
+    accent: "blue",
+    workflowPreviewIndexes: [0, 1, 2],
+    screenshotsLabel: docupassCopy.en.screenshotsLabel,
+    screenshotsNote: docupassCopy.en.screenshotsNote,
+    specificationsLabel: docupassCopy.en.specificationsLabel,
+    specificationsTitle: docupassCopy.en.specificationsTitle,
+    specificationsIntro: docupassCopy.en.specificationsIntro,
+    specifications: docupassCopy.en.specifications.map(([label, value]) => ({
+      label,
+      value,
+    })),
+    story: {
+      overviewTitle: docupassCopy.en.title,
+      problem: docupassCopy.en.problem,
+      approach: docupassCopy.en.approach,
+      workflowTitle: docupassCopy.en.workflowTitle,
+      workflowIntro: docupassCopy.en.workflowIntro,
+      workflow: docupassCopy.en.workflow.map(([title, description]) => ({
+        title,
+        description,
+      })),
+      principlesTitle: docupassCopy.en.principlesTitle,
+      principlesIntro: docupassCopy.en.principlesIntro,
+      principles: docupassCopy.en.principles.map(([title, description]) => ({
+        title,
+        description,
+      })),
+      statusNote: docupassCopy.en.status,
+    },
+    interfacePreviews: docupassCopy.en.previews.map(
+      ([title, description], index) => ({
+        title,
+        description,
+        image: `/images/projects/${[
+          "docupass-workflow.svg",
+          "docupass-hardware.svg",
+          "docupass-phone.svg",
+        ][index]}`,
+        alt: `${title}: ${description}`,
+        width: 1440,
+        height: 900,
+      }),
+    ),
+  },
 ];
+
+export const allProducts = [...products];
 
 export const getProduct = (slug: string): Product | undefined =>
   products.find((product) => product.slug === slug);

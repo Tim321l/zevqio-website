@@ -23,7 +23,7 @@ const withoutBase = (pathname: string): string => {
 const english = {
   nav: {
     products: "Products",
-    solutions: "Solutions",
+    solutions: "DocuPass",
     projects: "Projects",
     about: "About",
     contact: "Contact",
@@ -53,7 +53,7 @@ const english = {
     currentFocus: "CURRENT FOCUS",
     whatExploring: "What we’re exploring",
     possibleWorkflow: "Possible workflow",
-    possibleStep: "POSSIBLE STEP",
+    possibleStep: "STEP",
     designPriorities: "Design priorities",
     workWithUs: "Work with us",
     contactCta: "Start a conversation",
@@ -79,44 +79,42 @@ const english = {
     capabilitiesTitle: ["Less busywork.", "More room to think."],
     capabilitiesIntro:
       "A focused set of software ideas for the document-heavy, repetitive parts of modern work.",
-    productsLabel: "Product areas",
-    productsTitle: ["Ideas becoming", "useful tools."],
+    productsLabel: "Local applications",
+    productsTitle: ["Software projects", "in development."],
     productsIntro:
-      "We’re building with care and sharing progress honestly. Each product area is currently in development.",
-    allProducts: "View all product areas",
+      "Explore local tools and game projects with their current highlights, project-specific visuals, and clear development notes.",
+    allProducts: "View all projects",
     selectedLabel: "Selected projects",
     selectedTitle: ["Games and independent", "creative work."],
     selectedIntro:
-      "Explore four game builds across basketball, property strategy, and music trivia, alongside independent web and original audio projects.",
+      "Explore four game builds across basketball, property strategy, and music trivia, with source-backed details and local captures.",
     selectedNames: [
       "RimRise · Unity edition",
       "RimRise · Browser game",
       "BigDeal HK",
       "Song Guess Online",
-      "Original audio",
     ],
     selectedDescriptions: [
       "A Unity 6.3 prototype for full-court 5v5 basketball and career play.",
       "A browser basketball game with career progression and 3D city play.",
       "A Hong Kong-themed property card game with multiplayer rooms, bots, and changing events.",
       "A multiplayer music quiz with timed rounds, configurable rooms, and team modes.",
-      "Independent audio projects featuring original work.",
     ],
-    workflowLabel: "The shape of the work",
-    workflowTitle: ["From a file", "to a clear next step."],
+    workflowLabel: "DocuPass · Local document processing",
+    workflowTitle: ["From a scan", "to a checked export."],
     workflowIntro:
-      "Good automation makes the work easier to follow. This example shows a possible document workflow, with a person in the loop before information moves forward.",
-    workflowLink: "Explore document intelligence",
-    workflowBoard: "ILLUSTRATIVE WORKFLOW",
+      "A source-based view of the current desktop app: choose pages, check the OCR setup, review extracted fields, and export the records.",
+    workflowLink: "Explore DocuPass",
+    workflowBoard: "DOCUPASS · SOURCE-BASED FLOW",
     workflowSteps: [
-      ["Document input", "Scanned or digital file"],
-      ["OCR & extraction", "Text to structured fields"],
-      ["Validation", "Check what was captured"],
-      ["Human review", "Confirm before proceeding"],
-      ["Structured output", "Ready for the next tool"],
+      ["Choose files", "Images · PDF pages · folders"],
+      ["Check OCR setup", "Language · model · CPU/GPU"],
+      ["Process locally", "Progress · per-file results"],
+      ["Review fields", "Compare with source pages"],
+      ["Export records", "Excel · CSV · JSON"],
     ],
     workflowNote:
-      "Example diagram only. Product capabilities are in development.",
+      "DocuPass runs OCR on the desktop. NVIDIA GPU mode needs a compatible Windows setup; macOS uses CPU. The GPU path still needs real-device verification.",
     principlesLabel: "How we think about software",
     principlesTitle: ["Built around the", "real work."],
     principlesIntro:
@@ -144,7 +142,7 @@ const english = {
     studioIntro:
       "Zevqio is an independent, founder-led software studio, bootstrapped and in an early stage. It explores practical tools for document processing, automation, and business productivity.",
     studioDetail:
-      "Current work also includes RimRise in browser and Unity versions, BigDeal HK, and Song Guess Online, alongside smaller web and original audio projects. These independent game projects are in development, and we share their current stage as they evolve.",
+      "Current game work includes RimRise in browser and Unity versions, BigDeal HK, and Song Guess Online. These independent game projects are in development, and each project page describes its current build and stage.",
     studioStatus: "Founder-led · Bootstrapped · Early-stage",
     studioLink: "More about Zevqio",
     contactLabel: "Start a conversation",
@@ -204,29 +202,50 @@ const english = {
         name: "RimRise · Unity edition",
         category: "Basketball game · Unity prototype",
         summary:
-          "A Unity 6.3 version of RimRise, beginning with a playable full-court 5v5 basketball game and career interface.",
+          "A Unity 6.3 basketball game with a playable full-court 5v5 match, career progression, team management, and a 3D city. The current build is a local single-player prototype.",
         stage: "Unity prototype · In development",
         heroAlt:
           "RimRise Unity prototype during a five-on-five basketball game.",
         heroBadge: "UNITY 6.3 · LOCAL PROTOTYPE",
         overviewTitle: "A focused Unity prototype for basketball on the court.",
         overview: [
-          "RimRise is a basketball career and city-life game project. The Unity edition starts with the playable court: a full-court five-on-five game with player movement, passing, shooting, defense, AI teammates and opponents, and an in-game scoreboard.",
-          "The prototype also includes a career hub for player stats, training, teams, and season progress. Career data is saved locally. The Unity build is currently single-player; the browser edition still contains additional city, social, and online systems.",
+          "The Unity edition combines a hands-on full-court 5v5 basketball game with a native career and city-life simulation. On court, players move, dribble, pass, shoot, screen, defend, rebound, and make decisions against AI teammates and opponents. Match controls support keyboard, gamepad, and touch layouts.",
+          "A career can start in one of eight league pathways and keeps its data in a local JSON save that can be backed up or imported. Training, skill points, contracts, season decisions, team chemistry, city activities, housing, vehicles, shops, investments, and business systems connect play beyond the match.",
+          "The browser game remains a separate edition with its own online rooms and multiplayer systems. Unity currently runs as a local single-player build, and the two editions do not share automatic saves or feature parity.",
         ],
         focusTitle: "What the Unity build covers today",
         focus: [
           [
             "Full-court 5v5",
-            "A playable court loop with movement, ball handling, passing, shooting, defense, and AI players.",
+            "Play a complete 10-player game with AI teammates and opponents, four compressed quarters, a scoreboard, a 24-second shot clock, and overtime.",
           ],
           [
-            "Career dashboard",
-            "A career hub for player profiles, skills, team information, and season progress.",
+            "On-court controls",
+            "Dribble, pass, shoot, drive for a layup or dunk, call a screen, steal, block, switch players, and compete for rebounds.",
           ],
           [
-            "A staged port",
-            "The Unity edition is an in-progress single-player version. It does not yet include every system in the browser game.",
+            "Create a player and save locally",
+            "Choose a position, player model, city and career starting point; keep progress in a local JSON save with backup and import controls.",
+          ],
+          [
+            "Career development",
+            "Train skills, earn skill points, choose a role each offseason, manage stamina and team chemistry, and make season and contract decisions.",
+          ],
+          [
+            "Leagues and seasons",
+            "Follow league standings, play-in places, playoffs, awards, career statistics, contracts and free-agent offers.",
+          ],
+          [
+            "Team and money management",
+            "Use the player shop, training and agent options; manage investments, loans and businesses alongside career income.",
+          ],
+          [
+            "3D city life",
+            "Explore six city styles with jobs, travel, traffic, neighborhood characters, homes, furniture and management locations.",
+          ],
+          [
+            "Keyboard, gamepad and touch",
+            "The source includes desktop and mobile controls, with match and city layouts designed for each input type.",
           ],
         ],
         gallery: [
@@ -238,37 +257,66 @@ const english = {
             "Match pause screen",
             "The in-game pause view with the current match and basic controls.",
           ],
+          [
+            "3D city exploration",
+            "A local Unity capture showing the city scene and player navigation.",
+          ],
+          [
+            "Home and property view",
+            "A local capture of the housing interface and its available actions.",
+          ],
         ],
         stageNote:
-          "Work in progress. The Unity edition is currently a local single-player prototype, and its features are not yet at parity with the browser version.",
+          "Work in progress. Unity is currently a local single-player build. Online rooms, multiplayer, the browser administration console, and some browser city systems remain separate; career saves do not sync automatically between editions.",
       },
       "rimrise-web": {
         name: "RimRise · Browser edition",
         category: "Browser game · Web development",
         summary:
-          "A browser basketball career game that brings together season progression, an explorable 3D city, and street basketball.",
+          "A browser basketball career game that combines league seasons, hands-on 5v5 and street-court play, a themed 3D city, career management, and online friend play.",
         stage: "Browser game · In development",
         heroAlt:
           "RimRise browser game career dashboard with player and season information.",
         heroBadge: "BROWSER EDITION · SCREEN CAPTURE",
         overviewTitle: "A basketball world in the browser.",
         overview: [
-          "The browser edition combines a player career simulation with an explorable 3D city. Players build a fictional career across seasons, develop their skills, and make decisions about teams, training, and life outside the court.",
-          "The project brings its own browser interface, game simulation, and multiplayer room systems together. The city, season screens, and basketball matches are developed as one independent web game, separate from the Unity prototype.",
+          "Build a basketball career from a high-school start through college and professional league paths. The season simulation tracks schedules, standings, playoffs, awards, player development, contracts, free agency, and decisions that affect a player's team and career.",
+          "The 3D game includes full-court 5v5, street-court 1v1 and 5v5, and shooting practice. Outside the arena, the player can explore city styles based on Taipei, Hong Kong, and Tokyo, travel between locations, take part in city activities and jobs, and manage homes, vehicles, training, shops, and finances.",
+          "Online systems include rooms, friends, chat, leaderboards, 3D duels, and cooperative play. Three.js renders the world with WebGL and requests a high-performance GPU. Graphics settings show the graphics adapter and acceleration state, flag software rendering, and reduce resolution and frame rate when needed.",
         ],
         focusTitle: "What shapes the browser game",
         focus: [
           [
+            "WebGL graphics and GPU diagnostics",
+            "Three.js renders the 3D world through WebGL and requests a high-performance GPU. Graphics settings show the adapter and acceleration state, flag software rendering, and lower resolution and frame rate when needed.",
+          ],
+          [
             "Career and seasons",
-            "Player progression, season schedules, career milestones, and between-season decisions.",
+            "Start in high school, college, or a professional pathway; develop a player, move through weekly seasons and playoffs, and handle contracts, free agency, awards, and career decisions.",
           ],
           [
-            "3D city and street play",
-            "An explorable city themed around Taipei, Hong Kong, and Tokyo, with street courts for basketball games.",
+            "5v5, street courts, and practice",
+            "Play the season's full-court 5v5 games, challenge street-court 1v1 and 5v5 matches, or work on shooting practice.",
           ],
           [
-            "Browser game systems",
-            "JavaScript and Three.js power the client; Node.js and WebSocket support rooms and real-time features.",
+            "3D city life",
+            "Explore city styles based on Taipei, Hong Kong, and Tokyo; visit locations, travel, drive, take on jobs, and manage a home and other activities.",
+          ],
+          [
+            "Player growth and team systems",
+            "Develop player attributes and skills, train, manage energy and injuries, build team relationships, and pursue career milestones.",
+          ],
+          [
+            "Money and off-court choices",
+            "Manage contracts and sponsors alongside housing, vehicles, business, investments, training, and other career costs.",
+          ],
+          [
+            "Play with friends online",
+            "The project includes room-based play, friends, chat, leaderboards, 3D duels, and cooperative 5v5 systems; availability depends on the separate game server.",
+          ],
+          [
+            "WebGL performance controls",
+            "Graphics settings display the adapter and acceleration state, detect software rendering, and automatically lower resolution and frame rate when needed.",
           ],
         ],
         gallery: [
@@ -282,19 +330,19 @@ const english = {
           ],
         ],
         stageNote:
-          "Work in progress. These are screenshots from a local browser build; live availability and game systems may change as development continues.",
+          "Work in progress. These screenshots come from a local browser build. Online features depend on the separate game server, and this Zevqio website does not host game rooms or player accounts.",
       },
     },
   },
   productsPage: {
     title: "Products",
     description:
-      "Explore Zevqio's early-stage software projects and product areas, including OCR Studio, VidOutline, and TokenSaver.",
+      "Browse Zevqio's local software projects and games, with project-specific highlights, implementation details, and visuals.",
     eyebrow: "Product portfolio",
-    headline: ["Software for work", "that repeats."],
+    headline: ["Tools and games", "built from real projects."],
     intro:
-      "We’re exploring focused software projects for practical work. Every project listed here is in development, and some public details are still taking shape.",
-    note: "We’ll share availability and specific capabilities once each product area is ready to discuss publicly.",
+      "Browse local applications and game projects together. Each page explains its main features, workflow, platform, and current development boundaries.",
+    note: "The screenshots and diagrams come from local builds or are labeled as source-based illustrations. This site does not host the games or desktop apps.",
     ctaLabel: "Have a use case?",
     ctaTitle: "Tell us about the work.",
     ctaButton: "Get in touch",
@@ -366,7 +414,7 @@ const english = {
     focusKicker: "CURRENT FOCUS",
     focusTitle: "What we’re exploring",
     inDevelopment: "In development",
-    workflowEyebrow: "Possible workflow",
+    workflowEyebrow: "How the app works",
     workflowTitle: ["From a scan to", "reviewed text."],
     workflowIntro:
       "This is the direction being explored for OCR Studio. These steps describe a concept, not a released feature set.",
@@ -491,9 +539,11 @@ const english = {
       description:
         "VidOutline is the working public name for the local video analysis project currently labeled Video Agent in its desktop interface. It uses faster-whisper and Ollama for local analysis, with Gemini available as an optional cloud mode that uploads the full video to Google. The tool can analyze individual files or folders, watch an input folder, and export Markdown and JSON reports.",
       focus: [
-        "Transcribe speech locally with faster-whisper, then analyze it with Ollama",
-        "Use keyframes with a local vision model when the transcript is too short",
-        "Organize single-file, folder, and watched-folder runs into reports",
+        "Transcribe speech with faster-whisper, then use Ollama to identify topics and build a timestamped outline",
+        "When speech is too sparse, sample video keyframes for analysis with a local vision model",
+        "Run one video, process a folder batch, or watch an input folder for new files",
+        "Export categories, tags, a pitch, story summary, and timeline chapters as Markdown and JSON",
+        "Choose Gemini cloud analysis when needed; that mode uploads the full video to Google",
       ],
       previewBadge: "VIDOUTLINE · APP SCREEN",
       screenshotsLabel: "Screens from the desktop app",
@@ -561,8 +611,8 @@ const english = {
             "Analyze one video, process a folder, or place files in the watched folder. Choose local Ollama processing or Gemini cloud analysis before starting.",
           ],
           [
-            "Build a structured outline",
-            "In local mode, speech is transcribed first and short transcripts fall back to keyframe analysis. Results include a category, tags, a short pitch, a story summary, and timestamped chapters.",
+            "Set models and build the outline",
+            "Choose the local text and vision models, then start processing. Speech is transcribed first; videos with sparse speech can fall back to sampled keyframes before the report is created.",
           ],
           [
             "Keep the report files",
@@ -605,7 +655,7 @@ const translated = {
   "zh-cn": {
     nav: {
       products: "产品",
-      solutions: "解决方案",
+      solutions: "DocuPass",
       projects: "项目",
       about: "关于",
       contact: "联系",
@@ -635,7 +685,7 @@ const translated = {
       currentFocus: "当前重点",
       whatExploring: "正在探索的方向",
       possibleWorkflow: "设想中的流程",
-      possibleStep: "可能的步骤",
+      possibleStep: "步骤",
       designPriorities: "设计重点",
       workWithUs: "与我们合作",
       contactCta: "开始交流",
@@ -659,43 +709,42 @@ const translated = {
       capabilitiesLabel: "我们的工作方向",
       capabilitiesTitle: ["减少琐事，", "留出思考空间。"],
       capabilitiesIntro: "专注探索适用于文档密集、重复性现代工作的软件。",
-      productsLabel: "产品方向",
-      productsTitle: ["让想法逐渐成为", "实用工具。"],
+      productsLabel: "本机应用",
+      productsTitle: ["实际项目与", "正在开发的软件。"],
       productsIntro:
-        "我们认真构建并如实分享进展。目前每个产品方向都仍在开发中。",
-      allProducts: "查看所有产品方向",
+        "浏览本机软件工具与游戏项目，查看各项目的重点功能、实际画面和开发说明。",
+      allProducts: "查看所有项目",
       selectedLabel: "精选项目",
       selectedTitle: ["游戏与", "独立创作项目。"],
       selectedIntro:
-        "浏览篮球、地产策略与音乐竞猜题材的四款游戏版本，以及独立网页和原创音频项目。",
+      "浏览四款游戏：RimRise 的 Unity 与浏览器版本、BigDeal HK，以及 Song Guess Online。每个项目都有专属画面和当前功能说明。",
       selectedNames: [
         "RimRise · Unity 版",
         "RimRise · 浏览器版",
         "BigDeal HK",
         "Song Guess Online",
-        "原创音频",
       ],
       selectedDescriptions: [
-        "使用 Unity 6.3 制作的篮球生涯原型，现以全场 5 对 5 为起点。",
-        "包含生涯成长、3D 城市和街头篮球的浏览器游戏。",
-        "以香港为主题的地产卡牌游戏，包含多人房间、机器人对手和动态事件。",
-        "支持计时回合、房间设置和团队玩法的多人音乐竞猜游戏。",
-        "包含原创作品的独立音频项目。",
+        "Unity 6.3 篮球生涯原型：全场 5 对 5、球员成长和 3D 城市生活。",
+        "浏览器篮球游戏：生涯赛季、3D 城市、街头比赛与多人房间。",
+        "香港主题地产卡牌游戏：六种玩法、多人房间、机器人对手和动态事件。",
+        "多人音乐竞猜：计时回合、可调整房间规则和团队模式。",
       ],
-      workflowLabel: "工作流程的形态",
-      workflowTitle: ["从文件开始，", "找到清晰的下一步。"],
+      workflowLabel: "DocuPass · 本机文档处理",
+      workflowTitle: ["从扫描件", "到审核后的导出。"],
       workflowIntro:
-        "好的自动化让工作更容易理解。这个示例展示了一种可能的文档流程，并在信息继续流转前保留人工参与。",
-      workflowLink: "了解文档智能",
-      workflowBoard: "流程示意图",
+        "根据本机应用源码整理：选择文件、检查 OCR 设置、复核识别字段，再导出结构化记录。",
+      workflowLink: "了解 DocuPass",
+      workflowBoard: "DOCUPASS · 源码流程示意",
       workflowSteps: [
-        ["导入文档", "扫描件或数字文件"],
-        ["OCR 与提取", "将文字整理为字段"],
-        ["验证信息", "检查识别结果"],
-        ["人工审核", "确认后再继续"],
-        ["结构化输出", "供下一个工具使用"],
+        ["选择文件", "图片 · PDF 页面 · 文件夹"],
+        ["检查 OCR 设置", "语言 · 模型 · CPU/GPU"],
+        ["本机处理", "进度 · 单文件结果"],
+        ["复核字段", "对照原始页面"],
+        ["导出记录", "Excel · CSV · JSON"],
       ],
-      workflowNote: "仅为示意图。产品能力仍在开发中。",
+      workflowNote:
+        "DocuPass 在桌面端执行 OCR。兼容的 NVIDIA GPU 模式需要符合条件的 Windows 环境；macOS 使用 CPU。GPU 路径仍待真实设备验证。",
       principlesLabel: "我们如何看待软件",
       principlesTitle: ["围绕", "真实工作打造。"],
       principlesIntro: "实用工具应易于理解、贴合工作方式，并逐步建立信任。",
@@ -713,7 +762,7 @@ const translated = {
       studioIntro:
         "Zevqio 是一个由创办人主导、自筹资金、处于早期阶段的独立软件工作室，专注探索文档处理、自动化和业务效率工具。",
       studioDetail:
-        "目前的游戏项目包括 RimRise 的浏览器版与 Unity 版、BigDeal HK 和 Song Guess Online，此外还有独立网页与原创音频作品。游戏仍在开发中，我们会随着进展分享画面并说明当前阶段。",
+        "目前的游戏项目包括 RimRise 的浏览器版与 Unity 版、BigDeal HK 和 Song Guess Online。各项目页面会说明当前版本、实际画面和开发阶段。",
       studioStatus: "创办人主导 · 自筹资金 · 早期阶段",
       studioLink: "更多关于 Zevqio",
       contactLabel: "开始交流",
@@ -795,6 +844,8 @@ const translated = {
           gallery: [
             ["生涯管理界面", "球员总览、赛季信息和成长操作。"],
             ["比赛暂停画面", "比赛中的暂停界面及基本操作提示。"],
+            ["3D 城市探索", "Unity 本机截图，展示城市场景和角色移动。"],
+            ["房屋与物业界面", "本机截图展示房屋管理界面及可用操作。"],
           ],
           stageNote:
             "项目仍在开发中。Unity 版目前是本机单人原型，功能尚未与浏览器版本完全一致。",
@@ -810,18 +861,18 @@ const translated = {
           overviewTitle: "在浏览器中展开篮球世界。",
           overview: [
             "浏览器版把球员生涯模拟与可探索的 3D 城市结合起来。玩家可以跨赛季经营虚构球员生涯、提升能力，并作出球队、训练和球场外生活的选择。",
-            "项目把浏览器界面、游戏模拟和多人房间系统结合为一个独立网页游戏。城市、赛季界面和篮球比赛共同构成网页版本，与 Unity 原型分开开发。",
+            "项目把浏览器界面、游戏模拟和多人房间系统结合为一个独立网页游戏。Three.js 通过 WebGL 渲染 3D 场景，并请求高性能显卡。图形设置会显示显卡与硬件加速状态、提示软件渲染，并在需要时降低分辨率与帧率。",
           ],
-          focusTitle: "浏览器游戏的组成",
+          focusTitle: "图形、球员生涯与城市探索",
           focus: [
+            [
+              "WebGL 图形与显卡诊断",
+              "Three.js 通过 WebGL 渲染 3D 世界并请求高性能显卡。图形设置显示显卡与硬件加速状态，检测软件渲染，并在需要时降低分辨率和帧率。",
+            ],
             ["生涯与赛季", "球员成长、赛程、生涯里程碑和赛季之间的决定。"],
             [
               "3D 城市与街头篮球",
               "以台北、香港和东京为主题的可探索城市，以及街头篮球场。",
-            ],
-            [
-              "浏览器游戏系统",
-              "客户端使用 JavaScript 与 Three.js；Node.js 和 WebSocket 支持房间与实时功能。",
             ],
           ],
           gallery: [
@@ -836,12 +887,12 @@ const translated = {
     productsPage: {
       title: "产品",
       description:
-        "浏览 Zevqio 早期的软件项目与产品方向，包括 OCR Studio、VidOutline 和 TokenSaver。",
-      eyebrow: "产品组合",
-      headline: ["为重复工作", "打造软件。"],
+        "浏览 Zevqio 的本机软件项目与游戏，查看项目重点、实际画面、技术规格和开发状态。",
+      eyebrow: "项目组合",
+      headline: ["软件工具与游戏", "来自实际项目。"],
       intro:
-        "我们正在探索面向实际工作的专注型软件项目。此处列出的项目都在开发中，部分公开信息仍在整理。",
-      note: "当各产品方向适合公开讨论时，我们会分享其可用情况和具体能力。",
+        "每个项目页面都按当前版本列出主要功能、使用方式、平台、截图和已知开发边界。",
+      note: "截图来自本机项目版本；示意图会明确标注。此网站不托管桌面应用或游戏服务。",
       ctaLabel: "有实际应用场景？",
       ctaTitle: "告诉我们你的工作。",
       ctaButton: "联系我",
@@ -910,7 +961,7 @@ const translated = {
       focusKicker: "当前重点",
       focusTitle: "正在探索的方向",
       inDevelopment: "开发中",
-      workflowEyebrow: "设想中的流程",
+      workflowEyebrow: "应用流程",
       workflowTitle: ["从扫描件到", "审核后的文字。"],
       workflowIntro:
         "这是 OCR Studio 正在探索的方向。以下步骤描述的是概念，并非已发布的功能。",
@@ -1020,9 +1071,11 @@ const translated = {
         description:
           "VidOutline 是这款本地视频分析项目的对外名称；当前桌面界面仍显示为 Video Agent。它使用 faster-whisper 和 Ollama 进行本地分析，也可选用 Gemini 云端模式，将完整视频上传至 Google。工具支持单文件、文件夹批次处理和监视输入文件夹，并导出 Markdown 与 JSON 报告。",
         focus: [
-          "先用 faster-whisper 在本机转录语音，再交由 Ollama 分析",
-          "转录内容不足时，使用本机视觉模型分析关键帧",
-          "将单文件、文件夹批次和自动监视任务整理为报告",
+          "先用 faster-whisper 在本机转录语音，再由 Ollama 提取主题并生成带时间戳的大纲",
+          "语音内容较少时，抽取视频关键帧交给本机视觉模型分析",
+          "处理单个视频、批量处理文件夹，或监视输入文件夹中的新文件",
+          "将分类、标签、内容简介、故事摘要和时间线章节导出为 Markdown 与 JSON",
+          "也可选择 Gemini 云端分析；该模式会把完整视频上传到 Google",
         ],
         previewBadge: "VIDOUTLINE · 应用界面",
         screenshotsLabel: "桌面应用实机截图",
@@ -1128,7 +1181,7 @@ const translated = {
   "zh-hk": {
     nav: {
       products: "產品",
-      solutions: "方案",
+      solutions: "DocuPass",
       projects: "項目",
       about: "關於",
       contact: "聯絡",
@@ -1158,7 +1211,7 @@ const translated = {
       currentFocus: "目前重點",
       whatExploring: "正在探索的方向",
       possibleWorkflow: "構想中的流程",
-      possibleStep: "可能步驟",
+      possibleStep: "步驟",
       designPriorities: "設計重點",
       workWithUs: "與我們合作",
       contactCta: "開始交流",
@@ -1182,43 +1235,22 @@ const translated = {
       capabilitiesLabel: "我們的工作方向",
       capabilitiesTitle: ["減少瑣事，", "留多點思考空間。"],
       capabilitiesIntro: "專注探索適用於文檔密集、重複性現代工作的軟件。",
-      productsLabel: "產品方向",
-      productsTitle: ["讓構想逐步變成", "實用工具。"],
-      productsIntro:
-        "我們認真打造並如實分享進度。目前每個產品方向都仍在開發中。",
-      allProducts: "查看所有產品方向",
+      productsLabel: "本機應用程式",
+      productsTitle: ["實際項目與", "開發中的軟件。"],
+      productsIntro: "瀏覽本機軟件工具與遊戲項目，查看各項目的重點功能、實際畫面和開發說明。",
+      allProducts: "查看所有項目",
       selectedLabel: "精選項目",
       selectedTitle: ["遊戲與", "獨立創作項目。"],
-      selectedIntro:
-        "瀏覽籃球、地產策略與音樂猜歌題材的四款遊戲版本，以及獨立網頁和原創音訊項目。",
-      selectedNames: [
-        "RimRise · Unity 版",
-        "RimRise · 瀏覽器版",
-        "BigDeal HK",
-        "Song Guess Online",
-        "原創音訊",
-      ],
-      selectedDescriptions: [
-        "使用 Unity 6.3 製作的籃球生涯原型，現以全場 5 對 5 為起點。",
-        "包含生涯成長、3D 城市和街頭籃球的瀏覽器遊戲。",
-        "以香港為主題的地產卡牌遊戲，包含多人房間、機械人對手和動態事件。",
-        "設有計時回合、房間設定和團隊玩法的多人音樂猜歌遊戲。",
-        "包含原創作品的獨立音訊項目。",
-      ],
-      workflowLabel: "工作流程的構想",
-      workflowTitle: ["從檔案開始，", "找到清晰的下一步。"],
-      workflowIntro:
-        "好的自動化讓工作更容易理解。這個示例展示一種可能的文件流程，並在資訊繼續流轉前保留人手參與。",
-      workflowLink: "了解文件智能",
-      workflowBoard: "流程示意圖",
-      workflowSteps: [
-        ["匯入文件", "掃描檔或數碼檔案"],
-        ["OCR 與擷取", "將文字整理為欄位"],
-        ["驗證資料", "檢查識別結果"],
-        ["人工審核", "確認後再繼續"],
-        ["結構化輸出", "供下一個工具使用"],
-      ],
-      workflowNote: "僅供示意。產品功能仍在開發中。",
+      selectedIntro: "瀏覽四款遊戲：RimRise 的 Unity 與瀏覽器版本、BigDeal HK，以及 Song Guess Online。每個項目都有專屬畫面和目前功能說明。",
+      selectedNames: ["RimRise · Unity 版", "RimRise · 瀏覽器版", "BigDeal HK", "Song Guess Online"],
+      selectedDescriptions: ["Unity 6.3 籃球生涯原型：全場 5 對 5、球員成長和 3D 城市生活。", "瀏覽器籃球遊戲：生涯賽季、3D 城市、街頭比賽與多人房間。", "香港主題地產卡牌遊戲：六種玩法、多人房間、機械人對手和動態事件。", "多人音樂猜歌：計時回合、可調整房間規則和團隊模式。"],
+      workflowLabel: "DocuPass · 本機文件處理",
+      workflowTitle: ["從掃描檔", "到審核後的匯出。"],
+      workflowIntro: "根據本機應用程式原始碼整理：選擇檔案、檢查 OCR 設定、覆核識別欄位，再匯出結構化記錄。",
+      workflowLink: "了解 DocuPass",
+      workflowBoard: "DOCUPASS · 原始碼流程示意",
+      workflowSteps: [["選擇檔案", "圖片 · PDF 頁面 · 資料夾"], ["檢查 OCR 設定", "語言 · 模型 · CPU/GPU"], ["本機處理", "進度 · 個別檔案結果"], ["覆核欄位", "對照來源頁面"], ["匯出記錄", "Excel · CSV · JSON"]],
+      workflowNote: "DocuPass 在桌面端執行 OCR。兼容的 NVIDIA GPU 模式需要符合條件的 Windows 環境；macOS 使用 CPU。GPU 路徑仍待真實裝置驗證。",
       principlesLabel: "我們如何看待軟件",
       principlesTitle: ["圍繞", "真實工作打造。"],
       principlesIntro: "實用工具應易於理解、配合工作方式，並逐步建立信任。",
@@ -1236,7 +1268,7 @@ const translated = {
       studioIntro:
         "Zevqio 是一個由創辦人主導、自資、處於早期階段的獨立軟件工作室，專注探索文件處理、自動化和業務效率工具。",
       studioDetail:
-        "目前的遊戲項目包括 RimRise 的瀏覽器版與 Unity 版、BigDeal HK 和 Song Guess Online，另有獨立網頁與原創音訊作品。遊戲仍在開發中，我們會隨進度分享畫面並說明目前階段。",
+        "目前的遊戲項目包括 RimRise 的瀏覽器版與 Unity 版、BigDeal HK 和 Song Guess Online。各項目頁面會說明目前版本、實際畫面和開發階段。",
       studioStatus: "創辦人主導 · 自資 · 早期階段",
       studioLink: "更多關於 Zevqio",
       contactLabel: "開始交流",
@@ -1318,6 +1350,8 @@ const translated = {
           gallery: [
             ["生涯管理介面", "球員總覽、賽季資訊和成長操作。"],
             ["比賽暫停畫面", "比賽中的暫停介面及基本操作提示。"],
+            ["3D 城市探索", "Unity 本機截圖，展示城市場景和角色移動。"],
+            ["房屋與物業介面", "本機截圖展示房屋管理介面及可用操作。"],
           ],
           stageNote:
             "項目仍在開發中。Unity 版目前是本機單人原型，功能尚未與瀏覽器版本完全一致。",
@@ -1333,18 +1367,18 @@ const translated = {
           overviewTitle: "在瀏覽器中展開籃球世界。",
           overview: [
             "瀏覽器版把球員生涯模擬與可探索的 3D 城市結合。玩家可以跨賽季經營虛構球員生涯、提升能力，並作出球隊、訓練和球場外生活的選擇。",
-            "項目把瀏覽器介面、遊戲模擬和多人房間系統結合成一個獨立網頁遊戲。城市、賽季介面和籃球比賽共同構成網頁版本，並與 Unity 原型分開開發。",
+            "項目把瀏覽器介面、遊戲模擬和多人房間系統結合成一個獨立網頁遊戲。Three.js 透過 WebGL 繪製 3D 場景，並向瀏覽器請求高效能顯示卡。圖形設定會顯示顯示卡及硬件加速狀態、提示軟件渲染，並在需要時降低解析度和影格率。",
           ],
-          focusTitle: "瀏覽器遊戲的組成",
+          focusTitle: "圖形、球員生涯與城市探索",
           focus: [
+            [
+              "WebGL 圖形與顯示卡診斷",
+              "Three.js 透過 WebGL 繪製 3D 世界，並向瀏覽器請求高效能顯示卡。圖形設定會顯示顯示卡和硬件加速狀態、偵測軟件渲染，並在需要時降低解析度和影格率。",
+            ],
             ["生涯與賽季", "球員成長、賽程、生涯里程碑和賽季之間的決定。"],
             [
               "3D 城市與街頭籃球",
               "以台北、香港和東京為主題的可探索城市，以及街頭籃球場。",
-            ],
-            [
-              "瀏覽器遊戲系統",
-              "客戶端使用 JavaScript 與 Three.js；Node.js 和 WebSocket 支援房間與即時功能。",
             ],
           ],
           gallery: [
@@ -1358,13 +1392,11 @@ const translated = {
     },
     productsPage: {
       title: "產品",
-      description:
-        "瀏覽 Zevqio 早期軟件項目與產品方向，包括 OCR Studio、VidOutline 和 TokenSaver。",
-      eyebrow: "產品組合",
-      headline: ["為重複工作", "打造軟件。"],
-      intro:
-        "我們正探索面向實際工作的專注型軟件項目。此處列出的項目都在開發中，部分公開資料仍在整理。",
-      note: "當各產品方向適合公開討論時，我們會分享可用情況和具體功能。",
+      description: "瀏覽 Zevqio 的本機軟件項目與遊戲，查看項目重點、實際畫面、技術規格和開發狀態。",
+      eyebrow: "項目組合",
+      headline: ["軟件工具與遊戲", "來自實際項目。"],
+      intro: "每個項目頁面都按目前版本列出主要功能、使用方式、平台、截圖和已知開發界線。",
+      note: "截圖來自本機項目版本；示意圖會明確標示。此網站不託管桌面應用程式或遊戲服務。",
       ctaLabel: "有實際應用場景？",
       ctaTitle: "告訴我們你的工作。",
       ctaButton: "聯絡我們",
@@ -1433,7 +1465,7 @@ const translated = {
       focusKicker: "目前重點",
       focusTitle: "正在探索的方向",
       inDevelopment: "開發中",
-      workflowEyebrow: "構想中的流程",
+      workflowEyebrow: "應用流程",
       workflowTitle: ["從掃描檔到", "審核後的文字。"],
       workflowIntro:
         "這是 OCR Studio 正在探索的方向。以下步驟描述的是構想，並非已發佈的功能。",
@@ -1543,9 +1575,11 @@ const translated = {
         description:
           "VidOutline 是這個本機影片分析項目的對外名稱；目前桌面介面仍顯示為 Video Agent。它使用 faster-whisper 和 Ollama 進行本機分析，亦可選用 Gemini 雲端模式，把完整影片上載至 Google。工具支援單一檔案、資料夾批次處理和監察輸入資料夾，並匯出 Markdown 及 JSON 報告。",
         focus: [
-          "先以 faster-whisper 在本機轉錄語音，再交由 Ollama 分析",
-          "轉錄內容不足時，以本機視覺模型分析關鍵影格",
-          "把單一檔案、資料夾批次和自動監察工作整理成報告",
+          "先以 faster-whisper 在本機轉錄語音，再由 Ollama 提取主題並產生附時間戳的大綱",
+          "語音內容較少時，抽取影片關鍵影格交由本機視覺模型分析",
+          "處理單一影片、批次處理資料夾，或監察輸入資料夾的新檔案",
+          "將分類、標籤、內容簡介、故事摘要和時間線章節匯出為 Markdown 及 JSON",
+          "亦可選擇 Gemini 雲端分析；此模式會把完整影片上載至 Google",
         ],
         previewBadge: "VIDOUTLINE · 應用介面",
         screenshotsLabel: "桌面應用程式實際畫面",
@@ -1651,7 +1685,7 @@ const translated = {
   ja: {
     nav: {
       products: "プロダクト",
-      solutions: "ソリューション",
+      solutions: "DocuPass",
       projects: "プロジェクト",
       about: "概要",
       contact: "お問い合わせ",
@@ -1681,7 +1715,7 @@ const translated = {
       currentFocus: "現在の重点",
       whatExploring: "検討していること",
       possibleWorkflow: "想定ワークフロー",
-      possibleStep: "想定ステップ",
+      possibleStep: "ステップ",
       designPriorities: "設計の優先事項",
       workWithUs: "一緒に取り組む",
       contactCta: "お問い合わせ",
@@ -1707,43 +1741,22 @@ const translated = {
       capabilitiesTitle: ["細かな作業を減らし、", "考える時間を増やす。"],
       capabilitiesIntro:
         "文書が多く、繰り返しの多い現代の仕事に向けたソフトウェアを重点的に検討しています。",
-      productsLabel: "プロダクト領域",
-      productsTitle: ["アイデアを", "役立つツールへ。"],
-      productsIntro:
-        "丁寧につくり、進捗を正直に共有します。各プロダクト領域は現在開発中です。",
-      allProducts: "すべての領域を見る",
+      productsLabel: "ローカルアプリ",
+      productsTitle: ["実際のプロジェクトと", "開発中のソフトウェア。"],
+      productsIntro: "ローカルのソフトウェアとゲームを紹介します。各ページで主な機能、実際の画面、開発状況を確認できます。",
+      allProducts: "すべてのプロジェクトを見る",
       selectedLabel: "主なプロジェクト",
       selectedTitle: ["ゲームと", "個人制作プロジェクト。"],
-      selectedIntro:
-        "バスケットボール、物件カード、音楽クイズの4つのゲームビルドと、独立したウェブ・音楽プロジェクトを紹介します。",
-      selectedNames: [
-        "RimRise · Unity版",
-        "RimRise · ブラウザー版",
-        "BigDeal HK",
-        "Song Guess Online",
-        "オリジナル音源",
-      ],
-      selectedDescriptions: [
-        "Unity 6.3で開発中のバスケットボールキャリアゲーム。まずは5対5の試合から。",
-        "キャリア進行、3D都市、ストリートバスケを組み合わせたブラウザーゲーム。",
-        "香港をテーマにした物件カードゲーム。マルチプレイのルーム、ボット、イベントを実装中。",
-        "タイマー付きラウンド、ルーム設定、チーム戦に対応するマルチプレイ音楽クイズ。",
-        "オリジナル作品を含む音声プロジェクト。",
-      ],
-      workflowLabel: "仕事の流れ",
-      workflowTitle: ["ファイルから、", "次の一歩を明確に。"],
-      workflowIntro:
-        "優れた自動化は作業の流れを分かりやすくします。この例では、情報を次へ進める前に人が確認する文書ワークフローを示します。",
-      workflowLink: "文書インテリジェンスを見る",
-      workflowBoard: "ワークフロー例",
-      workflowSteps: [
-        ["文書を取り込む", "スキャンまたは電子ファイル"],
-        ["OCR・抽出", "テキストを項目に整理"],
-        ["検証", "読み取った内容を確認"],
-        ["人による確認", "確認してから次へ進む"],
-        ["構造化データ", "次のツールで利用可能"],
-      ],
-      workflowNote: "図はイメージ例です。製品機能は開発中です。",
+      selectedIntro: "4つのゲームを紹介します。RimRiseのUnity版とブラウザー版、BigDeal HK、Song Guess Onlineの画面と現在の機能を確認できます。",
+      selectedNames: ["RimRise · Unity版", "RimRise · ブラウザー版", "BigDeal HK", "Song Guess Online"],
+      selectedDescriptions: ["Unity 6.3のバスケットボールキャリア試作版。フルコート5対5、選手育成、3D都市生活を収録。", "キャリアのシーズン進行、3D都市、ストリート戦、オンラインルームを備えたブラウザーゲーム。", "香港をテーマにした物件カードゲーム。6つのモード、ルーム対戦、ボット、イベントに対応。", "タイマー付きラウンド、調整可能なルール、チーム戦を備えたマルチプレイ音楽クイズ。"],
+      workflowLabel: "DocuPass · ローカル文書処理",
+      workflowTitle: ["スキャンから", "確認済みの書き出しへ。"],
+      workflowIntro: "ローカルアプリのソースに基づく流れです。ファイルを選び、OCR設定を確認し、認識項目を照合してから構造化データを書き出します。",
+      workflowLink: "DocuPassを見る",
+      workflowBoard: "DOCUPASS · ソースに基づく図",
+      workflowSteps: [["ファイルを選択", "画像 · PDFページ · フォルダー"], ["OCR設定を確認", "言語 · モデル · CPU/GPU"], ["ローカルで処理", "進捗 · ファイルごとの結果"], ["項目を照合", "元のページと見比べる"], ["記録を書き出す", "Excel · CSV · JSON"]],
+      workflowNote: "DocuPassはデスクトップでOCRを実行します。NVIDIA GPUモードには対応するWindows環境が必要で、macOSではCPUを使用します。GPU処理は実機での確認が必要です。",
       principlesLabel: "ソフトウェアへの考え方",
       principlesTitle: ["実際の仕事を", "中心に設計する。"],
       principlesIntro:
@@ -1771,7 +1784,7 @@ const translated = {
       studioIntro:
         "Zevqio は創業者主導で自己資金により進める、初期段階の独立ソフトウェアスタジオです。文書処理、自動化、業務効率化に役立つツールを検討しています。",
       studioDetail:
-        "ゲーム制作では、ブラウザー版とUnity版のRimRise、BigDeal HK、Song Guess Onlineに取り組んでいます。独立したウェブやオリジナル音源のプロジェクトもあります。ゲームは開発中で、進捗に合わせて現在の段階を紹介します。",
+        "ゲーム制作では、ブラウザー版とUnity版のRimRise、BigDeal HK、Song Guess Onlineに取り組んでいます。各ページで現在のビルド、実際の画面、開発段階を紹介します。",
       studioStatus: "創業者主導 · 自己資金 · 初期段階",
       studioLink: "Zevqioについて詳しく",
       contactLabel: "相談する",
@@ -1859,6 +1872,8 @@ const translated = {
           gallery: [
             ["キャリア管理画面", "選手概要、シーズン情報、育成メニュー。"],
             ["試合のポーズ画面", "試合中に表示されるポーズ画面と基本操作。"],
+            ["3D都市の探索", "都市の風景とプレイヤーの移動を示すUnityのローカル画面です。"],
+            ["住居と物件の画面", "住居管理画面と利用できる操作を示すローカル画面です。"],
           ],
           stageNote:
             "開発中です。Unity版は現在ローカルのシングルプレイヤープロトタイプで、ブラウザー版と機能はまだ同等ではありません。",
@@ -1875,10 +1890,14 @@ const translated = {
           overviewTitle: "ブラウザーで広がるバスケットボールの世界。",
           overview: [
             "ブラウザー版では選手のキャリアシミュレーションと、探索できる3D都市を組み合わせています。プレイヤーは複数のシーズンにわたって架空のキャリアを築き、スキルを伸ばし、チーム、トレーニング、コート外の生活について選択します。",
-            "ブラウザー用のインターフェース、ゲームシミュレーション、マルチプレイヤーのルーム機能を一つの独立したウェブゲームにまとめています。都市、シーズン画面、バスケットボールの試合を含み、Unityプロトタイプとは別に開発しています。",
+            "ブラウザー用のインターフェース、ゲームシミュレーション、マルチプレイヤーのルーム機能を一つの独立したウェブゲームにまとめています。Three.js は WebGL で3Dシーンを描画し、高性能GPUを要求します。グラフィック設定ではGPUとハードウェアアクセラレーションの状態を表示し、ソフトウェア描画を検出すると解像度とフレームレートを下げます。",
           ],
-          focusTitle: "ブラウザーゲームの構成",
+          focusTitle: "グラフィック、キャリア、都市探索",
           focus: [
+            [
+              "WebGL描画とGPU診断",
+              "Three.js は WebGL で3D世界を描画し、高性能GPUを要求します。設定ではGPUとアクセラレーションの状態を表示し、ソフトウェア描画を検出すると解像度とフレームレートを下げます。",
+            ],
             [
               "キャリアとシーズン",
               "選手の成長、シーズン日程、キャリアの節目、シーズン間の選択。",
@@ -1886,10 +1905,6 @@ const translated = {
             [
               "3D都市とストリートプレイ",
               "台北、香港、東京をテーマにした探索可能な都市と、ストリートバスケのコート。",
-            ],
-            [
-              "ブラウザーゲームの仕組み",
-              "クライアントはJavaScriptとThree.jsで動作し、Node.jsとWebSocketがルームやリアルタイム機能を支えます。",
             ],
           ],
           gallery: [
@@ -1909,14 +1924,12 @@ const translated = {
     },
     productsPage: {
       title: "プロダクト",
-      description:
-        "OCR Studio、VidOutline、TokenSaver など、Zevqio の初期ソフトウェアプロジェクトをご覧ください。",
-      eyebrow: "プロダクト一覧",
-      headline: ["繰り返す仕事に", "役立つソフトウェア。"],
-      intro:
-        "実務に役立つ、目的を絞ったソフトウェアを検討しています。掲載中のプロジェクトはすべて開発中で、公開情報を整えている段階のものもあります。",
-      note: "各領域について公開できる段階になったら、提供状況や具体的な機能をお知らせします。",
-      ctaLabel: "活用したい場面はありますか？",
+      description: "Zevqioのローカルソフトウェアとゲームを紹介します。主な機能、実際の画面、仕様、開発状況を掲載しています。",
+      eyebrow: "プロジェクト一覧",
+      headline: ["ソフトウェアとゲーム", "実際のプロジェクトから。"],
+      intro: "各ページでは、現在のビルドに沿って主な機能、使い方、対応環境、画面、開発中の範囲を説明します。",
+      note: "画面はローカルビルドから掲載し、図解はその旨を明記しています。このサイトはデスクトップアプリやゲームサービスをホストしていません。",
+      ctaLabel: "活用できそうな場面はありますか？",
       ctaTitle: "取り組んでいる仕事をお聞かせください。",
       ctaButton: "お問い合わせ",
     },
@@ -1990,7 +2003,7 @@ const translated = {
       focusKicker: "現在の重点",
       focusTitle: "検討していること",
       inDevelopment: "開発中",
-      workflowEyebrow: "想定ワークフロー",
+      workflowEyebrow: "アプリの流れ",
       workflowTitle: ["スキャンから", "確認済みテキストへ。"],
       workflowIntro:
         "OCR Studio で検討している方向性です。以下はコンセプトを示しており、公開済みの機能一覧ではありません。",
@@ -2108,9 +2121,11 @@ const translated = {
         description:
           "VidOutline は、ローカル動画分析プロジェクトの公開用名称です。現在のデスクトップ画面では Video Agent と表示されています。faster-whisper と Ollama によるローカル分析に加え、動画全体を Google にアップロードして分析する Gemini クラウドモードも選べます。単一ファイル、フォルダー一括処理、監視フォルダーに対応し、Markdown と JSON のレポートを書き出します。",
         focus: [
-          "faster-whisper で音声をローカル文字起こしし、Ollama で分析",
-          "文字起こしが短い場合は、ローカルの視覚モデルでキーフレームを分析",
-          "単一動画、フォルダー一括処理、監視フォルダーの結果をレポート化",
+          "faster-whisperで音声を文字起こしし、Ollamaで話題を抽出してタイムスタンプ付きの構成を作成",
+          "音声が少ない動画はキーフレームを抽出し、ローカルの視覚モデルで分析",
+          "単一動画、フォルダー一括処理、監視フォルダーへの新規ファイル処理に対応",
+          "分類、タグ、紹介文、ストーリー要約、タイムラインをMarkdownとJSONで出力",
+          "Geminiのクラウド分析も選択可能です。このモードでは動画全体をGoogleにアップロードします",
         ],
         previewBadge: "VIDOUTLINE · アプリ画面",
         screenshotsLabel: "デスクトップアプリの画面",
@@ -2220,7 +2235,7 @@ const translated = {
   ko: {
     nav: {
       products: "제품",
-      solutions: "솔루션",
+      solutions: "DocuPass",
       projects: "프로젝트",
       about: "소개",
       contact: "문의",
@@ -2250,7 +2265,7 @@ const translated = {
       currentFocus: "현재 중점",
       whatExploring: "살펴보는 내용",
       possibleWorkflow: "가능한 작업 흐름",
-      possibleStep: "가능한 단계",
+      possibleStep: "단계",
       designPriorities: "디자인 우선순위",
       workWithUs: "함께하기",
       contactCta: "대화 시작하기",
@@ -2276,43 +2291,22 @@ const translated = {
       capabilitiesTitle: ["반복 업무는 줄이고,", "생각할 여유는 늘리고."],
       capabilitiesIntro:
         "문서가 많고 반복이 잦은 현대 업무를 위한 소프트웨어를 집중적으로 탐색합니다.",
-      productsLabel: "제품 분야",
-      productsTitle: ["아이디어를", "유용한 도구로."],
-      productsIntro:
-        "신중하게 만들고 진행 상황을 솔직하게 공유합니다. 모든 제품 분야는 현재 개발 중입니다.",
-      allProducts: "모든 제품 분야 보기",
+      productsLabel: "로컬 애플리케이션",
+      productsTitle: ["실제 프로젝트와", "개발 중인 소프트웨어."],
+      productsIntro: "로컬 소프트웨어와 게임 프로젝트를 소개합니다. 각 페이지에서 주요 기능, 실제 화면, 개발 상태를 볼 수 있습니다.",
+      allProducts: "모든 프로젝트 보기",
       selectedLabel: "주요 프로젝트",
       selectedTitle: ["게임과", "독립 제작 프로젝트."],
-      selectedIntro:
-        "농구, 부동산 카드 전략, 음악 퀴즈를 아우르는 네 가지 게임 빌드와 독립 웹·오디오 프로젝트를 소개합니다.",
-      selectedNames: [
-        "RimRise · Unity 에디션",
-        "RimRise · 브라우저 게임",
-        "BigDeal HK",
-        "Song Guess Online",
-        "오리지널 오디오",
-      ],
-      selectedDescriptions: [
-        "Unity 6.3 농구 커리어 프로토타입으로, 풀코트 5대5부터 구현하고 있습니다.",
-        "커리어 성장, 3D 도시, 길거리 농구를 담은 브라우저 게임입니다.",
-        "홍콩 테마의 부동산 카드 게임으로 멀티플레이어 방, 봇, 이벤트를 개발 중입니다.",
-        "시간 제한 라운드, 방 설정, 팀전을 지원하는 멀티플레이어 음악 퀴즈입니다.",
-        "오리지널 작업을 담은 독립 오디오 프로젝트입니다.",
-      ],
-      workflowLabel: "업무의 흐름",
-      workflowTitle: ["파일에서 시작해", "명확한 다음 단계로."],
-      workflowIntro:
-        "좋은 자동화는 업무 흐름을 이해하기 쉽게 만듭니다. 이 예시는 정보가 다음 단계로 넘어가기 전에 사람이 확인하는 문서 업무 흐름을 보여줍니다.",
-      workflowLink: "문서 인텔리전스 보기",
-      workflowBoard: "업무 흐름 예시",
-      workflowSteps: [
-        ["문서 입력", "스캔 또는 디지털 파일"],
-        ["OCR 및 추출", "텍스트를 구조화된 항목으로"],
-        ["검증", "인식된 내용 확인"],
-        ["사람의 검토", "확인 후 진행"],
-        ["구조화된 출력", "다음 도구에서 사용 가능"],
-      ],
-      workflowNote: "예시 다이어그램입니다. 제품 기능은 개발 중입니다.",
+      selectedIntro: "네 가지 게임을 소개합니다. RimRise Unity 및 브라우저 버전, BigDeal HK, Song Guess Online의 실제 화면과 현재 기능을 확인하세요.",
+      selectedNames: ["RimRise · Unity 에디션", "RimRise · 브라우저 게임", "BigDeal HK", "Song Guess Online"],
+      selectedDescriptions: ["Unity 6.3 농구 커리어 프로토타입: 풀코트 5대5, 선수 성장, 3D 도시 생활.", "커리어 시즌, 3D 도시, 길거리 경기와 온라인 방을 갖춘 브라우저 농구 게임.", "홍콩 테마 부동산 카드 게임: 6가지 모드, 멀티플레이어 방, 봇, 이벤트.", "시간 제한 라운드, 설정 가능한 규칙, 팀전을 지원하는 멀티플레이어 음악 퀴즈."],
+      workflowLabel: "DocuPass · 로컬 문서 처리",
+      workflowTitle: ["스캔에서 시작해", "검토 후 내보내기까지."],
+      workflowIntro: "로컬 앱 소스에 기반한 흐름입니다. 파일을 고르고 OCR 설정을 확인한 뒤 인식된 항목을 검토하고 구조화된 기록으로 내보냅니다.",
+      workflowLink: "DocuPass 보기",
+      workflowBoard: "DOCUPASS · 소스 기반 흐름",
+      workflowSteps: [["파일 선택", "이미지 · PDF 페이지 · 폴더"], ["OCR 설정 확인", "언어 · 모델 · CPU/GPU"], ["로컬 처리", "진행 상태 · 파일별 결과"], ["항목 검토", "원본 페이지와 대조"], ["기록 내보내기", "Excel · CSV · JSON"]],
+      workflowNote: "DocuPass는 데스크톱에서 OCR을 실행합니다. NVIDIA GPU 모드는 호환되는 Windows 환경이 필요하고 macOS는 CPU를 사용합니다. GPU 경로는 실제 기기 검증이 필요합니다.",
       principlesLabel: "소프트웨어에 대한 생각",
       principlesTitle: ["실제 업무를", "중심으로 만듭니다."],
       principlesIntro:
@@ -2340,7 +2334,7 @@ const translated = {
       studioIntro:
         "Zevqio는 창업자가 이끌고 자체 자금으로 운영하는 초기 단계의 독립 소프트웨어 스튜디오입니다. 문서 처리, 자동화, 비즈니스 생산성을 위한 도구를 탐색합니다.",
       studioDetail:
-        "현재 게임 프로젝트에는 브라우저 및 Unity 버전의 RimRise, BigDeal HK, Song Guess Online이 있습니다. 독립 웹과 오리지널 오디오 작업도 함께 진행합니다. 게임은 개발 중이며 진행 상황과 현재 단계를 공유합니다.",
+        "현재 게임 프로젝트는 브라우저 및 Unity 버전의 RimRise, BigDeal HK, Song Guess Online입니다. 각 페이지에서 현재 빌드와 실제 화면, 개발 단계를 확인할 수 있습니다.",
       studioStatus: "창업자 주도 · 자체 자금 · 초기 단계",
       studioLink: "Zevqio 자세히 보기",
       contactLabel: "대화 시작하기",
@@ -2425,14 +2419,10 @@ const translated = {
             ],
           ],
           gallery: [
-            [
-              "커리어 관리 화면",
-              "선수 개요, 시즌 정보, 성장 메뉴를 보여줍니다.",
-            ],
-            [
-              "경기 일시 정지 화면",
-              "경기 중 일시 정지 메뉴와 기본 조작 안내입니다.",
-            ],
+            ["커리어 관리 화면", "선수 개요, 시즌 정보, 성장 메뉴를 보여줍니다."],
+            ["경기 일시 정지 화면", "경기 중 일시 정지 메뉴와 기본 조작 안내입니다."],
+            ["3D 도시 탐험", "도시 장면과 플레이어 이동을 보여주는 Unity 로컬 화면입니다."],
+            ["주거 및 부동산 화면", "주거 관리 화면과 사용할 수 있는 동작을 보여주는 캡처입니다."],
           ],
           stageNote:
             "개발 중입니다. Unity 에디션은 현재 로컬 싱글 플레이어 프로토타입이며 브라우저 버전과 기능이 아직 동일하지 않습니다.",
@@ -2449,10 +2439,14 @@ const translated = {
           overviewTitle: "브라우저에서 펼쳐지는 농구 세계.",
           overview: [
             "브라우저 버전은 선수 커리어 시뮬레이션과 탐험 가능한 3D 도시를 결합합니다. 플레이어는 여러 시즌에 걸쳐 가상의 커리어를 만들고 기술을 키우며 팀, 훈련, 코트 밖 생활에 관한 결정을 내립니다.",
-            "브라우저 인터페이스, 게임 시뮬레이션, 멀티플레이어 룸 시스템을 하나의 독립 웹 게임으로 묶었습니다. 도시, 시즌 화면, 농구 경기가 포함되며 Unity 프로토타입과는 별도로 개발합니다.",
+            "브라우저 인터페이스, 게임 시뮬레이션, 멀티플레이어 룸 시스템을 하나의 독립 웹 게임으로 묶었습니다. Three.js는 WebGL로 3D 장면을 렌더링하며 고성능 GPU를 요청합니다. 그래픽 설정에서 GPU와 하드웨어 가속 상태를 표시하고 소프트웨어 렌더링을 감지하면 해상도와 프레임 속도를 낮춥니다.",
           ],
-          focusTitle: "브라우저 게임을 이루는 요소",
+          focusTitle: "그래픽, 커리어, 도시 탐험",
           focus: [
+            [
+              "WebGL 그래픽과 GPU 진단",
+              "Three.js는 WebGL로 3D 세계를 렌더링하고 고성능 GPU를 요청합니다. 설정에서 GPU와 가속 상태를 표시하며 소프트웨어 렌더링을 감지하면 해상도와 프레임 속도를 낮춥니다.",
+            ],
             [
               "커리어와 시즌",
               "선수 성장, 시즌 일정, 커리어의 주요 순간, 시즌 사이의 선택.",
@@ -2460,10 +2454,6 @@ const translated = {
             [
               "3D 도시와 길거리 농구",
               "타이베이, 홍콩, 도쿄를 테마로 한 탐험형 도시와 길거리 코트.",
-            ],
-            [
-              "브라우저 게임 시스템",
-              "클라이언트는 JavaScript와 Three.js로 만들고 Node.js 및 WebSocket으로 룸과 실시간 기능을 지원합니다.",
             ],
           ],
           gallery: [
@@ -2480,13 +2470,11 @@ const translated = {
     },
     productsPage: {
       title: "제품",
-      description:
-        "OCR Studio, VidOutline, TokenSaver를 포함한 Zevqio의 초기 소프트웨어 프로젝트와 제품 분야를 살펴보세요.",
-      eyebrow: "제품 포트폴리오",
-      headline: ["반복되는 업무를 위한", "소프트웨어."],
-      intro:
-        "실제 업무에 필요한 집중형 소프트웨어 프로젝트를 탐색합니다. 목록의 모든 프로젝트는 개발 중이며, 공개 세부 정보가 정리 중인 항목도 있습니다.",
-      note: "각 제품 분야를 공개적으로 논의할 준비가 되면 제공 여부와 구체적인 기능을 공유하겠습니다.",
+      description: "Zevqio의 로컬 소프트웨어와 게임을 소개합니다. 주요 기능, 실제 화면, 기술 사양, 개발 상태를 확인하세요.",
+      eyebrow: "프로젝트 포트폴리오",
+      headline: ["소프트웨어 도구와 게임", "실제 프로젝트에서."],
+      intro: "각 프로젝트 페이지는 현재 빌드에 맞춰 주요 기능, 사용 흐름, 플랫폼, 화면, 개발 중인 범위를 설명합니다.",
+      note: "화면은 로컬 프로젝트 빌드에서 가져왔고, 다이어그램은 따로 표시합니다. 이 웹사이트는 데스크톱 앱이나 게임 서비스를 호스팅하지 않습니다.",
       ctaLabel: "활용 사례가 있나요?",
       ctaTitle: "어떤 업무인지 알려주세요.",
       ctaButton: "문의하기",
@@ -2558,7 +2546,7 @@ const translated = {
       focusKicker: "현재 중점",
       focusTitle: "살펴보는 내용",
       inDevelopment: "개발 중",
-      workflowEyebrow: "가능한 업무 흐름",
+      workflowEyebrow: "앱 사용 흐름",
       workflowTitle: ["스캔에서", "검토된 텍스트로."],
       workflowIntro:
         "OCR Studio에서 탐색 중인 방향입니다. 아래 단계는 콘셉트를 설명하며 출시된 기능 목록이 아닙니다.",
@@ -2680,9 +2668,11 @@ const translated = {
         description:
           "VidOutline은 로컬 동영상 분석 프로젝트의 공개 이름입니다. 현재 데스크톱 화면에는 Video Agent로 표시됩니다. faster-whisper와 Ollama를 이용한 로컬 분석을 지원하며, 동영상 전체를 Google에 업로드하는 Gemini 클라우드 모드도 선택할 수 있습니다. 단일 파일, 폴더 일괄 처리, 감시 폴더를 지원하고 Markdown 및 JSON 보고서를 내보냅니다.",
         focus: [
-          "faster-whisper로 음성을 로컬 전사한 뒤 Ollama로 분석",
-          "전사 내용이 짧으면 로컬 비전 모델로 키프레임 분석",
-          "단일 파일, 폴더 일괄 처리, 감시 폴더 작업을 보고서로 정리",
+          "faster-whisper로 음성을 전사한 뒤 Ollama로 주제를 분석하고 타임스탬프 개요를 생성",
+          "음성이 적으면 영상 키프레임을 추출해 로컬 비전 모델로 분석",
+          "단일 영상, 폴더 일괄 처리, 감시 폴더의 새 파일 처리를 지원",
+          "분류, 태그, 소개, 줄거리 요약, 타임라인을 Markdown과 JSON으로 내보내기",
+          "Gemini 클라우드 분석도 선택할 수 있으며 이 모드는 전체 영상을 Google에 업로드",
         ],
         previewBadge: "VIDOUTLINE · 앱 화면",
         screenshotsLabel: "데스크톱 앱 실제 화면",
@@ -2815,83 +2805,6 @@ export const localeHref = (locale: Locale, path: string): string => {
   const hash = hashParts.length ? `#${hashParts.join("#")}` : "";
   return `${localized}${hash}`;
 };
-
-const capabilities = {
-  en: [
-    [
-      "Document intelligence",
-      "Explore ways to turn digital and scanned documents into clear, structured information.",
-    ],
-    [
-      "OCR & data extraction",
-      "Investigate text recognition and extraction workflows for everyday business documents.",
-    ],
-    [
-      "PDF automation",
-      "Design practical approaches to creating, processing, and organizing PDF documents.",
-    ],
-    [
-      "Workflow automation",
-      "Map repetitive operations into understandable steps with room for human review.",
-    ],
-    [
-      "Developer tools",
-      "Build toward useful integrations and developer-friendly ways to connect business tools.",
-    ],
-  ],
-  "zh-cn": [
-    ["文档智能", "探索将数字文档和扫描件转化为清晰结构化信息的方法。"],
-    ["OCR 与数据提取", "研究适用于日常业务文档的文字识别与提取流程。"],
-    ["PDF 自动化", "设计创建、处理和整理 PDF 文档的实用方案。"],
-    ["工作流程自动化", "将重复运营流程梳理为易懂步骤，并保留人工审核空间。"],
-    ["开发者工具", "探索实用集成方式，让业务工具更容易连接。"],
-  ],
-  "zh-hk": [
-    ["文件智能", "探索把數碼文件和掃描檔轉化為清晰結構化資料的方法。"],
-    ["OCR 與資料擷取", "研究適用於日常業務文件的文字辨識與擷取流程。"],
-    ["PDF 自動化", "設計建立、處理和整理 PDF 文件的實用方案。"],
-    ["工作流程自動化", "把重複營運流程整理成易明步驟，並保留人工審核空間。"],
-    ["開發者工具", "探索實用整合方式，讓業務工具更容易連接。"],
-  ],
-  ja: [
-    [
-      "文書インテリジェンス",
-      "電子文書やスキャン文書を明確な構造化情報にする方法を検討します。",
-    ],
-    [
-      "OCR・データ抽出",
-      "日常業務の文書を対象とした文字認識と抽出フローを検討します。",
-    ],
-    ["PDF自動化", "PDFの作成、処理、整理に役立つ方法を設計します。"],
-    [
-      "業務ワークフロー自動化",
-      "繰り返し作業を人による確認を含む分かりやすい手順に整理します。",
-    ],
-    ["開発者向けツール", "業務ツールをつなぐ実用的な連携方法を検討します。"],
-  ],
-  ko: [
-    [
-      "문서 인텔리전스",
-      "디지털 문서와 스캔 문서를 명확한 구조화 정보로 바꾸는 방법을 탐색합니다.",
-    ],
-    [
-      "OCR 및 데이터 추출",
-      "일상적인 비즈니스 문서를 위한 문자 인식과 추출 업무 흐름을 살펴봅니다.",
-    ],
-    [
-      "PDF 자동화",
-      "PDF 문서를 만들고 처리하고 정리하는 실용적인 방법을 설계합니다.",
-    ],
-    [
-      "업무 흐름 자동화",
-      "사람의 검토를 포함해 반복 운영 업무를 이해하기 쉬운 단계로 정리합니다.",
-    ],
-    ["개발자 도구", "비즈니스 도구를 연결하는 유용한 연동 방식을 탐색합니다."],
-  ],
-} as const;
-
-export const getCapabilityTranslations = (locale: Locale) =>
-  capabilities[locale];
 
 export const getEarlyStageNote = (locale: Locale): string =>
   ({

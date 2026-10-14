@@ -1,8 +1,8 @@
 ---
 import LocalizedPage from "../../components/LocalizedPage.astro";
-import { products } from "../../data/products";
+import { allProducts } from "../../data/products";
 export function getStaticPaths() {
-  return products.map((product) => ({ params: { slug: product.slug } }));
+  return allProducts.map((product) => ({ params: { slug: product.slug } }));
 }
 const { slug } = Astro.params;
 ---

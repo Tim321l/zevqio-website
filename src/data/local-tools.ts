@@ -1,4 +1,5 @@
 import content from "./local-tool-content.json";
+import { docupassCopy } from "./docupass-content";
 import type { Product, ProductStory } from "./products";
 import type { Locale } from "./locales";
 
@@ -53,9 +54,45 @@ const images = {
     "tokensaver-prompt.jpg",
     "tokensaver-versions.jpg",
   ],
+  docupass: [
+    "docupass-workflow.svg",
+    "docupass-hardware.svg",
+    "docupass-phone.svg",
+  ],
 };
 
 export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
+  if (slug === "docupass") {
+    const text = docupassCopy[locale];
+    return {
+      ...text,
+      previewBadge: `${text.name.toUpperCase()} · SOURCE-BASED DIAGRAMS`,
+      screenshotsLabel: text.screenshotsLabel,
+      specificationsLabel: text.specificationsLabel,
+      specificationsTitle: text.specificationsTitle,
+      specificationsIntro: text.specificationsIntro,
+      story: {
+        title: text.title,
+        problem: text.problem,
+        approach: text.approach,
+        workflowTitle: text.workflowTitle,
+        workflowIntro: text.workflowIntro,
+        workflow: text.workflow,
+        principlesTitle: text.principlesTitle,
+        principlesIntro: text.principlesIntro,
+        principles: text.principles,
+        status: text.status,
+      },
+      interfacePreviews: text.previews.map(([title, description], index) => ({
+        title,
+        description,
+        alt: `${title}: ${description}`,
+        image: `/images/projects/${images.docupass[index]}`,
+        width: 1440,
+        height: 900,
+      })),
+    };
+  }
   if (slug !== "monitor" && slug !== "tokensaver") return undefined;
   const text = content[locale][slug];
   const ui = labels[locale];
@@ -129,13 +166,3 @@ export function buildLocalTool(
 }
 
 export const fullImageLabel = (locale: Locale) => labels[locale][5];
-
-export const toolPortfolioIntro: Record<Locale, string> = {
-  en: "Explore VidOutline, TokenSaver and Monitor: local implementations with real app captures, current capabilities and clear development limits.",
-  "zh-hk":
-    "查看 VidOutline、TokenSaver 及 Monitor 的本機實作、實際截圖、目前功能及開發限制。",
-  "zh-cn":
-    "查看 VidOutline、TokenSaver 和 Monitor 的本地实现、实际截图、当前功能及开发限制。",
-  ja: "VidOutline、TokenSaver、Monitor のローカル実装、実際の画面、現在の機能と制限を紹介します。",
-  ko: "VidOutline, TokenSaver, Monitor의 로컬 구현, 실제 화면, 현재 기능과 개발 제한을 소개합니다.",
-};

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#0B1E2A"/><stop offset="1" stop-color="#112D37"/></linearGradient>
+    <linearGradient id="gpu" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8BF4D1"/><stop offset="1" stop-color="#43C1A8"/></linearGradient>
+  </defs>
+  <rect width="1440" height="900" rx="36" fill="url(#bg)"/>
+  <circle cx="1240" cy="90" r="240" fill="#278E7B" fill-opacity=".1"/>
+  <text x="88" y="108" fill="#83F0D0" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">DOCUPASS  /  HARDWARE-AWARE SETUP</text>
+  <text x="88" y="183" fill="#F4FAFB" font-family="Arial,sans-serif" font-size="46" font-weight="700">Check the machine before choosing a runtime</text>
+  <text x="88" y="226" fill="#B6C8CD" font-family="Arial,sans-serif" font-size="21">GPU use depends on the full supported stack, not the graphics card name alone.</text>
+  <rect x="510" y="286" width="420" height="108" rx="24" fill="#193540" stroke="#43616A" stroke-width="2"/>
+  <circle cx="564" cy="340" r="22" fill="#83F0D0"/>
+  <path d="M564 327v26M551 340h26" stroke="#0B1E2A" stroke-width="4" stroke-linecap="round"/>
+  <text x="607" y="334" fill="#F4FAFB" font-family="Arial,sans-serif" font-size="23" font-weight="700">Read this computer</text>
+  <text x="607" y="367" fill="#B6C8CD" font-family="Arial,sans-serif" font-size="17">CPU · available RAM · NVIDIA GPU · driver</text>
+  <path d="M720 394v53M720 447H366v44M720 447h354v44" stroke="#5C8990" stroke-width="3" stroke-linecap="round"/>
+  <path d="m357 482 9 12 9-12M1065 482l9 12 9-12" stroke="#5C8990" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="112" y="512" width="508" height="222" rx="24" fill="#152F3A" stroke="#42606A" stroke-width="2"/>
+  <rect x="820" y="512" width="508" height="222" rx="24" fill="#152F3A" stroke="#58BDA9" stroke-width="2"/>
+  <rect x="148" y="548" width="74" height="74" rx="20" fill="#243E48"/>
+  <path d="M168 568h34v34h-34zM176 560v8M194 560v8M176 602v8M194 602v8M160 576h8M202 576h8M160 594h8M202 594h8" stroke="#B5CDD2" stroke-width="3" stroke-linecap="round"/>
+  <text x="246" y="573" fill="#F4FAFB" font-family="Arial,sans-serif" font-size="25" font-weight="700">CPU path</text>
+  <text x="246" y="611" fill="#B6C8CD" font-family="Arial,sans-serif" font-size="17"><tspan x="246" dy="0">Available on Windows and macOS.</tspan><tspan x="246" dy="27">Parallel workers are capped using</tspan><tspan x="246" dy="27">available memory and CPU cores.</tspan></text>
+  <rect x="856" y="548" width="74" height="74" rx="20" fill="url(#gpu)"/>
+  <path d="M876 567h34v35h-34zM884 575h18v19h-18zM883 560v7M901 560v7M883 602v7M901 602v7M868 575h8M910 575h8M868 594h8M910 594h8" stroke="#0B1E2A" stroke-width="3" stroke-linecap="round"/>
+  <text x="954" y="573" fill="#F4FAFB" font-family="Arial,sans-serif" font-size="25" font-weight="700">NVIDIA GPU path</text>
+  <text x="954" y="611" fill="#B6C8CD" font-family="Arial,sans-serif" font-size="17"><tspan x="954" dy="0">Windows · compatible GPU runtime</tspan><tspan x="954" dy="27">Supported driver · at least 2 GB</tspan><tspan x="954" dy="27">free VRAM · safe worker count</tspan></text>
+  <rect x="112" y="770" width="1216" height="72" rx="18" fill="#0B202A" stroke="#294650"/>
+  <circle cx="151" cy="806" r="13" fill="#F2C56C"/>
+  <path d="M151 798v10M151 814v1" stroke="#142B35" stroke-width="3" stroke-linecap="round"/>
+  <text x="181" y="800" fill="#F4FAFB" font-family="Arial,sans-serif" font-size="18" font-weight="700">Important boundary</text>
+  <text x="181" y="826" fill="#B6C8CD" font-family="Arial,sans-serif" font-size="16">macOS uses CPU. The source includes NVIDIA setup and fallback logic; real NVIDIA hardware still needs verification.</text>
+  <text x="1294" y="826" fill="#83F0D0" font-family="Arial,sans-serif" font-size="13" text-anchor="end">SOURCE-BASED DIAGRAM</text>
+</svg>

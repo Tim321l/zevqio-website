@@ -5,9 +5,10 @@
       "summary": "A compact, always-on-top Windows dashboard for CPU, GPU, memory and network activity.",
       "description": "Monitor runs locally as Hardware Monitor Pro. Its Python desktop interface keeps live resource readings in one narrow window, so system activity remains visible beside other work.",
       "focus": [
-        "CPU and GPU utilization, GPU temperature and VRAM usage",
-        "System memory and total upload/download rates",
-        "Active applications ranked by network connection count"
+        "Read CPU and GPU activity, GPU temperature, and VRAM; GPU readings use NVIDIA NVML when supported.",
+        "Keep system memory and total upload/download rates visible together.",
+        "See active applications ranked by connection count; this is not per-application bandwidth measurement.",
+        "Watch live readings in a compact Windows window that stays above other windows."
       ],
       "previews": [
         [
@@ -81,9 +82,11 @@
       "summary": "Turn a rough idea into a structured prompt, with project context, token estimates and saved versions.",
       "description": "TokenSaver’s local app is currently named Promptwell v3.1. It prepares prompts using offline rules: clarify the goal, add context, define outputs and constraints, and state how completion will be checked.",
       "focus": [
-        "Five guided questions and editable requirements",
-        "Markdown context, prompt budgets and copy/export controls",
-        "Saved versions, comparison and JSON backup/restore"
+        "Five guided questions cover the goal, background, deliverable, constraints, and completion checks; every answer can be edited.",
+        "Import Markdown project notes and choose the full context or a budget-focused selection.",
+        "Build an editable brief with prompt and response-length controls; the displayed counts are character-based estimates.",
+        "Copy or export the prompt, save up to eight versions, compare or restore them, and move backups through JSON.",
+        "Optional task execution is a separate, confirmed local-service step; preparing a prompt sends no AI request."
       ],
       "previews": [
         [
@@ -171,9 +174,10 @@
       "summary": "置頂的精簡 Windows 面板，一眼查看 CPU、GPU、記憶體及網絡活動。",
       "description": "Monitor 的本機介面名為 Hardware Monitor Pro。Python 桌面程式將即時資源數據集中在窄身視窗，方便在遊戲或工作旁邊查看。",
       "focus": [
-        "CPU、GPU 使用率、GPU 溫度及顯示記憶體",
-        "系統記憶體與整體上下載速率",
-        "按網絡連線數排列活躍程式"
+        "查看 CPU、GPU 活動、GPU 溫度及 VRAM；支援時以 NVIDIA NVML 讀取 GPU 數據。",
+        "同時查看系統記憶體及整體上下載速率。",
+        "按連線數排列活躍程式；這不是各程式的頻寬用量。",
+        "在精簡的 Windows 置頂視窗中查看持續更新的讀數。"
       ],
       "previews": [
         [
@@ -229,9 +233,11 @@
       "summary": "把初步想法整理成工作提示詞，加入專案背景、詞元估算及版本保存。",
       "description": "TokenSaver 的本機程式目前名為 Promptwell v3.1。它使用離線規則，協助整理目標、背景、交付內容、限制及完成條件。",
       "focus": [
-        "五個引導問題及可直接修改的需求",
-        "Markdown 背景、提示詞預算及複製／匯出",
-        "版本保存、比較及 JSON 備份還原"
+        "五個引導問題整理目標、背景、交付內容、限制和完成條件，答案均可直接修改。",
+        "匯入 Markdown 專案資料，選擇完整背景或按預算挑選內容。",
+        "產生可編輯的工作提示詞，設定提示詞與回覆長度；畫面數值是以字元計算的估算。",
+        "複製或匯出提示詞，最多保存八個版本、比較或還原，並以 JSON 備份和匯入。",
+        "可選的任務執行需要另外確認本機服務；整理提示詞本身不會發出 AI 請求。"
       ],
       "previews": [
         [
@@ -301,9 +307,10 @@
       "summary": "CPU、GPU、メモリ、ネットワークの状態を最前面の小さなウィンドウで確認。",
       "description": "Monitor のローカル画面名は Hardware Monitor Pro です。Python のデスクトップ画面に各リソースの読み取り値をまとめます。",
       "focus": [
-        "CPU・GPU 使用率、GPU 温度と VRAM",
-        "メモリとシステム全体の送受信速度",
-        "接続数で並べたアプリ一覧"
+        "CPU・GPUの使用状況、GPU温度、VRAMを表示します。GPU値は対応環境でNVIDIA NVMLから取得します。",
+        "システムメモリと全体のアップロード／ダウンロード速度をまとめて確認できます。",
+        "アクティブなアプリを接続数順に表示します。アプリごとの通信量を測る機能ではありません。",
+        "他のウィンドウより前面に表示するコンパクトなWindows画面で、値を更新します。"
       ],
       "previews": [
         [
@@ -368,9 +375,11 @@
       "summary": "アイデアを構造化した指示にまとめ、背景、トークン推定、保存版を管理。",
       "description": "TokenSaver のローカルアプリ名は Promptwell v3.1 です。オフラインのルールで目標、背景、成果物、制約、完了条件を整理します。",
       "focus": [
-        "5 つの質問と直接編集",
-        "Markdown の背景と長さの設定",
-        "保存版の比較と JSON バックアップ"
+        "目標・背景・成果物・制約・完了条件を5つの質問で整理し、回答を直接編集できます。",
+        "Markdown のプロジェクト資料を取り込み、全体または予算に合わせた文脈を選べます。",
+        "編集可能なプロンプトを作成し、長さを調整できます。表示される数値は文字数ベースの概算です。",
+        "コピーや書き出しに加え、最大8件の版を保存・比較・復元し、JSONでバックアップできます。",
+        "任意のタスク実行はローカルサービスで別途確認が必要です。準備だけではAIリクエストを送りません。"
       ],
       "previews": [
         [
@@ -440,9 +449,10 @@
       "summary": "항상 위에 표시되는 작은 창에서 CPU, GPU, 메모리와 네트워크를 확인합니다.",
       "description": "Monitor의 로컬 화면 이름은 Hardware Monitor Pro입니다. Python 데스크톱 앱이 리소스 수치를 좁은 창에 모아 보여 줍니다.",
       "focus": [
-        "CPU·GPU 사용률, GPU 온도와 VRAM",
-        "메모리와 시스템 전체 업로드·다운로드",
-        "네트워크 연결 수로 정렬한 앱"
+        "CPU·GPU 활동, GPU 온도, VRAM을 표시합니다. 지원되는 환경에서는 NVIDIA NVML로 GPU 값을 읽습니다.",
+        "시스템 메모리와 전체 업로드·다운로드 속도를 함께 확인합니다.",
+        "활성 앱을 연결 수로 정렬합니다. 앱별 대역폭을 측정하는 기능은 아닙니다.",
+        "다른 창보다 앞에 표시되는 작은 Windows 창에서 값을 계속 갱신합니다."
       ],
       "previews": [
         [
@@ -507,9 +517,11 @@
       "summary": "아이디어를 구조화한 작업 지시로 만들고 배경, 토큰 추정과 저장 버전을 관리합니다.",
       "description": "TokenSaver의 로컬 앱 이름은 Promptwell v3.1입니다. 오프라인 규칙으로 목표, 배경, 결과물, 제약과 완료 조건을 정리합니다.",
       "focus": [
-        "다섯 질문과 직접 편집",
-        "Markdown 배경과 길이 설정",
-        "버전 비교와 JSON 백업"
+        "목표, 배경, 결과물, 제약, 완료 기준을 다섯 질문으로 정리하고 답변을 직접 수정할 수 있습니다.",
+        "Markdown 프로젝트 자료를 가져와 전체 문맥 또는 예산에 맞는 일부 문맥을 선택합니다.",
+        "수정 가능한 프롬프트를 만들고 길이를 조절합니다. 표시되는 수치는 문자 수 기반 추정치입니다.",
+        "복사와 내보내기, 최대 8개 버전 저장·비교·복원, JSON 백업을 지원합니다.",
+        "선택적 작업 실행은 로컬 서비스에서 별도로 확인해야 합니다. 준비 단계에서는 AI 요청을 보내지 않습니다."
       ],
       "previews": [
         [
@@ -594,9 +606,10 @@
       "summary": "置顶的精简 Windows 面板，一眼查看 CPU、GPU、内存及网络活动。",
       "description": "Monitor 的本机界面名为 Hardware Monitor Pro。Python 桌面程序将即时资源数据集中在窄身窗口，方便在游戏或工作旁边查看。",
       "focus": [
-        "CPU、GPU 使用率、GPU 温度及显存",
-        "系统内存与整体上传下载速率",
-        "按网络连接数排列活跃程序"
+        "查看 CPU、GPU 活动、GPU 温度及 VRAM；支持时通过 NVIDIA NVML 读取 GPU 数据。",
+        "同时查看系统内存与整体上传下载速率。",
+        "按连接数排列活跃程序；这不是各程序的带宽用量。",
+        "在精简的 Windows 置顶窗口中查看持续更新的数据。"
       ],
       "previews": [
         [
@@ -652,9 +665,11 @@
       "summary": "把初步想法整理成工作提示词，加入项目背景、词元估算及版本保存。",
       "description": "TokenSaver 的本机程序目前名为 Promptwell v3.1。它使用离线规则，协助整理目标、背景、交付内容、限制及完成条件。",
       "focus": [
-        "五个引导问题及可直接修改的需求",
-        "Markdown 背景、提示词预算及复制／导出",
-        "版本保存、比较及 JSON 备份还原"
+        "五个引导问题整理目标、背景、交付内容、限制和完成条件，答案都可以直接修改。",
+        "导入 Markdown 项目资料，选择完整背景或按预算挑选内容。",
+        "生成可编辑的工作提示词，设置提示词与回复长度；显示数值是按字符计算的估算。",
+        "复制或导出提示词，最多保存八个版本、比较或还原，并通过 JSON 备份和导入。",
+        "可选的任务执行需要另外确认本地服务；整理提示词本身不会发出 AI 请求。"
       ],
       "previews": [
         [

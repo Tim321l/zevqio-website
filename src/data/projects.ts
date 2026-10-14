@@ -2,8 +2,8 @@ export type SelectedProject = {
   name: string;
   summary: string;
   tools: string[];
-  icon: "gamepad" | "web" | "audio";
-  accent: "blue" | "cyan" | "violet";
+  icon: "gamepad" | "web";
+  accent: "blue" | "cyan";
   image?: string;
   imageAspect?: "wide" | "cinema" | "square";
   imagePosition?: "center" | "top";
@@ -20,6 +20,8 @@ export const projectImageSizes: Record<string, [number, number]> = {
   "/images/projects/rimrise-unity-career.webp": [1280, 720],
   "/images/projects/rimrise-unity-gameplay.webp": [1280, 720],
   "/images/projects/rimrise-unity-pause.webp": [1280, 720],
+  "/images/projects/rimrise-unity-city.png": [1280, 720],
+  "/images/projects/rimrise-unity-home.png": [1280, 720],
   "/images/projects/rimrise-web-career.webp": [1440, 960],
   "/images/projects/rimrise-web-city.webp": [1440, 960],
   "/images/projects/rimrise-web-gameplay.webp": [1440, 960],
@@ -40,6 +42,18 @@ export type ProjectDetailCopy = {
   stageNote: string;
 };
 
+export type ProjectSpecKey =
+  | "platform"
+  | "gameModes"
+  | "controls"
+  | "progression"
+  | "multiplayer"
+  | "matchFlow"
+  | "graphics"
+  | "quizModes"
+  | "timer"
+  | "roomAccess";
+
 export type ProjectPage = {
   slug: "rimrise-unity" | "rimrise-web" | "bigdeal" | "song-guess";
   icon: "gamepad" | "web";
@@ -49,6 +63,7 @@ export type ProjectPage = {
   tools: string[];
   githubUrl: string;
   imageAspect?: "cinema" | "square";
+  specifications?: [ProjectSpecKey, string][];
   details?: ProjectDetailCopy;
 };
 
@@ -61,8 +76,18 @@ export const projectPages: ProjectPage[] = [
     screenshots: [
       "/images/projects/rimrise-unity-career.webp",
       "/images/projects/rimrise-unity-pause.webp",
+      "/images/projects/rimrise-unity-city.png",
+      "/images/projects/rimrise-unity-home.png",
     ],
     tools: ["Unity 6.3", "C#"],
+    specifications: [
+      ["platform", "Unity 6.3 · C#"],
+      ["gameModes", "Full-court 5v5 · 21-point street game · career and city life"],
+      ["controls", "Keyboard · gamepad · touch"],
+      ["progression", "8 career starting paths · seasons and contracts · local JSON save with backup/import"],
+      ["multiplayer", "Local single-player prototype"],
+      ["graphics", "Unity 3D · quality and frame-rate options · keyboard, controller and touch layouts"],
+    ],
     githubUrl:
       "https://github.com/Tim321l/hardwood-career/tree/codex/unity-city-continuation-20261006/unity",
   },
@@ -75,7 +100,14 @@ export const projectPages: ProjectPage[] = [
       "/images/projects/rimrise-web-city.webp",
       "/images/projects/rimrise-web-gameplay.webp",
     ],
-    tools: ["JavaScript", "Three.js", "Node.js", "WebSocket"],
+    tools: ["JavaScript", "Three.js", "WebGL", "Node.js", "WebSocket"],
+    specifications: [
+      ["platform", "Browser · Three.js · WebGL"],
+      ["gameModes", "2D career · full-court 5v5 · street 1v1/5v5 · shooting practice · free-city life"],
+      ["progression", "High school to professional seasons · contracts and player growth · browser save"],
+      ["multiplayer", "WebSocket rooms · friend duels · cooperative city jobs · group tasks up to 4"],
+      ["graphics", "Three.js/WebGL · adapter and acceleration status · software-rendering warning and fallback"],
+    ],
     githubUrl: "https://github.com/Tim321l/hardwood-career",
   },
   {
@@ -88,6 +120,12 @@ export const projectPages: ProjectPage[] = [
       "/images/projects/bigdeal-waiting-room.png",
     ],
     tools: ["TypeScript", "React", "Socket.IO", "Node.js"],
+    specifications: [
+      ["platform", "React · TypeScript · Node.js"],
+      ["gameModes", "6 modes in the current codebase"],
+      ["multiplayer", "Socket.IO rooms · bots · spectator seats"],
+      ["matchFlow", "Room-based matches · mode-specific win goals"],
+    ],
     githubUrl: "https://github.com/Tim321l/bigdeal",
     imageAspect: "cinema",
     details: {
@@ -107,16 +145,36 @@ export const projectPages: ProjectPage[] = [
       focusTitle: "What the current build includes",
       focus: [
         [
-          "Six room modes",
-          "Classic set collection, elimination, teams, auctions, co-op boss play, and a property board mode.",
+          "Classic property sets",
+          "Build complete property sets while managing bank cash, rent and action cards; the first player to complete three sets wins.",
         ],
         [
-          "Room-based multiplayer",
-          "Create or join rooms, set a game mode, add bot players, and watch as a spectator.",
+          "Battle Royale",
+          "Rent and payment demands are doubled. A player who cannot pay is eliminated, and the last player remaining wins.",
         ],
         [
-          "Dynamic events",
-          "Random event modifiers change the conditions around a match as it unfolds.",
+          "Syndicate 2v2 teams",
+          "Four players form two teams, can pass cards to a teammate, and combine property sets toward a shared four-set win.",
+        ],
+        [
+          "Blind Auction Draft",
+          "Three cards are revealed at the start of a turn; players bid bank cash privately and the highest bidder takes the lot.",
+        ],
+        [
+          "Co-op Boss Raid",
+          "Everyone works toward a shared target of $30M in bank cash or four complete sets before the turn limit; a major event occurs each turn.",
+        ],
+        [
+          "Real Big Deal board mode",
+          "Roll around a 32-space property board, buy unowned lots, pay or defend rent, and resolve transit, auction and event spaces.",
+        ],
+        [
+          "Rooms, bots and spectators",
+          "Create or join a room, choose a mode, add bot players, ready the table and watch a match as a spectator.",
+        ],
+        [
+          "Action cards and events",
+          "Use rent, property and response cards to change a turn; random events can alter the conditions of a match.",
         ],
       ],
       gallery: [
@@ -143,6 +201,15 @@ export const projectPages: ProjectPage[] = [
       "/images/projects/song-guess-join-room.png",
     ],
     tools: ["JavaScript", "Socket.IO", "Express", "MongoDB"],
+    specifications: [
+      ["platform", "Browser client · Express · Socket.IO"],
+      [
+        "quizModes",
+        "7 modes: rounds, elimination, speed, lyrics, tournament, teams, and more",
+      ],
+      ["timer", "1 s · 5 s · 10 s answer timer"],
+      ["roomAccess", "Public/private rooms · room-code join"],
+    ],
     githubUrl: "https://github.com/Tim321l/song-guess",
     imageAspect: "square",
     details: {
@@ -162,16 +229,24 @@ export const projectPages: ProjectPage[] = [
       focusTitle: "Room and round options",
       focus: [
         [
-          "Timed rounds",
-          "Choose a difficulty and set the round length for a standard match.",
+          "Seven quiz modes",
+          "Play fixed rounds, survival elimination, fastest-answer scoring, next-song clues, next-lyric rounds, a 1v1 tournament, or red-versus-blue team play.",
         ],
         [
-          "Multiple game modes",
-          "Use fixed rounds, elimination, fastest answer, lyrics, tournament, or team play.",
+          "Difficulty and round settings",
+          "Set the answer timer to 10, 5 or 1 second; standard matches offer 5, 10, 20 or 30 rounds, while elimination uses starting hearts.",
         ],
         [
-          "Room access",
-          "Set a room to public or private, then join with a room code or browse public rooms.",
+          "Music categories and playlists",
+          "Choose a music category, or connect Spotify in settings to select a playlist for a room.",
+        ],
+        [
+          "Public and private rooms",
+          "Create a public room for the room list or a private one for invited players; join by code or search public rooms.",
+        ],
+        [
+          "Teams and scoreboards",
+          "Create or join a team, track team contributions, and view leaderboards filtered by category and game mode.",
         ],
       ],
       gallery: [
@@ -202,7 +277,7 @@ export const selectedProjects: SelectedProject[] = [
     name: "RimRise · Browser game",
     summary:
       "A browser basketball career game with season progression, a 3D city, and street play.",
-    tools: ["JavaScript", "Three.js"],
+    tools: ["JavaScript", "Three.js", "WebGL"],
     icon: "web",
     accent: "cyan",
     image: "/images/projects/rimrise-web-career.webp",
@@ -230,12 +305,5 @@ export const selectedProjects: SelectedProject[] = [
     image: "/images/projects/song-guess-create-room.png",
     imageAspect: "square",
     href: "/projects/song-guess",
-  },
-  {
-    name: "Original audio",
-    summary: "Independent audio projects featuring original work.",
-    tools: ["Audio"],
-    icon: "audio",
-    accent: "violet",
   },
 ];

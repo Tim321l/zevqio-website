@@ -1,13 +1,13 @@
 ---
 import LocalizedPage from "../../../components/LocalizedPage.astro";
 import { localeOptions, type Locale } from "../../../data/locales";
-import { products } from "../../../data/products";
+import { allProducts } from "../../../data/products";
 
 export function getStaticPaths() {
   return localeOptions
     .filter(({ code }) => code !== "en")
     .flatMap(({ code }) =>
-      products.map((product) => ({
+      allProducts.map((product) => ({
         params: { locale: code, slug: product.slug },
         props: { locale: code, slug: product.slug },
       })),
