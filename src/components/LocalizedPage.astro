@@ -2,10 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
 import { products, allProducts } from "../data/products";
-import {
-  getLocalToolCopy,
-  fullImageLabel,
-} from "../data/local-tools";
+import { getLocalToolCopy, fullImageLabel } from "../data/local-tools";
 import {
   projectPages,
   selectedProjects,
@@ -479,7 +476,9 @@ const getHomeProjectCopy = (href?: string) => {
             <h2>
               {docuPassStory.workflowTitle[0]}
               <br />
-              <span class="text-gradient">{docuPassStory.workflowTitle[1]}</span>
+              <span class="text-gradient">
+                {docuPassStory.workflowTitle[1]}
+              </span>
             </h2>
             <p>{docuPassStory.workflowIntro}</p>
             <a
@@ -873,8 +872,9 @@ const getHomeProjectCopy = (href?: string) => {
                   ] ??
                   project.details;
                 if (!text) return null;
-                const [width, height] =
-                  projectImageSizes[project.heroImage] ?? [1440, 900];
+                const [width, height] = projectImageSizes[
+                  project.heroImage
+                ] ?? [1440, 900];
                 const href = projectUrl(project.slug);
                 return (
                   <article
@@ -888,8 +888,8 @@ const getHomeProjectCopy = (href?: string) => {
                       <img
                         src={withBase(project.heroImage)}
                         alt={text.heroAlt}
-                        width={width}
-                        height={height}
+                        {width}
+                        {height}
                         loading="lazy"
                       />
                       <span class="product-card-preview-badge">
@@ -906,18 +906,22 @@ const getHomeProjectCopy = (href?: string) => {
                       </span>
                     </div>
                     <p class="card-category">{text.category}</p>
-                    <h3><a href={href}>{text.name}</a></h3>
+                    <h3>
+                      <a {href}>{text.name}</a>
+                    </h3>
                     <p class="product-card-copy">{text.summary}</p>
                     <ul class="home-product-highlights">
                       {text.focus.slice(0, 3).map(([title, description]) => (
                         <li>
                           <Icon name="check" size={14} />
-                          <span><strong>{title}.</strong> {description}</span>
+                          <span>
+                            <strong>{title}.</strong> {description}
+                          </span>
                         </li>
                       ))}
                     </ul>
                     <p class="card-category">{project.tools.join(" · ")}</p>
-                    <a class="text-link" href={href}>
+                    <a class="text-link" {href}>
                       {copy.common.learn} <Icon name="arrowUpRight" size={16} />
                     </a>
                   </article>
@@ -1009,9 +1013,7 @@ const getHomeProjectCopy = (href?: string) => {
             {sourceProduct.interfacePreviews?.[0] ? (
               <div class="detail-preview-hero">
                 <img
-                  src={withBase(
-                    sourceProduct.interfacePreviews[0].image,
-                  )}
+                  src={withBase(sourceProduct.interfacePreviews[0].image)}
                   alt={
                     "previews" in productCopy
                       ? `${productCopy.name}: ${productCopy.previews[0]?.[0]}`

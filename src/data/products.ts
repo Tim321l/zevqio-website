@@ -242,11 +242,13 @@ export const products: Product[] = [
       ([title, description], index) => ({
         title,
         description,
-        image: `/images/projects/${[
-          "docupass-app-home.png",
-          "docupass-hardware.svg",
-          "docupass-phone.svg",
-        ][index]}`,
+        image: `/images/projects/${
+          [
+            "docupass-app-home.png",
+            "docupass-hardware.svg",
+            "docupass-phone.svg",
+          ][index]
+        }`,
         alt: `${title}: ${description}`,
         width: index === 0 ? 2640 : 1440,
         height: index === 0 ? 1560 : 900,

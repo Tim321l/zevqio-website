@@ -717,7 +717,7 @@ const translated = {
       selectedLabel: "精选项目",
       selectedTitle: ["游戏与", "独立创作项目。"],
       selectedIntro:
-      "浏览四款游戏：RimRise 的 Unity 与浏览器版本、BigDeal HK，以及 Song Guess Online。每个项目都有专属画面和当前功能说明。",
+        "浏览四款游戏：RimRise 的 Unity 与浏览器版本、BigDeal HK，以及 Song Guess Online。每个项目都有专属画面和当前功能说明。",
       selectedNames: [
         "RimRise · Unity 版",
         "RimRise · 浏览器版",
@@ -1237,20 +1237,40 @@ const translated = {
       capabilitiesIntro: "專注探索適用於文檔密集、重複性現代工作的軟件。",
       productsLabel: "本機應用程式",
       productsTitle: ["實際項目與", "開發中的軟件。"],
-      productsIntro: "瀏覽本機軟件工具與遊戲項目，查看各項目的重點功能、實際畫面和開發說明。",
+      productsIntro:
+        "瀏覽本機軟件工具與遊戲項目，查看各項目的重點功能、實際畫面和開發說明。",
       allProducts: "查看所有項目",
       selectedLabel: "精選項目",
       selectedTitle: ["遊戲與", "獨立創作項目。"],
-      selectedIntro: "瀏覽四款遊戲：RimRise 的 Unity 與瀏覽器版本、BigDeal HK，以及 Song Guess Online。每個項目都有專屬畫面和目前功能說明。",
-      selectedNames: ["RimRise · Unity 版", "RimRise · 瀏覽器版", "BigDeal HK", "Song Guess Online"],
-      selectedDescriptions: ["Unity 6.3 籃球生涯原型：全場 5 對 5、球員成長和 3D 城市生活。", "瀏覽器籃球遊戲：生涯賽季、3D 城市、街頭比賽與多人房間。", "香港主題地產卡牌遊戲：六種玩法、多人房間、機械人對手和動態事件。", "多人音樂猜歌：計時回合、可調整房間規則和團隊模式。"],
+      selectedIntro:
+        "瀏覽四款遊戲：RimRise 的 Unity 與瀏覽器版本、BigDeal HK，以及 Song Guess Online。每個項目都有專屬畫面和目前功能說明。",
+      selectedNames: [
+        "RimRise · Unity 版",
+        "RimRise · 瀏覽器版",
+        "BigDeal HK",
+        "Song Guess Online",
+      ],
+      selectedDescriptions: [
+        "Unity 6.3 籃球生涯原型：全場 5 對 5、球員成長和 3D 城市生活。",
+        "瀏覽器籃球遊戲：生涯賽季、3D 城市、街頭比賽與多人房間。",
+        "香港主題地產卡牌遊戲：六種玩法、多人房間、機械人對手和動態事件。",
+        "多人音樂猜歌：計時回合、可調整房間規則和團隊模式。",
+      ],
       workflowLabel: "DocuPass · 本機文件處理",
       workflowTitle: ["從掃描檔", "到審核後的匯出。"],
-      workflowIntro: "根據本機應用程式原始碼整理：選擇檔案、檢查 OCR 設定、覆核識別欄位，再匯出結構化記錄。",
+      workflowIntro:
+        "根據本機應用程式原始碼整理：選擇檔案、檢查 OCR 設定、覆核識別欄位，再匯出結構化記錄。",
       workflowLink: "了解 DocuPass",
       workflowBoard: "DOCUPASS · 原始碼流程示意",
-      workflowSteps: [["選擇檔案", "圖片 · PDF 頁面 · 資料夾"], ["檢查 OCR 設定", "語言 · 模型 · CPU/GPU"], ["本機處理", "進度 · 個別檔案結果"], ["覆核欄位", "對照來源頁面"], ["匯出記錄", "Excel · CSV · JSON"]],
-      workflowNote: "DocuPass 在桌面端執行 OCR。兼容的 NVIDIA GPU 模式需要符合條件的 Windows 環境；macOS 使用 CPU。GPU 路徑仍待真實裝置驗證。",
+      workflowSteps: [
+        ["選擇檔案", "圖片 · PDF 頁面 · 資料夾"],
+        ["檢查 OCR 設定", "語言 · 模型 · CPU/GPU"],
+        ["本機處理", "進度 · 個別檔案結果"],
+        ["覆核欄位", "對照來源頁面"],
+        ["匯出記錄", "Excel · CSV · JSON"],
+      ],
+      workflowNote:
+        "DocuPass 在桌面端執行 OCR。兼容的 NVIDIA GPU 模式需要符合條件的 Windows 環境；macOS 使用 CPU。GPU 路徑仍待真實裝置驗證。",
       principlesLabel: "我們如何看待軟件",
       principlesTitle: ["圍繞", "真實工作打造。"],
       principlesIntro: "實用工具應易於理解、配合工作方式，並逐步建立信任。",
@@ -1392,10 +1412,12 @@ const translated = {
     },
     productsPage: {
       title: "產品",
-      description: "瀏覽 Zevqio 的本機軟件項目與遊戲，查看項目重點、實際畫面、技術規格和開發狀態。",
+      description:
+        "瀏覽 Zevqio 的本機軟件項目與遊戲，查看項目重點、實際畫面、技術規格和開發狀態。",
       eyebrow: "項目組合",
       headline: ["軟件工具與遊戲", "來自實際項目。"],
-      intro: "每個項目頁面都按目前版本列出主要功能、使用方式、平台、截圖和已知開發界線。",
+      intro:
+        "每個項目頁面都按目前版本列出主要功能、使用方式、平台、截圖和已知開發界線。",
       note: "截圖來自本機項目版本；示意圖會明確標示。此網站不託管桌面應用程式或遊戲服務。",
       ctaLabel: "有實際應用場景？",
       ctaTitle: "告訴我們你的工作。",
@@ -1743,20 +1765,40 @@ const translated = {
         "文書が多く、繰り返しの多い現代の仕事に向けたソフトウェアを重点的に検討しています。",
       productsLabel: "ローカルアプリ",
       productsTitle: ["実際のプロジェクトと", "開発中のソフトウェア。"],
-      productsIntro: "ローカルのソフトウェアとゲームを紹介します。各ページで主な機能、実際の画面、開発状況を確認できます。",
+      productsIntro:
+        "ローカルのソフトウェアとゲームを紹介します。各ページで主な機能、実際の画面、開発状況を確認できます。",
       allProducts: "すべてのプロジェクトを見る",
       selectedLabel: "主なプロジェクト",
       selectedTitle: ["ゲームと", "個人制作プロジェクト。"],
-      selectedIntro: "4つのゲームを紹介します。RimRiseのUnity版とブラウザー版、BigDeal HK、Song Guess Onlineの画面と現在の機能を確認できます。",
-      selectedNames: ["RimRise · Unity版", "RimRise · ブラウザー版", "BigDeal HK", "Song Guess Online"],
-      selectedDescriptions: ["Unity 6.3のバスケットボールキャリア試作版。フルコート5対5、選手育成、3D都市生活を収録。", "キャリアのシーズン進行、3D都市、ストリート戦、オンラインルームを備えたブラウザーゲーム。", "香港をテーマにした物件カードゲーム。6つのモード、ルーム対戦、ボット、イベントに対応。", "タイマー付きラウンド、調整可能なルール、チーム戦を備えたマルチプレイ音楽クイズ。"],
+      selectedIntro:
+        "4つのゲームを紹介します。RimRiseのUnity版とブラウザー版、BigDeal HK、Song Guess Onlineの画面と現在の機能を確認できます。",
+      selectedNames: [
+        "RimRise · Unity版",
+        "RimRise · ブラウザー版",
+        "BigDeal HK",
+        "Song Guess Online",
+      ],
+      selectedDescriptions: [
+        "Unity 6.3のバスケットボールキャリア試作版。フルコート5対5、選手育成、3D都市生活を収録。",
+        "キャリアのシーズン進行、3D都市、ストリート戦、オンラインルームを備えたブラウザーゲーム。",
+        "香港をテーマにした物件カードゲーム。6つのモード、ルーム対戦、ボット、イベントに対応。",
+        "タイマー付きラウンド、調整可能なルール、チーム戦を備えたマルチプレイ音楽クイズ。",
+      ],
       workflowLabel: "DocuPass · ローカル文書処理",
       workflowTitle: ["スキャンから", "確認済みの書き出しへ。"],
-      workflowIntro: "ローカルアプリのソースに基づく流れです。ファイルを選び、OCR設定を確認し、認識項目を照合してから構造化データを書き出します。",
+      workflowIntro:
+        "ローカルアプリのソースに基づく流れです。ファイルを選び、OCR設定を確認し、認識項目を照合してから構造化データを書き出します。",
       workflowLink: "DocuPassを見る",
       workflowBoard: "DOCUPASS · ソースに基づく図",
-      workflowSteps: [["ファイルを選択", "画像 · PDFページ · フォルダー"], ["OCR設定を確認", "言語 · モデル · CPU/GPU"], ["ローカルで処理", "進捗 · ファイルごとの結果"], ["項目を照合", "元のページと見比べる"], ["記録を書き出す", "Excel · CSV · JSON"]],
-      workflowNote: "DocuPassはデスクトップでOCRを実行します。NVIDIA GPUモードには対応するWindows環境が必要で、macOSではCPUを使用します。GPU処理は実機での確認が必要です。",
+      workflowSteps: [
+        ["ファイルを選択", "画像 · PDFページ · フォルダー"],
+        ["OCR設定を確認", "言語 · モデル · CPU/GPU"],
+        ["ローカルで処理", "進捗 · ファイルごとの結果"],
+        ["項目を照合", "元のページと見比べる"],
+        ["記録を書き出す", "Excel · CSV · JSON"],
+      ],
+      workflowNote:
+        "DocuPassはデスクトップでOCRを実行します。NVIDIA GPUモードには対応するWindows環境が必要で、macOSではCPUを使用します。GPU処理は実機での確認が必要です。",
       principlesLabel: "ソフトウェアへの考え方",
       principlesTitle: ["実際の仕事を", "中心に設計する。"],
       principlesIntro:
@@ -1872,8 +1914,14 @@ const translated = {
           gallery: [
             ["キャリア管理画面", "選手概要、シーズン情報、育成メニュー。"],
             ["試合のポーズ画面", "試合中に表示されるポーズ画面と基本操作。"],
-            ["3D都市の探索", "都市の風景とプレイヤーの移動を示すUnityのローカル画面です。"],
-            ["住居と物件の画面", "住居管理画面と利用できる操作を示すローカル画面です。"],
+            [
+              "3D都市の探索",
+              "都市の風景とプレイヤーの移動を示すUnityのローカル画面です。",
+            ],
+            [
+              "住居と物件の画面",
+              "住居管理画面と利用できる操作を示すローカル画面です。",
+            ],
           ],
           stageNote:
             "開発中です。Unity版は現在ローカルのシングルプレイヤープロトタイプで、ブラウザー版と機能はまだ同等ではありません。",
@@ -1924,10 +1972,12 @@ const translated = {
     },
     productsPage: {
       title: "プロダクト",
-      description: "Zevqioのローカルソフトウェアとゲームを紹介します。主な機能、実際の画面、仕様、開発状況を掲載しています。",
+      description:
+        "Zevqioのローカルソフトウェアとゲームを紹介します。主な機能、実際の画面、仕様、開発状況を掲載しています。",
       eyebrow: "プロジェクト一覧",
       headline: ["ソフトウェアとゲーム", "実際のプロジェクトから。"],
-      intro: "各ページでは、現在のビルドに沿って主な機能、使い方、対応環境、画面、開発中の範囲を説明します。",
+      intro:
+        "各ページでは、現在のビルドに沿って主な機能、使い方、対応環境、画面、開発中の範囲を説明します。",
       note: "画面はローカルビルドから掲載し、図解はその旨を明記しています。このサイトはデスクトップアプリやゲームサービスをホストしていません。",
       ctaLabel: "活用できそうな場面はありますか？",
       ctaTitle: "取り組んでいる仕事をお聞かせください。",
@@ -2293,20 +2343,40 @@ const translated = {
         "문서가 많고 반복이 잦은 현대 업무를 위한 소프트웨어를 집중적으로 탐색합니다.",
       productsLabel: "로컬 애플리케이션",
       productsTitle: ["실제 프로젝트와", "개발 중인 소프트웨어."],
-      productsIntro: "로컬 소프트웨어와 게임 프로젝트를 소개합니다. 각 페이지에서 주요 기능, 실제 화면, 개발 상태를 볼 수 있습니다.",
+      productsIntro:
+        "로컬 소프트웨어와 게임 프로젝트를 소개합니다. 각 페이지에서 주요 기능, 실제 화면, 개발 상태를 볼 수 있습니다.",
       allProducts: "모든 프로젝트 보기",
       selectedLabel: "주요 프로젝트",
       selectedTitle: ["게임과", "독립 제작 프로젝트."],
-      selectedIntro: "네 가지 게임을 소개합니다. RimRise Unity 및 브라우저 버전, BigDeal HK, Song Guess Online의 실제 화면과 현재 기능을 확인하세요.",
-      selectedNames: ["RimRise · Unity 에디션", "RimRise · 브라우저 게임", "BigDeal HK", "Song Guess Online"],
-      selectedDescriptions: ["Unity 6.3 농구 커리어 프로토타입: 풀코트 5대5, 선수 성장, 3D 도시 생활.", "커리어 시즌, 3D 도시, 길거리 경기와 온라인 방을 갖춘 브라우저 농구 게임.", "홍콩 테마 부동산 카드 게임: 6가지 모드, 멀티플레이어 방, 봇, 이벤트.", "시간 제한 라운드, 설정 가능한 규칙, 팀전을 지원하는 멀티플레이어 음악 퀴즈."],
+      selectedIntro:
+        "네 가지 게임을 소개합니다. RimRise Unity 및 브라우저 버전, BigDeal HK, Song Guess Online의 실제 화면과 현재 기능을 확인하세요.",
+      selectedNames: [
+        "RimRise · Unity 에디션",
+        "RimRise · 브라우저 게임",
+        "BigDeal HK",
+        "Song Guess Online",
+      ],
+      selectedDescriptions: [
+        "Unity 6.3 농구 커리어 프로토타입: 풀코트 5대5, 선수 성장, 3D 도시 생활.",
+        "커리어 시즌, 3D 도시, 길거리 경기와 온라인 방을 갖춘 브라우저 농구 게임.",
+        "홍콩 테마 부동산 카드 게임: 6가지 모드, 멀티플레이어 방, 봇, 이벤트.",
+        "시간 제한 라운드, 설정 가능한 규칙, 팀전을 지원하는 멀티플레이어 음악 퀴즈.",
+      ],
       workflowLabel: "DocuPass · 로컬 문서 처리",
       workflowTitle: ["스캔에서 시작해", "검토 후 내보내기까지."],
-      workflowIntro: "로컬 앱 소스에 기반한 흐름입니다. 파일을 고르고 OCR 설정을 확인한 뒤 인식된 항목을 검토하고 구조화된 기록으로 내보냅니다.",
+      workflowIntro:
+        "로컬 앱 소스에 기반한 흐름입니다. 파일을 고르고 OCR 설정을 확인한 뒤 인식된 항목을 검토하고 구조화된 기록으로 내보냅니다.",
       workflowLink: "DocuPass 보기",
       workflowBoard: "DOCUPASS · 소스 기반 흐름",
-      workflowSteps: [["파일 선택", "이미지 · PDF 페이지 · 폴더"], ["OCR 설정 확인", "언어 · 모델 · CPU/GPU"], ["로컬 처리", "진행 상태 · 파일별 결과"], ["항목 검토", "원본 페이지와 대조"], ["기록 내보내기", "Excel · CSV · JSON"]],
-      workflowNote: "DocuPass는 데스크톱에서 OCR을 실행합니다. NVIDIA GPU 모드는 호환되는 Windows 환경이 필요하고 macOS는 CPU를 사용합니다. GPU 경로는 실제 기기 검증이 필요합니다.",
+      workflowSteps: [
+        ["파일 선택", "이미지 · PDF 페이지 · 폴더"],
+        ["OCR 설정 확인", "언어 · 모델 · CPU/GPU"],
+        ["로컬 처리", "진행 상태 · 파일별 결과"],
+        ["항목 검토", "원본 페이지와 대조"],
+        ["기록 내보내기", "Excel · CSV · JSON"],
+      ],
+      workflowNote:
+        "DocuPass는 데스크톱에서 OCR을 실행합니다. NVIDIA GPU 모드는 호환되는 Windows 환경이 필요하고 macOS는 CPU를 사용합니다. GPU 경로는 실제 기기 검증이 필요합니다.",
       principlesLabel: "소프트웨어에 대한 생각",
       principlesTitle: ["실제 업무를", "중심으로 만듭니다."],
       principlesIntro:
@@ -2419,10 +2489,22 @@ const translated = {
             ],
           ],
           gallery: [
-            ["커리어 관리 화면", "선수 개요, 시즌 정보, 성장 메뉴를 보여줍니다."],
-            ["경기 일시 정지 화면", "경기 중 일시 정지 메뉴와 기본 조작 안내입니다."],
-            ["3D 도시 탐험", "도시 장면과 플레이어 이동을 보여주는 Unity 로컬 화면입니다."],
-            ["주거 및 부동산 화면", "주거 관리 화면과 사용할 수 있는 동작을 보여주는 캡처입니다."],
+            [
+              "커리어 관리 화면",
+              "선수 개요, 시즌 정보, 성장 메뉴를 보여줍니다.",
+            ],
+            [
+              "경기 일시 정지 화면",
+              "경기 중 일시 정지 메뉴와 기본 조작 안내입니다.",
+            ],
+            [
+              "3D 도시 탐험",
+              "도시 장면과 플레이어 이동을 보여주는 Unity 로컬 화면입니다.",
+            ],
+            [
+              "주거 및 부동산 화면",
+              "주거 관리 화면과 사용할 수 있는 동작을 보여주는 캡처입니다.",
+            ],
           ],
           stageNote:
             "개발 중입니다. Unity 에디션은 현재 로컬 싱글 플레이어 프로토타입이며 브라우저 버전과 기능이 아직 동일하지 않습니다.",
@@ -2470,10 +2552,12 @@ const translated = {
     },
     productsPage: {
       title: "제품",
-      description: "Zevqio의 로컬 소프트웨어와 게임을 소개합니다. 주요 기능, 실제 화면, 기술 사양, 개발 상태를 확인하세요.",
+      description:
+        "Zevqio의 로컬 소프트웨어와 게임을 소개합니다. 주요 기능, 실제 화면, 기술 사양, 개발 상태를 확인하세요.",
       eyebrow: "프로젝트 포트폴리오",
       headline: ["소프트웨어 도구와 게임", "실제 프로젝트에서."],
-      intro: "각 프로젝트 페이지는 현재 빌드에 맞춰 주요 기능, 사용 흐름, 플랫폼, 화면, 개발 중인 범위를 설명합니다.",
+      intro:
+        "각 프로젝트 페이지는 현재 빌드에 맞춰 주요 기능, 사용 흐름, 플랫폼, 화면, 개발 중인 범위를 설명합니다.",
       note: "화면은 로컬 프로젝트 빌드에서 가져왔고, 다이어그램은 따로 표시합니다. 이 웹사이트는 데스크톱 앱이나 게임 서비스를 호스팅하지 않습니다.",
       ctaLabel: "활용 사례가 있나요?",
       ctaTitle: "어떤 업무인지 알려주세요.",

@@ -3923,7 +3923,11 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 12% 0, rgba(102, 219, 255, 0.08), transparent 34rem),
+    radial-gradient(
+      circle at 12% 0,
+      rgba(102, 219, 255, 0.08),
+      transparent 34rem
+    ),
     var(--page-raised);
 }
 

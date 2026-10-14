@@ -82,11 +82,20 @@ export const projectPages: ProjectPage[] = [
     tools: ["Unity 6.3", "C#"],
     specifications: [
       ["platform", "Unity 6.3 · C#"],
-      ["gameModes", "Full-court 5v5 · 21-point street game · career and city life"],
+      [
+        "gameModes",
+        "Full-court 5v5 · 21-point street game · career and city life",
+      ],
       ["controls", "Keyboard · gamepad · touch"],
-      ["progression", "8 career starting paths · seasons and contracts · local JSON save with backup/import"],
+      [
+        "progression",
+        "8 career starting paths · seasons and contracts · local JSON save with backup/import",
+      ],
       ["multiplayer", "Local single-player prototype"],
-      ["graphics", "Unity 3D · quality and frame-rate options · keyboard, controller and touch layouts"],
+      [
+        "graphics",
+        "Unity 3D · quality and frame-rate options · keyboard, controller and touch layouts",
+      ],
     ],
     githubUrl:
       "https://github.com/Tim321l/hardwood-career/tree/codex/unity-city-continuation-20261006/unity",
@@ -103,10 +112,22 @@ export const projectPages: ProjectPage[] = [
     tools: ["JavaScript", "Three.js", "WebGL", "Node.js", "WebSocket"],
     specifications: [
       ["platform", "Browser · Three.js · WebGL"],
-      ["gameModes", "2D career · full-court 5v5 · street 1v1/5v5 · shooting practice · free-city life"],
-      ["progression", "High school to professional seasons · contracts and player growth · browser save"],
-      ["multiplayer", "WebSocket rooms · friend duels · cooperative city jobs · group tasks up to 4"],
-      ["graphics", "Three.js/WebGL · adapter and acceleration status · software-rendering warning and fallback"],
+      [
+        "gameModes",
+        "2D career · full-court 5v5 · street 1v1/5v5 · shooting practice · free-city life",
+      ],
+      [
+        "progression",
+        "High school to professional seasons · contracts and player growth · browser save",
+      ],
+      [
+        "multiplayer",
+        "WebSocket rooms · friend duels · cooperative city jobs · group tasks up to 4",
+      ],
+      [
+        "graphics",
+        "Three.js/WebGL · adapter and acceleration status · software-rendering warning and fallback",
+      ],
     ],
     githubUrl: "https://github.com/Tim321l/hardwood-career",
   },
