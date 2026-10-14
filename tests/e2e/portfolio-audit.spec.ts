@@ -74,6 +74,8 @@ const pages = [
   "products/vidoany",
   "products/tokensaver",
   "products/monitor",
+  "products/docupass",
+  "products/nba-clip-mixer",
   "projects/rimrise-unity",
   "projects/rimrise-web",
   "projects/bigdeal",
@@ -103,6 +105,8 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
         const prefix = locale === "en" ? "" : `/${locale}`;
         const target = route.startsWith("projects/")
           ? `${locale === "en" ? "/" : ""}#selected-projects`
+          : route === "products/docupass"
+            ? `/${route}`
           : `/${route.split("/")[0]}`;
         await expect(activeLink).toHaveAttribute(
           "href",

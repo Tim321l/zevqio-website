@@ -32,9 +32,11 @@ describe("product configuration", () => {
       "tokensaver",
       "monitor",
       "docupass",
+      "nba-clip-mixer",
     ]);
     expect(getProduct("vidoany")?.name).toBe("VidOutline");
     expect(getProduct("tokensaver")?.name).toBe("TokenSaver");
+    expect(getProduct("nba-clip-mixer")?.name).toBe("NBA Clip Mixer");
     expect(getProduct("unknown-product")).toBeUndefined();
   });
 });

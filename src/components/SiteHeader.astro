@@ -129,12 +129,19 @@ const interactionCopy = {
           ];
           const href = localeHref(locale, item.href);
           const normalizedCurrent = stripLocaleFromPath(currentPath);
+          const hasSpecificNavigationMatch = site.navigation.some(
+            (navigationItem) =>
+              navigationItem.href !== item.href &&
+              navigationItem.href.startsWith(`${item.href}/`) &&
+              normalizedCurrent.startsWith(navigationItem.href),
+          );
           const isActive =
-            (!item.href.startsWith("/#") &&
+            !hasSpecificNavigationMatch &&
+            ((!item.href.startsWith("/#") &&
               (normalizedCurrent === item.href ||
                 normalizedCurrent.startsWith(`${item.href}/`))) ||
-            (item.href === "/#selected-projects" &&
-              normalizedCurrent.startsWith("/projects/"));
+              (item.href === "/#selected-projects" &&
+                normalizedCurrent.startsWith("/projects/")));
           return (
             <a
               class:list={["nav-link", { active: isActive }]}

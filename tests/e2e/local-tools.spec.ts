@@ -21,7 +21,13 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
       "tokensaver",
       "monitor",
       "docupass",
+      "nba-clip-mixer",
     ]);
+    await page.goto(`${language}products/nba-clip-mixer`);
+    await expect(page.locator("h1")).toContainText("NBA Clip Mixer");
+    await expect(page.locator(".detail-symbol-card")).toHaveCount(1);
+    await expect(page.locator(".tool-image-link")).toHaveCount(0);
+    await expect(page.locator(".project-depth-section")).toHaveCount(0);
     await expect(page.locator("main")).not.toContainText(
       /OCR Studio|Document Intelligence|PDF Automation|Workflow Automation/,
     );

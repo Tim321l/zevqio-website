@@ -180,7 +180,19 @@ const pageDescription =
             : page === "project"
               ? (projectCopy?.summary ?? site.description)
               : (productCopy?.summary ?? site.description);
-const docuPassStory = getLocalToolCopy(locale, "docupass", "DocuPass")!.story;
+const docuPassStory = (
+  getLocalToolCopy(locale, "docupass", "DocuPass")! as {
+    story: {
+      workflow: [string, string][];
+      workflowTitle: [string, string];
+      workflowIntro: string;
+    };
+  }
+).story;
+const tokenSaverCopy = getLocalToolCopy(locale, "tokensaver", "TokenSaver")! as {
+  previews: [string, string][];
+  previewBadge: string;
+};
 const earlyStageNote = getEarlyStageNote(locale);
 const studioLabels = getStudioLabels(locale);
 const productUrl = (productSlug: string) =>
@@ -251,8 +263,7 @@ const getHomeProjectCopy = (href?: string) => {
             <img
               src={withBase("/images/projects/tokensaver-workspace.jpg")}
               alt={
-                getLocalToolCopy(locale, "tokensaver", "TokenSaver")!
-                  .previews[0][1]
+                tokenSaverCopy.previews[0][1]
               }
               width="1905"
               height="938"
@@ -260,8 +271,7 @@ const getHomeProjectCopy = (href?: string) => {
             />
             <span class="detail-preview-badge">
               {
-                getLocalToolCopy(locale, "tokensaver", "TokenSaver")!
-                  .previewBadge
+                tokenSaverCopy.previewBadge
               }
             </span>
           </div>
@@ -1111,7 +1121,7 @@ const getHomeProjectCopy = (href?: string) => {
                   />
                 </span>
                 <span class="detail-symbol-label">
-                  {studioLabels.exploration}
+                  {copy.common.inDevelopment}
                 </span>
                 <span class="detail-symbol-orbit orbit-left"></span>
                 <span class="detail-symbol-orbit orbit-right"></span>
