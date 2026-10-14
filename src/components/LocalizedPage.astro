@@ -497,7 +497,7 @@ const getHomeProjectCopy = (href?: string) => {
               </span>
             </div>
             <div class="workflow-steps">
-              {docuPassStory.workflow.map(({ title, description }, index) => (
+              {docuPassStory.workflow.map(([title, description], index) => (
                 <div class="workflow-step">
                   <span class="step-icon">
                     <Icon
