@@ -50,7 +50,7 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 - `/products/vidoany`
 - `/products/tokensaver` — Promptwell local prompt preparation, four real captures
 - `/products/monitor` — local Windows resource dashboard and real capture
-- `/products/nba-clip-mixer` — Windows basketball highlight video project
+- `/products/basketball-clip-mixer` — Windows basketball highlight video project
 - Homepage selected projects section for game development, web, and original audio work
 - `/projects/rimrise-unity` — Unity basketball prototype
 - `/projects/rimrise-web` — browser basketball career project

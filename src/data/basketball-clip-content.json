@@ -2,7 +2,7 @@
   "en": {
     "category": "Sports video · Windows desktop",
     "summary": "A local desktop project for combining basketball game clips into one highlight video.",
-    "description": "NBA Clip Mixer is a Windows desktop project focused on bringing basketball game clips together in a single highlight video. It is a local project in development.",
+    "description": "Basketball Clip Mixer is a Windows desktop project focused on bringing basketball game clips together in a single highlight video. It is a local project in development.",
     "focus": [
       "Basketball game clip collection",
       "A single combined highlight video",
@@ -12,19 +12,19 @@
   "zh-hk": {
     "category": "體育影片 · Windows 桌面工具",
     "summary": "本機桌面項目，將籃球比賽片段合併成一段精華影片。",
-    "description": "NBA Clip Mixer 是一個 Windows 桌面項目，專注於將籃球比賽片段整理成一段精華影片。目前仍是本機開發項目。",
+    "description": "Basketball Clip Mixer 是一個 Windows 桌面項目，專注於將籃球比賽片段整理成一段精華影片。目前仍是本機開發項目。",
     "focus": ["籃球比賽片段", "合併成一段精華影片", "Windows 桌面項目"]
   },
   "zh-cn": {
     "category": "体育视频 · Windows 桌面工具",
     "summary": "本地桌面项目，将篮球比赛片段合并为一段集锦视频。",
-    "description": "NBA Clip Mixer 是一个 Windows 桌面项目，专注于将篮球比赛片段整理成一段集锦视频。目前仍是本地开发项目。",
+    "description": "Basketball Clip Mixer 是一个 Windows 桌面项目，专注于将篮球比赛片段整理成一段集锦视频。目前仍是本地开发项目。",
     "focus": ["篮球比赛片段", "合并成一段集锦视频", "Windows 桌面项目"]
   },
   "ja": {
     "category": "スポーツ動画 · Windows デスクトップ",
     "summary": "バスケットボールの試合クリップを1本のハイライト動画にまとめるローカルプロジェクトです。",
-    "description": "NBA Clip Mixer は、バスケットボールの試合クリップを1本のハイライト動画にまとめる Windows デスクトッププロジェクトです。現在開発中のローカルプロジェクトです。",
+    "description": "Basketball Clip Mixer は、バスケットボールの試合クリップを1本のハイライト動画にまとめる Windows デスクトッププロジェクトです。現在開発中のローカルプロジェクトです。",
     "focus": [
       "バスケットボールの試合クリップ",
       "1本にまとめたハイライト動画",
@@ -34,7 +34,7 @@
   "ko": {
     "category": "스포츠 영상 · Windows 데스크톱",
     "summary": "농구 경기 클립을 하나의 하이라이트 영상으로 합치는 로컬 데스크톱 프로젝트입니다.",
-    "description": "NBA Clip Mixer는 농구 경기 클립을 하나의 하이라이트 영상으로 모으는 Windows 데스크톱 프로젝트입니다. 현재 로컬 개발 단계입니다.",
+    "description": "Basketball Clip Mixer는 농구 경기 클립을 하나의 하이라이트 영상으로 모으는 Windows 데스크톱 프로젝트입니다. 현재 로컬 개발 단계입니다.",
     "focus": [
       "농구 경기 클립 모음",
       "하나로 합친 하이라이트 영상",

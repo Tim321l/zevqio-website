@@ -75,7 +75,7 @@ const pages = [
   "products/tokensaver",
   "products/monitor",
   "products/docupass",
-  "products/nba-clip-mixer",
+  "products/basketball-clip-mixer",
   "projects/rimrise-unity",
   "projects/rimrise-web",
   "projects/bigdeal",

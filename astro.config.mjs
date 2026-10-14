@@ -10,6 +10,13 @@ export default defineConfig({
   base,
   output: "static",
   trailingSlash: "never",
+  redirects: {
+    "/products/nba-clip-mixer": "/products/basketball-clip-mixer",
+    "/zh-hk/products/nba-clip-mixer": "/zh-hk/products/basketball-clip-mixer",
+    "/zh-cn/products/nba-clip-mixer": "/zh-cn/products/basketball-clip-mixer",
+    "/ja/products/nba-clip-mixer": "/ja/products/basketball-clip-mixer",
+    "/ko/products/nba-clip-mixer": "/ko/products/basketball-clip-mixer",
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

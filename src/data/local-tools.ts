@@ -1,7 +1,7 @@
 import content from "./local-tool-content.json";
 import { docupassCopy } from "./docupass-content";
 import docuShowcaseCopy from "./docupass-showcase.json";
-import nbaClipContent from "./nba-clip-content.json";
+import basketballClipContent from "./basketball-clip-content.json";
 import type { Product, ProductStory } from "./products";
 import type { Locale } from "./locales";
 
@@ -64,9 +64,9 @@ const images = {
 };
 
 export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
-  if (slug === "nba-clip-mixer") {
+  if (slug === "basketball-clip-mixer") {
     return {
-      ...nbaClipContent[locale],
+      ...basketballClipContent[locale],
       name,
     };
   }

@@ -256,14 +256,14 @@ export const products: Product[] = [
     ),
   },
   {
-    slug: "nba-clip-mixer",
-    name: "NBA Clip Mixer",
-    shortName: "NBA Clip Mixer",
+    slug: "basketball-clip-mixer",
+    name: "Basketball Clip Mixer",
+    shortName: "Basketball Clip Mixer",
     category: "Sports video · Windows desktop",
     summary:
       "A local desktop project for combining basketball game clips into one highlight video.",
     description:
-      "NBA Clip Mixer is a Windows desktop project focused on bringing basketball game clips together in a single highlight video. It is a local project in development.",
+      "Basketball Clip Mixer is a Windows desktop project focused on bringing basketball game clips together in a single highlight video. It is a local project in development.",
     stage: "In Development",
     focus: [
       "Basketball game clip collection",
