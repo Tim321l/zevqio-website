@@ -145,7 +145,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
         ).toEqual([]);
       }
 
-      for (const image of await page.locator("main img").all()) {
+      for (const image of await page.locator("main img:visible").all()) {
         await image.scrollIntoViewIfNeeded();
         await expect(image).toHaveJSProperty("complete", true);
         expect(

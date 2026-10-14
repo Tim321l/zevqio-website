@@ -4052,6 +4052,199 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
   line-height: 1.7;
 }
 
+.project-demos-section {
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(
+    115deg,
+    rgba(40, 177, 216, 0.08),
+    transparent 64%
+  );
+}
+.project-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+.project-demo-grid--single {
+  grid-template-columns: 1fr;
+}
+.project-demo-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: var(--surface);
+}
+.project-demo-card video {
+  display: block;
+  width: 100%;
+  height: 26rem;
+  max-height: 65vw;
+  background: #080d18;
+  object-fit: contain;
+}
+.project-demo-card figcaption {
+  padding: 1.4rem;
+}
+.project-demo-card h3,
+.project-evidence-card h3,
+.project-tour h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+.project-demo-card p,
+.project-evidence-card p,
+.project-tour p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.project-demo-grid--single .project-demo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.8fr);
+  align-items: center;
+}
+.project-engineering-section {
+  background: var(--page-raised);
+  border-bottom: 1px solid var(--line);
+}
+.project-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.project-evidence-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: var(--surface);
+}
+.project-evidence-number {
+  margin-bottom: 1rem;
+  color: var(--cyan);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+.project-evidence-card .selected-project-tags {
+  margin: 1.3rem 0;
+}
+.project-evidence-sources {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.project-evidence-sources > span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.project-evidence-sources a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--cyan);
+  font-size: 0.88rem;
+}
+.project-evidence-sources svg {
+  flex-shrink: 0;
+}
+.project-tour {
+  margin-top: 2rem;
+  padding: 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: var(--surface);
+}
+.project-tour-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.project-tour-play,
+.project-tour-steps button {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.7rem;
+  color: var(--text);
+  background: var(--surface-2);
+  cursor: pointer;
+}
+.project-tour-play {
+  flex-shrink: 0;
+}
+.project-tour-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 1.4rem 0;
+}
+.project-tour-steps button {
+  text-align: left;
+  line-height: 1.5;
+}
+.project-tour-steps span {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--cyan);
+  font-size: 0.75rem;
+}
+.project-tour-steps button[aria-pressed="true"],
+.project-tour-play[aria-pressed="true"] {
+  border-color: var(--cyan);
+  background: var(--surface-3);
+}
+.project-tour-screen {
+  margin: 0;
+}
+.project-tour-screen[hidden] {
+  display: none;
+}
+.project-tour-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  background: #080d18;
+}
+.project-tour-screen figcaption {
+  padding: 1.2rem 0 0.2rem;
+}
+@media (max-width: 900px) {
+  .project-evidence-grid,
+  .project-demo-grid,
+  .project-demo-grid--single .project-demo-card {
+    grid-template-columns: 1fr;
+  }
+  .project-tour-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .project-tour-heading {
+    flex-direction: column;
+  }
+  .project-tour {
+    padding: 1rem;
+  }
+  .project-demo-card video {
+    height: 22rem;
+    max-height: 95vw;
+  }
+}
+
 .gameplay-demo-video {
   display: block;
   width: 100%;

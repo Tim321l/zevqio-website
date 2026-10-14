@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
+import ProjectShowcase from "./ProjectShowcase.astro";
+import { showcaseLabels } from "../data/project-showcase";
 import { products, allProducts } from "../data/products";
 import { getLocalToolCopy, fullImageLabel } from "../data/local-tools";
 import {
@@ -1395,9 +1397,8 @@ const getHomeProjectCopy = (href?: string) => {
         <a href="#game-background">{gameUI.background}</a>
         <a href="#game-process">{gameUI.process}</a>
         <a href="#game-specs">{gameUI.specs}</a>
-        {slug === "rimrise-web" && (
-          <a href="#gameplay-demo">{gameUI.gameplay}</a>
-        )}
+        <a href="#gameplay-demo">{showcaseLabels.demos[locale]}</a>
+        <a href="#project-engineering">{showcaseLabels.engineering[locale]}</a>
         <a href="#project-screenshots">{gameUI.images}</a>
         <a href="#all-game-projects">{gameUI.others}</a>
       </nav>
@@ -1527,37 +1528,7 @@ const getHomeProjectCopy = (href?: string) => {
         </section>
       )}
 
-      {slug === "rimrise-web" && (
-        <section
-          class="gameplay-demo-section section-space"
-          id="gameplay-demo"
-          aria-labelledby="gameplay-demo-title"
-        >
-          <div class="shell gameplay-demo-layout">
-            <div class="gameplay-demo-copy">
-              <p class="eyebrow">
-                <span class="eyebrow-line"></span>
-                {gameUI.gameplay}
-              </p>
-              <h2 id="gameplay-demo-title">{projectCopy.focus[2][0]}</h2>
-              <p>{gameUI.gameplayNote}</p>
-              <p>{projectCopy.focus[2][1]}</p>
-            </div>
-            <video
-              class="gameplay-demo-video"
-              src={withBase("/videos/rimrise-web-gameplay.webm")}
-              poster={withBase(sourceProject.heroImage)}
-              autoplay
-              muted
-              loop
-              playsinline
-              controls
-              preload="metadata"
-              aria-label={gameUI.gameplay}
-            ></video>
-          </div>
-        </section>
-      )}
+      <ProjectShowcase {locale} project={sourceProject} copy={projectCopy} />
 
       <section
         class:list={[

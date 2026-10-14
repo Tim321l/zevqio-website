@@ -65,7 +65,9 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
   - `/ja/` — Japanese
   - `/ko/` — Korean
 
-The language menu keeps the current page when switching languages. Game descriptions, screenshot captions, and navigation are localized in every supported language. Each game page includes its background, current features, three local captures with original-size image links, and navigation to all four game projects. The captured game interfaces retain the language of their source builds. Concept-only products are hidden. Tool descriptions and captions are translated; the real app captures retain their source interface language.
+The language menu keeps the current page when switching languages. Game descriptions, screenshot captions, and navigation are localized in every supported language. Each game page includes its background, current features, local captures with original-size image links, and navigation to all four game projects. The captured game interfaces retain the language of their source builds. Concept-only products are hidden. Tool descriptions and captions are translated; the real app captures retain their source interface language.
+
+Game pages also include project demos and engineering examples linked to inspected source files at fixed commits. RimRise browser shows city movement and a 5v5 simulation; BigDeal records a real local room and card turn; Song Guess records its frontend settings; Unity provides an interactive tour of real screenshots. Videos play on request, and the Unity tour supports keyboard selection and optional playback. Added explanations are localized in all five languages. See [demo evidence](docs/DEMO_EVIDENCE.md) for capture scope and source snapshots.
 
 Product names, descriptions, status labels, homepage capabilities, navigation, contact details, and SEO helpers are kept in `src/data/` and `src/utils/`.
 

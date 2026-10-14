@@ -1,0 +1,254 @@
+---
+import Icon from "./Icon.astro";
+import { projectShowcases, showcaseLabels } from "../data/project-showcase";
+import {
+  projectImageSizes,
+  type ProjectPage,
+  type ProjectDetailCopy,
+} from "../data/projects";
+import type { Locale } from "../data/locales";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  locale: Locale;
+  project: ProjectPage;
+  copy: Pick<ProjectDetailCopy, "name" | "heroAlt"> & {
+    gallery: ReadonlyArray<readonly [string, string]>;
+    focus: ReadonlyArray<readonly [string, string]>;
+  };
+}
+const { locale, project, copy } = Astro.props;
+const showcase = projectShowcases[project.slug];
+const ui = Object.fromEntries(
+  Object.entries(showcaseLabels).map(([key, value]) => [key, value[locale]]),
+);
+const tour =
+  project.slug === "rimrise-unity"
+    ? [
+        {
+          image: project.screenshots[0],
+          title: copy.gallery[0][0],
+          description: copy.gallery[0][1],
+        },
+        {
+          image: project.heroImage,
+          title: copy.focus[0][0],
+          description: copy.heroAlt,
+        },
+        {
+          image: project.screenshots[2],
+          title: copy.gallery[2][0],
+          description: copy.gallery[2][1],
+        },
+        {
+          image: project.screenshots[3],
+          title: copy.gallery[3][0],
+          description: copy.gallery[3][1],
+        },
+      ]
+    : [];
+---
+
+<section
+  class="project-demos-section section-space"
+  id="gameplay-demo"
+  aria-labelledby="project-demos-title"
+>
+  <div class="shell">
+    <div class="showcase-heading">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          {ui.demos}
+        </p>
+        <h2 id="project-demos-title">{copy.name}</h2>
+      </div>
+      <p>{ui.demoIntro}</p>
+    </div>
+    {showcase.demos.length > 0 && (
+      <div
+        class:list={[
+          "project-demo-grid",
+          { "project-demo-grid--single": showcase.demos.length === 1 },
+        ]}
+      >
+        {showcase.demos.map((demo) => (
+          <figure class="project-demo-card">
+            <video
+              src={withBase(demo.video)}
+              poster={withBase(demo.poster)}
+              controls
+              muted
+              playsinline
+              preload="none"
+              aria-label={demo.title[locale]}
+            ></video>
+            <figcaption>
+              <h3>{demo.title[locale]}</h3>
+              <p>{demo.description[locale]}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
+    {tour.length > 0 && (
+      <div class="project-tour" data-project-tour>
+        <div class="project-tour-heading">
+          <div>
+            <h3>{ui.tour}</h3>
+            <p>{ui.tourNote}</p>
+          </div>
+          <button
+            type="button"
+            class="project-tour-play"
+            data-tour-play
+            data-play-label={ui.playTour}
+            data-pause-label={ui.pauseTour}
+            aria-pressed="false"
+          >
+            {ui.playTour}
+          </button>
+        </div>
+        <div class="project-tour-steps" aria-label={ui.tour}>
+          {tour.map((step, index) => (
+            <button
+              type="button"
+              data-tour-step={index}
+              aria-pressed={index === 0 ? "true" : "false"}
+              aria-controls={"tour-screen-" + index}
+            >
+              <span>0{index + 1}</span>
+              {step.title}
+            </button>
+          ))}
+        </div>
+        <div class="project-tour-viewer" aria-live="polite">
+          {tour.map((step, index) => (
+            <figure
+              id={"tour-screen-" + index}
+              data-tour-screen={index}
+              hidden={index !== 0}
+              class="project-tour-screen"
+            >
+              <img
+                src={withBase(step.image)}
+                alt={step.description}
+                width={projectImageSizes[step.image]?.[0]}
+                height={projectImageSizes[step.image]?.[1]}
+                loading="lazy"
+              />
+              <figcaption>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<section
+  class="project-engineering-section section-space"
+  id="project-engineering"
+  aria-labelledby="project-engineering-title"
+>
+  <div class="shell">
+    <div class="showcase-heading">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          {ui.engineering}
+        </p>
+        <h2 id="project-engineering-title">{copy.name}</h2>
+      </div>
+      <p>{ui.engineeringIntro}</p>
+    </div>
+    <div class="project-evidence-grid">
+      {showcase.evidence.map((evidence, index) => (
+        <article class="project-evidence-card">
+          <span class="project-evidence-number">0{index + 1}</span>
+          <h3>{evidence.title[locale]}</h3>
+          <p>{evidence.description[locale]}</p>
+          <ul class="selected-project-tags">
+            {evidence.skills.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+          <div class="project-evidence-sources">
+            <span>{ui.source}</span>
+            {evidence.files.map((file) => (
+              <a
+                href={showcase.sourceRoot + file}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {file.split("/").at(-1)}
+                <Icon name="arrowUpRight" size={14} />
+              </a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-project-tour]")
+    .forEach((root) => {
+      const buttons = [
+        ...root.querySelectorAll<HTMLButtonElement>("[data-tour-step]"),
+      ];
+      const screens = [
+        ...root.querySelectorAll<HTMLElement>("[data-tour-screen]"),
+      ];
+      const play = root.querySelector<HTMLButtonElement>("[data-tour-play]");
+      if (!play || !buttons.length) return;
+      let current = 0;
+      let timer: number | undefined;
+      const select = (index: number) => {
+        current = (index + buttons.length) % buttons.length;
+        buttons.forEach((button, i) =>
+          button.setAttribute("aria-pressed", String(i === current)),
+        );
+        screens.forEach((screen, i) => {
+          screen.hidden = i !== current;
+        });
+      };
+      const stop = () => {
+        window.clearInterval(timer);
+        timer = undefined;
+        play.setAttribute("aria-pressed", "false");
+        play.textContent = play.dataset.playLabel ?? "";
+      };
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          stop();
+          select(index);
+        });
+        button.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+          event.preventDefault();
+          stop();
+          select(current + (event.key === "ArrowRight" ? 1 : -1));
+          buttons[current].focus();
+        });
+      });
+      play.addEventListener("click", () => {
+        if (timer !== undefined) {
+          stop();
+          return;
+        }
+        play.setAttribute("aria-pressed", "true");
+        play.textContent = play.dataset.pauseLabel ?? "";
+        timer = window.setInterval(() => select(current + 1), 4000);
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+      });
+      window.addEventListener("pagehide", stop);
+    });
+</script>
