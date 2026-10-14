@@ -205,7 +205,7 @@ const english = {
           "A Unity 6.3 basketball game with a playable full-court 5v5 match, career progression, team management, and a 3D city. The current build is a local single-player prototype.",
         stage: "Unity prototype · In development",
         heroAlt:
-          "RimRise Unity prototype during a five-on-five basketball game.",
+          "A full-court 5v5 match in progress, with the quarter, score, shot clock, team markers and control hints visible.",
         heroBadge: "UNITY 6.3 · LOCAL PROTOTYPE",
         overviewTitle: "A focused Unity prototype for basketball on the court.",
         overview: [
@@ -250,20 +250,20 @@ const english = {
         ],
         gallery: [
           [
-            "Career management screen",
-            "A player overview with season information and development actions.",
+            "Career hub: plan the next week",
+            "Review player ratings, stamina, skill points, season record and cash, then start the next match or open player and team management.",
           ],
           [
-            "Match pause screen",
-            "The in-game pause view with the current match and basic controls.",
+            "Pause and resume the match",
+            "The court stays visible behind the pause menu, where you can continue the live game or return to the career hub.",
           ],
           [
-            "3D city exploration",
-            "A local Unity capture showing the city scene and player navigation.",
+            "Free-roam city street",
+            "Walk or drive through the city, follow the minimap, and use the city menu to reach work, shops and activities.",
           ],
           [
-            "Home and property view",
-            "A local capture of the housing interface and its available actions.",
+            "Inside the player’s home",
+            "Explore the furnished home with the player avatar; the map and city shortcuts connect housing to nearby work, shops and activities.",
           ],
         ],
         stageNote:
@@ -276,7 +276,7 @@ const english = {
           "A browser basketball career game that combines league seasons, hands-on 5v5 and street-court play, a themed 3D city, career management, and online friend play.",
         stage: "Browser game · In development",
         heroAlt:
-          "RimRise browser game career dashboard with player and season information.",
+          "Career dashboard linking player and season stats to the next 5v5 game, free-city mode and trackable city commissions.",
         heroBadge: "BROWSER EDITION · SCREEN CAPTURE",
         overviewTitle: "A basketball world in the browser.",
         overview: [
@@ -321,12 +321,12 @@ const english = {
         ],
         gallery: [
           [
-            "3D city exploration",
-            "A browser capture from the city mode, with navigation and the player in the world.",
+            "Find the next stop in the city",
+            "The player stands in Taipei’s Xinyi district beside a school-match marker; the minimap and objective panel point to the next activity.",
           ],
           [
-            "Street-court game",
-            "A five-on-five basketball match running inside the browser game.",
+            "Live full-court 5v5 match",
+            "The game opens at tip-off with the score, target score, player HUD, minimap and control guide visible as you play through the career schedule.",
           ],
         ],
         stageNote:
@@ -822,7 +822,8 @@ const translated = {
           summary:
             "RimRise 的 Unity 6.3 版本，从可玩的全场 5 对 5 篮球比赛和生涯界面开始。",
           stage: "Unity 原型 · 开发中",
-          heroAlt: "RimRise Unity 原型中的五对五篮球比赛。",
+          heroAlt:
+            "正在进行的全场 5 对 5 比赛：画面显示节次、比分、进攻计时、球队标记和操作提示。",
           heroBadge: "UNITY 6.3 · 本机原型",
           overviewTitle: "专注打造篮球场上的 Unity 原型。",
           overview: [
@@ -842,10 +843,22 @@ const translated = {
             ],
           ],
           gallery: [
-            ["生涯管理界面", "球员总览、赛季信息和成长操作。"],
-            ["比赛暂停画面", "比赛中的暂停界面及基本操作提示。"],
-            ["3D 城市探索", "Unity 本机截图，展示城市场景和角色移动。"],
-            ["房屋与物业界面", "本机截图展示房屋管理界面及可用操作。"],
+            [
+              "生涯中心：安排下一周",
+              "查看球员能力、体力、技能点、赛季战绩和资金，再进入下一场比赛或打开球员与球队管理。",
+            ],
+            [
+              "暂停并返回比赛",
+              "暂停菜单叠加在球场画面上，可继续当前比赛，也可返回生涯中心。",
+            ],
+            [
+              "自由探索城市街道",
+              "在城市中步行或开车，查看小地图，并从城市菜单前往工作、商店和活动地点。",
+            ],
+            [
+              "走进球员的家",
+              "在有家具的室内场景中操控球员；地图和城市快捷入口把住所与工作、商店及活动连接起来。",
+            ],
           ],
           stageNote:
             "项目仍在开发中。Unity 版目前是本机单人原型，功能尚未与浏览器版本完全一致。",
@@ -856,7 +869,8 @@ const translated = {
           summary:
             "一款浏览器篮球生涯游戏，结合赛季成长、可探索的 3D 城市和街头篮球。",
           stage: "浏览器游戏 · 开发中",
-          heroAlt: "RimRise 浏览器游戏的球员生涯界面。",
+          heroAlt:
+            "生涯面板把球员和赛季数据连接到下一场 5 对 5、自由城市模式及可追踪的城市委托。",
           heroBadge: "浏览器版本 · 实际截屏",
           overviewTitle: "在浏览器中展开篮球世界。",
           overview: [
@@ -876,8 +890,14 @@ const translated = {
             ],
           ],
           gallery: [
-            ["探索 3D 城市", "浏览器城市模式截屏，展示导航和游戏角色。"],
-            ["街头篮球比赛", "在浏览器游戏中进行的五对五篮球比赛。"],
+            [
+              "在城市中寻找下一站",
+              "球员位于台北信义区，前方有校队比赛标记；小地图和目标面板会提示接下来的活动地点。",
+            ],
+            [
+              "进行中的全场 5 对 5",
+              "比赛从跳球开始，画面显示比分、目标分数、球员状态、小地图和操作提示，说明生涯赛程如何进入实战。",
+            ],
           ],
           stageNote:
             "项目仍在开发中。这些画面截取自本机浏览器版本；在线可用状态和游戏系统可能随开发进度调整。",
@@ -1348,7 +1368,8 @@ const translated = {
           summary:
             "RimRise 的 Unity 6.3 版本，從可玩的全場 5 對 5 籃球比賽和生涯介面開始。",
           stage: "Unity 原型 · 開發中",
-          heroAlt: "RimRise Unity 原型中的五對五籃球比賽。",
+          heroAlt:
+            "正在進行的全場 5 對 5 比賽：畫面顯示節數、比分、進攻計時、球隊標記和操作提示。",
           heroBadge: "UNITY 6.3 · 本機原型",
           overviewTitle: "專注打造球場籃球體驗的 Unity 原型。",
           overview: [
@@ -1368,10 +1389,22 @@ const translated = {
             ],
           ],
           gallery: [
-            ["生涯管理介面", "球員總覽、賽季資訊和成長操作。"],
-            ["比賽暫停畫面", "比賽中的暫停介面及基本操作提示。"],
-            ["3D 城市探索", "Unity 本機截圖，展示城市場景和角色移動。"],
-            ["房屋與物業介面", "本機截圖展示房屋管理介面及可用操作。"],
+            [
+              "生涯中心：安排下一週",
+              "查看球員能力、體力、技能點、賽季戰績和資金，再進入下一場比賽或開啟球員與球隊管理。",
+            ],
+            [
+              "暫停並返回比賽",
+              "暫停選單疊加在球場畫面上，可繼續目前比賽，也可返回生涯中心。",
+            ],
+            [
+              "自由探索城市街道",
+              "在城市中步行或開車，查看小地圖，並從城市選單前往工作、商店和活動地點。",
+            ],
+            [
+              "走進球員的家",
+              "在有家具的室內場景中操控球員；地圖和城市捷徑把住所與工作、商店及活動連接起來。",
+            ],
           ],
           stageNote:
             "項目仍在開發中。Unity 版目前是本機單人原型，功能尚未與瀏覽器版本完全一致。",
@@ -1382,7 +1415,8 @@ const translated = {
           summary:
             "一款瀏覽器籃球生涯遊戲，結合賽季成長、可探索的 3D 城市和街頭籃球。",
           stage: "瀏覽器遊戲 · 開發中",
-          heroAlt: "RimRise 瀏覽器遊戲的球員生涯介面。",
+          heroAlt:
+            "生涯面板把球員和賽季數據連接到下一場 5 對 5、自由城市模式及可追蹤的城市委託。",
           heroBadge: "瀏覽器版本 · 實際截圖",
           overviewTitle: "在瀏覽器中展開籃球世界。",
           overview: [
@@ -1402,8 +1436,14 @@ const translated = {
             ],
           ],
           gallery: [
-            ["探索 3D 城市", "瀏覽器城市模式截圖，展示導航和遊戲角色。"],
-            ["街頭籃球比賽", "在瀏覽器遊戲中進行的五對五籃球比賽。"],
+            [
+              "在城市中尋找下一站",
+              "球員位於台北信義區，前方有校隊比賽標記；小地圖和目標面板會提示接下來的活動地點。",
+            ],
+            [
+              "進行中的全場 5 對 5",
+              "比賽從跳球開始，畫面顯示比分、目標分數、球員狀態、小地圖和操作提示，說明生涯賽程如何進入實戰。",
+            ],
           ],
           stageNote:
             "項目仍在開發中。這些畫面截取自本機瀏覽器版本；線上可用狀態和遊戲系統可能隨開發進度調整。",
@@ -1888,7 +1928,8 @@ const translated = {
           summary:
             "RimRiseのUnity 6.3版です。プレイ可能なフルコート5対5とキャリア画面から開発を進めています。",
           stage: "Unityプロトタイプ · 開発中",
-          heroAlt: "RimRiseのUnityプロトタイプで行われる5対5の試合。",
+          heroAlt:
+            "フルコートの5対5試合中の画面です。クォーター、スコア、ショットクロック、チーム表示、操作ガイドが見えます。",
           heroBadge: "UNITY 6.3 · ローカルプロトタイプ",
           overviewTitle:
             "コートでのバスケットボールに焦点を当てたUnityプロトタイプ。",
@@ -1912,15 +1953,21 @@ const translated = {
             ],
           ],
           gallery: [
-            ["キャリア管理画面", "選手概要、シーズン情報、育成メニュー。"],
-            ["試合のポーズ画面", "試合中に表示されるポーズ画面と基本操作。"],
             [
-              "3D都市の探索",
-              "都市の風景とプレイヤーの移動を示すUnityのローカル画面です。",
+              "キャリアハブ：次の週を計画",
+              "選手の能力、体力、スキルポイント、シーズン成績、所持金を確認し、次の試合や選手・チーム管理へ進みます。",
             ],
             [
-              "住居と物件の画面",
-              "住居管理画面と利用できる操作を示すローカル画面です。",
+              "試合を一時停止して再開",
+              "コートを背景にしたメニューから試合を続けるか、キャリアハブに戻るかを選べます。",
+            ],
+            [
+              "街を自由に歩く",
+              "街を歩いたり車で移動したりしながらミニマップを確認し、街のメニューから仕事、店、アクティビティへ向かいます。",
+            ],
+            [
+              "選手の自宅を探索",
+              "家具のある部屋を選手の視点で歩きます。地図や街のショートカットから仕事、店、アクティビティにも移動できます。",
             ],
           ],
           stageNote:
@@ -1933,7 +1980,7 @@ const translated = {
             "シーズンの成長、探索できる3D都市、ストリートバスケを組み合わせたブラウザーゲームです。",
           stage: "ブラウザーゲーム · 開発中",
           heroAlt:
-            "選手とシーズン情報を表示するRimRiseのブラウザー版キャリア画面。",
+            "選手とシーズンの情報から、次の5対5、自由に歩ける街、街の依頼へ進めるキャリアダッシュボード。",
           heroBadge: "ブラウザー版 · 実際の画面",
           overviewTitle: "ブラウザーで広がるバスケットボールの世界。",
           overview: [
@@ -1957,12 +2004,12 @@ const translated = {
           ],
           gallery: [
             [
-              "3D都市の探索",
-              "ナビゲーションとプレイヤーを表示する都市モードの画面。",
+              "街で次の目的地を探す",
+              "台北・信義区に立つ選手の前方に高校の試合マーカーがあります。ミニマップと目標欄が次の行き先を示します。",
             ],
             [
-              "ストリートコートの試合",
-              "ブラウザーゲーム内でプレイする5対5の試合。",
+              "フルコート5対5の試合",
+              "ティップオフから始まる試合画面です。スコア、目標得点、選手HUD、ミニマップ、操作ガイドを見ながらキャリアの試合をプレイします。",
             ],
           ],
           stageNote:
@@ -2466,7 +2513,8 @@ const translated = {
           summary:
             "플레이 가능한 풀코트 5대5 농구와 커리어 화면부터 시작하는 RimRise의 Unity 6.3 버전입니다.",
           stage: "Unity 프로토타입 · 개발 중",
-          heroAlt: "RimRise Unity 프로토타입에서 진행 중인 5대5 농구 경기.",
+          heroAlt:
+            "풀코트 5대5 경기가 진행 중입니다. 화면에 쿼터, 점수, 공격 시간, 팀 표시와 조작 안내가 보입니다.",
           heroBadge: "UNITY 6.3 · 로컬 프로토타입",
           overviewTitle: "코트 위 농구에 집중한 Unity 프로토타입.",
           overview: [
@@ -2490,20 +2538,20 @@ const translated = {
           ],
           gallery: [
             [
-              "커리어 관리 화면",
-              "선수 개요, 시즌 정보, 성장 메뉴를 보여줍니다.",
+              "커리어 허브: 다음 주 계획",
+              "선수 능력치, 체력, 스킬 포인트, 시즌 기록과 자금을 확인하고 다음 경기나 선수·팀 관리로 이동합니다.",
             ],
             [
-              "경기 일시 정지 화면",
-              "경기 중 일시 정지 메뉴와 기본 조작 안내입니다.",
+              "경기를 멈추고 다시 시작",
+              "코트 장면 위에 열린 메뉴에서 진행 중인 경기를 계속하거나 커리어 허브로 돌아갈 수 있습니다.",
             ],
             [
-              "3D 도시 탐험",
-              "도시 장면과 플레이어 이동을 보여주는 Unity 로컬 화면입니다.",
+              "도시 거리 자유 이동",
+              "도시를 걷거나 운전하면서 미니맵을 확인하고, 도시 메뉴에서 일자리·상점·활동 장소로 이동합니다.",
             ],
             [
-              "주거 및 부동산 화면",
-              "주거 관리 화면과 사용할 수 있는 동작을 보여주는 캡처입니다.",
+              "선수의 집 둘러보기",
+              "가구가 놓인 실내 공간을 선수 캐릭터로 둘러봅니다. 지도와 도시 바로가기를 통해 일자리, 상점, 활동에도 갈 수 있습니다.",
             ],
           ],
           stageNote:
@@ -2516,7 +2564,7 @@ const translated = {
             "시즌 성장, 탐험 가능한 3D 도시, 길거리 농구를 결합한 브라우저 농구 커리어 게임입니다.",
           stage: "브라우저 게임 · 개발 중",
           heroAlt:
-            "선수와 시즌 정보를 보여주는 RimRise 브라우저 커리어 대시보드.",
+            "선수와 시즌 현황에서 다음 5대5 경기, 자유 도시 모드, 도시 의뢰로 이어지는 커리어 대시보드입니다.",
           heroBadge: "브라우저 버전 · 실제 화면 캡처",
           overviewTitle: "브라우저에서 펼쳐지는 농구 세계.",
           overview: [
@@ -2539,10 +2587,13 @@ const translated = {
             ],
           ],
           gallery: [
-            ["3D 도시 탐험", "이동 안내와 플레이어를 보여주는 도시 모드 화면."],
             [
-              "길거리 코트 경기",
-              "브라우저 게임 안에서 진행되는 5대5 농구 경기.",
+              "도시에서 다음 목적지 찾기",
+              "타이베이 신이구에 선 선수가 학교 경기 마커를 바라봅니다. 미니맵과 목표 패널이 다음 활동 장소를 알려 줍니다.",
+            ],
+            [
+              "풀코트 5대5 경기",
+              "경기는 점프볼로 시작하며 점수, 목표 점수, 선수 HUD, 미니맵과 조작 안내가 표시됩니다. 커리어 일정에서 실제 경기로 들어가는 장면입니다.",
             ],
           ],
           stageNote:

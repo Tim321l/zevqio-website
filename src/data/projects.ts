@@ -156,7 +156,7 @@ export const projectPages: ProjectPage[] = [
         "A Hong Kong-themed property card game with several room modes, bot opponents, and changing game events.",
       stage: "Local prototype · In development",
       heroAlt:
-        "BigDeal HK local game screen showing a player hand and an opponent at the card table.",
+        "A local round in progress: review the opponent’s property and your five-card hand, then bank money, play an action card, draw, or end the turn.",
       heroBadge: "BIG DEAL HK · LOCAL SCREEN CAPTURE",
       overviewTitle: "Property cards with room for different ways to play.",
       overview: [
@@ -200,12 +200,12 @@ export const projectPages: ProjectPage[] = [
       ],
       gallery: [
         [
-          "Room entry screen",
-          "Choose to open a room or join with a room code.",
+          "Room entry: create or join",
+          "Set a display name and open a room, or switch to Join Room and enter the host’s code before choosing the match rules.",
         ],
         [
-          "Waiting room",
-          "Select a mode, add a bot, and ready the room before a match.",
+          "Choose the rules before play",
+          "The host selects one of six modes, checks the seats, adds bots if needed, and readies the table. The match starts when everyone is ready; the shown code and names are temporary test data.",
         ],
       ],
       stageNote:
@@ -240,7 +240,7 @@ export const projectPages: ProjectPage[] = [
         "A multiplayer music-guessing game with configurable rooms, timed rounds, categories, and team play.",
       stage: "Local prototype · In development",
       heroAlt:
-        "Song Guess room setup screen with category, difficulty, game mode, rounds, and visibility controls.",
+        "Room setup controls the music category, answer time, quiz mode, round count, and public or private visibility before you create a room.",
       heroBadge: "SONG GUESS · LOCAL SCREEN PREVIEW",
       overviewTitle: "A music quiz shaped around the room.",
       overview: [
@@ -272,10 +272,13 @@ export const projectPages: ProjectPage[] = [
       ],
       gallery: [
         [
-          "Elimination settings",
-          "Choose survival play and set the starting number of hearts.",
+          "Elimination mode: set starting lives",
+          "Switching from fixed rounds to elimination replaces the round count with starting hearts, making the survival format clear before the room opens.",
         ],
-        ["Join a room", "Enter a room code to join a match."],
+        [
+          "Join with a room code",
+          "Enter the code shared by the host and choose Join to enter the same music quiz room. This capture shows the empty code field before entry.",
+        ],
       ],
       stageNote:
         "Work in progress. These screen captures come from a local front-end preview. Account, room, and server features depend on the project's backend and are not hosted by this website.",
