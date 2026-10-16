@@ -45,7 +45,7 @@ test("Unity screen tour supports manual selection, keyboard and opt-in playback"
     ).toBeGreaterThan(0);
   }
   await steps.last().click();
-  await expect(selected).toContainText("Inside the player");
+  await expect(selected).toContainText("Inside a café");
   await expect(page.locator("[data-tour-screen]:visible img")).toHaveJSProperty(
     "complete",
     true,
