@@ -74,7 +74,7 @@ export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
     const text = docupassCopy[locale];
     return {
       ...text,
-      previewBadge: `${text.name.toUpperCase()} · REAL APP SCREEN + DIAGRAMS`,
+      previewBadge: `${text.name.toUpperCase()} · ${docuShowcaseCopy[locale].eyebrow}`,
       screenshotsLabel: text.screenshotsLabel,
       specificationsLabel: text.specificationsLabel,
       specificationsTitle: text.specificationsTitle,

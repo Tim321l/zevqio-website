@@ -23,7 +23,7 @@ Engineering cards link to inspected files at these fixed commits. They describe 
 
 Source snapshot: `bf86a8c1853b976cdba95610fd5515ce46b5a5b9` (local working tree).
 
-Four real macOS source-app captures: New job, Recognition settings, receipt review and the export dialog. An isolated temporary data directory held only the generated SUNNY CAFE receipt. Phone background reception was disabled in the capture harness. Capture pages were opened at startup for consistent views; the walkthrough is explicitly a screen tour, not a continuous OCR recording. Its 20-second WebM plays only on request with native controls.
+The product page gallery contains five real macOS source-app captures across four unique screens: New job in dark and light themes, Recognition settings, receipt review and the export dialog. The light-theme image is an additional view of the New job screen, not another workflow. An isolated temporary data directory held only the generated SUNNY CAFE receipt. Phone background reception was disabled in the capture harness. Capture pages were opened at startup for consistent views; the walkthrough is explicitly a screen tour, not a continuous OCR recording. Its 20-second WebM plays only on request with native controls. Full-size links open each capture directly.
 
 The packaged desktop executable's existing `--self-test` passed PNG/HEIC recognition, empty-file error isolation, receipt cropping, merchant/total extraction and Excel workbook creation. The sanitized report is `public/downloads/docupass-ocr-check.json`. This check used English, Balanced PP-OCRv6 and macOS CPU. No speed or representative accuracy claim is made.
 

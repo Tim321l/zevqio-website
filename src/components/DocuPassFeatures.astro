@@ -18,7 +18,7 @@ const { locale } = Astro.props;
   aria-labelledby="docu-features-title"
 >
   <div class="shell">
-    <div class="showcase-heading">
+    <div class="showcase-heading docu-feature-guide-heading">
       <div>
         <p class="eyebrow">
           <span class="eyebrow-line"></span>
@@ -28,13 +28,15 @@ const { locale } = Astro.props;
       </div>
       <p>{labels.intro[locale]}</p>
     </div>
-    <nav class="docu-feature-index" aria-label={labels.eyebrow[locale]}>
-      {docuFeatureGroups.map((group) => (
-        <a href={`#${group.id}`}>{group.title[locale]}</a>
-      ))}
-    </nav>
-    <div class="docu-types-block">
-      <h3>{labels.types[locale]}</h3>
+    <details class="docu-types-detail">
+      <summary>
+        <span class="docu-detail-number">01</span>
+        <span class="docu-detail-label">
+          <strong>{labels.types[locale]}</strong>
+          <small>{labels.typeSummary[locale]}</small>
+        </span>
+        <span class="docu-detail-toggle" aria-hidden="true"></span>
+      </summary>
       <div class="docu-types-table">
         <table>
           <thead>
@@ -53,11 +55,17 @@ const { locale } = Astro.props;
           </tbody>
         </table>
       </div>
-    </div>
+    </details>
     <div class="docu-capability-grid">
-      {docuFeatureGroups.map((group) => (
-        <article class="docu-capability" id={group.id}>
-          <h3>{group.title[locale]}</h3>
+      {docuFeatureGroups.map((group, index) => (
+        <details class="docu-capability" id={group.id}>
+          <summary>
+            <span class="docu-detail-number">
+              {(index + 2).toString().padStart(2, "0")}
+            </span>
+            <strong>{group.title[locale].replace(/^\d+\s*\/\s*/, "")}</strong>
+            <span class="docu-detail-toggle" aria-hidden="true"></span>
+          </summary>
           <ul>
             {group.items.map((item) => (
               <li>
@@ -66,7 +74,7 @@ const { locale } = Astro.props;
               </li>
             ))}
           </ul>
-        </article>
+        </details>
       ))}
     </div>
     <div class="docu-capability-links">

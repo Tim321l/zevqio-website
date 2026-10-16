@@ -1114,7 +1114,7 @@ const getHomeProjectCopy = (href?: string) => {
                   <span class="status-dot" aria-hidden="true"></span>
                   {copy.common.inDevelopment}
                 </span>
-                {sourceProduct.interfacePreviews && (
+                {sourceProduct.interfacePreviews && slug !== "docupass" && (
                   <a class="text-link" href="#interface-previews">
                     {copy.common.screens} <Icon name="arrowRight" size={15} />
                   </a>
@@ -1122,15 +1122,15 @@ const getHomeProjectCopy = (href?: string) => {
               </div>
               {slug === "docupass" && (
                 <div class="docu-hero-actions">
-                  <a class="button button-primary" href="#docupass-features">
-                    {docuFeatureLabels.eyebrow[locale]}
+                  <a class="button button-primary" href="#docupass-demo">
+                    {docuFeatureLabels.screens[locale]}
                     <Icon name="arrowRight" size={16} />
                   </a>
                   <a class="button button-secondary" href="#ocr-results">
-                    {docuShowcaseCopy[locale].results}
+                    {docuFeatureLabels.results[locale]}
                   </a>
-                  <a class="text-link" href="#docupass-demo">
-                    {docuShowcaseCopy[locale].watch}
+                  <a class="text-link" href="#docupass-features">
+                    {docuFeatureLabels.eyebrow[locale]}
                     <Icon name="arrowRight" size={16} />
                   </a>
                 </div>
@@ -1197,7 +1197,6 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </div>
       </section>
-      {slug === "docupass" && <DocuPassFeatures {locale} />}
       {slug === "docupass" && <DocuPassShowcase {locale} />}
       {slug === "docupass" && (
         <section
@@ -1245,7 +1244,8 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </section>
       )}
-      {sourceProduct.interfacePreviews && "previews" in productCopy && (
+      {slug === "docupass" && <DocuPassFeatures {locale} />}
+      {slug !== "docupass" && sourceProduct.interfacePreviews && "previews" in productCopy && (
         <section
           class:list={[
             "product-showcase-section section-space tool-gallery",
@@ -1311,6 +1311,7 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </section>
       )}
+      {slug !== "docupass" && (
       <section class="product-detail-content section-space compact-top">
         <div class="shell detail-content-grid">
           <div class="detail-description">
@@ -1369,7 +1370,8 @@ const getHomeProjectCopy = (href?: string) => {
           </aside>
         </div>
       </section>
-      {productCopy && "specifications" in productCopy && (
+      )}
+      {slug !== "docupass" && productCopy && "specifications" in productCopy && (
         <section class="project-depth-section section-space">
           <div class="shell">
             <div class="section-heading heading-split project-depth-heading">
@@ -1393,7 +1395,7 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </section>
       )}
-      {story && (
+      {slug !== "docupass" && story && (
         <section class="project-depth-section section-space">
           <div class="shell">
             <div class="section-heading heading-split project-depth-heading">

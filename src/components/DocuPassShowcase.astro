@@ -11,6 +11,7 @@ const { locale } = Astro.props;
 const ui = content[locale];
 const screens = [
   {
+    step: 1,
     name: ui.add,
     note: ui.addNote,
     file: "docupass-new-job.png",
@@ -18,6 +19,15 @@ const screens = [
     height: 1560,
   },
   {
+    step: 1,
+    name: ui.addLight,
+    note: ui.addLightNote,
+    file: "docupass-app-home.png",
+    width: 2640,
+    height: 1560,
+  },
+  {
+    step: 2,
     name: ui.model,
     note: ui.modelNote,
     file: "docupass-recognition.png",
@@ -25,6 +35,7 @@ const screens = [
     height: 1560,
   },
   {
+    step: 3,
     name: ui.review,
     note: ui.reviewNote,
     file: "docupass-review.png",
@@ -32,6 +43,7 @@ const screens = [
     height: 1560,
   },
   {
+    step: 4,
     name: ui.export,
     note: ui.exportNote,
     file: "docupass-export.png",
@@ -57,32 +69,16 @@ const screens = [
       </div>
       <p>{ui.intro}</p>
     </div>
-    <figure class="docu-film">
-      <video
-        controls
-        muted
-        playsinline
-        preload="none"
-        poster={withBase("/images/projects/docupass-review.png")}
-        aria-label={ui.tour}
-      >
-        <source
-          src={withBase("/videos/docupass-screen-tour.webm")}
-          type="video/webm"
-        />
-      </video>
-      <figcaption>
-        <div>
-          <Icon name="layers" size={18} />
-          <strong>{ui.tour}</strong>
-        </div>
-        <p>{ui.tourNote}</p>
-      </figcaption>
-    </figure>
     <div class="docu-screens">
-      {screens.map((screen, index) => (
-        <figure class="docu-screen">
+      {screens.map((screen) => (
+        <figure
+          class:list={[
+            "docu-screen",
+            { "docu-screen--export": screen.file === "docupass-export.png" },
+          ]}
+        >
           <a
+            class="docu-screen-image"
             href={withBase(`/images/projects/${screen.file}`)}
             target="_blank"
             rel="noopener"
@@ -93,11 +89,11 @@ const screens = [
               alt={screen.name}
               width={screen.width}
               height={screen.height}
-              loading="lazy"
+              loading={screen.step === 1 ? "eager" : "lazy"}
             />
           </a>
           <figcaption>
-            <span class="docu-stage">0{index + 1}</span>
+            <span class="docu-stage">0{screen.step}</span>
             <div>
               <h3>{screen.name}</h3>
               <p>{screen.note}</p>
@@ -115,6 +111,34 @@ const screens = [
         </figure>
       ))}
     </div>
+    <details class="docu-film-details">
+      <summary>
+        <Icon name="arrowRight" size={16} />
+        {ui.watch}
+      </summary>
+      <figure class="docu-film">
+        <video
+          controls
+          muted
+          playsinline
+          preload="none"
+          poster={withBase("/images/projects/docupass-review.png")}
+          aria-label={ui.tour}
+        >
+          <source
+            src={withBase("/videos/docupass-screen-tour.webm")}
+            type="video/webm"
+          />
+        </video>
+        <figcaption>
+          <div>
+            <Icon name="layers" size={18} />
+            <strong>{ui.tour}</strong>
+          </div>
+          <p>{ui.tourNote}</p>
+        </figcaption>
+      </figure>
+    </details>
   </div>
 </section>
 <section
@@ -200,26 +224,26 @@ const screens = [
           {ui.read} · JSON
           <Icon name="arrowRight" size={16} />
         </a>
-        <div class="docu-raw">
-          <span>PNG / HEIC</span>
-          <code>PaddleOCR 2468</code>
-        </div>
       </div>
-      <aside class="docu-test">
+    </div>
+    <aside class="docu-test">
+      <div class="docu-test-copy">
         <p class="eyebrow">{ui.test}</p>
         <h3>PP-OCRv6</h3>
         <p>{ui.environment}</p>
-        <ul>
-          {[ui.png, ui.broken, ui.receipt, ui.excel].map((label) => (
-            <li>
-              <Icon name="check" size={16} />
-              {label}
-            </li>
-          ))}
-        </ul>
         <p class="docu-test-note">{ui.testNote}</p>
+      </div>
+      <ul>
+        {[ui.png, ui.broken, ui.receipt, ui.excel].map((label) => (
+          <li>
+            <Icon name="check" size={16} />
+            {label}
+          </li>
+        ))}
+      </ul>
+      <div class="docu-test-links">
         <a
-          class="button button-secondary"
+          class="text-link"
           href={withBase("/downloads/docupass-ocr-check.json")}
           download
         >
@@ -227,14 +251,14 @@ const screens = [
           <Icon name="arrowRight" size={16} />
         </a>
         <a
-          class="text-link docu-excel-link"
+          class="text-link"
           href={withBase("/downloads/docupass-sample.xlsx")}
           download
         >
           {ui.sampleExcel}
           <Icon name="arrowRight" size={16} />
         </a>
-      </aside>
-    </div>
+      </div>
+    </aside>
   </div>
 </section>
