@@ -1245,156 +1245,160 @@ const getHomeProjectCopy = (href?: string) => {
         </section>
       )}
       {slug === "docupass" && <DocuPassFeatures {locale} />}
-      {slug !== "docupass" && sourceProduct.interfacePreviews && "previews" in productCopy && (
-        <section
-          class:list={[
-            "product-showcase-section section-space tool-gallery",
-            { "tool-gallery--portrait": slug === "monitor" },
-          ]}
-          id="interface-previews"
-          aria-labelledby="product-showcase-title"
-        >
-          <div class="shell">
-            <div class="showcase-heading">
-              <div>
-                <p class="eyebrow">
-                  <span class="eyebrow-line"></span>
-                  {"screenshotsLabel" in productCopy
-                    ? productCopy.screenshotsLabel
-                    : detail.screenLabel}
+      {slug !== "docupass" &&
+        sourceProduct.interfacePreviews &&
+        "previews" in productCopy && (
+          <section
+            class:list={[
+              "product-showcase-section section-space tool-gallery",
+              { "tool-gallery--portrait": slug === "monitor" },
+            ]}
+            id="interface-previews"
+            aria-labelledby="product-showcase-title"
+          >
+            <div class="shell">
+              <div class="showcase-heading">
+                <div>
+                  <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    {"screenshotsLabel" in productCopy
+                      ? productCopy.screenshotsLabel
+                      : detail.screenLabel}
+                  </p>
+                  <h2 id="product-showcase-title">
+                    {detail.closer}{" "}
+                    <span class="text-muted">{productCopy.name}.</span>
+                  </h2>
+                </div>
+                <p>
+                  {"screenshotsNote" in productCopy
+                    ? productCopy.screenshotsNote
+                    : detail.screenDisclaimer}
                 </p>
-                <h2 id="product-showcase-title">
-                  {detail.closer}{" "}
-                  <span class="text-muted">{productCopy.name}.</span>
-                </h2>
               </div>
-              <p>
-                {"screenshotsNote" in productCopy
-                  ? productCopy.screenshotsNote
-                  : detail.screenDisclaimer}
-              </p>
+              <div class="showcase-preview-grid">
+                {sourceProduct.interfacePreviews.map((preview, index) => (
+                  <figure class="showcase-preview-card">
+                    <div class="showcase-image-frame">
+                      <img
+                        src={withBase(preview.image)}
+                        alt={`${productCopy.name}: ${productCopy.previews[index]?.[0] ?? preview.title}`}
+                        width={preview.width ?? 1440}
+                        height={preview.height ?? 900}
+                        loading="lazy"
+                      />
+                      <span class="showcase-image-index" aria-hidden="true">
+                        0{index + 1}
+                      </span>
+                    </div>
+                    <figcaption>
+                      <span class="showcase-screen-label">
+                        {copy.common.screen} 0{index + 1}
+                      </span>
+                      <h3>{productCopy.previews[index]?.[0]}</h3>
+                      <p>{productCopy.previews[index]?.[1]}</p>
+                      <a
+                        class="text-link tool-image-link"
+                        href={withBase(preview.image)}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        {fullImageLabel(locale)}{" "}
+                        <Icon name="arrowUpRight" size={16} />
+                      </a>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
-            <div class="showcase-preview-grid">
-              {sourceProduct.interfacePreviews.map((preview, index) => (
-                <figure class="showcase-preview-card">
-                  <div class="showcase-image-frame">
-                    <img
-                      src={withBase(preview.image)}
-                      alt={`${productCopy.name}: ${productCopy.previews[index]?.[0] ?? preview.title}`}
-                      width={preview.width ?? 1440}
-                      height={preview.height ?? 900}
-                      loading="lazy"
-                    />
-                    <span class="showcase-image-index" aria-hidden="true">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <figcaption>
-                    <span class="showcase-screen-label">
-                      {copy.common.screen} 0{index + 1}
-                    </span>
-                    <h3>{productCopy.previews[index]?.[0]}</h3>
-                    <p>{productCopy.previews[index]?.[1]}</p>
-                    <a
-                      class="text-link tool-image-link"
-                      href={withBase(preview.image)}
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      {fullImageLabel(locale)}{" "}
-                      <Icon name="arrowUpRight" size={16} />
-                    </a>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
       {slug !== "docupass" && (
-      <section class="product-detail-content section-space compact-top">
-        <div class="shell detail-content-grid">
-          <div class="detail-description">
-            <p class="eyebrow">
-              <span class="eyebrow-line"></span>
-              {story ? detail.overviewLabel : detail.aboutLabel}
-            </p>
-            <h2>
-              {story
-                ? story.title
-                : detail.fallbackTitle.map((line, index) => (
-                    <>
-                      {index > 0 && <br />}
-                      {index === 1 ? (
-                        <span class="text-muted">{line}</span>
-                      ) : (
-                        line
-                      )}
-                    </>
-                  ))}
-            </h2>
-            {story ? (
-              <>
-                <p>{story.problem}</p>
-                <p>{story.approach}</p>
-              </>
-            ) : (
-              <p>{productCopy.description}</p>
-            )}
-            <p class="detail-disclaimer">{story?.status ?? earlyStageNote}</p>
-          </div>
-          <aside class="focus-panel">
-            <div class="focus-panel-head">
-              <div>
-                <span class="focus-kicker">{detail.focusKicker}</span>
-                <h2>{detail.focusTitle}</h2>
+        <section class="product-detail-content section-space compact-top">
+          <div class="shell detail-content-grid">
+            <div class="detail-description">
+              <p class="eyebrow">
+                <span class="eyebrow-line"></span>
+                {story ? detail.overviewLabel : detail.aboutLabel}
+              </p>
+              <h2>
+                {story
+                  ? story.title
+                  : detail.fallbackTitle.map((line, index) => (
+                      <>
+                        {index > 0 && <br />}
+                        {index === 1 ? (
+                          <span class="text-muted">{line}</span>
+                        ) : (
+                          line
+                        )}
+                      </>
+                    ))}
+              </h2>
+              {story ? (
+                <>
+                  <p>{story.problem}</p>
+                  <p>{story.approach}</p>
+                </>
+              ) : (
+                <p>{productCopy.description}</p>
+              )}
+              <p class="detail-disclaimer">{story?.status ?? earlyStageNote}</p>
+            </div>
+            <aside class="focus-panel">
+              <div class="focus-panel-head">
+                <div>
+                  <span class="focus-kicker">{detail.focusKicker}</span>
+                  <h2>{detail.focusTitle}</h2>
+                </div>
+                <span class="focus-icon">
+                  <Icon name="layers" size={19} />
+                </span>
               </div>
-              <span class="focus-icon">
-                <Icon name="layers" size={19} />
-              </span>
-            </div>
-            <ul>
-              {productCopy.focus.map((item) => (
-                <li>
-                  <span>
-                    <Icon name="check" size={14} />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div class="focus-footer">
-              <span class="status-dot"></span>
-              {detail.inDevelopment}
-            </div>
-          </aside>
-        </div>
-      </section>
-      )}
-      {slug !== "docupass" && productCopy && "specifications" in productCopy && (
-        <section class="project-depth-section section-space">
-          <div class="shell">
-            <div class="section-heading heading-split project-depth-heading">
-              <div>
-                <p class="eyebrow">
-                  <span class="eyebrow-line"></span>
-                  {productCopy.specificationsLabel}
-                </p>
-                <h2>{productCopy.specificationsTitle}</h2>
+              <ul>
+                {productCopy.focus.map((item) => (
+                  <li>
+                    <span>
+                      <Icon name="check" size={14} />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div class="focus-footer">
+                <span class="status-dot"></span>
+                {detail.inDevelopment}
               </div>
-              <p class="section-intro">{productCopy.specificationsIntro}</p>
-            </div>
-            <div class="project-spec-grid">
-              {productCopy.specifications.map(([label, value]) => (
-                <article class="project-spec-card">
-                  <h3>{label}</h3>
-                  <p>{value}</p>
-                </article>
-              ))}
-            </div>
+            </aside>
           </div>
         </section>
       )}
+      {slug !== "docupass" &&
+        productCopy &&
+        "specifications" in productCopy && (
+          <section class="project-depth-section section-space">
+            <div class="shell">
+              <div class="section-heading heading-split project-depth-heading">
+                <div>
+                  <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    {productCopy.specificationsLabel}
+                  </p>
+                  <h2>{productCopy.specificationsTitle}</h2>
+                </div>
+                <p class="section-intro">{productCopy.specificationsIntro}</p>
+              </div>
+              <div class="project-spec-grid">
+                {productCopy.specifications.map(([label, value]) => (
+                  <article class="project-spec-card">
+                    <h3>{label}</h3>
+                    <p>{value}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       {slug !== "docupass" && story && (
         <section class="project-depth-section section-space">
           <div class="shell">

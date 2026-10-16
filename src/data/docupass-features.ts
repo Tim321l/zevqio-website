@@ -44,13 +44,7 @@ export const docuFeatureLabels = {
     "6種類の書類と抽出項目",
     "6가지 문서 유형과 추출 필드",
   ),
-  fields: l(
-    "Typical fields",
-    "主要欄位",
-    "主要字段",
-    "主な項目",
-    "주요 필드",
-  ),
+  fields: l("Typical fields", "主要欄位", "主要字段", "主な項目", "주요 필드"),
   source: l(
     "Full feature guide in the source",
     "查看原始碼的完整功能指南",
