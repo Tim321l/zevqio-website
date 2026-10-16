@@ -4343,6 +4343,151 @@ h3 {
   gap: 12px;
   margin-top: 24px;
 }
+.docu-feature {
+  border-block: 1px solid var(--line);
+  background:
+    radial-gradient(
+      ellipse at 85% 30%,
+      color-mix(in srgb, var(--cyan) 10%, transparent),
+      transparent 60%
+    ),
+    var(--page-raised);
+}
+.docu-feature-grid,
+.docu-handwriting-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+}
+.docu-feature-copy h2,
+.docu-handwriting h2 {
+  margin: 16px 0;
+  max-width: 680px;
+  font-size: clamp(34px, 4.1vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.docu-feature-copy > p:not(.eyebrow),
+.docu-handwriting-layout > div:first-child > p:not(.eyebrow) {
+  color: var(--text-soft);
+  max-width: 60ch;
+}
+.docu-feature-copy .button {
+  margin-top: 20px;
+}
+.docu-feature-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.docu-feature-image {
+  display: block;
+  background: #dde2e9;
+}
+.docu-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: top;
+}
+.docu-feature-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: clamp(18px, 3vw, 38px);
+}
+.docu-feature-result > span {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.docu-feature-result strong {
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.2;
+}
+.docu-feature-result b {
+  color: var(--mint);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1;
+}
+.docu-handwriting {
+  background: var(--page-raised);
+  border-block: 1px solid var(--line);
+}
+.docu-handwriting .text-link {
+  display: inline-flex;
+  margin-top: 12px;
+}
+.handwriting-results-card {
+  padding: clamp(24px, 4vw, 46px);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.handwriting-results-card > .eyebrow {
+  margin-bottom: 26px;
+}
+.handwriting-score {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  margin: 0 0 24px;
+}
+.handwriting-score span {
+  color: var(--text-soft);
+}
+.handwriting-score strong {
+  font-size: 28px;
+  line-height: 1;
+}
+.handwriting-score i {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+.handwriting-score i::before {
+  content: "";
+  display: block;
+  width: var(--score);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+.handwriting-results-card > p:last-child {
+  margin: 28px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+@media (max-width: 850px) {
+  .docu-feature-grid,
+  .docu-handwriting-layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 540px) {
+  .docu-feature-proof {
+    grid-template-columns: 1fr;
+  }
+  .docu-feature-image img {
+    max-height: 260px;
+  }
+}
 .docu-film {
   margin: 0 0 28px;
   border: 1px solid var(--line-strong);

@@ -52,11 +52,11 @@ export const showcaseLabels = {
     "Unity 게임 흐름 살펴보기",
   ),
   tourNote: l(
-    "An interactive tour of real local screenshots: career, court, city and home. Select a screen or play the screen tour.",
-    "以本機實際截圖展示生涯、球場、城市和住所。選擇畫面，或播放畫面導覽。",
-    "用本机实际截图展示生涯、球场、城市和住所。选择画面，或播放画面导览。",
-    "ローカルの実際の画面でキャリア、コート、街、自宅を紹介します。画面を選択するか、画面ツアーを再生できます。",
-    "실제 로컬 캡처로 커리어, 코트, 도시와 집을 소개합니다. 화면을 선택하거나 화면 투어를 재생하세요.",
+    "An interactive tour of current local captures: career, court, city and walk-in shops. Select a screen or play the screen tour.",
+    "以目前本機截圖展示生涯、球場、城市及可步入的商店。選擇畫面，或播放畫面導覽。",
+    "用当前本地截图展示生涯、球场、城市和可步入的商店。选择画面，或播放画面导览。",
+    "現在のローカル画面でキャリア、コート、都市、入れる店舗を紹介します。画面を選択するか、画面ツアーを再生できます。",
+    "현재 로컬 캡처로 커리어, 코트, 도시와 들어갈 수 있는 상점을 소개합니다. 화면을 선택하거나 화면 투어를 재생하세요.",
   ),
   playTour: l(
     "Play screen tour",

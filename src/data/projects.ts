@@ -11,6 +11,11 @@ export type SelectedProject = {
 };
 
 export const projectImageSizes: Record<string, [number, number]> = {
+  "/images/projects/rimrise-unity-current-match.png": [1280, 720],
+  "/images/projects/rimrise-unity-current-career.png": [1280, 720],
+  "/images/projects/rimrise-unity-current-city.png": [1280, 720],
+  "/images/projects/rimrise-unity-current-storefront.png": [1280, 720],
+  "/images/projects/rimrise-unity-current-cafe.png": [1280, 720],
   "/images/projects/bigdeal-gameplay.png": [1440, 1000],
   "/images/projects/bigdeal-landing.png": [420, 322],
   "/images/projects/bigdeal-waiting-room.png": [480, 852],
@@ -71,12 +76,12 @@ export const projectPages: ProjectPage[] = [
     slug: "rimrise-unity",
     icon: "gamepad",
     accent: "blue",
-    heroImage: "/images/projects/rimrise-unity-gameplay.webp",
+    heroImage: "/images/projects/rimrise-unity-current-match.png",
     screenshots: [
-      "/images/projects/rimrise-unity-career.webp",
-      "/images/projects/rimrise-unity-pause.webp",
-      "/images/projects/rimrise-unity-city.png",
-      "/images/projects/rimrise-unity-home.png",
+      "/images/projects/rimrise-unity-current-career.png",
+      "/images/projects/rimrise-unity-current-city.png",
+      "/images/projects/rimrise-unity-current-storefront.png",
+      "/images/projects/rimrise-unity-current-cafe.png",
     ],
     tools: ["Unity 6.3", "C#"],
     specifications: [
@@ -288,7 +293,7 @@ export const selectedProjects: SelectedProject[] = [
     tools: ["Unity 6.3", "C#"],
     icon: "gamepad",
     accent: "blue",
-    image: "/images/projects/rimrise-unity-gameplay.webp",
+    image: "/images/projects/rimrise-unity-current-match.png",
     href: "/projects/rimrise-unity",
   },
   {

@@ -1,5 +1,11 @@
 # Demo evidence
 
+## Portfolio refresh — 16 October 2026
+
+DocuPass is featured on the homepage with its existing real OCR output. The handwriting comparison quotes the development results in `Tim321l/paddleocr-studio` at `bf86a8c1853b976cdba95610fd5515ce46b5a5b9`, `docs/studio-plan.md`, Phase 7: 60 hand-printed forms and 240 fields, with line orientation detection disabled. Rounded exact-field results were Balanced 78%, Accurate 79% and Fast 60%. The source forms are not redistributed; the website explicitly distinguishes these measurements from the printed synthetic receipt and from production accuracy.
+
+Unity gallery assets now come from the current local `rimrise-latest` workspace at source commit `83b9769`, rather than the older October 8 workspace. Court and career captures are from `DrivingRegression-Final4`; the city exterior is from `Exterior-Release` (16 October, 16:02), and the storefront and café are from `Interior-Release` (16 October, 19:16). The latter completed with 251 checks; the exterior run completed with 78 checks. These are existing native QA captures, not newly recorded gameplay. The interactive tour now covers career, court, city, storefront and café. Captions are localized in all five languages.
+
 All added media are silent local project captures. The static portfolio hosts recordings and source links, not running game services. Videos use controls and preload only on request.
 
 | Asset                       | Capture and scope                                                                                                                                                                                                                                                    | Source snapshot                                                                                        |
