@@ -36,6 +36,27 @@
         "Related web skill · Playwright",
         "This portfolio website uses Playwright to check responsive layouts, language navigation, keyboard interaction, both themes and automated accessibility. This demonstrates web verification experience alongside the desktop project's Selenium implementation."
       ]
+    ],
+    "previewBadge": "Real desktop UI · Sample media",
+    "screenshotsLabel": "Real desktop captures",
+    "screenshotsNote": "Captured from the current desktop app with generated sample clips, including a completed local merge. Images are cropped to the workspace; the interface remains in Traditional Chinese.",
+    "previews": [
+      [
+        "Clip workspace",
+        "Three generated sample clips in playback order, with local output settings and task controls."
+      ],
+      [
+        "Output library",
+        "The completed sample merge appears in the library with search, status filters and editing actions. This is a local file; it was not uploaded."
+      ],
+      [
+        "Manual editor",
+        "Trim, subtitle and voiceover controls opened on the generated sample output, before any edits."
+      ],
+      [
+        "Render settings",
+        "Merge mode, frame-rate selection and optional GPU preference. SQL storage is switched off in this isolated preview."
+      ]
     ]
   },
   "zh-hk": {
@@ -74,6 +95,27 @@
       [
         "相關網頁技能 · Playwright",
         "這個作品集網站以 Playwright 檢查響應式版面、語言導覽、鍵盤操作、深淺主題及自動化無障礙項目，展示桌面 Selenium 實作以外的網頁驗證經驗。"
+      ]
+    ],
+    "previewBadge": "實際桌面介面 · 示範素材",
+    "screenshotsLabel": "真實桌面截圖",
+    "screenshotsNote": "使用目前桌面程式及自行產生的示範片段拍攝，包含一次已完成的本機合成。圖片裁切至工作區，程式介面保留繁體中文。",
+    "previews": [
+      [
+        "片段工作區",
+        "三段自行產生的示範片段按播放順序排列，並展示本機輸出設定及工作控制。"
+      ],
+      [
+        "輸出影片庫",
+        "示範合成完成後的本機檔案，以及搜尋、狀態篩選與編輯入口。這個檔案沒有上傳。"
+      ],
+      [
+        "手動剪輯介面",
+        "以示範輸出開啟裁剪、字幕及旁白控制；截圖時尚未進行編輯。"
+      ],
+      [
+        "影片輸出設定",
+        "展示合成方式、幀率選項及可選的 GPU 偏好；此獨立預覽沒有啟用 SQL 儲存。"
       ]
     ]
   },
@@ -114,6 +156,27 @@
         "相关网页技能 · Playwright",
         "这个作品集网站使用 Playwright 检查响应式布局、语言导航、键盘操作、深浅主题和自动化无障碍项目，展示桌面 Selenium 实现以外的网页验证经验。"
       ]
+    ],
+    "previewBadge": "实际桌面界面 · 示例素材",
+    "screenshotsLabel": "真实桌面截图",
+    "screenshotsNote": "使用当前桌面程序和自行生成的示例片段拍摄，包括一次已完成的本地合成。图片裁切至工作区，程序界面保留繁体中文。",
+    "previews": [
+      [
+        "片段工作区",
+        "三段自行生成的示例片段按播放顺序排列，并展示本地输出设置与任务控制。"
+      ],
+      [
+        "输出视频库",
+        "示例合成完成后的本地文件，以及搜索、状态筛选和编辑入口。这个文件没有上传。"
+      ],
+      [
+        "手动剪辑界面",
+        "使用示例输出打开裁剪、字幕和旁白控制；截图时尚未进行编辑。"
+      ],
+      [
+        "视频输出设置",
+        "展示合成方式、帧率选项和可选的 GPU 偏好；此独立预览没有启用 SQL 存储。"
+      ]
     ]
   },
   "ja": {
@@ -153,6 +216,27 @@
         "関連する Web 技術 · Playwright",
         "このサイトでは Playwright でレスポンシブ表示、言語切り替え、キーボード操作、両テーマ、自動アクセシビリティ検査を確認しています。デスクトップの Selenium 実装とともに Web 検証の経験を示しています。"
       ]
+    ],
+    "previewBadge": "実際のデスクトップ画面 · サンプル素材",
+    "screenshotsLabel": "実際のデスクトップ画面",
+    "screenshotsNote": "現在のアプリと生成したサンプルクリップで撮影し、実際に完了したローカル結合の結果も含みます。画像は作業領域に切り抜き、アプリの繁体字中国語表示を保持しています。",
+    "previews": [
+      [
+        "クリップ作業領域",
+        "生成した3本のサンプルクリップの再生順と、ローカル出力設定・ジョブ操作を表示しています。"
+      ],
+      [
+        "出力ライブラリー",
+        "結合したサンプルのローカルファイルと、検索・状態フィルター・編集機能を表示しています。このファイルはアップロードしていません。"
+      ],
+      [
+        "手動編集画面",
+        "生成したサンプル出力を開いた、編集前のトリミング・字幕・ナレーション設定です。"
+      ],
+      [
+        "レンダリング設定",
+        "結合モード、フレームレート、任意の GPU 設定を表示しています。この独立したプレビューでは SQL 保存は無効です。"
+      ]
     ]
   },
   "ko": {
@@ -191,6 +275,27 @@
       [
         "관련 웹 기술 · Playwright",
         "이 포트폴리오 웹사이트는 Playwright로 반응형 화면, 언어 탐색, 키보드 조작, 두 테마, 자동 접근성 검사를 확인합니다. 데스크톱 Selenium 구현과 함께 웹 검증 경험을 보여 줍니다."
+      ]
+    ],
+    "previewBadge": "실제 데스크톱 화면 · 샘플 미디어",
+    "screenshotsLabel": "실제 데스크톱 캡처",
+    "screenshotsNote": "현재 앱과 생성한 샘플 클립으로 촬영했으며, 실제로 완료한 로컬 병합 결과도 포함합니다. 이미지는 작업 영역으로 잘랐고, 앱의 중국어 번체 화면은 유지했습니다.",
+    "previews": [
+      [
+        "클립 작업 공간",
+        "생성한 샘플 클립 3개의 재생 순서와 로컬 출력 설정, 작업 제어를 보여 줍니다."
+      ],
+      [
+        "출력 라이브러리",
+        "병합을 완료한 샘플 로컬 파일과 검색, 상태 필터, 편집 기능입니다. 이 파일은 업로드하지 않았습니다."
+      ],
+      [
+        "수동 편집 화면",
+        "생성한 샘플 출력을 연 상태의 자르기, 자막, 내레이션 설정입니다. 캡처 시 편집은 적용하지 않았습니다."
+      ],
+      [
+        "렌더링 설정",
+        "병합 모드, 프레임 속도, 선택적 GPU 설정을 보여 줍니다. 이 독립된 미리보기에서는 SQL 저장을 사용하지 않습니다."
       ]
     ]
   }

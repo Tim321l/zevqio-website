@@ -267,6 +267,16 @@ export const products: Product[] = [
     focus: basketballClipContent.en.focus,
     icon: "workflow",
     accent: "violet",
+    interfacePreviews: basketballClipContent.en.previews.map(
+      ([title, description], index) => ({
+        title,
+        description,
+        image: `/images/projects/basketball-${["workspace", "library", "editor", "settings"][index]}.webp`,
+        alt: `${title}: ${description}`,
+        width: index === 2 ? 920 : 1233,
+        height: index === 2 ? 759 : 898,
+      }),
+    ),
   },
 ];
 
