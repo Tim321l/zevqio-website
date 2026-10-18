@@ -1,5 +1,6 @@
 import { buildLocalTool } from "./local-tools";
 import { docupassCopy } from "./docupass-content";
+import basketballClipContent from "./basketball-clip-content.json";
 export type ProductStatus = "In Development";
 
 export type ProductInterfacePreview = {
@@ -259,18 +260,12 @@ export const products: Product[] = [
     slug: "basketball-clip-mixer",
     name: "Basketball Clip Mixer",
     shortName: "Basketball Clip Mixer",
-    category: "Sports video · Windows desktop",
-    summary:
-      "A local desktop project for combining basketball game clips into one highlight video.",
-    description:
-      "Basketball Clip Mixer is a Windows desktop project focused on bringing basketball game clips together in a single highlight video. It is a local project in development.",
+    category: basketballClipContent.en.category,
+    summary: basketballClipContent.en.summary,
+    description: basketballClipContent.en.description,
     stage: "In Development",
-    focus: [
-      "Basketball game clip collection",
-      "A single combined highlight video",
-      "Windows desktop project",
-    ],
-    icon: "file",
+    focus: basketballClipContent.en.focus,
+    icon: "workflow",
     accent: "violet",
   },
 ];

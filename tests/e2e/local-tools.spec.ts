@@ -27,7 +27,9 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
     await expect(page.locator("h1")).toContainText("Basketball Clip Mixer");
     await expect(page.locator(".detail-symbol-card")).toHaveCount(1);
     await expect(page.locator(".tool-image-link")).toHaveCount(0);
-    await expect(page.locator(".project-depth-section")).toHaveCount(0);
+    await expect(page.locator(".project-spec-card")).toHaveCount(6);
+    await expect(page.locator("main")).toContainText("Selenium + ChromeDriver");
+    await expect(page.locator("main")).toContainText("Playwright");
     await expect(page.locator("main")).not.toContainText(
       /OCR Studio|Document Intelligence|PDF Automation|Workflow Automation/,
     );
