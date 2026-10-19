@@ -417,9 +417,6 @@ const source =
             start();
           }),
         );
-      root
-        .querySelector(".docu-story-stage")!
-        .addEventListener("pointerenter", pause);
       root.addEventListener("focusin", (event) => {
         if (event.target !== play) pause();
       });

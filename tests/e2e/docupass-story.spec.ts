@@ -4,8 +4,14 @@ import AxeBuilder from "@axe-core/playwright";
 test("DocuPass story plays, supports keyboard navigation and pauses for interaction", async ({
   page,
 }) => {
-  await page.goto("products/docupass#docupass-features");
+  await page.goto("products/docupass");
   const story = page.locator("[data-docu-story]");
+  await page
+    .getByRole("link", { name: "Play the product story", exact: true })
+    .click();
+  await expect(story).toHaveAttribute("data-playing", "true");
+  await story.getByRole("button", { name: "Pause story", exact: true }).click();
+  await expect(story).toHaveAttribute("data-playing", "false");
   const tabs = story.getByRole("tab");
   await expect(tabs).toHaveCount(6);
   await expect(story.getByRole("tabpanel")).toHaveCount(1);
