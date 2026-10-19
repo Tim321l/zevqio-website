@@ -1,6 +1,7 @@
 import { buildLocalTool } from "./local-tools";
 import { docupassCopy } from "./docupass-content";
 import basketballClipContent from "./basketball-clip-content.json";
+import smartcartContent from "./smartcart-content.json";
 export type ProductStatus = "In Development";
 
 export type ProductInterfacePreview = {
@@ -275,6 +276,28 @@ export const products: Product[] = [
         alt: `${title}: ${description}`,
         width: index === 2 ? 920 : 1233,
         height: index === 2 ? 759 : 898,
+      }),
+    ),
+  },
+  {
+    slug: "smartcart-ai",
+    name: "SmartCart AI",
+    shortName: "SmartCart AI",
+    category: smartcartContent.en.category,
+    summary: smartcartContent.en.summary,
+    description: smartcartContent.en.description,
+    stage: "In Development",
+    focus: smartcartContent.en.focus,
+    icon: "workflow",
+    accent: "cyan",
+    interfacePreviews: smartcartContent.en.previews.map(
+      ([title, description], index) => ({
+        title,
+        description,
+        image: `/images/projects/smartcart-${["overview", "list", "shopping", "prices"][index]}.webp`,
+        alt: `${title}: ${description}`,
+        width: [1280, 390, 390, 640][index],
+        height: [720, 640, 640, 434][index],
       }),
     ),
   },

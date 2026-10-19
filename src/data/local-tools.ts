@@ -2,6 +2,7 @@ import content from "./local-tool-content.json";
 import { docupassCopy } from "./docupass-content";
 import docuShowcaseCopy from "./docupass-showcase.json";
 import basketballClipContent from "./basketball-clip-content.json";
+import smartcartContent from "./smartcart-content.json";
 import type { Product, ProductStory } from "./products";
 import type { Locale } from "./locales";
 
@@ -64,6 +65,12 @@ const images = {
 };
 
 export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
+  if (slug === "smartcart-ai") {
+    return {
+      ...smartcartContent[locale],
+      name,
+    };
+  }
   if (slug === "basketball-clip-mixer") {
     return {
       ...basketballClipContent[locale],

@@ -33,6 +33,7 @@ describe("product configuration", () => {
       "monitor",
       "docupass",
       "basketball-clip-mixer",
+      "smartcart-ai",
     ]);
     expect(getProduct("vidoany")?.name).toBe("VidOutline");
     expect(getProduct("tokensaver")?.name).toBe("TokenSaver");
@@ -40,6 +41,7 @@ describe("product configuration", () => {
       "Basketball Clip Mixer",
     );
     expect(getProduct("unknown-product")).toBeUndefined();
+    expect(getProduct("smartcart-ai")?.name).toBe("SmartCart AI");
   });
 });
 

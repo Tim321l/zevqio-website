@@ -76,6 +76,7 @@ const pages = [
   "products/monitor",
   "products/docupass",
   "products/basketball-clip-mixer",
+  "products/smartcart-ai",
   "projects/rimrise-unity",
   "projects/rimrise-web",
   "projects/bigdeal",

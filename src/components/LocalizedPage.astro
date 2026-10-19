@@ -1284,7 +1284,15 @@ const getHomeProjectCopy = (href?: string) => {
               <div class="showcase-preview-grid">
                 {sourceProduct.interfacePreviews.map((preview, index) => (
                   <figure class="showcase-preview-card">
-                    <div class="showcase-image-frame">
+                    <div
+                      class:list={[
+                        "showcase-image-frame",
+                        {
+                          "showcase-image-frame--portrait":
+                            (preview.width ?? 1440) < (preview.height ?? 900),
+                        },
+                      ]}
+                    >
                       <img
                         src={withBase(preview.image)}
                         alt={`${productCopy.name}: ${productCopy.previews[index]?.[0] ?? preview.title}`}

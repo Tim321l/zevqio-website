@@ -2375,6 +2375,9 @@ svg {
 .tool-gallery .tool-image-link {
   margin-top: 20px;
 }
+.tool-gallery .showcase-image-frame--portrait img {
+  width: min(100%, 390px);
+}
 .tool-gallery--portrait .showcase-image-frame img {
   width: min(100%, 352px);
 }

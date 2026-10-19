@@ -22,6 +22,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
       "monitor",
       "docupass",
       "basketball-clip-mixer",
+      "smartcart-ai",
     ]);
     await page.goto(`${language}products/basketball-clip-mixer`);
     await expect(page.locator("h1")).toContainText("Basketball Clip Mixer");
@@ -48,6 +49,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
       ["monitor", 1],
       ["tokensaver", 4],
       ["basketball-clip-mixer", 4],
+      ["smartcart-ai", 4],
     ] as const) {
       await page.goto(`${language}products/${slug}`);
       await expect(page.locator(".tool-image-link")).toHaveCount(count);

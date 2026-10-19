@@ -1,0 +1,302 @@
+{
+  "en": {
+    "category": "Grocery planning · Flutter & .NET",
+    "summary": "A local grocery MVP combining shared household lists, focused shopping mode, private receipt review and source-attributed price records.",
+    "description": "SmartCart AI connects planning, shopping and confirmed purchases in one household workspace. The local MVP includes shared lists, product lookup, manually confirmed photo additions, receipt review, purchase history and recorded-price comparison. Flutter provides the client, backed by an ASP.NET Core API, PostgreSQL and an internal RapidOCR/ONNX service. Web workflows run locally; public app hosting and native-device validation remain pending.",
+    "focus": [
+      "Household lists and mobile shopping mode",
+      "Private receipt OCR with human review",
+      "Recorded prices with visible source evidence"
+    ],
+    "specificationsLabel": "Current implementation",
+    "specificationsTitle": "From a grocery list to purchase evidence",
+    "specificationsIntro": "Current capabilities include private CPU receipt OCR, manual product-photo matching and deterministic summaries of recorded prices. The project is a local MVP in development.",
+    "specifications": [
+      [
+        "Shared lists and shopping mode",
+        "Plan items, adjust quantities and use a focused phone-width shopping view. Checked list items remain separate from purchase transactions."
+      ],
+      [
+        "Private receipt review",
+        "RapidOCR/ONNX suggests receipt fields on a private local CPU service. People review and save the candidates before confirming a purchase. Real-store recognition accuracy is not established."
+      ],
+      [
+        "Traceable price comparison",
+        "Recorded observations carry source, date, currency and verification status. Summaries calculate ranges from that evidence; demo records are labelled and are not current store quotes."
+      ],
+      [
+        "Confirmed purchase history",
+        "Household members can view confirmed purchases and add an item to a shopping list again. Historical amounts remain historical; receipt price contribution requires explicit consent and review."
+      ],
+      [
+        "Read-only connection fallback",
+        "Previously loaded list text can remain available for less than 24 hours during connection failures. The current fallback keeps edits disabled and requires a previously opened signed-in app."
+      ],
+      [
+        "Engineering and release stage",
+        "Flutter, ASP.NET Core 10, PostgreSQL and private RapidOCR/ONNX form the local stack. Android/iOS runner sources exist; native builds, physical-device cameras and production deployment remain pending."
+      ]
+    ],
+    "previewBadge": "Local app capture · Demo data",
+    "screenshotsLabel": "Real local app screens",
+    "screenshotsNote": "Local development captures with demo lists and clearly labelled price observations. Mobile views are Flutter Web at phone width, not native-device captures. Grocery artwork is generated decoration.",
+    "previews": [
+      [
+        "Grocery overview",
+        "The local desktop dashboard brings list progress and the known-price budget together. Its grocery artwork is decorative, not evidence of store inventory."
+      ],
+      [
+        "Mobile list planning",
+        "The 390px web preview shows demo groceries, quantities, photo entry and the shopping-mode shortcut. Captured UI remains Traditional Chinese."
+      ],
+      [
+        "Focused shopping mode",
+        "A phone-width view of three demo items with visible list progress. Checking an item does not record payment or create a purchase."
+      ],
+      [
+        "Price-source records",
+        "A local development evidence panel with dated demo observations. These illustrative records are not live supermarket prices."
+      ]
+    ]
+  },
+  "zh-hk": {
+    "category": "日常採購 · Flutter 與 .NET",
+    "summary": "本機購物 MVP，結合家庭共用清單、專注購物模式、私人收據核對，以及附來源的價格記錄。",
+    "description": "SmartCart AI 將購物規劃、逛超市及已確認購買連接到同一個家庭工作區。本機 MVP 已包含共用清單、商品搜尋、經人工確認的相片加商品、收據核對、購買歷史及記錄比價。前端採用 Flutter，後端使用 ASP.NET Core API、PostgreSQL 及內部 RapidOCR／ONNX 服務。Web 流程可在本機使用，正式託管及原生裝置驗證仍待完成。",
+    "focus": [
+      "家庭清單及手機購物模式",
+      "私人收據 OCR 與人工核對",
+      "可查看來源的價格記錄"
+    ],
+    "specificationsLabel": "目前實作",
+    "specificationsTitle": "從購物清單到購買依據",
+    "specificationsIntro": "目前能力包括私人 CPU 收據 OCR、人工商品相片匹配，以及根據價格記錄計算的摘要。項目仍是開發中的本機 MVP。",
+    "specifications": [
+      [
+        "共用清單與購物模式",
+        "規劃商品、調整數量，並使用手機寬度的專注購物畫面。清單勾選與真正的購買交易分開記錄。"
+      ],
+      [
+        "私人收據核對",
+        "RapidOCR／ONNX 透過私人本機 CPU 服務提供收據欄位候選。用戶核對及儲存後，才確認購買；真實店舖收據的辨識準確率尚未建立。"
+      ],
+      [
+        "可追溯的價格比較",
+        "價格觀察記錄包含來源、日期、貨幣及驗證狀態。摘要根據依據計算範圍；示範記錄有清楚標示，並非商店現價。"
+      ],
+      [
+        "已確認購買歷史",
+        "家庭成員可查看已確認購買，並把商品再次加入清單。歷史金額保留其歷史性質；收據價格投稿需要明確同意及審核。"
+      ],
+      [
+        "斷線時的只讀副本",
+        "曾載入的清單文字可在斷線時限時保留，少於 24 小時。此模式停用編輯，並需要已開啟及登入的程式。"
+      ],
+      [
+        "工程架構與開發階段",
+        "本機架構包括 Flutter、ASP.NET Core 10、PostgreSQL 及私人 RapidOCR／ONNX。已有 Android／iOS runner 原始碼；原生建置、實機相機及正式部署仍待完成。"
+      ]
+    ],
+    "previewBadge": "本機程式截圖 · 示範資料",
+    "screenshotsLabel": "真實本機介面",
+    "screenshotsNote": "本機開發截圖使用示範清單及有清楚標示的價格記錄。手機畫面是手機寬度的 Flutter Web，並非原生實機截圖；食品圖片為生成的裝飾素材。",
+    "previews": [
+      [
+        "購物總覽",
+        "本機桌面總覽集中展示清單進度與已知單價預算。食品插圖只作裝飾，並不代表商店庫存。"
+      ],
+      [
+        "手機清單規劃",
+        "390px Web 預覽展示示範商品、數量、相片入口及購物模式捷徑；程式介面保留繁體中文。"
+      ],
+      [
+        "專注購物模式",
+        "手機寬度畫面展示三項示範商品及清單進度。勾選商品不代表付款，也不會建立購買記錄。"
+      ],
+      [
+        "價格來源記錄",
+        "本機開發版本的依據面板，展示有日期及清楚標示的示範價格觀察，並非超級市場即時價格。"
+      ]
+    ]
+  },
+  "zh-cn": {
+    "category": "日常采购 · Flutter 与 .NET",
+    "summary": "本地购物 MVP，结合家庭共享清单、专注购物模式、私人收据核对以及附来源的价格记录。",
+    "description": "SmartCart AI 将购物规划、逛超市和已确认购买连接到同一个家庭工作区。本地 MVP 包含共享清单、商品搜索、经人工确认的照片添加商品、收据核对、购买历史和记录比价。前端采用 Flutter，后端使用 ASP.NET Core API、PostgreSQL 和内部 RapidOCR／ONNX 服务。Web 流程可在本地使用，正式托管和原生设备验证仍待完成。",
+    "focus": [
+      "家庭清单和手机购物模式",
+      "私人收据 OCR 与人工核对",
+      "可查看来源的价格记录"
+    ],
+    "specificationsLabel": "当前实现",
+    "specificationsTitle": "从购物清单到购买依据",
+    "specificationsIntro": "当前能力包括私人 CPU 收据 OCR、人工商品照片匹配，以及根据价格记录计算的摘要。项目仍是开发中的本地 MVP。",
+    "specifications": [
+      [
+        "共享清单与购物模式",
+        "规划商品、调整数量，并使用手机宽度的专注购物界面。清单勾选与真正的购买交易分开记录。"
+      ],
+      [
+        "私人收据核对",
+        "RapidOCR／ONNX 通过私人本地 CPU 服务提供收据字段候选。用户核对并保存后才确认购买；真实商店收据的识别准确率尚未建立。"
+      ],
+      [
+        "可追溯的价格比较",
+        "价格观察记录包含来源、日期、货币和验证状态。摘要根据依据计算范围；示例记录明确标注，并非商店现价。"
+      ],
+      [
+        "已确认购买历史",
+        "家庭成员可查看已确认购买，并将商品再次加入清单。历史金额保留其历史性质；收据价格投稿需要明确同意和审核。"
+      ],
+      [
+        "断线时的只读副本",
+        "已加载的清单文字可在断线时限时保留，少于 24 小时。此模式停用编辑，并需要已打开且登录的程序。"
+      ],
+      [
+        "工程架构与开发阶段",
+        "本地架构包括 Flutter、ASP.NET Core 10、PostgreSQL 和私人 RapidOCR／ONNX。已有 Android／iOS runner 源代码；原生构建、实机相机和正式部署仍待完成。"
+      ]
+    ],
+    "previewBadge": "本地程序截图 · 示例数据",
+    "screenshotsLabel": "真实本地界面",
+    "screenshotsNote": "本地开发截图使用示例清单和明确标注的价格记录。手机界面是手机宽度的 Flutter Web，并非原生实机截图；食品图片是生成的装饰素材。",
+    "previews": [
+      [
+        "购物总览",
+        "本地桌面总览集中展示清单进度和已知单价预算。食品插图仅用于装饰，不代表商店库存。"
+      ],
+      [
+        "手机清单规划",
+        "390px Web 预览展示示例商品、数量、照片入口和购物模式快捷方式；程序界面保留繁体中文。"
+      ],
+      [
+        "专注购物模式",
+        "手机宽度界面展示三项示例商品和清单进度。勾选商品不代表付款，也不会创建购买记录。"
+      ],
+      [
+        "价格来源记录",
+        "本地开发版本的依据面板，展示带日期且明确标注的示例价格观察，并非超市实时价格。"
+      ]
+    ]
+  },
+  "ja": {
+    "category": "食料品の買い物計画 · Flutter & .NET",
+    "summary": "家族の共有リスト、買い物専用画面、非公開のレシート確認、出典付き価格記録をまとめたローカル MVP。",
+    "description": "SmartCart AI は、買い物計画と確認済み購入を1つの家族用作業環境につなぎます。共有リスト、商品検索、人が確認する写真からの商品追加、レシート確認、購入履歴、価格記録の比較を備えています。Flutter、ASP.NET Core API、PostgreSQL、内部 RapidOCR／ONNX サービスで構成されます。Web はローカルで動作し、公開運用と実機検証は今後の作業です。",
+    "focus": [
+      "家族の共有リストと買い物画面",
+      "非公開レシート OCR と人による確認",
+      "出典を確認できる価格記録"
+    ],
+    "specificationsLabel": "現在の実装",
+    "specificationsTitle": "買い物リストから購入の根拠へ",
+    "specificationsIntro": "非公開 CPU レシート OCR、手動の商品写真照合、価格記録から計算する要約を実装しています。現在は開発中のローカル MVP です。",
+    "specifications": [
+      [
+        "共有リストと買い物画面",
+        "商品や数量を計画し、スマートフォン幅の専用画面を使えます。リストのチェックと実際の購入取引は分けて記録します。"
+      ],
+      [
+        "非公開のレシート確認",
+        "RapidOCR／ONNX のローカル CPU サービスが入力候補を出します。人が確認・保存した後に購入を確定します。実店舗レシートの認識精度は未評価です。"
+      ],
+      [
+        "出典付き価格比較",
+        "価格記録には出典、日付、通貨、検証状態を付けます。その記録から範囲を計算し、デモ記録を明示します。表示例は現在の店舗価格ではありません。"
+      ],
+      [
+        "確定した購入履歴",
+        "家族の確定済み購入を確認し、商品をリストに再追加できます。過去の金額は履歴として扱い、レシート価格の投稿には明示的な同意と審査を必要とします。"
+      ],
+      [
+        "切断時の読み取り専用コピー",
+        "接続中に開いたリストの文字情報を、24時間未満の期限で表示できます。編集は無効となり、ログインしたアプリが既に開いている必要があります。"
+      ],
+      [
+        "構成と開発段階",
+        "Flutter、ASP.NET Core 10、PostgreSQL、非公開 RapidOCR／ONNX を使います。Android／iOS runner ソースはあり、ネイティブビルド・実機カメラ・本番展開は今後の作業です。"
+      ]
+    ],
+    "previewBadge": "ローカルアプリ画面 · デモデータ",
+    "screenshotsLabel": "実際のローカル画面",
+    "screenshotsNote": "開発時のデモリストと明示された価格記録を使った画面です。スマートフォン画面は端末幅の Flutter Web で、ネイティブ実機の撮影ではありません。食品画像は生成した装飾素材です。",
+    "previews": [
+      [
+        "買い物の概要",
+        "リストの進捗と既知単価の予算をまとめたデスクトップ画面です。食品画像は装飾であり、店舗の在庫を示しません。"
+      ],
+      [
+        "スマートフォンのリスト",
+        "390px の Web プレビューで、デモ商品、数量、写真入力、買い物画面への入口を表示します。アプリは繁体字中国語表示です。"
+      ],
+      [
+        "買い物専用画面",
+        "3つのデモ商品とリストの進捗を表示します。チェックは支払いを意味せず、購入記録も作成しません。"
+      ],
+      [
+        "価格記録の出典",
+        "開発時の根拠パネルに、日付とデモ表示のある価格記録を表示しています。スーパーのリアルタイム価格ではありません。"
+      ]
+    ]
+  },
+  "ko": {
+    "category": "식료품 구매 계획 · Flutter & .NET",
+    "summary": "가족 공유 목록, 집중 쇼핑 모드, 비공개 영수증 검토와 출처가 있는 가격 기록을 연결하는 로컬 MVP입니다.",
+    "description": "SmartCart AI는 쇼핑 계획과 확인된 구매를 하나의 가구 작업 공간으로 연결합니다. 공유 목록, 상품 검색, 사람이 확인하는 사진 상품 추가, 영수증 검토, 구매 내역, 기록된 가격 비교를 포함합니다. Flutter, ASP.NET Core API, PostgreSQL, 내부 RapidOCR／ONNX 서비스로 구성됩니다. Web은 로컬에서 실행되며 공개 운영과 실제 기기 검증은 진행 예정입니다.",
+    "focus": [
+      "가족 공유 목록과 모바일 쇼핑 모드",
+      "비공개 영수증 OCR과 사람의 검토",
+      "출처를 확인할 수 있는 가격 기록"
+    ],
+    "specificationsLabel": "현재 구현",
+    "specificationsTitle": "쇼핑 목록에서 구매 근거까지",
+    "specificationsIntro": "현재 구현은 비공개 CPU 영수증 OCR, 수동 상품 사진 매칭, 기록된 가격에서 계산한 요약을 포함합니다. 개발 중인 로컬 MVP입니다.",
+    "specifications": [
+      [
+        "공유 목록과 쇼핑 모드",
+        "상품과 수량을 계획하고 휴대폰 너비의 집중 쇼핑 화면을 사용할 수 있습니다. 목록 체크와 실제 구매 거래는 별도로 기록합니다."
+      ],
+      [
+        "비공개 영수증 검토",
+        "RapidOCR／ONNX 로컬 CPU 서비스가 입력 후보를 제시합니다. 사람이 검토하고 저장한 뒤 구매를 확정합니다. 실제 매장 영수증의 인식 정확도는 아직 평가되지 않았습니다."
+      ],
+      [
+        "출처가 있는 가격 비교",
+        "가격 관측 기록에는 출처, 날짜, 통화와 검증 상태가 있습니다. 해당 근거에서 범위를 계산하며 데모 기록을 명시합니다. 예시 가격은 현재 매장 가격이 아닙니다."
+      ],
+      [
+        "확인된 구매 내역",
+        "가족의 확정된 구매 내역을 확인하고 상품을 목록에 다시 추가할 수 있습니다. 과거 금액은 이력으로 유지하며 영수증 가격 공유에는 명시적 동의와 검토가 필요합니다."
+      ],
+      [
+        "연결 중단 시 읽기 전용 사본",
+        "미리 열어 둔 목록의 텍스트를 24시간 미만의 기간 동안 볼 수 있습니다. 편집은 비활성화되며 로그인한 앱이 이미 열려 있어야 합니다."
+      ],
+      [
+        "기술 구성과 개발 단계",
+        "Flutter, ASP.NET Core 10, PostgreSQL, 비공개 RapidOCR／ONNX를 사용합니다. Android／iOS runner 소스는 있으며 네이티브 빌드, 실기기 카메라와 운영 배포는 진행 예정입니다."
+      ]
+    ],
+    "previewBadge": "로컬 앱 캡처 · 데모 데이터",
+    "screenshotsLabel": "실제 로컬 앱 화면",
+    "screenshotsNote": "로컬 개발 화면은 데모 목록과 명확히 표시된 가격 기록을 사용합니다. 모바일 화면은 휴대폰 너비의 Flutter Web이며 네이티브 기기 캡처가 아닙니다. 식료품 이미지는 생성한 장식 소재입니다.",
+    "previews": [
+      [
+        "쇼핑 개요",
+        "목록 진행률과 단가가 알려진 항목의 예산을 모은 데스크톱 화면입니다. 식료품 그림은 장식이며 매장 재고를 나타내지 않습니다."
+      ],
+      [
+        "모바일 목록 계획",
+        "390px Web 미리보기로 데모 상품, 수량, 사진 입력과 쇼핑 모드 바로가기를 보여 줍니다. 앱 화면은 중국어 번체입니다."
+      ],
+      [
+        "집중 쇼핑 모드",
+        "데모 상품 3개와 목록 진행률을 표시합니다. 체크는 결제를 의미하지 않으며 구매 기록을 만들지 않습니다."
+      ],
+      [
+        "가격 출처 기록",
+        "날짜와 데모 표시가 있는 가격 관측을 보여 주는 로컬 개발 근거 패널입니다. 실시간 마트 가격이 아닙니다."
+      ]
+    ]
+  }
+}
