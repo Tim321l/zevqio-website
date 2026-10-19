@@ -1,0 +1,442 @@
+---
+import {
+  ArrowLeft,
+  ArrowRight,
+  Cpu,
+  FileSpreadsheet,
+  FolderInput,
+  Laptop,
+  Pause,
+  Play,
+  ScanLine,
+  Smartphone,
+} from "@lucide/astro";
+import { docuScenes, docuStory as ui } from "../data/docupass-story";
+import { docuDocumentTypes } from "../data/docupass-features";
+import result from "../data/docupass-demo-result.json";
+import type { Locale } from "../data/locales";
+import { withBase } from "../utils/paths";
+import "../styles/docupass-story.css";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const source =
+  "https://github.com/Tim321l/paddleocr-studio/blob/bf86a8c1853b976cdba95610fd5515ce46b5a5b9/";
+---
+
+<section
+  class="docu-story-section section-space"
+  id="docupass-features"
+  aria-labelledby="docu-story-title"
+>
+  <div class="shell">
+    <div class="showcase-heading docu-story-heading">
+      <div>
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          {ui.eyebrow[locale]}
+        </p>
+        <h2 id="docu-story-title">{ui.title[locale]}</h2>
+      </div>
+      <p>{ui.intro[locale]}</p>
+    </div>
+    <div
+      class="docu-story"
+      data-docu-story
+      data-play-label={ui.watch[locale]}
+      data-pause-label={ui.pause[locale]}
+      data-replay-label={ui.restart[locale]}
+      data-reduced-label={ui.reduced[locale]}
+    >
+      <div class="docu-story-masthead" aria-hidden="true">
+        <span>
+          <ScanLine size={17} /> DOCUPASS
+        </span>
+        <span>PADDLEOCR / PP-OCRv6</span>
+      </div>
+      <div
+        class="docu-story-tabs"
+        role="tablist"
+        aria-label={ui.chapters[locale]}
+      >
+        {docuScenes.map((scene, index) => (
+          <button
+            type="button"
+            role="tab"
+            id={`docu-tab-${scene.id}`}
+            aria-controls={`docu-scene-${scene.id}`}
+            aria-selected={index === 0 ? "true" : "false"}
+            tabindex={index === 0 ? 0 : -1}
+            data-docu-tab={index}
+          >
+            <span>0{index + 1}</span>
+            {scene.label[locale]}
+          </button>
+        ))}
+      </div>
+      <div class="docu-story-stage">
+        {docuScenes.map((scene, index) => (
+          <article
+            class={`docu-story-scene docu-scene-${scene.id}`}
+            id={`docu-scene-${scene.id}`}
+            role="tabpanel"
+            aria-labelledby={`docu-tab-${scene.id}`}
+            hidden={index !== 0}
+            data-docu-scene
+          >
+            <div class="docu-scene-copy">
+              <p class="docu-scene-chapter">
+                0{index + 1} / {scene.label[locale]}
+              </p>
+              <h3>{scene.title[locale]}</h3>
+              <p>{scene.text[locale]}</p>
+              <ul>
+                {scene.points.map((point) => (
+                  <li>{point[locale]}</li>
+                ))}
+              </ul>
+              <a
+                href={source + scene.source}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {ui.source[locale]}
+                <ArrowRight size={15} />
+              </a>
+            </div>
+            <div class="docu-scene-visual">
+              {scene.image ? (
+                <>
+                  <div class="docu-scene-window">
+                    <div class="docu-window-label">
+                      <i></i>
+                      <span>{ui.realScreen[locale]}</span>
+                      <span>macOS · 19 OCT 2026</span>
+                    </div>
+                    <a
+                      href={withBase(`/images/projects/${scene.image}`)}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`${ui.realScreen[locale]}: ${scene.label[locale]}`}
+                    >
+                      <img
+                        src={withBase(`/images/projects/${scene.image}`)}
+                        alt={scene.label[locale]}
+                        width="2640"
+                        height="1560"
+                        loading="lazy"
+                      />
+                    </a>
+                    <span class="docu-scene-scan" aria-hidden="true"></span>
+                  </div>
+                  {scene.id === "engine" && (
+                    <div class="docu-scene-result">
+                      <span>{ui.sample[locale]}</span>
+                      <strong>{result.document.fields.merchant.value}</strong>
+                      <b>{result.document.fields.total.value}</b>
+                    </div>
+                  )}
+                  {scene.id === "detect" && (
+                    <div class="docu-detection-types">
+                      {docuDocumentTypes.slice(0, 4).map(([name]) => (
+                        <span>
+                          <ScanLine size={14} />
+                          {name[locale]}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {scene.id === "benchmark" && (
+                    <div class="docu-benchmark-visual">
+                      <div>
+                        <strong>24</strong>
+                        <span>
+                          {ui.lines[locale]}
+                          <small>{ui.standardPage[locale]}</small>
+                        </span>
+                      </div>
+                      <div>
+                        <strong>2–4</strong>
+                        <span>{ui.ownPages[locale]}</span>
+                      </div>
+                      <p>{ui.benchmarkNote[locale]}</p>
+                    </div>
+                  )}
+                  {scene.id === "ai" && (
+                    <div class="docu-ai-visual">
+                      <span>
+                        <Cpu size={19} />
+                        {ui.localAI[locale]}
+                        <small>Ollama · localhost</small>
+                      </span>
+                      <i aria-hidden="true">/</i>
+                      <span>
+                        <ScanLine size={19} />
+                        {ui.apiAI[locale]}
+                        <small>OpenAI-compatible</small>
+                      </span>
+                      <p>{ui.aiFlow[locale]}</p>
+                    </div>
+                  )}
+                  {scene.id === "automation" && (
+                    <div class="docu-automation-visual">
+                      <FolderInput size={26} />
+                      <span class="docu-flow-line" aria-hidden="true"></span>
+                      <Cpu size={26} />
+                      <span class="docu-flow-line" aria-hidden="true"></span>
+                      <FileSpreadsheet size={26} />
+                      <p>{ui.folderFlow[locale]}</p>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div class="docu-mobile-visual">
+                  <p class="docu-illustration-label">{ui.diagram[locale]}</p>
+                  <div class="docu-mobile-devices">
+                    <div class="docu-phone-device">
+                      <span class="docu-device-camera"></span>
+                      <Smartphone size={23} />
+                      <p>iOS / Android</p>
+                      <img
+                        src={withBase(
+                          "/images/projects/docupass-sample-receipt.jpg",
+                        )}
+                        alt={ui.sample[locale]}
+                        width="978"
+                        height="1178"
+                        loading="lazy"
+                      />
+                      <span>{ui.read[locale]}</span>
+                    </div>
+                    <div class="docu-device-transfer" aria-hidden="true">
+                      <ArrowRight size={24} />
+                      <span class="docu-flow-line"></span>
+                      <ArrowLeft size={24} />
+                    </div>
+                    <div class="docu-desktop-device">
+                      <span>Windows / macOS</span>
+                      <img
+                        src={withBase(
+                          "/images/projects/docupass-current-review.webp",
+                        )}
+                        alt={ui.realScreen[locale]}
+                        width="2640"
+                        height="1560"
+                        loading="lazy"
+                      />
+                      <div>
+                        <Cpu size={16} /> PaddleOCR
+                      </div>
+                    </div>
+                  </div>
+                  <p class="docu-phone-caption">{ui.phoneFlow[locale]}</p>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="docu-story-controls">
+        <button type="button" class="docu-story-play" data-docu-play>
+          <Play size={16} class="docu-play-icon" />
+          <Pause size={16} class="docu-pause-icon" />
+          <span data-docu-play-label>{ui.watch[locale]}</span>
+        </button>
+        <div class="docu-story-track" aria-hidden="true">
+          <span data-docu-progress></span>
+        </div>
+        <span class="docu-story-count" data-docu-count>
+          01 / 06
+        </span>
+        <button
+          type="button"
+          class="docu-story-arrow"
+          data-docu-prev
+          aria-label={ui.previous[locale]}
+        >
+          <ArrowLeft size={18} />
+        </button>
+        <button
+          type="button"
+          class="docu-story-arrow"
+          data-docu-next
+          aria-label={ui.next[locale]}
+        >
+          <ArrowRight size={18} />
+        </button>
+      </div>
+      <p class="sr-only" role="status" data-docu-status></p>
+    </div>
+    <p class="docu-story-caption">{ui.caption[locale]}</p>
+    <noscript>
+      <div class="docu-story-static">
+        {docuScenes.slice(1).map((scene) => (
+          <article>
+            <h3>{scene.title[locale]}</h3>
+            <p>{scene.text[locale]}</p>
+          </article>
+        ))}
+      </div>
+    </noscript>
+    <div class="docu-platforms">
+      <h3>{ui.platformsTitle[locale]}</h3>
+      <div class="docu-platform-grid">
+        {["macOS", "Windows", "iOS", "Android"].map((platform, index) => (
+          <article>
+            {index < 2 ? <Laptop size={23} /> : <Smartphone size={23} />}
+            <div>
+              <strong>{platform}</strong>
+              <span>
+                {index < 2 ? ui.desktop[locale] : ui.companion[locale]}
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p>{ui.platformNote[locale]}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-docu-story]")
+    .forEach((root) => {
+      const tabs = [
+        ...root.querySelectorAll<HTMLButtonElement>("[data-docu-tab]"),
+      ];
+      const panels = [
+        ...root.querySelectorAll<HTMLElement>("[data-docu-scene]"),
+      ];
+      const play = root.querySelector<HTMLButtonElement>("[data-docu-play]")!;
+      const label = root.querySelector<HTMLElement>("[data-docu-play-label]")!;
+      const progress = root.querySelector<HTMLElement>("[data-docu-progress]")!;
+      const count = root.querySelector<HTMLElement>("[data-docu-count]")!;
+      const status = root.querySelector<HTMLElement>("[data-docu-status]")!;
+      const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let selected = 0;
+      let playing = false;
+      let elapsed = 0;
+      let started = 0;
+      let timer: ReturnType<typeof setInterval> | undefined;
+      const duration = 8500;
+      const updateControl = () => {
+        root.dataset.playing = String(playing);
+        label.textContent = motion.matches
+          ? root.dataset.reducedLabel!
+          : playing
+            ? root.dataset.pauseLabel!
+            : selected === panels.length - 1
+              ? root.dataset.replayLabel!
+              : root.dataset.playLabel!;
+        play.disabled = motion.matches;
+      };
+      const pause = () => {
+        if (playing) elapsed += performance.now() - started;
+        playing = false;
+        clearInterval(timer);
+        updateControl();
+      };
+      const select = (index: number, manual = false) => {
+        if (manual) pause();
+        selected = Math.max(0, Math.min(panels.length - 1, index));
+        panels.forEach((panel, i) => {
+          panel.hidden = i !== selected;
+        });
+        tabs.forEach((tab, i) => {
+          tab.setAttribute("aria-selected", String(i === selected));
+          tab.tabIndex = i === selected ? 0 : -1;
+        });
+        count.textContent = `${String(selected + 1).padStart(2, "0")} / ${String(panels.length).padStart(2, "0")}`;
+        elapsed = 0;
+        started = performance.now();
+        progress.style.transform = "scaleX(0)";
+        if (manual)
+          status.textContent =
+            panels[selected].querySelector("h3")?.textContent || "";
+        updateControl();
+      };
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => select(index, true));
+        tab.addEventListener("keydown", (event) => {
+          let next: number | undefined;
+          if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+          if (event.key === "ArrowLeft")
+            next = (index - 1 + tabs.length) % tabs.length;
+          if (event.key === "Home") next = 0;
+          if (event.key === "End") next = tabs.length - 1;
+          if (next !== undefined) {
+            event.preventDefault();
+            select(next, true);
+            tabs[next].focus();
+          }
+        });
+      });
+      root
+        .querySelector("[data-docu-prev]")!
+        .addEventListener("click", () =>
+          select((selected - 1 + panels.length) % panels.length, true),
+        );
+      root
+        .querySelector("[data-docu-next]")!
+        .addEventListener("click", () =>
+          select((selected + 1) % panels.length, true),
+        );
+      const start = () => {
+        if (motion.matches) return;
+        if (selected === panels.length - 1) select(0);
+        playing = true;
+        started = performance.now();
+        updateControl();
+        timer = setInterval(() => {
+          const fraction = Math.min(
+            1,
+            (elapsed + performance.now() - started) / duration,
+          );
+          progress.style.transform = `scaleX(${fraction})`;
+          if (fraction === 1) {
+            if (selected === panels.length - 1) pause();
+            else select(selected + 1);
+          }
+        }, 80);
+      };
+      play.addEventListener("click", () => {
+        if (playing) pause();
+        else start();
+      });
+      document
+        .querySelectorAll<HTMLAnchorElement>("[data-docu-start]")
+        .forEach((link) =>
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            pause();
+            select(0);
+            history.replaceState(null, "", "#docupass-features");
+            root.scrollIntoView({ block: "center", behavior: "instant" });
+            start();
+          }),
+        );
+      root
+        .querySelector(".docu-story-stage")!
+        .addEventListener("pointerenter", pause);
+      root.addEventListener("focusin", (event) => {
+        if (event.target !== play) pause();
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) pause();
+      });
+      motion.addEventListener("change", () => {
+        pause();
+        updateControl();
+      });
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) pause();
+        },
+        { threshold: 0.15 },
+      );
+      observer.observe(root);
+      updateControl();
+    });
+</script>

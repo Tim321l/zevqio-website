@@ -245,13 +245,13 @@ export const products: Product[] = [
         description,
         image: `/images/projects/${
           [
-            "docupass-review.png",
+            "docupass-current-review.webp",
             "docupass-hardware.svg",
             "docupass-phone.svg",
           ][index]
         }`,
         alt: `${title}: ${description}`,
-        width: index === 0 ? 2880 : 1440,
+        width: index === 0 ? 2640 : 1440,
         height: index === 0 ? 1560 : 900,
       }),
     ),

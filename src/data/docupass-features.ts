@@ -23,11 +23,11 @@ export const docuFeatureLabels = {
     "DocuPass 기능",
   ),
   intro: l(
-    "The real app screens, receipt example and handwriting results are above. Open any row to read the full details; some options depend on the device or setup.",
-    "上方有真實程式畫面、收據範例及手寫實測。點開項目可閱讀詳情；部分選項視乎裝置或設定。",
-    "上方有真实程序画面、收据示例和手写实测。展开项目可查看详情；部分选项取决于设备或设置。",
-    "上には実際のアプリ画面、レシート例、手書き測定結果があります。各項目を開くと詳細を確認できます。機器や設定に依存する機能もあります。",
-    "위에서 실제 앱 화면, 영수증 예시와 필기 측정 결과를 볼 수 있습니다. 항목을 열어 자세히 확인하세요. 일부 기능은 기기나 설정에 따라 달라집니다.",
+    "Explore the detailed input, OCR, review and export capabilities. Some options depend on the device and configuration.",
+    "查看匯入、OCR、覆核及匯出的完整功能；部分選項視乎裝置及設定。",
+    "查看导入、OCR、核对和导出的完整功能；部分选项取决于设备和设置。",
+    "取込み・OCR・確認・出力の詳細です。一部の機能は機器や設定に依存します。",
+    "입력, OCR, 검토와 내보내기 기능을 자세히 확인하세요. 일부 옵션은 기기와 설정에 따라 달라집니다.",
   ),
   types: l(
     "What can it read?",
