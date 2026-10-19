@@ -4318,7 +4318,7 @@ h3 {
   background:
     radial-gradient(
       ellipse at 78% 35%,
-      color-mix(in srgb, var(--mint) 9%, transparent),
+      color-mix(in srgb, var(--blue) 9%, transparent),
       transparent 55%
     ),
     var(--page);

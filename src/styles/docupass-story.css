@@ -6,38 +6,37 @@
   max-width: 690px;
 }
 .docu-story {
-  --story-ink: #effbf6;
-  --story-muted: #a9c3bc;
-  --story-accent: #8cf0c4;
-  color: var(--story-ink);
-  background: #091d20;
-  border: 1px solid #34504b;
-  border-radius: 24px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 24px 90px #0002;
+  box-shadow: var(--shadow);
 }
 .docu-story-masthead {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 28px;
-  border-bottom: 1px solid #ffffff15;
+  border-bottom: 1px solid var(--line);
   font-size: 10px;
   letter-spacing: 0.14em;
-  color: var(--story-muted);
+  color: var(--muted);
+  background: var(--surface-2);
 }
 .docu-story-masthead span:first-child {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--story-accent);
+  color: var(--cyan);
   font-size: 12px;
   font-weight: 750;
 }
 .docu-story-tabs {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  border-bottom: 1px solid #ffffff15;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
 }
 .docu-story-tabs button {
   display: flex;
@@ -48,7 +47,7 @@
   padding: 12px 8px;
   border: 0;
   border-bottom: 2px solid transparent;
-  color: #b6cec6;
+  color: var(--text-soft);
   background: transparent;
   font: inherit;
   font-size: 12px;
@@ -59,27 +58,31 @@
 }
 .docu-story-tabs button span {
   font-size: 10px;
-  opacity: 0.6;
+  color: var(--muted);
   flex-shrink: 0;
   white-space: nowrap;
 }
 .docu-story-tabs button:hover {
-  background: #ffffff09;
-  color: #fff;
+  background: var(--surface-3);
+  color: var(--text);
 }
 .docu-story-tabs button[aria-selected="true"] {
-  color: var(--story-accent);
-  border-color: var(--story-accent);
-  background: #8cf0c40b;
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: color-mix(in srgb, var(--cyan) 8%, var(--surface));
 }
 .docu-story button:focus-visible,
 .docu-story a:focus-visible {
-  outline: 2px solid #c0ffde;
+  outline: 2px solid var(--cyan);
   outline-offset: -4px;
 }
 .docu-story-stage {
   position: relative;
-  background: radial-gradient(ellipse at 82% 40%, #1b534741, transparent 65%);
+  background: radial-gradient(
+    ellipse at 82% 40%,
+    color-mix(in srgb, var(--blue) 6%, transparent),
+    transparent 65%
+  );
 }
 .docu-story-scene {
   display: grid;
@@ -96,7 +99,7 @@
   animation: docu-copy-enter 0.5s ease both;
 }
 .docu-scene-chapter {
-  color: var(--story-accent);
+  color: var(--cyan);
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 0.13em;
@@ -107,12 +110,13 @@
   line-height: 1.12;
   letter-spacing: -0.045em;
   max-width: 390px;
-  color: var(--story-ink);
+  color: var(--text);
+  font-weight: 560;
   text-wrap: balance;
   margin: 0 0 20px;
 }
 .docu-scene-copy > p:not(.docu-scene-chapter) {
-  color: var(--story-muted);
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.75;
   max-width: 400px;
@@ -130,21 +134,21 @@
   gap: 10px;
   font-size: 12px;
   line-height: 1.5;
-  color: #dbebe5;
+  color: var(--text-soft);
 }
 .docu-scene-copy li::before {
   content: "";
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--story-accent);
+  background: var(--cyan);
   flex-shrink: 0;
 }
 .docu-scene-copy > a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--story-accent);
+  color: var(--cyan);
   font-size: 11px;
   padding-block: 10px;
   text-decoration: none;
@@ -159,10 +163,10 @@
 }
 .docu-scene-window {
   position: relative;
-  border: 1px solid #779b8155;
+  border: 1px solid var(--line-strong);
   border-radius: 11px;
-  box-shadow: 0 24px 60px #0006;
-  background: #172133;
+  box-shadow: var(--shadow);
+  background: var(--surface-2);
   overflow: hidden;
 }
 .docu-window-label {
@@ -170,16 +174,16 @@
   align-items: center;
   gap: 6px;
   padding: 10px 12px;
-  color: #c6d9d1;
+  color: var(--text-soft);
   font-size: 8px;
-  background: #102c28;
+  background: var(--surface-2);
   letter-spacing: 0.03em;
 }
 .docu-window-label > i {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #8cf0c4;
+  background: var(--cyan);
 }
 .docu-window-label > span:last-child {
   margin-left: auto;
@@ -198,8 +202,8 @@
   position: absolute;
   inset: 36px 0 auto;
   height: 1px;
-  background: #9fffd1;
-  box-shadow: 0 0 18px 5px #8cf0c433;
+  background: var(--cyan);
+  box-shadow: 0 0 18px 5px color-mix(in srgb, var(--cyan) 20%, transparent);
   pointer-events: none;
   opacity: 0;
   animation: docu-scan 1.8s ease-out 0.3s;
@@ -210,15 +214,14 @@
   gap: 8px;
   margin: 18px 0 0 28px;
   padding: 18px;
-  background: #123930;
-  border: 1px solid #8cf0c44a;
+  background: color-mix(in srgb, var(--cyan) 6%, var(--surface));
+  border: 1px solid var(--line-strong);
   border-radius: 10px;
-  box-shadow: 0 12px 40px #0002;
 }
 .docu-scene-result > span {
   grid-column: 1/-1;
   font-size: 9px;
-  color: var(--story-muted);
+  color: var(--muted);
 }
 .docu-scene-result > strong {
   font-size: 12px;
@@ -227,7 +230,7 @@
 .docu-scene-result > b {
   font-size: 28px;
   font-weight: 500;
-  color: var(--story-accent);
+  color: var(--cyan);
   letter-spacing: -0.04em;
 }
 .docu-detection-types {
@@ -241,14 +244,14 @@
   align-items: center;
   gap: 8px;
   padding: 12px;
-  background: #113730;
-  border: 1px solid #8cf0c42b;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
   border-radius: 8px;
   font-size: 11px;
-  color: #cfebdd;
+  color: var(--text-soft);
 }
 .docu-detection-types svg {
-  color: var(--story-accent);
+  color: var(--cyan);
   flex-shrink: 0;
 }
 .docu-benchmark-visual {
@@ -262,31 +265,31 @@
   align-items: center;
   gap: 12px;
   padding: 14px;
-  border: 1px solid #8cf0c43a;
-  background: #11352e;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
   border-radius: 9px;
 }
 .docu-benchmark-visual strong {
   font-size: 32px;
   font-weight: 450;
-  color: var(--story-accent);
+  color: var(--cyan);
   letter-spacing: -0.05em;
 }
 .docu-benchmark-visual span {
   font-size: 10px;
-  color: #e3f2eb;
+  color: var(--text-soft);
 }
 .docu-benchmark-visual small {
   display: block;
   font-size: 9px;
   margin-top: 5px;
-  color: var(--story-muted);
+  color: var(--muted);
 }
 .docu-benchmark-visual p {
   grid-column: 1/-1;
   font-size: 10px;
   line-height: 1.6;
-  color: var(--story-muted);
+  color: var(--muted);
   margin: 0;
 }
 .docu-ai-visual {
@@ -302,27 +305,27 @@
   align-items: center;
   gap: 6px 8px;
   padding: 14px;
-  border: 1px solid #8cf0c43b;
-  background: #11352e;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
   border-radius: 9px;
   font-size: 11px;
 }
 .docu-ai-visual svg {
-  color: var(--story-accent);
+  color: var(--cyan);
 }
 .docu-ai-visual small {
   grid-column: 1/-1;
-  color: var(--story-muted);
+  color: var(--muted);
   font-size: 9px;
 }
 .docu-ai-visual > i {
-  color: var(--story-muted);
+  color: var(--muted);
   font-size: 22px;
   font-style: normal;
 }
 .docu-ai-visual > p {
   grid-column: 1/-1;
-  color: var(--story-accent);
+  color: var(--cyan);
   font-size: 10px;
   margin: 0;
   text-align: center;
@@ -333,12 +336,12 @@
   grid-template-columns: auto 1fr auto 1fr auto;
   align-items: center;
   gap: 16px;
-  color: var(--story-accent);
+  color: var(--cyan);
   padding: 20px 16px 0;
 }
 .docu-flow-line {
   height: 1px;
-  background: #6cbd9c55;
+  background: var(--line-strong);
   position: relative;
   overflow: hidden;
   display: block;
@@ -349,7 +352,7 @@
   position: absolute;
   width: 22px;
   inset: 0 auto 0 -22px;
-  background: #b9ffda;
+  background: var(--cyan);
   transform: translateX(60px);
 }
 .docu-story[data-playing="true"] .docu-flow-line::after {
@@ -359,7 +362,7 @@
   grid-column: 1/-1;
   font-size: 11px;
   text-align: center;
-  color: #d0e6dc;
+  color: var(--text-soft);
   margin: 0;
 }
 .docu-illustration-label {
@@ -367,7 +370,7 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 8px;
-  color: var(--story-muted);
+  color: var(--muted);
   margin-bottom: 28px;
 }
 .docu-mobile-devices {
@@ -383,19 +386,19 @@
   align-items: center;
   gap: 12px;
   position: relative;
-  border: 2px solid #66877c;
-  background: #16382f;
+  border: 2px solid var(--line-strong);
+  background: var(--surface-3);
   padding: 22px 9px 12px;
   border-radius: 22px;
-  color: var(--story-accent);
-  box-shadow: 0 24px 60px #0004;
+  color: var(--cyan);
+  box-shadow: var(--shadow);
 }
 .docu-device-camera {
   position: absolute;
   top: 9px;
   width: 28px;
   height: 4px;
-  background: #6c897d;
+  background: var(--muted);
   border-radius: 4px;
 }
 .docu-phone-device p {
@@ -407,7 +410,7 @@
   height: auto;
   max-height: 140px;
   object-fit: contain;
-  background: #f4f3e5;
+  background: var(--surface);
   border-radius: 4px;
 }
 .docu-phone-device > span:last-child {
@@ -417,23 +420,23 @@
   display: grid;
   justify-items: center;
   gap: 14px;
-  color: var(--story-accent);
+  color: var(--cyan);
 }
 .docu-device-transfer .docu-flow-line {
   width: 100%;
 }
 .docu-desktop-device {
-  border: 2px solid #66877c;
+  border: 2px solid var(--line-strong);
   border-radius: 9px;
-  background: #102c28;
+  background: var(--surface-2);
   text-align: center;
-  box-shadow: 0 24px 60px #0004;
+  box-shadow: var(--shadow);
 }
 .docu-desktop-device > span {
   display: block;
   font-size: 9px;
   padding: 10px 0;
-  color: #d4e9dd;
+  color: var(--text-soft);
 }
 .docu-desktop-device img {
   display: block;
@@ -446,11 +449,11 @@
   align-items: center;
   gap: 7px;
   padding: 10px 0;
-  color: var(--story-accent);
+  color: var(--cyan);
   font-size: 10px;
 }
 .docu-phone-caption {
-  color: var(--story-accent);
+  color: var(--cyan);
   text-align: center;
   font-size: 12px;
   line-height: 1.6;
@@ -461,20 +464,21 @@
   align-items: center;
   gap: 14px;
   padding: 18px 28px;
-  border-top: 1px solid #ffffff19;
-  background: #071719;
+  border-top: 1px solid var(--line);
+  background: var(--surface-2);
 }
 .docu-story-controls button {
-  border: 1px solid #618c774a;
-  color: var(--story-ink);
-  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  background: var(--surface);
   font: inherit;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 9px;
   min-height: 44px;
 }
 .docu-story-controls button:hover {
-  background: #8cf0c416;
+  background: var(--surface-3);
+  border-color: var(--cyan);
 }
 .docu-story-play {
   display: flex;
@@ -487,7 +491,7 @@
 .docu-story-play:disabled {
   cursor: default;
   border-color: transparent;
-  color: #b8cec5;
+  color: var(--muted);
 }
 .docu-pause-icon,
 .docu-story[data-playing="true"] .docu-play-icon {
@@ -499,21 +503,21 @@
 .docu-story-track {
   height: 2px;
   flex: 1;
-  background: #ffffff1b;
+  background: var(--line-strong);
   overflow: hidden;
 }
 .docu-story-track > span {
   display: block;
   width: 100%;
   height: 100%;
-  background: var(--story-accent);
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
   transform: scaleX(0);
   transform-origin: left;
 }
 .docu-story-count {
   font-size: 10px;
   font-variant-numeric: tabular-nums;
-  color: var(--story-muted);
+  color: var(--muted);
   white-space: nowrap;
 }
 .docu-story-arrow {
