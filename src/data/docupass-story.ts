@@ -153,13 +153,6 @@ export const docuStory = {
     "開発中：macOS・Windowsのデスクトップビルドと、インストール済みのiOS開発版。Androidは実装済みで実機検証とストア公開は準備中です。macOSはCPU、WindowsのNVIDIA処理は対応GPU・ランタイムが必要で、実GPUでは未検証です。",
     "개발 중: macOS·Windows 데스크톱 빌드 및 설치된 iOS 개발 빌드. Android 앱 소스는 구현되었으며 실기기 검증과 스토어 출시는 준비 중입니다. macOS는 CPU를 사용합니다. Windows NVIDIA 모드는 호환 GPU·런타임이 필요하며 실제 GPU에서는 미검증입니다.",
   ),
-  details: l(
-    "Technical details and document types",
-    "技術詳情及文件種類",
-    "技术详情和文档类型",
-    "技術詳細と書類の種類",
-    "기술 정보 및 문서 유형",
-  ),
   read: l("Read", "讀取", "读取", "読取", "읽기"),
   detect: l("Detect", "識別", "识别", "判別", "분류"),
   check: l("Review", "覆核", "核对", "確認", "검토"),
