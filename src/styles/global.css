@@ -213,7 +213,7 @@ svg {
   color: var(--text-soft);
   background: var(--surface);
   cursor: pointer;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 620;
   list-style: none;
 }
@@ -261,7 +261,7 @@ svg {
   position: relative;
   padding: 11px 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   transition: color 160ms ease;
 }
 .nav-link::after {
@@ -337,7 +337,8 @@ svg {
 .button-small {
   min-height: 38px;
   padding-inline: 13px;
-  font-size: 14px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 .button-primary {
   border-color: rgba(109, 169, 255, 0.5);
@@ -3057,12 +3058,16 @@ svg {
   }
   .nav-shell {
     min-height: 70px;
+    gap: 16px;
   }
   .primary-navigation {
-    gap: 23px;
+    gap: 16px;
   }
   .nav-links {
-    gap: 20px;
+    gap: 16px;
+  }
+  .nav-actions {
+    gap: 8px;
   }
   .hero-section {
     min-height: 600px;
