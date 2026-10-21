@@ -4354,7 +4354,7 @@ h3 {
   transform: none;
 }
 .docu-detail-hero .detail-preview-hero img {
-  aspect-ratio: 2640/1560;
+  aspect-ratio: 2560/1504;
   object-fit: contain;
 }
 .docu-hero-actions {

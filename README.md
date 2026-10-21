@@ -47,7 +47,7 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 
 - `/` — studio overview and local prompt preparation workflow
 - `/products` — product portfolio
-- `/products/docupass` — six-chapter animated feature story, five current app captures, platform roles, OCR evidence and handwriting evaluation
+- `/products/docupass` — six-chapter animated feature story, eight current app captures (new job, benchmark, review, AI helper, automation, history, custom types, phone pairing), platform roles, OCR evidence and handwriting evaluation
 - `/products/vidoany`
 - `/products/tokensaver` — Promptwell local prompt preparation, four real captures
 - `/products/monitor` — local Windows resource dashboard and real capture

@@ -283,8 +283,8 @@ const getHomeProjectCopy = (href?: string) => {
             <img
               src={withBase("/images/projects/docupass-current-review.webp")}
               alt={docuEvidence.receiptLabel[locale]}
-              width="2640"
-              height="1560"
+              width="2560"
+              height="1504"
               fetchpriority="high"
             />
             <span class="detail-preview-badge">
@@ -908,8 +908,8 @@ const getHomeProjectCopy = (href?: string) => {
               <img
                 src={withBase("/images/projects/docupass-current-review.webp")}
                 alt={docuShowcaseCopy[locale].review}
-                width="2640"
-                height="1560"
+                width="2560"
+                height="1504"
                 loading="lazy"
               />
             </a>
@@ -1451,8 +1451,8 @@ const getHomeProjectCopy = (href?: string) => {
                           image: `/images/projects/${docuFile}`,
                           title,
                           description,
-                          width: index === 4 ? 1360 : 2880,
-                          height: index === 4 ? 1416 : 1560,
+                          width: [2880, 2880, 0, 2560, 1360][index],
+                          height: [1560, 1560, 0, 1504, 1416][index],
                         }
                       : undefined
                     : previewIndex == null
