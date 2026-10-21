@@ -48,7 +48,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
     for (const [slug, count] of [
       ["monitor", 1],
       ["tokensaver", 4],
-      ["basketball-clip-mixer", 4],
+      ["basketball-clip-mixer", 7],
       ["smartcart-ai", 4],
     ] as const) {
       await page.goto(`${language}products/${slug}`);

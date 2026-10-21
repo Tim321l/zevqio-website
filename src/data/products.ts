@@ -272,10 +272,10 @@ export const products: Product[] = [
       ([title, description], index) => ({
         title,
         description,
-        image: `/images/projects/basketball-${["workspace", "library", "editor", "settings"][index]}.webp`,
+        image: `/images/projects/basketball-${["workspace", "calendar", "library", "shorts", "tracking", "editor", "settings"][index]}.webp`,
         alt: `${title}: ${description}`,
-        width: index === 2 ? 920 : 1233,
-        height: index === 2 ? 759 : 898,
+        width: 1600,
+        height: [872, 872, 872, 1360, 1109, 1308, 872][index],
       }),
     ),
   },

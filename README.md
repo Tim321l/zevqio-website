@@ -52,9 +52,9 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 - `/products/tokensaver` — Promptwell local prompt preparation, four real captures
 - `/products/monitor` — local Windows resource dashboard and real capture
 - `/products/smartcart-ai` — local grocery MVP with shared lists, receipt review, recorded-price comparison and four demo-data captures
-- `/products/basketball-clip-mixer` — Python desktop automation with Selenium + ChromeDriver, related Playwright portfolio verification skills, and four real app captures using generated sample media
+- `/products/basketball-clip-mixer` — Python desktop video studio with Selenium + ChromeDriver collection, Shorts player/ball tracking, a game calendar, related Playwright portfolio verification skills, and seven real Mac app captures using generated sample media and fictional demo data
 - Homepage selected projects section for game development, web, and original audio work
-- `/projects/rimrise-unity` — Unity basketball prototype
+- `/projects/rimrise-unity` — Unity basketball prototype with ten native QA captures, including the character studio, home Build and Buy mode, city emergencies and vehicle damage
 - `/projects/rimrise-web` — browser basketball career project
 - `/projects/bigdeal` — Hong Kong property card game prototype
 - `/projects/song-guess` — multiplayer music quiz interface prototype

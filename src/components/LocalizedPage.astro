@@ -491,7 +491,7 @@ const getHomeProjectCopy = (href?: string) => {
                     <span class="principle-icon">
                       <Icon name={project.icon} size={22} />
                     </span>
-                    <span>0{index + 1}</span>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
                   </div>
                   {projectCopy && (
                     <div class="selected-project-meta">
@@ -599,7 +599,9 @@ const getHomeProjectCopy = (href?: string) => {
                     <b>{title}</b>
                     <small>{description}</small>
                   </span>
-                  <span class="step-number">0{index + 1}</span>
+                  <span class="step-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
               ))}
             </div>
@@ -643,7 +645,7 @@ const getHomeProjectCopy = (href?: string) => {
                       size={22}
                     />
                   </span>
-                  <span>0{index + 1}</span>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <h3>{title}</h3>
                 <p>{description}</p>
@@ -819,7 +821,7 @@ const getHomeProjectCopy = (href?: string) => {
                       size={22}
                     />
                   </span>
-                  <span>0{index + 1}</span>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <h3>{title}</h3>
                 <p>{description}</p>
@@ -885,7 +887,7 @@ const getHomeProjectCopy = (href?: string) => {
                   docuShowcaseCopy[locale].export,
                 ].map((step, index) => (
                   <span>
-                    <b>0{index + 1}</b>
+                    <b>{String(index + 1).padStart(2, "0")}</b>
                     {step}
                   </span>
                 ))}
@@ -1154,7 +1156,7 @@ const getHomeProjectCopy = (href?: string) => {
                     : productCopy.focus.slice(0, 3)
                   ).map((highlight, index) => (
                     <article>
-                      <span>0{index + 1}</span>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                       <p>{highlight}</p>
                     </article>
                   ))}
@@ -1303,12 +1305,13 @@ const getHomeProjectCopy = (href?: string) => {
                         loading="lazy"
                       />
                       <span class="showcase-image-index" aria-hidden="true">
-                        0{index + 1}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
                     <figcaption>
                       <span class="showcase-screen-label">
-                        {copy.common.screen} 0{index + 1}
+                        {copy.common.screen}{" "}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                       <h3>{productCopy.previews[index]?.[0]}</h3>
                       <p>{productCopy.previews[index]?.[1]}</p>
@@ -1479,7 +1482,7 @@ const getHomeProjectCopy = (href?: string) => {
                       <span class="project-step-kicker">
                         {copy.common.possibleStep}
                       </span>
-                      <span>0{index + 1}</span>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                     </div>
                     <h3>{title}</h3>
                     <p>{description}</p>
@@ -1499,7 +1502,7 @@ const getHomeProjectCopy = (href?: string) => {
               <div class="project-principles-grid">
                 {story.principles.map(([title, description], index) => (
                   <article class="project-principle-card">
-                    <span>0{index + 1}</span>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
                     <h4>{title}</h4>
                     <p>{description}</p>
                   </article>
@@ -1574,7 +1577,7 @@ const getHomeProjectCopy = (href?: string) => {
                   .slice(0, 3)
                   .map(([title, description], index) => (
                     <article class="game-hero-highlight">
-                      <span>0{index + 1}</span>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                       <h2>{title}</h2>
                       <p>{description}</p>
                     </article>
@@ -1710,7 +1713,9 @@ const getHomeProjectCopy = (href?: string) => {
                   />
                 </a>
                 <div class="game-process-copy">
-                  <span class="game-process-number">0{index + 1}</span>
+                  <span class="game-process-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>
@@ -1811,12 +1816,13 @@ const getHomeProjectCopy = (href?: string) => {
                         loading="lazy"
                       />
                       <span class="showcase-image-index" aria-hidden="true">
-                        0{index + 1}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                     </a>
                     <figcaption>
                       <span class="showcase-screen-label">
-                        {copy.common.screen} 0{index + 1}
+                        {copy.common.screen}{" "}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                       <h3>{caption?.[0]}</h3>
                       <p>{caption?.[1]}</p>
