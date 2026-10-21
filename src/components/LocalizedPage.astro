@@ -253,18 +253,20 @@ const getHomeProjectCopy = (href?: string) => {
                 {docuEvidence.inspect[locale]}{" "}
                 <Icon name="arrowUpRight" size={16} />
               </a>
-              <a class="button button-quiet" href="#selected-projects">
-                {gameUI.games}
-                <Icon name="gamepad" size={18} />
-              </a>
               <a
-                class="button button-primary"
+                class="button button-outline"
                 href={withBase(localeHref(locale, "/products"))}
               >
                 {home.productsCta} <Icon name="arrowUpRight" size={16} />
               </a>
+            </div>
+            <div class="hero-links">
+              <a class="text-link" href="#selected-projects">
+                {gameUI.games}
+                <Icon name="gamepad" size={16} />
+              </a>
               <a
-                class="button button-quiet"
+                class="text-link"
                 href={withBase(localeHref(locale, "/contact"))}
               >
                 {home.contactCta} <Icon name="arrowRight" size={16} />
