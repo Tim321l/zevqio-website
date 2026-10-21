@@ -247,7 +247,7 @@ svg {
   padding: 7px 9px;
   border-radius: 8px;
   color: var(--text-soft);
-  font-size: 12px;
+  font-size: 14px;
 }
 .language-menu a:hover,
 .language-menu a[aria-current="page"] {
@@ -319,7 +319,7 @@ svg {
   padding: 0 18px;
   border: 1px solid transparent;
   border-radius: 9px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 650;
   letter-spacing: -0.01em;
   transition:
@@ -338,6 +338,7 @@ svg {
   min-height: 38px;
   padding-inline: 13px;
   font-size: 12px;
+  white-space: nowrap;
 }
 .button-primary {
   border-color: rgba(109, 169, 255, 0.5);
@@ -384,7 +385,7 @@ svg {
   gap: 11px;
   margin: 0 0 20px;
   color: var(--cyan);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 680;
   letter-spacing: 0.18em;
   line-height: 1.4;
@@ -421,7 +422,7 @@ svg {
   max-width: 360px;
   margin: 0 0 5px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
 }
 .section-intro-block {
@@ -435,7 +436,7 @@ svg {
   align-items: center;
   gap: 9px;
   color: var(--text-soft);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 620;
   transition: color 160ms ease;
 }
@@ -496,7 +497,7 @@ svg {
   bottom: 14px;
   left: auto;
   max-width: calc(100% - 28px);
-  font-size: 8px;
+  font-size: 10px;
 }
 .hero-grid-bg {
   position: absolute;
@@ -550,9 +551,21 @@ svg {
 }
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 32px;
+}
+.hero-actions .button {
+  text-align: center;
+  text-wrap: balance;
+}
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 26px;
+  margin-top: 20px;
 }
 .hero-footnote {
   display: flex;
@@ -560,7 +573,7 @@ svg {
   gap: 10px;
   margin-top: 38px;
   color: var(--faint);
-  font-size: 11px;
+  font-size: 13px;
 }
 .footnote-mark {
   display: grid;
@@ -932,11 +945,11 @@ svg {
 .capability-index {
   color: var(--faint);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 9px;
+  font-size: 11px;
 }
 .capability-card h3 {
   margin: 20px 0 8px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 620;
   letter-spacing: -0.02em;
 }
@@ -944,7 +957,7 @@ svg {
   max-width: 205px;
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
 }
 .capability-arrow {
@@ -1050,7 +1063,7 @@ svg {
   border-radius: 99px;
   color: #8bd6c9;
   background: rgba(58, 149, 130, 0.09);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 620;
   letter-spacing: 0.03em;
   white-space: nowrap;
@@ -1062,7 +1075,7 @@ svg {
 .card-category {
   margin: 24px 0 7px;
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1082,14 +1095,14 @@ svg {
 .product-card-copy {
   margin: 10px 0 20px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
 }
 .product-card .text-link {
   position: relative;
   z-index: 1;
   margin-top: auto;
-  font-size: 11px;
+  font-size: 13px;
 }
 .product-grid-page .product-card {
   min-height: 308px;
@@ -1131,7 +1144,7 @@ svg {
   border-radius: 6px;
   color: #fff;
   background: rgb(9 14 22 / 0.78);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.1em;
   text-overflow: ellipsis;
@@ -1155,7 +1168,7 @@ svg {
   align-items: start;
   gap: 8px;
   color: var(--text-soft);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.55;
 }
 .home-product-highlights svg {
@@ -1176,7 +1189,7 @@ svg {
 }
 .portfolio-note p {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 .note-mark {
   color: var(--cyan);
@@ -1200,7 +1213,7 @@ svg {
   max-width: 430px;
   margin: 22px 0 23px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
 .workflow-board {
@@ -1217,7 +1230,7 @@ svg {
   padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
   color: var(--faint);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.15em;
 }
@@ -1260,18 +1273,18 @@ svg {
   gap: 1px;
 }
 .step-copy b {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 620;
 }
 .step-copy small {
   color: var(--faint);
-  font-size: 8px;
+  font-size: 10px;
 }
 .step-number {
   margin-left: auto;
   color: var(--faint);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 8px;
+  font-size: 10px;
 }
 .review-step {
   border-color: rgba(91, 145, 255, 0.18);
@@ -1304,7 +1317,7 @@ svg {
   padding-top: 12px;
   border-top: 1px solid var(--line);
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
 }
 .board-note svg {
   color: var(--cyan);
@@ -1352,7 +1365,7 @@ svg {
   justify-content: space-between;
   color: var(--faint);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 9px;
+  font-size: 11px;
 }
 .principle-icon {
   width: 39px;
@@ -1361,14 +1374,14 @@ svg {
 }
 .principle-card h3 {
   margin: 23px 0 8px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 620;
   letter-spacing: -0.02em;
 }
 .principle-card p {
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.75;
 }
 .selected-projects-section {
@@ -1443,7 +1456,7 @@ svg {
   font-size: 16px;
 }
 .selected-project-card p {
-  font-size: 12px;
+  font-size: 14px;
 }
 .selected-project-capture {
   position: absolute;
@@ -1456,7 +1469,7 @@ svg {
   border-radius: 7px;
   color: #fff;
   background: rgb(8 13 20 / 0.78);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.1em;
   text-overflow: ellipsis;
@@ -1472,7 +1485,7 @@ svg {
 }
 .selected-project-meta > span:first-child {
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 640;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1482,7 +1495,7 @@ svg {
   align-items: center;
   gap: 6px;
   color: #8bd6c9;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 620;
 }
 .selected-project-stage .status-dot {
@@ -1503,12 +1516,12 @@ svg {
 }
 .selected-project-highlights strong {
   color: var(--text);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 650;
 }
 .selected-project-highlights span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.6;
 }
 .selected-project-tags {
@@ -1524,7 +1537,7 @@ svg {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   color: var(--text-soft);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.2;
 }
 .selected-project-link {
@@ -1535,7 +1548,7 @@ svg {
   border: 1px solid var(--line-strong);
   border-radius: 9px;
   background: color-mix(in srgb, var(--surface-2) 76%, transparent);
-  font-size: 12px;
+  font-size: 14px;
 }
 .selected-project-link:hover {
   border-color: color-mix(
@@ -1667,7 +1680,7 @@ svg {
   max-width: 565px;
   margin: 21px 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.85;
 }
 .studio-note {
@@ -1676,7 +1689,7 @@ svg {
   gap: 8px;
   margin: 21px 0 20px;
   color: var(--text-soft);
-  font-size: 11px;
+  font-size: 13px;
 }
 .studio-note .status-dot {
   width: 5px;
@@ -1720,7 +1733,7 @@ svg {
 .contact-band-inner > div > p:last-child {
   margin: 12px 0 0;
   color: #bbccd9;
-  font-size: 13px;
+  font-size: 14px;
 }
 .site-footer {
   padding-block: 55px 22px;
@@ -1739,7 +1752,7 @@ svg {
   max-width: 285px;
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
 }
 .footer-column {
@@ -1751,7 +1764,7 @@ svg {
 .footer-column h2 {
   margin: 4px 0 5px;
   color: var(--text);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 670;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1761,7 +1774,7 @@ svg {
   align-items: center;
   gap: 5px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   transition: color 160ms ease;
 }
 .footer-column a:hover {
@@ -1775,7 +1788,7 @@ svg {
   padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
 }
 .footer-location {
   display: inline-flex;
@@ -1844,7 +1857,7 @@ svg {
   gap: 9px;
   margin-bottom: 55px;
   color: var(--faint);
-  font-size: 10px;
+  font-size: 12px;
 }
 .breadcrumbs a {
   transition: color 160ms ease;
@@ -1881,7 +1894,7 @@ svg {
   max-width: 405px;
   margin: 0 0 5px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
 .page-hero-row .text-gradient {
@@ -1936,13 +1949,13 @@ svg {
 .product-hero-highlights article > span {
   color: var(--product-accent, var(--cyan));
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
 }
 .product-hero-highlights p {
   margin: 8px 0 0;
   color: var(--text-soft);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.55;
 }
 .game-detail-hero {
@@ -2071,7 +2084,7 @@ svg {
   line-height: 1.75;
 }
 .detail-status {
-  font-size: 10px;
+  font-size: 12px;
 }
 .detail-meta {
   display: flex;
@@ -2121,7 +2134,7 @@ svg {
   border-radius: 7px;
   color: #d8e9f1;
   background: rgba(9, 16, 26, 0.78);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.12em;
   backdrop-filter: blur(10px);
@@ -2197,7 +2210,7 @@ svg {
 .detail-description > p:not(.eyebrow) {
   max-width: 590px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.85;
 }
 .detail-description .detail-disclaimer {
@@ -2205,7 +2218,7 @@ svg {
   padding-left: 14px;
   border-left: 1px solid var(--cyan);
   color: var(--faint);
-  font-size: 11px;
+  font-size: 13px;
 }
 .focus-panel {
   align-self: start;
@@ -2224,7 +2237,7 @@ svg {
 }
 .focus-kicker {
   color: var(--cyan);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.14em;
 }
@@ -2257,7 +2270,7 @@ svg {
   align-items: start;
   gap: 10px;
   color: var(--text-soft);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.6;
 }
 .focus-panel li > span {
@@ -2277,7 +2290,7 @@ svg {
   padding-top: 13px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
 }
 .focus-footer .status-dot {
   width: 5px;
@@ -2334,7 +2347,7 @@ svg {
   max-width: 470px;
   margin: 0 0 3px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
 }
 .showcase-preview-grid {
@@ -2369,7 +2382,7 @@ svg {
   font-size: clamp(20px, 2vw, 27px);
 }
 .tool-gallery .showcase-preview-card figcaption p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
 .tool-gallery .tool-image-link {
@@ -2496,7 +2509,7 @@ svg {
   border-radius: 8px;
   color: #d7e4f3;
   background: rgba(9, 16, 26, 0.8);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   backdrop-filter: blur(9px);
 }
@@ -2505,7 +2518,7 @@ svg {
 }
 .showcase-screen-label {
   color: var(--cyan);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.14em;
 }
@@ -2518,7 +2531,7 @@ svg {
 .showcase-preview-card figcaption p {
   margin: 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.65;
 }
 .project-depth-section {
@@ -2549,13 +2562,13 @@ svg {
 }
 .project-spec-card h3 {
   margin: 0 0 8px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 620;
 }
 .project-spec-card p {
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
 }
 .project-step-card {
@@ -2581,7 +2594,7 @@ svg {
 .project-step-kicker {
   color: var(--cyan);
   font-family: var(--font-sans);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.12em;
 }
@@ -2591,7 +2604,7 @@ svg {
 }
 .project-step-card p {
   max-width: 360px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .project-principles {
   display: grid;
@@ -2617,7 +2630,7 @@ svg {
   max-width: 390px;
   margin: 13px 0 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.75;
 }
 .project-principles-grid {
@@ -2635,18 +2648,18 @@ svg {
 .project-principle-card > span {
   color: var(--faint);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 9px;
+  font-size: 11px;
 }
 .project-principle-card h4 {
   margin: 18px 0 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 630;
   letter-spacing: -0.02em;
 }
 .project-principle-card p {
   margin: 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
 }
 
@@ -2669,7 +2682,7 @@ svg {
   max-width: 620px;
   margin: 19px 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.9;
 }
 .about-story-main > p.large-body {
@@ -2688,7 +2701,7 @@ svg {
 }
 .stage-card-eyebrow {
   color: var(--faint);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.15em;
 }
@@ -2732,7 +2745,7 @@ svg {
   gap: 15px;
   padding-block: 11px;
   border-bottom: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 12px;
 }
 .about-stage-card dt {
   color: var(--muted);
@@ -2752,7 +2765,7 @@ svg {
 .stage-card-foot {
   margin: 15px 0 0;
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
 }
 .about-principles {
   border-block: 1px solid var(--line);
@@ -2791,7 +2804,7 @@ svg {
 .contact-card-label {
   margin: 27px 0 6px;
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.14em;
 }
@@ -2806,7 +2819,7 @@ svg {
   max-width: 380px;
   margin: 12px 0 20px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
 }
 .contact-address {
@@ -2814,7 +2827,7 @@ svg {
   align-items: center;
   gap: 8px;
   color: var(--cyan);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 620;
 }
 .contact-address svg {
@@ -2838,7 +2851,7 @@ svg {
 .contact-guidance > p:not(.eyebrow, .contact-privacy-note) {
   margin: 10px 0 17px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 .contact-guidance ul {
   display: grid;
@@ -2852,7 +2865,7 @@ svg {
   align-items: center;
   gap: 10px;
   color: var(--text-soft);
-  font-size: 11px;
+  font-size: 13px;
 }
 .contact-guidance li > span {
   display: grid;
@@ -2869,7 +2882,7 @@ svg {
   padding-top: 14px;
   border-top: 1px solid var(--line);
   color: var(--faint);
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.65;
 }
 
@@ -2891,13 +2904,13 @@ svg {
 }
 .legal-date-label {
   color: var(--cyan);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.13em;
 }
 .legal-aside time {
   color: var(--text-soft);
-  font-size: 11px;
+  font-size: 13px;
 }
 .legal-aside-rule {
   width: 36px;
@@ -2909,7 +2922,7 @@ svg {
   max-width: 170px;
   margin: 0;
   color: var(--faint);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
 }
 .legal-article {
@@ -2934,7 +2947,7 @@ svg {
 .legal-article p {
   margin: 8px 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.9;
 }
 .legal-article a {
@@ -3024,7 +3037,7 @@ svg {
   max-width: 420px;
   margin: 17px 0 24px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 @media (min-width: 1440px) {
@@ -3045,12 +3058,16 @@ svg {
   }
   .nav-shell {
     min-height: 70px;
+    gap: 16px;
   }
   .primary-navigation {
-    gap: 23px;
+    gap: 16px;
   }
   .nav-links {
-    gap: 20px;
+    gap: 16px;
+  }
+  .nav-actions {
+    gap: 8px;
   }
   .hero-section {
     min-height: 600px;
@@ -3170,7 +3187,7 @@ svg {
   .nav-link {
     padding: 12px 2px;
     border-bottom: 1px solid var(--line);
-    font-size: 13px;
+    font-size: 14px;
   }
   .nav-link::after {
     display: none;
@@ -3193,7 +3210,7 @@ svg {
   }
   .eyebrow {
     margin-bottom: 16px;
-    font-size: 9px;
+    font-size: 11px;
   }
   .heading-split {
     display: block;
@@ -3315,10 +3332,10 @@ svg {
   }
   .capability-card h3 {
     margin-top: 15px;
-    font-size: 13px;
+    font-size: 14px;
   }
   .capability-card p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .product-grid,
   .principle-grid {
@@ -3342,13 +3359,13 @@ svg {
   }
   .workflow-copy > p:not(.eyebrow) {
     margin-top: 17px;
-    font-size: 13px;
+    font-size: 14px;
   }
   .workflow-board {
     padding: 16px 13px 12px;
   }
   .board-head {
-    font-size: 7px;
+    font-size: 9px;
   }
   .board-state {
     font-size: 6px;
@@ -3358,13 +3375,13 @@ svg {
     padding-inline: 6px;
   }
   .step-copy b {
-    font-size: 9px;
+    font-size: 11px;
   }
   .step-copy small {
-    font-size: 7px;
+    font-size: 9px;
   }
   .board-note {
-    font-size: 8px;
+    font-size: 10px;
   }
   .heading-center {
     text-align: left;
@@ -3407,11 +3424,11 @@ svg {
     padding-block: 47px;
   }
   .contact-band-inner > div > p:last-child {
-    font-size: 12px;
+    font-size: 14px;
   }
   .button-light {
     min-height: 45px;
-    font-size: 11px;
+    font-size: 13px;
   }
   .footer-main {
     grid-template-columns: 1fr 1fr;
@@ -3425,7 +3442,7 @@ svg {
     align-items: flex-start;
     flex-direction: column;
     gap: 9px;
-    font-size: 8px;
+    font-size: 10px;
   }
   .page-hero .shell,
   .product-detail-hero .shell {
@@ -3444,7 +3461,7 @@ svg {
   }
   .page-hero-row > p {
     max-width: 500px;
-    font-size: 13px;
+    font-size: 14px;
   }
   .page-cta-inner {
     min-height: 0;
@@ -3461,7 +3478,7 @@ svg {
     padding: 14px;
   }
   .portfolio-note p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .product-detail-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -3473,7 +3490,7 @@ svg {
   }
   .detail-lede {
     margin-top: 18px;
-    font-size: 14px;
+    font-size: 15px;
   }
   .detail-meta {
     flex-wrap: wrap;
@@ -3523,7 +3540,7 @@ svg {
     font-size: 36px;
   }
   .detail-description > p:not(.eyebrow) {
-    font-size: 13px;
+    font-size: 14px;
   }
   .about-story-main h2 {
     font-size: clamp(37px, 9vw, 49px);
@@ -3681,13 +3698,13 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
 .game-hero-highlight > span {
   color: var(--product-accent, var(--cyan));
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
 }
 .game-hero-highlight h2 {
   margin: 10px 0 6px;
   color: var(--text);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 650;
   letter-spacing: -0.02em;
   line-height: 1.4;
@@ -3695,7 +3712,7 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
 .game-hero-highlight p {
   margin: 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.65;
 }
 .game-project-page .game-detail-grid .detail-preview-hero img {
@@ -3732,7 +3749,7 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
   padding: 8px 12px;
   color: var(--muted);
   border-bottom: 2px solid transparent;
-  font-size: 14px;
+  font-size: 15px;
 }
 .game-switcher a[aria-current="page"] {
   color: var(--text);
@@ -3755,7 +3772,7 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
   border-radius: 999px;
   color: var(--text);
   background: var(--surface);
-  font-size: 14px;
+  font-size: 15px;
 }
 .game-section-nav a:hover {
   border-color: var(--cyan);
@@ -3805,7 +3822,7 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
   border-radius: 999px;
   color: var(--text-soft);
   background: var(--surface-2);
-  font-size: 12px;
+  font-size: 14px;
 }
 .game-project-page .showcase-preview-grid {
   grid-template-columns: 1fr;
@@ -4286,7 +4303,7 @@ html[lang^="ko"] .locale-hero .hero-content h1 {
   }
   .game-section-nav a {
     padding: 9px 12px;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -4387,7 +4404,7 @@ h3 {
   border-radius: 11px;
   background: var(--surface-2);
   color: var(--cyan);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -4404,7 +4421,7 @@ h3 {
 }
 .docu-detail-label small {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 .docu-detail-toggle {
   position: relative;
@@ -4449,7 +4466,7 @@ h3 {
 .docu-types-table thead {
   background: var(--surface-2);
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
 }
 .docu-types-table tbody th {
   width: 25%;
@@ -4458,7 +4475,7 @@ h3 {
 }
 .docu-types-table td {
   color: var(--text-soft);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.55;
 }
 .docu-types-table tbody tr:last-child > * {
@@ -4491,7 +4508,7 @@ h3 {
   align-items: flex-start;
   gap: 12px;
   color: var(--text-soft);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
 }
 .docu-capability li svg {
@@ -4519,10 +4536,10 @@ h3 {
   }
   .docu-types-table tbody th {
     width: 30%;
-    font-size: 12px;
+    font-size: 14px;
   }
   .docu-types-table td {
-    font-size: 12px;
+    font-size: 14px;
   }
   .docu-types-detail > summary,
   .docu-capability > summary {
@@ -4596,7 +4613,7 @@ h3 {
 }
 .docu-feature-result > span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
@@ -4662,7 +4679,7 @@ h3 {
   padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
 }
 @media (max-width: 850px) {
   .docu-feature-grid,
@@ -4689,7 +4706,7 @@ h3 {
   width: fit-content;
   min-height: 48px;
   color: var(--text-soft);
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   list-style: none;
 }
@@ -4730,7 +4747,7 @@ h3 {
   margin: 0;
   color: var(--muted);
   max-width: 680px;
-  font-size: 14px;
+  font-size: 15px;
 }
 .docu-screens {
   display: grid;
@@ -4863,7 +4880,7 @@ h3 {
   display: flex;
   gap: 8px;
   color: var(--mint);
-  font-size: 14px;
+  font-size: 15px;
 }
 .docu-review-note svg,
 .docu-test li svg {
@@ -4890,7 +4907,7 @@ h3 {
 .docu-test-copy > p:not(.eyebrow) {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
 }
 .docu-test-copy .docu-test-note {
@@ -4909,7 +4926,7 @@ h3 {
   align-items: center;
   gap: 6px;
   color: var(--text-soft);
-  font-size: 12px;
+  font-size: 14px;
 }
 .docu-test li svg {
   color: var(--mint);
@@ -5022,7 +5039,7 @@ h3 {
 .portfolio-feature-steps span {
   display: flex;
   gap: 8px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-soft);
 }
 .portfolio-feature-steps b {
@@ -5054,15 +5071,15 @@ h3 {
   padding: 14px;
 }
 .docu-detail-hero .product-hero-highlights p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
 }
 .product-card-copy {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
 }
 .product-card .text-link {
-  font-size: 13px;
+  font-size: 14px;
   min-height: 44px;
 }
 .docu-field-details {
@@ -5077,10 +5094,10 @@ h3 {
 }
 .docu-field-details span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
 }
 .docu-field-details strong {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
@@ -5093,7 +5110,7 @@ h3 {
   cursor: pointer;
   min-height: 44px;
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-soft);
 }
 .docu-items ul {
@@ -5106,10 +5123,10 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  font-size: 13px;
+  font-size: 14px;
 }
 .docu-items p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
 }
 .docu-excel-link {

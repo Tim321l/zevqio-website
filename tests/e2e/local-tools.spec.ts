@@ -27,7 +27,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
     await page.goto(`${language}products/basketball-clip-mixer`);
     await expect(page.locator("h1")).toContainText("Basketball Clip Mixer");
     await expect(page.locator(".detail-preview-hero img")).toHaveCount(1);
-    await expect(page.locator(".tool-image-link")).toHaveCount(4);
+    await expect(page.locator(".tool-image-link")).toHaveCount(7);
     await expect(page.locator(".project-spec-card")).toHaveCount(6);
     await expect(page.locator("main")).toContainText("Selenium + ChromeDriver");
     await expect(page.locator("main")).toContainText("Playwright");
@@ -48,7 +48,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
     for (const [slug, count] of [
       ["monitor", 1],
       ["tokensaver", 4],
-      ["basketball-clip-mixer", 4],
+      ["basketball-clip-mixer", 7],
       ["smartcart-ai", 4],
     ] as const) {
       await page.goto(`${language}products/${slug}`);

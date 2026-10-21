@@ -1,301 +1,361 @@
 {
   "en": {
-    "category": "Browser automation · Python desktop",
-    "summary": "A Python desktop project showcasing Selenium + ChromeDriver browser automation, background task control, and local basketball video processing.",
-    "description": "Basketball Clip Mixer brings repeated browser work and video preparation into one desktop workspace. The current project combines controlled Chrome sessions with task queues, progress reporting, cancellation, and local video editing. Its selling point is the engineering that connects these moving parts into a usable desktop interface. It remains a local project in development.",
+    "category": "Video automation · Python desktop",
+    "summary": "A Python desktop studio for basketball highlight work: Selenium-driven clip collection, local merging, 9:16 Shorts with player and ball tracking, a game calendar and a searchable output library.",
+    "description": "Basketball Clip Mixer brings repeated browser work and video production into one desktop workspace. The current Mac and Windows build combines controlled Chrome sessions, durable background jobs, local FFmpeg rendering, vertical Shorts, manual editing and a calendar of saved games. Analysis and upload tools are included, and every result waits for human review before publishing. It remains a local project in development.",
     "focus": [
-      "Selenium + ChromeDriver automation",
-      "Background jobs, progress and cancellation",
-      "Local video processing and output preparation"
+      "Selenium + ChromeDriver clip collection",
+      "9:16 Shorts with player and ball tracking",
+      "Game calendar, output library and job recovery"
     ],
     "specificationsLabel": "Automation engineering",
     "specificationsTitle": "The skills behind the project",
-    "specificationsIntro": "The desktop project uses Selenium + ChromeDriver. Related Playwright experience is demonstrated by automated browser checks for this portfolio website.",
+    "specificationsIntro": "The desktop project uses Selenium + ChromeDriver and FFmpeg. Related Playwright experience is demonstrated by the automated browser checks for this portfolio website.",
     "specifications": [
       [
         "Selenium + ChromeDriver",
-        "Python controls Chrome in visible or background mode. Page-load limits, readiness checks and browser cleanup support managed browser sessions."
+        "Python controls Chrome in visible or background mode behind a replaceable collection interface, with page-load limits, readiness checks and browser cleanup."
       ],
       [
-        "Reliable browser tasks",
-        "Condition-based waits, cancellation checkpoints and clear error reporting help the app handle changing page states and interrupted work."
+        "Durable background jobs",
+        "SQLite job records keep progress and mark interrupted runs. Completed clips and outputs are reused, so a stopped run does not download finished work again."
       ],
       [
-        "Background job coordination",
-        "Separate queues coordinate media preparation and rendering. Progress events and cancellation controls connect long-running work to the desktop interface."
+        "Local video rendering",
+        "FFmpeg merging uses stream copy when clips match and transcodes when they do not. Outputs keep event order and save metadata beside each video."
       ],
       [
-        "Local video processing",
-        "FFmpeg-based merging includes compatible-stream handling and CPU/GPU encoding paths. The workspace also includes standard and vertical output preparation, subtitles and thumbnail editing."
+        "Shorts and tracking",
+        "1080×1920 Shorts with blur-background, zoom, crop or tracking layouts. The user boxes the player and ball once, and can re-check after camera cuts."
       ],
       [
-        "Progress and recovery",
-        "Task logs, saved run reports and completed download records make it easier to inspect a run and avoid repeating completed work."
+        "Calendar and library",
+        "Saved games, scores, player videos and jobs are grouped by date. The library adds search, status filters, metadata edits, thumbnails and upload drafts."
       ],
       [
-        "Related web skill · Playwright",
-        "This portfolio website uses Playwright to check responsive layouts, language navigation, keyboard interaction, both themes and automated accessibility. This demonstrates web verification experience alongside the desktop project's Selenium implementation."
+        "Packaging and testing",
+        "Mac and Windows builds with CI on both platforms, an offline synthetic-media end-to-end test, and Playwright checks for this portfolio as related web-testing work."
       ]
     ],
-    "previewBadge": "Real desktop UI · Sample media",
+    "previewBadge": "Real desktop UI · Synthetic sample media",
     "screenshotsLabel": "Real desktop captures",
-    "screenshotsNote": "Captured from the current desktop app with generated sample clips, including a completed local merge. Images are cropped to the workspace; the interface remains in Traditional Chinese.",
+    "screenshotsNote": "Captured from the current Mac build on 22 October 2026 with isolated app data, generated sample clips and fictional demo games and players. No real game footage is shown and nothing was uploaded. The interface remains in Traditional Chinese.",
     "previews": [
       [
-        "Clip workspace",
-        "Three generated sample clips in playback order, with local output settings and task controls."
+        "Local clip workspace",
+        "Three generated sample clips loaded in playback order, with merge method, output name and reorder controls."
+      ],
+      [
+        "Game calendar",
+        "Saved games are grouped by date. An expanded day shows the final score and each collected player video, with links to play or inspect it."
       ],
       [
         "Output library",
-        "The completed sample merge appears in the library with search, status filters and editing actions. This is a local file; it was not uploaded."
+        "Search, production and upload filters over finished videos, with a detail panel for thumbnails, Shorts, editing and upload preparation."
+      ],
+      [
+        "9:16 Shorts editor",
+        "Choose a start point and length, add an optional statistics end card, and pick a blur, zoom, crop or player-tracking layout."
+      ],
+      [
+        "Player and ball tracking",
+        "The user boxes the player and the ball on a sample frame; the tracker uses both to keep the action in the vertical crop."
       ],
       [
         "Manual editor",
-        "Trim, subtitle and voiceover controls opened on the generated sample output, before any edits."
+        "Trim with start and end sliders, then add your own subtitles and voiceover as a separate edited copy."
       ],
       [
-        "Render settings",
-        "Merge mode, frame-rate selection and optional GPU preference. SQL storage is switched off in this isolated preview."
+        "Settings and recent jobs",
+        "Merge and frame-rate preferences, optional SQL Server storage, and the recent job list used to spot interrupted work."
       ]
     ]
   },
   "zh-hk": {
-    "category": "瀏覽器自動化 · Python 桌面項目",
-    "summary": "以 Python 桌面項目展示 Selenium + ChromeDriver 瀏覽器自動化、背景工作控制，以及本機籃球影片處理能力。",
-    "description": "Basketball Clip Mixer 將重複的瀏覽器工作與影片整理集中到一個桌面工作區。目前項目結合受控的 Chrome 工作階段、工作佇列、進度回報、取消操作及本機影片編輯。重點是把這些環節串連成可操作介面的工程能力。目前仍是本機開發中的項目。",
+    "category": "影片自動化 · Python 桌面項目",
+    "summary": "以 Python 製作的籃球精華桌面工作室：Selenium 片段收集、本機合成、追蹤球員與籃球的 9:16 Shorts、比賽日曆及可搜尋的影片庫。",
+    "description": "Basketball Clip Mixer 將重複的瀏覽器工作與影片製作集中到一個桌面工作區。目前的 Mac 及 Windows 版本結合受控 Chrome 工作階段、可恢復的背景工作、本機 FFmpeg 輸出、直向 Shorts、手動剪輯及已儲存比賽的日曆。程式亦包含數據分析及上傳工具，所有成果都要經人手審閱才會發佈。目前仍是本機開發中的項目。",
     "focus": [
-      "Selenium + ChromeDriver 自動化",
-      "背景工作、進度回報與取消控制",
-      "本機影片處理及輸出整理"
+      "Selenium + ChromeDriver 片段收集",
+      "追蹤球員與籃球的 9:16 Shorts",
+      "比賽日曆、影片庫及工作恢復"
     ],
     "specificationsLabel": "自動化工程能力",
     "specificationsTitle": "這個項目展示的技能",
-    "specificationsIntro": "桌面項目使用 Selenium + ChromeDriver；相關的 Playwright 能力則由這個作品集網站的自動化瀏覽器檢查展示。",
+    "specificationsIntro": "桌面項目使用 Selenium + ChromeDriver 及 FFmpeg；相關的 Playwright 能力則由這個作品集網站的自動化瀏覽器檢查展示。",
     "specifications": [
       [
         "Selenium + ChromeDriver",
-        "以 Python 控制可見或背景模式的 Chrome，配合頁面載入時限、就緒狀態檢查及瀏覽器清理，管理瀏覽器工作階段。"
+        "以 Python 透過可替換的收集介面控制可見或背景模式的 Chrome，配合頁面載入時限、就緒檢查及瀏覽器清理。"
       ],
       [
-        "可靠的瀏覽器工作",
-        "透過按條件等待、取消檢查點及清晰的錯誤回報，處理頁面狀態變化與工作中斷。"
+        "可恢復的背景工作",
+        "SQLite 工作記錄保存進度並標記中斷的執行。已完成的片段及成品會重用，停止後再開始不會重複下載。"
       ],
       [
-        "背景工作協調",
-        "獨立佇列協調媒體整理及影片輸出，透過進度事件與取消控制，讓長時間工作與桌面介面保持連動。"
+        "本機影片輸出",
+        "片段規格相同時以串流複製合併，不同時才重新編碼。成品保持事件順序，並在每部影片旁保存資料。"
       ],
       [
-        "本機影片處理",
-        "以 FFmpeg 合併影片，包含相容串流處理及 CPU／GPU 編碼路徑。目前工作區亦包含橫向與直向影片輸出、字幕及縮圖編輯。"
+        "Shorts 與追蹤",
+        "製作 1080×1920 Shorts，可選模糊背景、放大、裁切或追蹤版面。使用者先框選球員與籃球，切鏡後可再確認。"
       ],
       [
-        "進度記錄與恢復",
-        "工作記錄、已儲存的執行報告及已完成下載記錄，方便檢視執行情況，減少重複已完成的工作。"
+        "日曆與影片庫",
+        "已儲存的比賽、比分、球員影片及工作按日期整理。影片庫提供搜尋、狀態篩選、資料修改、縮圖及上傳草稿。"
       ],
       [
-        "相關網頁技能 · Playwright",
-        "這個作品集網站以 Playwright 檢查響應式版面、語言導覽、鍵盤操作、深淺主題及自動化無障礙項目，展示桌面 Selenium 實作以外的網頁驗證經驗。"
+        "打包與測試",
+        "Mac 及 Windows 版本均有 CI，另有離線合成素材端對端測試；這個作品集的 Playwright 檢查則展示相關網頁測試經驗。"
       ]
     ],
-    "previewBadge": "實際桌面介面 · 示範素材",
+    "previewBadge": "實際桌面介面 · 合成示範素材",
     "screenshotsLabel": "真實桌面截圖",
-    "screenshotsNote": "使用目前桌面程式及自行產生的示範片段拍攝，包含一次已完成的本機合成。圖片裁切至工作區，程式介面保留繁體中文。",
+    "screenshotsNote": "2026 年 10 月 22 日以目前 Mac 版本拍攝，使用獨立程式資料、自行產生的示範片段，以及虛構的示範比賽與球員。畫面沒有真實比賽片段，亦沒有上傳任何內容。程式介面保留繁體中文。",
     "previews": [
       [
-        "片段工作區",
-        "三段自行產生的示範片段按播放順序排列，並展示本機輸出設定及工作控制。"
+        "本機片段工作區",
+        "三段自行產生的示範片段按播放順序載入，並顯示合成方式、成品名稱及排序控制。"
+      ],
+      [
+        "比賽日曆",
+        "已儲存的比賽按日期整理；展開當日可看到最終比分及每位球員的影片，並可播放或查看詳情。"
       ],
       [
         "輸出影片庫",
-        "示範合成完成後的本機檔案，以及搜尋、狀態篩選與編輯入口。這個檔案沒有上傳。"
+        "以搜尋、製作及上傳狀態篩選成品，旁邊的詳情面板提供縮圖、Shorts、剪輯及上傳準備。"
       ],
       [
-        "手動剪輯介面",
-        "以示範輸出開啟裁剪、字幕及旁白控制；截圖時尚未進行編輯。"
+        "9:16 Shorts 編輯",
+        "選擇起點及長度，可加入數據總結卡，並選擇模糊背景、放大、裁切或追蹤球員版面。"
       ],
       [
-        "影片輸出設定",
-        "展示合成方式、幀率選項及可選的 GPU 偏好；此獨立預覽沒有啟用 SQL 儲存。"
+        "球員與籃球追蹤",
+        "在示範畫面框選球員及籃球，追蹤器會依據兩者讓動作保持在直向畫面內。"
+      ],
+      [
+        "手動剪輯",
+        "以開始及結束滑桿裁剪，再加入自己的字幕和旁白，另存為新的剪輯版本。"
+      ],
+      [
+        "設定與最近工作",
+        "合成及幀率偏好、可選的 SQL Server 儲存，以及用來找出中斷工作的最近工作清單。"
       ]
     ]
   },
   "zh-cn": {
-    "category": "浏览器自动化 · Python 桌面项目",
-    "summary": "通过 Python 桌面项目展示 Selenium + ChromeDriver 浏览器自动化、后台任务控制以及本地篮球视频处理能力。",
-    "description": "Basketball Clip Mixer 将重复的浏览器工作与视频整理集中到一个桌面工作区。目前项目结合受控的 Chrome 会话、任务队列、进度报告、取消操作及本地视频编辑。重点是把这些环节连接为可操作界面的工程能力。目前仍是本地开发中的项目。",
+    "category": "视频自动化 · Python 桌面项目",
+    "summary": "用 Python 制作的篮球集锦桌面工作室：Selenium 片段收集、本地合成、追踪球员与篮球的 9:16 Shorts、比赛日历及可搜索的视频库。",
+    "description": "Basketball Clip Mixer 将重复的浏览器工作与视频制作集中到一个桌面工作区。当前的 Mac 及 Windows 版本结合受控 Chrome 会话、可恢复的后台任务、本地 FFmpeg 输出、竖版 Shorts、手动剪辑及已保存比赛的日历。程序也包含数据分析及上传工具，所有成果都要经人工审阅才会发布。目前仍是本地开发中的项目。",
     "focus": [
-      "Selenium + ChromeDriver 自动化",
-      "后台任务、进度报告与取消控制",
-      "本地视频处理及输出整理"
+      "Selenium + ChromeDriver 片段收集",
+      "追踪球员与篮球的 9:16 Shorts",
+      "比赛日历、视频库及任务恢复"
     ],
     "specificationsLabel": "自动化工程能力",
     "specificationsTitle": "这个项目展示的技能",
-    "specificationsIntro": "桌面项目使用 Selenium + ChromeDriver；相关的 Playwright 能力则由这个作品集网站的自动化浏览器检查展示。",
+    "specificationsIntro": "桌面项目使用 Selenium + ChromeDriver 及 FFmpeg；相关的 Playwright 能力则由这个作品集网站的自动化浏览器检查展示。",
     "specifications": [
       [
         "Selenium + ChromeDriver",
-        "通过 Python 控制可见或后台模式的 Chrome，结合页面加载时限、就绪状态检查及浏览器清理，管理浏览器会话。"
+        "用 Python 通过可替换的收集接口控制可见或后台模式的 Chrome，配合页面加载时限、就绪检查及浏览器清理。"
       ],
       [
-        "可靠的浏览器任务",
-        "通过按条件等待、取消检查点及清晰的错误报告，处理页面状态变化与任务中断。"
+        "可恢复的后台任务",
+        "SQLite 任务记录保存进度并标记中断的运行。已完成的片段及成品会被重用，停止后再开始不会重复下载。"
       ],
       [
-        "后台任务协调",
-        "独立队列协调媒体整理与视频输出，通过进度事件和取消控制，让长时间任务与桌面界面保持联动。"
+        "本地视频输出",
+        "片段规格相同时以流复制合并，不同时才重新编码。成品保持事件顺序，并在每个视频旁保存数据。"
       ],
       [
-        "本地视频处理",
-        "使用 FFmpeg 合并视频，包含兼容流处理和 CPU／GPU 编码路径。目前工作区还包括横向与竖向视频输出、字幕及缩略图编辑。"
+        "Shorts 与追踪",
+        "制作 1080×1920 Shorts，可选模糊背景、放大、裁切或追踪版式。用户先框选球员与篮球，切镜后可再确认。"
       ],
       [
-        "进度记录与恢复",
-        "任务日志、已保存的执行报告和已完成下载记录，便于查看执行情况，减少重复已完成的工作。"
+        "日历与视频库",
+        "已保存的比赛、比分、球员视频及任务按日期整理。视频库提供搜索、状态筛选、资料修改、缩略图及上传草稿。"
       ],
       [
-        "相关网页技能 · Playwright",
-        "这个作品集网站使用 Playwright 检查响应式布局、语言导航、键盘操作、深浅主题和自动化无障碍项目，展示桌面 Selenium 实现以外的网页验证经验。"
+        "打包与测试",
+        "Mac 及 Windows 版本均有 CI，另有离线合成素材端到端测试；这个作品集的 Playwright 检查则展示相关网页测试经验。"
       ]
     ],
-    "previewBadge": "实际桌面界面 · 示例素材",
+    "previewBadge": "实际桌面界面 · 合成示范素材",
     "screenshotsLabel": "真实桌面截图",
-    "screenshotsNote": "使用当前桌面程序和自行生成的示例片段拍摄，包括一次已完成的本地合成。图片裁切至工作区，程序界面保留繁体中文。",
+    "screenshotsNote": "2026 年 10 月 22 日以当前 Mac 版本拍摄，使用独立程序数据、自行生成的示范片段，以及虚构的示范比赛与球员。画面没有真实比赛片段，也没有上传任何内容。程序界面保留繁体中文。",
     "previews": [
       [
-        "片段工作区",
-        "三段自行生成的示例片段按播放顺序排列，并展示本地输出设置与任务控制。"
+        "本地片段工作区",
+        "三段自行生成的示范片段按播放顺序载入，并显示合成方式、成品名称及排序控制。"
+      ],
+      [
+        "比赛日历",
+        "已保存的比赛按日期整理；展开当天可看到最终比分及每位球员的视频，并可播放或查看详情。"
       ],
       [
         "输出视频库",
-        "示例合成完成后的本地文件，以及搜索、状态筛选和编辑入口。这个文件没有上传。"
+        "按搜索、制作及上传状态筛选成品，旁边的详情面板提供缩略图、Shorts、剪辑及上传准备。"
       ],
       [
-        "手动剪辑界面",
-        "使用示例输出打开裁剪、字幕和旁白控制；截图时尚未进行编辑。"
+        "9:16 Shorts 编辑",
+        "选择起点及长度，可加入数据总结卡，并选择模糊背景、放大、裁切或追踪球员版式。"
       ],
       [
-        "视频输出设置",
-        "展示合成方式、帧率选项和可选的 GPU 偏好；此独立预览没有启用 SQL 存储。"
+        "球员与篮球追踪",
+        "在示范画面框选球员及篮球，追踪器会根据两者让动作保持在竖版画面内。"
+      ],
+      [
+        "手动剪辑",
+        "用开始及结束滑块裁剪，再加入自己的字幕和旁白，另存为新的剪辑版本。"
+      ],
+      [
+        "设置与最近任务",
+        "合成及帧率偏好、可选的 SQL Server 存储，以及用来找出中断任务的最近任务列表。"
       ]
     ]
   },
   "ja": {
-    "category": "ブラウザー自動化 · Python デスクトップ",
-    "summary": "Selenium + ChromeDriver によるブラウザー自動化、バックグラウンド処理の制御、ローカルでのバスケットボール動画処理を紹介する Python デスクトッププロジェクト。",
-    "description": "Basketball Clip Mixer は、繰り返しのブラウザー操作と動画の準備を1つの作業環境にまとめます。Chrome の制御、ジョブキュー、進捗表示、キャンセル、ローカル動画編集を組み合わせています。これらを操作可能な画面へつなぐ設計と実装が強みです。現在もローカルで開発中です。",
+    "category": "動画自動化 · Python デスクトップ",
+    "summary": "バスケットボールのハイライト制作用 Python デスクトップスタジオ。Selenium によるクリップ収集、ローカル結合、選手とボールを追う 9:16 Shorts、試合カレンダー、検索できる動画ライブラリを備えます。",
+    "description": "Basketball Clip Mixer は、繰り返しのブラウザー作業と動画制作を一つのデスクトップ作業領域にまとめます。現在の Mac・Windows 版は、制御された Chrome セッション、再開可能なバックグラウンドジョブ、ローカル FFmpeg 出力、縦型 Shorts、手動編集、保存済み試合のカレンダーを組み合わせています。分析・アップロード機能も含みますが、公開前には必ず人が確認します。現在もローカルで開発中のプロジェクトです。",
     "focus": [
-      "Selenium + ChromeDriver による自動化",
-      "バックグラウンド処理・進捗・キャンセル",
-      "ローカル動画処理と出力の準備"
+      "Selenium + ChromeDriver によるクリップ収集",
+      "選手とボールを追う 9:16 Shorts",
+      "試合カレンダー、動画ライブラリ、ジョブ復旧"
     ],
-    "specificationsLabel": "自動化の設計と実装",
-    "specificationsTitle": "このプロジェクトで示す技術",
-    "specificationsIntro": "デスクトップ側は Selenium + ChromeDriver を使用しています。関連する Playwright の経験は、このサイトの自動ブラウザーチェックで示しています。",
+    "specificationsLabel": "自動化エンジニアリング",
+    "specificationsTitle": "プロジェクトを支えるスキル",
+    "specificationsIntro": "デスクトッププロジェクトは Selenium + ChromeDriver と FFmpeg を使用します。関連する Playwright の経験は、このポートフォリオサイトの自動ブラウザーチェックで示しています。",
     "specifications": [
       [
         "Selenium + ChromeDriver",
-        "Python から通常表示またはバックグラウンドで Chrome を制御します。読み込み時間の制限、準備状態の確認、終了時の後処理でセッションを管理します。"
+        "差し替え可能な収集インターフェースを通じて、Python が表示・バックグラウンドの Chrome を制御します。読み込み時間の上限、準備完了の確認、ブラウザーの後片付けを含みます。"
       ],
       [
-        "安定したブラウザー処理",
-        "条件に基づく待機、キャンセル確認、明確なエラー表示により、ページ状態の変化や処理の中断に対応します。"
+        "再開可能なジョブ",
+        "SQLite のジョブ記録が進捗を保存し、中断した実行を記録します。完了済みのクリップと成果物は再利用され、停止後に同じものを再ダウンロードしません。"
       ],
       [
-        "バックグラウンド処理の連携",
-        "個別のキューでメディアの準備とレンダリングを調整します。進捗イベントとキャンセル操作で、長時間の処理を画面から確認できます。"
+        "ローカル動画出力",
+        "クリップの仕様が一致すればストリームコピーで結合し、異なる場合のみ再エンコードします。成果物はイベント順を保ち、各動画の横にメタデータを保存します。"
       ],
       [
-        "ローカル動画処理",
-        "FFmpeg による結合には、互換ストリームの処理と CPU／GPU エンコード経路が含まれます。横型・縦型動画、字幕、サムネイルの編集も備えています。"
+        "Shorts とトラッキング",
+        "ぼかし背景・拡大・切り抜き・追跡のレイアウトで 1080×1920 の Shorts を作成します。選手とボールを一度囲み、カット切り替え後に再確認できます。"
       ],
       [
-        "進捗記録と再開の支援",
-        "ジョブログ、実行レポート、完了済みダウンロードの記録により、実行状況の確認と重複作業の削減を支援します。"
+        "カレンダーとライブラリ",
+        "保存した試合、スコア、選手動画、ジョブを日付ごとに整理します。ライブラリでは検索、状態フィルター、情報編集、サムネイル、アップロード下書きを扱えます。"
       ],
       [
-        "関連する Web 技術 · Playwright",
-        "このサイトでは Playwright でレスポンシブ表示、言語切り替え、キーボード操作、両テーマ、自動アクセシビリティ検査を確認しています。デスクトップの Selenium 実装とともに Web 検証の経験を示しています。"
+        "パッケージとテスト",
+        "Mac・Windows 両方の CI、オフラインの合成素材によるエンドツーエンドテスト、関連する Web テスト経験としてこのポートフォリオの Playwright チェックがあります。"
       ]
     ],
-    "previewBadge": "実際のデスクトップ画面 · サンプル素材",
+    "previewBadge": "実際のデスクトップ UI · 合成サンプル素材",
     "screenshotsLabel": "実際のデスクトップ画面",
-    "screenshotsNote": "現在のアプリと生成したサンプルクリップで撮影し、実際に完了したローカル結合の結果も含みます。画像は作業領域に切り抜き、アプリの繁体字中国語表示を保持しています。",
+    "screenshotsNote": "2026年10月22日に現在の Mac 版で、独立したアプリデータ、生成したサンプルクリップ、架空のデモ試合と選手を使って撮影しました。実際の試合映像は含まれず、何もアップロードしていません。UI は繁体字中国語のままです。",
     "previews": [
       [
-        "クリップ作業領域",
-        "生成した3本のサンプルクリップの再生順と、ローカル出力設定・ジョブ操作を表示しています。"
+        "ローカルクリップ作業領域",
+        "生成した 3 本のサンプルクリップを再生順に読み込み、結合方法、出力名、並べ替えを表示しています。"
       ],
       [
-        "出力ライブラリー",
-        "結合したサンプルのローカルファイルと、検索・状態フィルター・編集機能を表示しています。このファイルはアップロードしていません。"
+        "試合カレンダー",
+        "保存した試合を日付ごとに整理します。日を開くと最終スコアと選手ごとの動画が表示され、再生や詳細確認ができます。"
       ],
       [
-        "手動編集画面",
-        "生成したサンプル出力を開いた、編集前のトリミング・字幕・ナレーション設定です。"
+        "動画ライブラリ",
+        "完成した動画を検索・制作状態・アップロード状態で絞り込み、詳細パネルからサムネイル、Shorts、編集、アップロード準備を行います。"
       ],
       [
-        "レンダリング設定",
-        "結合モード、フレームレート、任意の GPU 設定を表示しています。この独立したプレビューでは SQL 保存は無効です。"
+        "9:16 Shorts エディター",
+        "開始位置と長さを選び、統計エンドカードを追加し、ぼかし・拡大・切り抜き・選手追跡のレイアウトを選択します。"
+      ],
+      [
+        "選手とボールの追跡",
+        "サンプル画面で選手とボールを囲むと、トラッカーが両方を使って縦型画面内に動きを収めます。"
+      ],
+      [
+        "手動エディター",
+        "開始・終了スライダーでトリミングし、自分の字幕とナレーションを加えて別の編集版として保存します。"
+      ],
+      [
+        "設定と最近のジョブ",
+        "結合とフレームレートの設定、任意の SQL Server 保存、中断したジョブを見つけるための最近のジョブ一覧。"
       ]
     ]
   },
   "ko": {
-    "category": "브라우저 자동화 · Python 데스크톱",
-    "summary": "Selenium + ChromeDriver 브라우저 자동화, 백그라운드 작업 제어, 로컬 농구 영상 처리를 보여 주는 Python 데스크톱 프로젝트입니다.",
-    "description": "Basketball Clip Mixer는 반복적인 브라우저 작업과 영상 준비를 하나의 데스크톱 작업 공간으로 연결합니다. Chrome 세션 제어, 작업 대기열, 진행 상황 표시, 취소 기능, 로컬 영상 편집을 포함합니다. 이 기능들을 조작 가능한 화면으로 연결하는 설계와 구현 능력이 핵심입니다. 현재 로컬에서 개발 중입니다.",
+    "category": "영상 자동화 · Python 데스크톱",
+    "summary": "농구 하이라이트 작업용 Python 데스크톱 스튜디오입니다. Selenium 클립 수집, 로컬 병합, 선수와 공을 추적하는 9:16 Shorts, 경기 캘린더, 검색 가능한 영상 라이브러리를 제공합니다.",
+    "description": "Basketball Clip Mixer는 반복적인 브라우저 작업과 영상 제작을 하나의 데스크톱 작업 공간으로 모읍니다. 현재 Mac·Windows 빌드는 제어된 Chrome 세션, 재개 가능한 백그라운드 작업, 로컬 FFmpeg 출력, 세로형 Shorts, 수동 편집, 저장된 경기 캘린더를 결합합니다. 분석과 업로드 도구도 포함되어 있으며 모든 결과는 게시 전에 사람이 검토합니다. 현재 로컬에서 개발 중인 프로젝트입니다.",
     "focus": [
-      "Selenium + ChromeDriver 자동화",
-      "백그라운드 작업·진행 상황·취소 제어",
-      "로컬 영상 처리와 출력 준비"
+      "Selenium + ChromeDriver 클립 수집",
+      "선수와 공을 추적하는 9:16 Shorts",
+      "경기 캘린더, 영상 라이브러리, 작업 복구"
     ],
-    "specificationsLabel": "자동화 설계와 구현",
-    "specificationsTitle": "이 프로젝트가 보여 주는 기술",
-    "specificationsIntro": "데스크톱 프로젝트는 Selenium + ChromeDriver를 사용합니다. 관련 Playwright 경험은 이 포트폴리오 웹사이트의 자동 브라우저 검사로 보여 줍니다.",
+    "specificationsLabel": "자동화 엔지니어링",
+    "specificationsTitle": "프로젝트를 뒷받침하는 기술",
+    "specificationsIntro": "데스크톱 프로젝트는 Selenium + ChromeDriver와 FFmpeg를 사용합니다. 관련 Playwright 경험은 이 포트폴리오 웹사이트의 자동 브라우저 검사로 보여 줍니다.",
     "specifications": [
       [
         "Selenium + ChromeDriver",
-        "Python으로 화면에 보이는 모드 또는 백그라운드 모드의 Chrome을 제어합니다. 페이지 로드 제한, 준비 상태 확인, 브라우저 정리로 세션을 관리합니다."
+        "교체 가능한 수집 인터페이스를 통해 Python이 표시 또는 백그라운드 모드의 Chrome을 제어합니다. 페이지 로드 제한, 준비 상태 확인, 브라우저 정리를 포함합니다."
       ],
       [
-        "안정적인 브라우저 작업",
-        "조건 기반 대기, 취소 확인 지점, 명확한 오류 보고로 페이지 상태 변화와 작업 중단을 처리합니다."
+        "재개 가능한 작업",
+        "SQLite 작업 기록이 진행 상황을 저장하고 중단된 실행을 표시합니다. 완료된 클립과 결과물은 재사용되어 중지 후 다시 다운로드하지 않습니다."
       ],
       [
-        "백그라운드 작업 조정",
-        "별도의 대기열로 미디어 준비와 렌더링을 조정합니다. 진행 이벤트와 취소 제어로 긴 작업의 상태를 화면에서 확인할 수 있습니다."
+        "로컬 영상 출력",
+        "클립 사양이 같으면 스트림 복사로 병합하고 다를 때만 다시 인코딩합니다. 결과물은 이벤트 순서를 유지하고 각 영상 옆에 메타데이터를 저장합니다."
       ],
       [
-        "로컬 영상 처리",
-        "FFmpeg 병합에는 호환 스트림 처리와 CPU／GPU 인코딩 경로가 포함됩니다. 가로·세로 영상 출력, 자막, 썸네일 편집도 포함됩니다."
+        "Shorts와 추적",
+        "흐림 배경, 확대, 자르기, 추적 레이아웃으로 1080×1920 Shorts를 만듭니다. 선수와 공을 한 번 지정하고 장면 전환 후 다시 확인할 수 있습니다."
       ],
       [
-        "진행 기록과 복구 지원",
-        "작업 로그, 실행 보고서, 완료된 다운로드 기록으로 실행 상태를 살피고 완료한 작업의 반복을 줄일 수 있습니다."
+        "캘린더와 라이브러리",
+        "저장된 경기, 점수, 선수 영상, 작업을 날짜별로 정리합니다. 라이브러리에서 검색, 상태 필터, 정보 수정, 썸네일, 업로드 초안을 다룹니다."
       ],
       [
-        "관련 웹 기술 · Playwright",
-        "이 포트폴리오 웹사이트는 Playwright로 반응형 화면, 언어 탐색, 키보드 조작, 두 테마, 자동 접근성 검사를 확인합니다. 데스크톱 Selenium 구현과 함께 웹 검증 경험을 보여 줍니다."
+        "패키징과 테스트",
+        "Mac과 Windows 모두 CI가 있고, 오프라인 합성 소재 엔드투엔드 테스트가 있으며, 관련 웹 테스트 경험으로 이 포트폴리오의 Playwright 검사를 보여 줍니다."
       ]
     ],
-    "previewBadge": "실제 데스크톱 화면 · 샘플 미디어",
-    "screenshotsLabel": "실제 데스크톱 캡처",
-    "screenshotsNote": "현재 앱과 생성한 샘플 클립으로 촬영했으며, 실제로 완료한 로컬 병합 결과도 포함합니다. 이미지는 작업 영역으로 잘랐고, 앱의 중국어 번체 화면은 유지했습니다.",
+    "previewBadge": "실제 데스크톱 UI · 합성 샘플 소재",
+    "screenshotsLabel": "실제 데스크톱 화면",
+    "screenshotsNote": "2026년 10월 22일 현재 Mac 빌드에서 분리된 앱 데이터, 생성한 샘플 클립, 가상의 데모 경기와 선수로 촬영했습니다. 실제 경기 영상은 없으며 아무것도 업로드하지 않았습니다. 인터페이스는 번체 중국어로 유지됩니다.",
     "previews": [
       [
-        "클립 작업 공간",
-        "생성한 샘플 클립 3개의 재생 순서와 로컬 출력 설정, 작업 제어를 보여 줍니다."
+        "로컬 클립 작업 공간",
+        "생성한 샘플 클립 3개를 재생 순서대로 불러오고 병합 방식, 출력 이름, 순서 조정을 보여 줍니다."
       ],
       [
-        "출력 라이브러리",
-        "병합을 완료한 샘플 로컬 파일과 검색, 상태 필터, 편집 기능입니다. 이 파일은 업로드하지 않았습니다."
+        "경기 캘린더",
+        "저장된 경기를 날짜별로 정리합니다. 날짜를 펼치면 최종 점수와 선수별 영상이 표시되며 재생하거나 자세히 볼 수 있습니다."
       ],
       [
-        "수동 편집 화면",
-        "생성한 샘플 출력을 연 상태의 자르기, 자막, 내레이션 설정입니다. 캡처 시 편집은 적용하지 않았습니다."
+        "영상 라이브러리",
+        "완성된 영상을 검색·제작 상태·업로드 상태로 필터링하고, 상세 패널에서 썸네일, Shorts, 편집, 업로드 준비를 합니다."
       ],
       [
-        "렌더링 설정",
-        "병합 모드, 프레임 속도, 선택적 GPU 설정을 보여 줍니다. 이 독립된 미리보기에서는 SQL 저장을 사용하지 않습니다."
+        "9:16 Shorts 편집기",
+        "시작 지점과 길이를 고르고 통계 엔드 카드를 추가하며 흐림, 확대, 자르기, 선수 추적 레이아웃을 선택합니다."
+      ],
+      [
+        "선수와 공 추적",
+        "샘플 화면에서 선수와 공을 지정하면 추적기가 두 대상을 이용해 세로 화면 안에 움직임을 유지합니다."
+      ],
+      [
+        "수동 편집기",
+        "시작·종료 슬라이더로 자르고 자신의 자막과 내레이션을 더해 별도 편집본으로 저장합니다."
+      ],
+      [
+        "설정과 최근 작업",
+        "병합 및 프레임 속도 설정, 선택형 SQL Server 저장, 중단된 작업을 찾는 최근 작업 목록."
       ]
     ]
   }
