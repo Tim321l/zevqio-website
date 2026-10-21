@@ -59,8 +59,7 @@ const screens = [
   aria-labelledby="docu-demo-title"
 >
   <div class="shell">
-    <details class="docu-gallery-details">
-      <summary>{ui.gallery}</summary>
+    <div class="docu-gallery-details">
       <div class="showcase-heading">
         <div>
           <p class="eyebrow">
@@ -113,7 +112,7 @@ const screens = [
           </figure>
         ))}
       </div>
-    </details>
+    </div>
   </div>
 </section>
 <section
@@ -237,20 +236,3 @@ const screens = [
     </aside>
   </div>
 </section>
-
-<script>
-  const gallery = document.querySelector<HTMLDetailsElement>(
-    ".docu-gallery-details",
-  );
-  const revealGallery = () => {
-    if (gallery && window.location.hash === "#docupass-demo")
-      gallery.open = true;
-  };
-  document.querySelectorAll('a[href="#docupass-demo"]').forEach((link) =>
-    link.addEventListener("click", () => {
-      if (gallery) gallery.open = true;
-    }),
-  );
-  window.addEventListener("hashchange", revealGallery);
-  revealGallery();
-</script>

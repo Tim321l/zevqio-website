@@ -37,10 +37,8 @@ test("DocuPass story plays, supports keyboard navigation and pauses for interact
     .getByRole("link", { name: "See app screens", exact: true })
     .first()
     .click();
-  await expect(page.locator(".docu-gallery-details")).toHaveAttribute(
-    "open",
-    "",
-  );
+  await expect(page).toHaveURL(/#docupass-demo$/);
+  await expect(page.locator("#docu-demo-title")).toBeInViewport();
   for (const image of await page.locator(".docu-gallery-details img").all()) {
     await image.scrollIntoViewIfNeeded();
     await expect(image).toHaveJSProperty("complete", true);

@@ -7,7 +7,6 @@ import {
 import type { Locale } from "../data/locales";
 import Icon from "./Icon.astro";
 import DocuPassStory from "./DocuPassStory.astro";
-import { docuStory } from "../data/docupass-story";
 interface Props {
   locale: Locale;
 }
@@ -17,11 +16,10 @@ const { locale } = Astro.props;
 <DocuPassStory {locale} />
 <section
   class="docu-capabilities docu-technical-section section-space"
-  aria-label={docuStory.details[locale]}
+  aria-labelledby="docu-features-title"
 >
   <div class="shell">
-    <details class="docu-technical-details">
-      <summary>{docuStory.details[locale]}</summary>
+    <div class="docu-technical-details">
       <div class="showcase-heading docu-feature-guide-heading">
         <div>
           <p class="eyebrow">
@@ -103,6 +101,6 @@ const { locale } = Astro.props;
           <Icon name="arrowUpRight" size={16} />
         </a>
       </div>
-    </details>
+    </div>
   </div>
 </section>

@@ -5107,11 +5107,34 @@ h3 {
   padding: 6px 0;
 }
 .docu-items summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   cursor: pointer;
   min-height: 44px;
   padding: 10px 0;
   font-size: 15px;
   color: var(--text-soft);
+  list-style: none;
+}
+.docu-items summary::-webkit-details-marker {
+  display: none;
+}
+.docu-items summary::after {
+  display: grid;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  content: "+";
+  font-size: 18px;
+  line-height: 1;
+}
+.docu-items[open] summary::after {
+  content: "−";
 }
 .docu-items ul {
   list-style: none;
