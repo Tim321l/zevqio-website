@@ -20,6 +20,7 @@ import {
 import { site } from "../data/site";
 import { getGameDetail, gameLabels } from "../data/game-details";
 import { getCurrentUnityCopy } from "../data/unity-current";
+import { getCurrentWebCopy } from "../data/rimrise-web-current";
 import {
   getEarlyStageNote,
   getLocaleContent,
@@ -75,7 +76,9 @@ const originalProjectCopy = slug
 const projectCopy =
   slug === "rimrise-unity" && originalProjectCopy
     ? getCurrentUnityCopy(locale, originalProjectCopy)
-    : originalProjectCopy;
+    : slug === "rimrise-web" && originalProjectCopy
+      ? getCurrentWebCopy(locale, originalProjectCopy)
+      : originalProjectCopy;
 const projectWorkflow =
   sourceProject && projectCopy
     ? (() => {
@@ -217,9 +220,10 @@ const getHomeProjectCopy = (href?: string) => {
     getGameDetail(locale, projectSlug) ??
     portfolio.pages[projectSlug as keyof typeof portfolio.pages] ??
     projectPages.find((project) => project.slug === projectSlug)?.details;
-  return projectSlug === "rimrise-unity" && base
-    ? getCurrentUnityCopy(locale, base)
-    : base;
+  if (!base) return base;
+  if (projectSlug === "rimrise-unity") return getCurrentUnityCopy(locale, base);
+  if (projectSlug === "rimrise-web") return getCurrentWebCopy(locale, base);
+  return base;
 };
 ---
 

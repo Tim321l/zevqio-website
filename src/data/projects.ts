@@ -32,8 +32,14 @@ export const projectImageSizes: Record<string, [number, number]> = {
   "/images/projects/rimrise-unity-pause.webp": [1280, 720],
   "/images/projects/rimrise-unity-city.png": [1280, 720],
   "/images/projects/rimrise-unity-home.png": [1280, 720],
-  "/images/projects/rimrise-web-career.webp": [1440, 960],
-  "/images/projects/rimrise-web-city.webp": [1440, 960],
+  "/images/projects/rimrise-web-career.webp": [1440, 900],
+  "/images/projects/rimrise-web-city.webp": [1440, 900],
+  "/images/projects/rimrise-web-create.webp": [1440, 900],
+  "/images/projects/rimrise-web-city-life.webp": [1440, 900],
+  "/images/projects/rimrise-web-city-map.webp": [1440, 900],
+  "/images/projects/rimrise-web-wealth.webp": [1440, 900],
+  "/images/projects/rimrise-web-online.webp": [1440, 715],
+  "/images/projects/rimrise-web-league.webp": [1440, 900],
   "/images/projects/rimrise-web-gameplay.webp": [1440, 960],
 };
 
@@ -120,6 +126,12 @@ export const projectPages: ProjectPage[] = [
     screenshots: [
       "/images/projects/rimrise-web-city.webp",
       "/images/projects/rimrise-web-gameplay.webp",
+      "/images/projects/rimrise-web-create.webp",
+      "/images/projects/rimrise-web-city-life.webp",
+      "/images/projects/rimrise-web-city-map.webp",
+      "/images/projects/rimrise-web-wealth.webp",
+      "/images/projects/rimrise-web-online.webp",
+      "/images/projects/rimrise-web-league.webp",
     ],
     tools: ["JavaScript", "Three.js", "WebGL", "Node.js", "WebSocket"],
     specifications: [
