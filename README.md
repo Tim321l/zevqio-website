@@ -55,7 +55,7 @@ After editing the social preview source SVG, regenerate its PNG with `npm run so
 - `/products/basketball-clip-mixer` — Python desktop video studio with Selenium + ChromeDriver collection, Shorts player/ball tracking, a game calendar, related Playwright portfolio verification skills, and seven real Mac app captures using generated sample media and fictional demo data
 - Homepage selected projects section for game development, web, and original audio work
 - `/projects/rimrise-unity` — Unity basketball prototype with ten native QA captures, including the character studio, home Build and Buy mode, city emergencies and vehicle damage
-- `/projects/rimrise-web` — browser basketball career project
+- `/projects/rimrise-web` — browser basketball career project with captures from the public build: start screen, city roles and duties, city map, wealth hub, online street city and league
 - `/projects/bigdeal` — Hong Kong property card game prototype
 - `/projects/song-guess` — multiplayer music quiz interface prototype
 - `/about`
