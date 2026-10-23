@@ -8,6 +8,7 @@ import ProjectShowcase from "./ProjectShowcase.astro";
 import DocuPassShowcase from "./DocuPassShowcase.astro";
 import DocuPassFeatures from "./DocuPassFeatures.astro";
 import docuShowcaseCopy from "../data/docupass-showcase.json";
+import { docuFeatureLabels } from "../data/docupass-features";
 import { docuEvidence } from "../data/docupass-evidence";
 import { docuStory } from "../data/docupass-story";
 import docuResult from "../data/docupass-demo-result.json";
@@ -1141,15 +1142,35 @@ const getHomeProjectCopy = (href?: string) => {
                   {promotionUI[2]}
                   <Icon name="arrowRight" size={16} />
                 </a>
+                {slug === "docupass" && (
+                  <a
+                    class="text-link"
+                    href="#docupass-features"
+                    data-docu-start
+                  >
+                    {docuStory.watch[locale]}
+                    <Icon name="arrowRight" size={16} />
+                  </a>
+                )}
               </div>
               <div class="detail-meta">
                 <span class="status-pill detail-status">
                   <span class="status-dot" aria-hidden="true"></span>
                   {copy.common.inDevelopment}
                 </span>
-                {sourceProduct.interfacePreviews && slug !== "docupass" && (
-                  <a class="text-link" href="#interface-previews">
-                    {copy.common.screens} <Icon name="arrowRight" size={15} />
+                {sourceProduct.interfacePreviews && (
+                  <a
+                    class="text-link"
+                    href={
+                      slug === "docupass"
+                        ? "#docupass-demo"
+                        : "#interface-previews"
+                    }
+                  >
+                    {slug === "docupass"
+                      ? docuFeatureLabels.screens[locale]
+                      : copy.common.screens}{" "}
+                    <Icon name="arrowRight" size={15} />
                   </a>
                 )}
               </div>
