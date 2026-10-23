@@ -1061,7 +1061,7 @@ svg {
   padding: 0 9px;
   border: 1px solid rgba(101, 215, 192, 0.19);
   border-radius: 99px;
-  color: #8bd6c9;
+  color: var(--mint);
   background: rgba(58, 149, 130, 0.09);
   font-size: 11px;
   font-weight: 620;
@@ -1494,7 +1494,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #8bd6c9;
+  color: var(--mint);
   font-size: 11px;
   font-weight: 620;
 }
@@ -5199,11 +5199,7 @@ h3 {
   color: var(--cyan);
   align-self: center;
 }
-.promotion-flow-label {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-top: 1rem;
-}
+
 .promotion-enquiry {
   background:
     radial-gradient(
@@ -5252,5 +5248,48 @@ h3 {
   }
   .promotion-actions .button {
     max-width: 100%;
+  }
+}
+
+/* Portfolio hierarchy: overview cards lead to detailed project evidence. */
+.product-listing-card .card-category,
+.home-product-card .card-category {
+  margin-top: 16px;
+}
+.product-listing-card .home-product-highlights,
+.home-product-card .home-product-highlights {
+  gap: 8px;
+  padding-top: 16px;
+}
+.product-areas-list {
+  margin-top: clamp(56px, 7vw, 96px);
+}
+
+/* Keep complete app captures inside a predictable preview stage. */
+.tool-detail-hero:not(.docu-detail-hero) .detail-preview-hero img {
+  height: auto;
+  max-height: 360px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: var(--surface-2);
+}
+.tool-gallery .showcase-image-frame img {
+  max-height: 480px;
+}
+.product-detail-content.compact-top {
+  padding-top: clamp(48px, 6vw, 80px);
+}
+
+@media (max-width: 767px) {
+  .tool-detail-hero:not(.docu-detail-hero) .detail-preview-hero img {
+    max-height: 280px;
+  }
+  .tool-gallery .showcase-image-frame img {
+    max-height: 360px;
+  }
+  .promotion-actions .button {
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
   }
 }
