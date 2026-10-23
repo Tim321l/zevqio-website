@@ -20,6 +20,7 @@ import {
 import { site } from "../data/site";
 import { getGameDetail, gameLabels } from "../data/game-details";
 import { getCurrentUnityCopy } from "../data/unity-current";
+import { getCurrentWebCopy } from "../data/rimrise-web-current";
 import {
   getEarlyStageNote,
   getLocaleContent,
@@ -75,7 +76,9 @@ const originalProjectCopy = slug
 const projectCopy =
   slug === "rimrise-unity" && originalProjectCopy
     ? getCurrentUnityCopy(locale, originalProjectCopy)
-    : originalProjectCopy;
+    : slug === "rimrise-web" && originalProjectCopy
+      ? getCurrentWebCopy(locale, originalProjectCopy)
+      : originalProjectCopy;
 const projectWorkflow =
   sourceProject && projectCopy
     ? (() => {
@@ -217,9 +220,10 @@ const getHomeProjectCopy = (href?: string) => {
     getGameDetail(locale, projectSlug) ??
     portfolio.pages[projectSlug as keyof typeof portfolio.pages] ??
     projectPages.find((project) => project.slug === projectSlug)?.details;
-  return projectSlug === "rimrise-unity" && base
-    ? getCurrentUnityCopy(locale, base)
-    : base;
+  if (!base) return base;
+  if (projectSlug === "rimrise-unity") return getCurrentUnityCopy(locale, base);
+  if (projectSlug === "rimrise-web") return getCurrentWebCopy(locale, base);
+  return base;
 };
 ---
 
@@ -283,8 +287,8 @@ const getHomeProjectCopy = (href?: string) => {
             <img
               src={withBase("/images/projects/docupass-current-review.webp")}
               alt={docuEvidence.receiptLabel[locale]}
-              width="2640"
-              height="1560"
+              width="2560"
+              height="1504"
               fetchpriority="high"
             />
             <span class="detail-preview-badge">
@@ -908,8 +912,8 @@ const getHomeProjectCopy = (href?: string) => {
               <img
                 src={withBase("/images/projects/docupass-current-review.webp")}
                 alt={docuShowcaseCopy[locale].review}
-                width="2640"
-                height="1560"
+                width="2560"
+                height="1504"
                 loading="lazy"
               />
             </a>
@@ -1451,8 +1455,8 @@ const getHomeProjectCopy = (href?: string) => {
                           image: `/images/projects/${docuFile}`,
                           title,
                           description,
-                          width: index === 4 ? 1360 : 2880,
-                          height: index === 4 ? 1416 : 1560,
+                          width: [2880, 2880, 0, 2560, 1360][index],
+                          height: [1560, 1560, 0, 1504, 1416][index],
                         }
                       : undefined
                     : previewIndex == null

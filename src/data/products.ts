@@ -253,8 +253,8 @@ export const products: Product[] = [
           ][index]
         }`,
         alt: `${title}: ${description}`,
-        width: index === 0 ? 2640 : 1440,
-        height: index === 0 ? 1560 : 900,
+        width: index === 0 ? 2560 : 1440,
+        height: index === 0 ? 1504 : 900,
       }),
     ),
   },

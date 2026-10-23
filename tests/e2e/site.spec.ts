@@ -79,7 +79,7 @@ for (const slug of ["rimrise-unity", "rimrise-web", "bigdeal", "song-guess"]) {
         ),
       ).toBe(true);
       await expect(page.locator(".game-image-link")).toHaveCount(
-        slug === "rimrise-unity" ? 10 : 3,
+        slug === "rimrise-unity" ? 10 : slug === "rimrise-web" ? 9 : 3,
       );
       const results = await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])

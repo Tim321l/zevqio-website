@@ -15,40 +15,64 @@ const screens = [
     name: ui.add,
     note: ui.addNote,
     file: "docupass-current-new-job.webp",
-    width: 2640,
-    height: 1560,
+    width: 2560,
+    height: 1504,
   },
   {
     step: 2,
     name: ui.model,
     note: ui.modelNote,
     file: "docupass-current-recognition.webp",
-    width: 2640,
-    height: 1560,
+    width: 2560,
+    height: 1504,
   },
   {
     step: 3,
     name: ui.review,
     note: ui.reviewNote,
     file: "docupass-current-review.webp",
-    width: 2640,
-    height: 1560,
+    width: 2560,
+    height: 1504,
   },
   {
     step: 4,
     name: ui.ai,
     note: ui.aiNote,
     file: "docupass-current-ai.webp",
-    width: 2640,
-    height: 1560,
+    width: 2560,
+    height: 1504,
   },
   {
     step: 5,
     name: ui.automation,
     note: ui.automationNote,
     file: "docupass-current-automation.webp",
-    width: 2640,
-    height: 1560,
+    width: 2560,
+    height: 1504,
+  },
+  {
+    step: 6,
+    name: ui.history,
+    note: ui.historyNote,
+    file: "docupass-current-history.webp",
+    width: 2560,
+    height: 1504,
+  },
+  {
+    step: 7,
+    name: ui.documents,
+    note: ui.documentsNote,
+    file: "docupass-current-documents.webp",
+    width: 2560,
+    height: 1504,
+  },
+  {
+    step: 8,
+    name: ui.phone,
+    note: ui.phoneNote,
+    file: "docupass-current-phone.webp",
+    width: 1560,
+    height: 1300,
   },
 ];
 ---
@@ -59,8 +83,7 @@ const screens = [
   aria-labelledby="docu-demo-title"
 >
   <div class="shell">
-    <details class="docu-gallery-details">
-      <summary>{ui.gallery}</summary>
+    <div class="docu-gallery-details">
       <div class="showcase-heading">
         <div>
           <p class="eyebrow">
@@ -113,7 +136,7 @@ const screens = [
           </figure>
         ))}
       </div>
-    </details>
+    </div>
   </div>
 </section>
 <section
@@ -237,20 +260,3 @@ const screens = [
     </aside>
   </div>
 </section>
-
-<script>
-  const gallery = document.querySelector<HTMLDetailsElement>(
-    ".docu-gallery-details",
-  );
-  const revealGallery = () => {
-    if (gallery && window.location.hash === "#docupass-demo")
-      gallery.open = true;
-  };
-  document.querySelectorAll('a[href="#docupass-demo"]').forEach((link) =>
-    link.addEventListener("click", () => {
-      if (gallery) gallery.open = true;
-    }),
-  );
-  window.addEventListener("hashchange", revealGallery);
-  revealGallery();
-</script>
