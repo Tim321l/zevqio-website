@@ -1,3 +1,4 @@
+import webControlContent from "./web-control-content.json";
 import content from "./local-tool-content.json";
 import { docupassCopy } from "./docupass-content";
 import docuShowcaseCopy from "./docupass-showcase.json";
@@ -70,6 +71,9 @@ export function getLocalToolCopy(locale: Locale, slug: string, name: string) {
       ...smartcartContent[locale],
       name,
     };
+  }
+  if (slug === "web-control-studio") {
+    return { ...webControlContent[locale], name };
   }
   if (slug === "basketball-clip-mixer") {
     return {

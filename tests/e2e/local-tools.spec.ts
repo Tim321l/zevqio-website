@@ -23,9 +23,10 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
       "docupass",
       "basketball-clip-mixer",
       "smartcart-ai",
+      "web-control-studio",
     ]);
     await page.goto(`${language}products/basketball-clip-mixer`);
-    await expect(page.locator("h1")).toContainText("Basketball Clip Mixer");
+    await expect(page.locator("h1")).toContainText("NBA Video Studio");
     await expect(page.locator(".detail-preview-hero img")).toHaveCount(1);
     await expect(page.locator(".tool-image-link")).toHaveCount(7);
     await expect(page.locator(".project-spec-card")).toHaveCount(6);
@@ -50,6 +51,7 @@ for (const locale of ["en", "zh-hk", "zh-cn", "ja", "ko"]) {
       ["tokensaver", 4],
       ["basketball-clip-mixer", 7],
       ["smartcart-ai", 4],
+      ["web-control-studio", 3],
     ] as const) {
       await page.goto(`${language}products/${slug}`);
       await expect(page.locator(".tool-image-link")).toHaveCount(count);
@@ -85,6 +87,6 @@ test("forwards old localized basketball clip links to the renamed page", async (
     await expect(page).toHaveURL(
       (url) => url.pathname === target || url.pathname === `${target}/`,
     );
-    await expect(page.locator("h1")).toContainText("Basketball Clip Mixer");
+    await expect(page.locator("h1")).toContainText("NBA Video Studio");
   }
 });

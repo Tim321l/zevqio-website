@@ -34,12 +34,11 @@ describe("product configuration", () => {
       "docupass",
       "basketball-clip-mixer",
       "smartcart-ai",
+      "web-control-studio",
     ]);
     expect(getProduct("vidoany")?.name).toBe("VidOutline");
     expect(getProduct("tokensaver")?.name).toBe("TokenSaver");
-    expect(getProduct("basketball-clip-mixer")?.name).toBe(
-      "Basketball Clip Mixer",
-    );
+    expect(getProduct("basketball-clip-mixer")?.name).toBe("NBA Video Studio");
     expect(getProduct("unknown-product")).toBeUndefined();
     expect(getProduct("smartcart-ai")?.name).toBe("SmartCart AI");
   });

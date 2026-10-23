@@ -2,7 +2,7 @@
   "en": {
     "category": "Video automation · Python desktop",
     "summary": "A Python desktop studio for basketball highlight work: Selenium-driven clip collection, local merging, 9:16 Shorts with player and ball tracking, a game calendar and a searchable output library.",
-    "description": "Basketball Clip Mixer brings repeated browser work and video production into one desktop workspace. The current Mac and Windows build combines controlled Chrome sessions, durable background jobs, local FFmpeg rendering, vertical Shorts, manual editing and a calendar of saved games. Analysis and upload tools are included, and every result waits for human review before publishing. It remains a local project in development.",
+    "description": "NBA Video Studio brings repeated browser work and video production into one desktop workspace. The current Mac and Windows build combines controlled Chrome sessions, durable background jobs, local FFmpeg rendering, vertical Shorts, manual editing and a calendar of saved games. Analysis and upload tools are included, and every result waits for human review before publishing. It remains a local project in development.",
     "focus": [
       "Selenium + ChromeDriver clip collection",
       "9:16 Shorts with player and ball tracking",
@@ -25,16 +25,16 @@
         "FFmpeg merging uses stream copy when clips match and transcodes when they do not. Outputs keep event order and save metadata beside each video."
       ],
       [
-        "Shorts and tracking",
-        "1080×1920 Shorts with blur-background, zoom, crop or tracking layouts. The user boxes the player and ball once, and can re-check after camera cuts."
+        "Shorts and review",
+        "9:16 output supports automatic court framing, smooth ball-following crops, blur backgrounds and manual tracking. Suspicious shots are grouped for focus correction; saved local analysis can be reused when rendering."
       ],
       [
-        "Calendar and library",
-        "Saved games, scores, player videos and jobs are grouped by date. The library adds search, status filters, metadata edits, thumbnails and upload drafts."
+        "Calendar and daily selection",
+        "Browse games by date, inspect player statistics and retry unfinished work. Daily selection can fill a configured target from final scores; a shared local 24-hour upload budget covers landscape and Shorts."
       ],
       [
-        "Packaging and testing",
-        "Mac and Windows builds with CI on both platforms, an offline synthetic-media end-to-end test, and Playwright checks for this portfolio as related web-testing work."
+        "Analysis and publishing",
+        "Prepare statistics end cards, thumbnails, subtitles and voiceover. Optional local Ollama helps draft analysis; YouTube API supports upload, resume and separate upload records with user-provided OAuth."
       ]
     ],
     "previewBadge": "Real desktop UI · Synthetic sample media",
@@ -74,7 +74,7 @@
   "zh-hk": {
     "category": "影片自動化 · Python 桌面項目",
     "summary": "以 Python 製作的籃球精華桌面工作室：Selenium 片段收集、本機合成、追蹤球員與籃球的 9:16 Shorts、比賽日曆及可搜尋的影片庫。",
-    "description": "Basketball Clip Mixer 將重複的瀏覽器工作與影片製作集中到一個桌面工作區。目前的 Mac 及 Windows 版本結合受控 Chrome 工作階段、可恢復的背景工作、本機 FFmpeg 輸出、直向 Shorts、手動剪輯及已儲存比賽的日曆。程式亦包含數據分析及上傳工具，所有成果都要經人手審閱才會發佈。目前仍是本機開發中的項目。",
+    "description": "NBA Video Studio 將重複的瀏覽器工作與影片製作集中到一個桌面工作區。目前的 Mac 及 Windows 版本結合受控 Chrome 工作階段、可恢復的背景工作、本機 FFmpeg 輸出、直向 Shorts、手動剪輯及已儲存比賽的日曆。程式亦包含數據分析及上傳工具，所有成果都要經人手審閱才會發佈。目前仍是本機開發中的項目。",
     "focus": [
       "Selenium + ChromeDriver 片段收集",
       "追蹤球員與籃球的 9:16 Shorts",
@@ -97,16 +97,16 @@
         "片段規格相同時以串流複製合併，不同時才重新編碼。成品保持事件順序，並在每部影片旁保存資料。"
       ],
       [
-        "Shorts 與追蹤",
-        "製作 1080×1920 Shorts，可選模糊背景、放大、裁切或追蹤版面。使用者先框選球員與籃球，切鏡後可再確認。"
+        "Shorts 與集中覆核",
+        "9:16 輸出支援自動球場取景、平滑跟球裁切、模糊背景及手動追蹤。可疑鏡頭集中分組修正焦點，本機分析記錄可於輸出時重用。"
       ],
       [
-        "日曆與影片庫",
-        "已儲存的比賽、比分、球員影片及工作按日期整理。影片庫提供搜尋、狀態篩選、資料修改、縮圖及上傳草稿。"
+        "日曆與每日補位",
+        "按日期查看比賽、球員統計及重試未完成工作。每日補位按完場比分填滿設定目標，橫式及 Shorts 共用本機近 24 小時上傳額度。"
       ],
       [
-        "打包與測試",
-        "Mac 及 Windows 版本均有 CI，另有離線合成素材端對端測試；這個作品集的 Playwright 檢查則展示相關網頁測試經驗。"
+        "分析與發佈",
+        "製作數據片尾、縮圖、字幕及旁白。選用本機 Ollama 協助分析草稿；YouTube API 支援上傳、續傳及獨立紀錄，須提供自己的 OAuth 設定。"
       ]
     ],
     "previewBadge": "實際桌面介面 · 合成示範素材",
@@ -146,7 +146,7 @@
   "zh-cn": {
     "category": "视频自动化 · Python 桌面项目",
     "summary": "用 Python 制作的篮球集锦桌面工作室：Selenium 片段收集、本地合成、追踪球员与篮球的 9:16 Shorts、比赛日历及可搜索的视频库。",
-    "description": "Basketball Clip Mixer 将重复的浏览器工作与视频制作集中到一个桌面工作区。当前的 Mac 及 Windows 版本结合受控 Chrome 会话、可恢复的后台任务、本地 FFmpeg 输出、竖版 Shorts、手动剪辑及已保存比赛的日历。程序也包含数据分析及上传工具，所有成果都要经人工审阅才会发布。目前仍是本地开发中的项目。",
+    "description": "NBA Video Studio 将重复的浏览器工作与视频制作集中到一个桌面工作区。当前的 Mac 及 Windows 版本结合受控 Chrome 会话、可恢复的后台任务、本地 FFmpeg 输出、竖版 Shorts、手动剪辑及已保存比赛的日历。程序也包含数据分析及上传工具，所有成果都要经人工审阅才会发布。目前仍是本地开发中的项目。",
     "focus": [
       "Selenium + ChromeDriver 片段收集",
       "追踪球员与篮球的 9:16 Shorts",
@@ -169,16 +169,16 @@
         "片段规格相同时以流复制合并，不同时才重新编码。成品保持事件顺序，并在每个视频旁保存数据。"
       ],
       [
-        "Shorts 与追踪",
-        "制作 1080×1920 Shorts，可选模糊背景、放大、裁切或追踪版式。用户先框选球员与篮球，切镜后可再确认。"
+        "Shorts 与集中复核",
+        "9:16 输出支持自动球场取景、平滑跟球裁切、模糊背景及手动追踪。可疑镜头集中分组修正焦点，本地分析记录可在输出时重用。"
       ],
       [
-        "日历与视频库",
-        "已保存的比赛、比分、球员视频及任务按日期整理。视频库提供搜索、状态筛选、资料修改、缩略图及上传草稿。"
+        "日历与每日补位",
+        "按日期查看比赛、球员统计及重试未完成任务。每日补位按完场比分填满配置目标，横式及 Shorts 共用本地近 24 小时上传额度。"
       ],
       [
-        "打包与测试",
-        "Mac 及 Windows 版本均有 CI，另有离线合成素材端到端测试；这个作品集的 Playwright 检查则展示相关网页测试经验。"
+        "分析与发布",
+        "制作数据片尾、缩略图、字幕及旁白。可选本地 Ollama 协助分析草稿；YouTube API 支持上传、续传和独立记录，需要自己的 OAuth 配置。"
       ]
     ],
     "previewBadge": "实际桌面界面 · 合成示范素材",
@@ -218,7 +218,7 @@
   "ja": {
     "category": "動画自動化 · Python デスクトップ",
     "summary": "バスケットボールのハイライト制作用 Python デスクトップスタジオ。Selenium によるクリップ収集、ローカル結合、選手とボールを追う 9:16 Shorts、試合カレンダー、検索できる動画ライブラリを備えます。",
-    "description": "Basketball Clip Mixer は、繰り返しのブラウザー作業と動画制作を一つのデスクトップ作業領域にまとめます。現在の Mac・Windows 版は、制御された Chrome セッション、再開可能なバックグラウンドジョブ、ローカル FFmpeg 出力、縦型 Shorts、手動編集、保存済み試合のカレンダーを組み合わせています。分析・アップロード機能も含みますが、公開前には必ず人が確認します。現在もローカルで開発中のプロジェクトです。",
+    "description": "NBA Video Studio は、繰り返しのブラウザー作業と動画制作を一つのデスクトップ作業領域にまとめます。現在の Mac・Windows 版は、制御された Chrome セッション、再開可能なバックグラウンドジョブ、ローカル FFmpeg 出力、縦型 Shorts、手動編集、保存済み試合のカレンダーを組み合わせています。分析・アップロード機能も含みますが、公開前には必ず人が確認します。現在もローカルで開発中のプロジェクトです。",
     "focus": [
       "Selenium + ChromeDriver によるクリップ収集",
       "選手とボールを追う 9:16 Shorts",
@@ -241,16 +241,16 @@
         "クリップの仕様が一致すればストリームコピーで結合し、異なる場合のみ再エンコードします。成果物はイベント順を保ち、各動画の横にメタデータを保存します。"
       ],
       [
-        "Shorts とトラッキング",
-        "ぼかし背景・拡大・切り抜き・追跡のレイアウトで 1080×1920 の Shorts を作成します。選手とボールを一度囲み、カット切り替え後に再確認できます。"
+        "Shortsと確認",
+        "9:16出力は自動コート構図、滑らかなボール追従、背景ぼかし、手動追跡に対応。要確認カットをまとめて焦点を修正し、保存したローカル分析を出力時に再利用できます。"
       ],
       [
-        "カレンダーとライブラリ",
-        "保存した試合、スコア、選手動画、ジョブを日付ごとに整理します。ライブラリでは検索、状態フィルター、情報編集、サムネイル、アップロード下書きを扱えます。"
+        "カレンダーと日次選択",
+        "日付ごとに試合と選手統計を確認し、未完了処理を再試行。終了した試合のスコアから目標本数を補い、横動画とShortsでローカル24時間アップロード枠を共有します。"
       ],
       [
-        "パッケージとテスト",
-        "Mac・Windows 両方の CI、オフラインの合成素材によるエンドツーエンドテスト、関連する Web テスト経験としてこのポートフォリオの Playwright チェックがあります。"
+        "分析と公開",
+        "統計エンドカード、サムネイル、字幕、ナレーションを準備。任意のローカルOllamaで分析案を作成。YouTube APIのアップロードと再開には自身のOAuth設定が必要です。"
       ]
     ],
     "previewBadge": "実際のデスクトップ UI · 合成サンプル素材",
@@ -290,7 +290,7 @@
   "ko": {
     "category": "영상 자동화 · Python 데스크톱",
     "summary": "농구 하이라이트 작업용 Python 데스크톱 스튜디오입니다. Selenium 클립 수집, 로컬 병합, 선수와 공을 추적하는 9:16 Shorts, 경기 캘린더, 검색 가능한 영상 라이브러리를 제공합니다.",
-    "description": "Basketball Clip Mixer는 반복적인 브라우저 작업과 영상 제작을 하나의 데스크톱 작업 공간으로 모읍니다. 현재 Mac·Windows 빌드는 제어된 Chrome 세션, 재개 가능한 백그라운드 작업, 로컬 FFmpeg 출력, 세로형 Shorts, 수동 편집, 저장된 경기 캘린더를 결합합니다. 분석과 업로드 도구도 포함되어 있으며 모든 결과는 게시 전에 사람이 검토합니다. 현재 로컬에서 개발 중인 프로젝트입니다.",
+    "description": "NBA Video Studio는 반복적인 브라우저 작업과 영상 제작을 하나의 데스크톱 작업 공간으로 모읍니다. 현재 Mac·Windows 빌드는 제어된 Chrome 세션, 재개 가능한 백그라운드 작업, 로컬 FFmpeg 출력, 세로형 Shorts, 수동 편집, 저장된 경기 캘린더를 결합합니다. 분석과 업로드 도구도 포함되어 있으며 모든 결과는 게시 전에 사람이 검토합니다. 현재 로컬에서 개발 중인 프로젝트입니다.",
     "focus": [
       "Selenium + ChromeDriver 클립 수집",
       "선수와 공을 추적하는 9:16 Shorts",
@@ -313,16 +313,16 @@
         "클립 사양이 같으면 스트림 복사로 병합하고 다를 때만 다시 인코딩합니다. 결과물은 이벤트 순서를 유지하고 각 영상 옆에 메타데이터를 저장합니다."
       ],
       [
-        "Shorts와 추적",
-        "흐림 배경, 확대, 자르기, 추적 레이아웃으로 1080×1920 Shorts를 만듭니다. 선수와 공을 한 번 지정하고 장면 전환 후 다시 확인할 수 있습니다."
+        "Shorts와 검토",
+        "9:16 출력은 자동 코트 구도, 부드러운 공 추적, 흐린 배경과 수동 추적을 지원합니다. 확인이 필요한 컷을 묶어 초점을 수정하고 저장된 로컬 분석을 렌더링에 재사용합니다."
       ],
       [
-        "캘린더와 라이브러리",
-        "저장된 경기, 점수, 선수 영상, 작업을 날짜별로 정리합니다. 라이브러리에서 검색, 상태 필터, 정보 수정, 썸네일, 업로드 초안을 다룹니다."
+        "달력과 일일 선택",
+        "날짜별 경기와 선수 통계를 확인하고 미완료 작업을 재시도합니다. 종료 경기 점수로 목표 수를 채우고 가로 영상과 Shorts가 로컬 24시간 업로드 한도를 공유합니다."
       ],
       [
-        "패키징과 테스트",
-        "Mac과 Windows 모두 CI가 있고, 오프라인 합성 소재 엔드투엔드 테스트가 있으며, 관련 웹 테스트 경험으로 이 포트폴리오의 Playwright 검사를 보여 줍니다."
+        "분석과 게시",
+        "통계 엔드카드, 썸네일, 자막과 내레이션을 준비합니다. 선택형 로컬 Ollama로 분석 초안을 만들며 YouTube API 업로드와 재개에는 본인의 OAuth 설정이 필요합니다."
       ]
     ],
     "previewBadge": "실제 데스크톱 UI · 합성 샘플 소재",

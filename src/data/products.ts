@@ -1,3 +1,4 @@
+import webControlContent from "./web-control-content.json";
 import { buildLocalTool } from "./local-tools";
 import { docupassCopy } from "./docupass-content";
 import basketballClipContent from "./basketball-clip-content.json";
@@ -259,8 +260,8 @@ export const products: Product[] = [
   },
   {
     slug: "basketball-clip-mixer",
-    name: "Basketball Clip Mixer",
-    shortName: "Basketball Clip Mixer",
+    name: "NBA Video Studio",
+    shortName: "NBA Video Studio",
     category: basketballClipContent.en.category,
     summary: basketballClipContent.en.summary,
     description: basketballClipContent.en.description,
@@ -298,6 +299,28 @@ export const products: Product[] = [
         alt: `${title}: ${description}`,
         width: [1280, 390, 390, 640][index],
         height: [720, 640, 640, 434][index],
+      }),
+    ),
+  },
+  {
+    slug: "web-control-studio",
+    name: "Web Control Studio",
+    shortName: "Web Control Studio",
+    ...webControlContent.en,
+    stage: "In Development",
+    icon: "braces",
+    accent: "blue",
+    specifications: webControlContent.en.specifications.map(
+      ([label, value]) => ({ label, value }),
+    ),
+    interfacePreviews: webControlContent.en.previews.map(
+      ([title, description], index) => ({
+        title,
+        description,
+        alt: `${title}: ${description}`,
+        image: `/images/projects/web-control-${["follow", "navigation", "recovery"][index]}.png`,
+        width: 2850,
+        height: [3300, 2622, 2656][index],
       }),
     ),
   },

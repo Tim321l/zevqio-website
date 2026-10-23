@@ -1,0 +1,266 @@
+{
+  "en": {
+    "category": "Browser control · Electron desktop",
+    "summary": "One control desk for separate browser profiles, shared page navigation, window layouts and supervised actions.",
+    "description": "Web Control Studio brings authorized browser sessions into a single desktop workspace. Select profiles, open a shared URL, arrange windows, choose a lead browser and review an action before following it in other profiles. The current app is named TicketWatch Studio; its watch rules and manual guides complement the control desk.",
+    "focus": [
+      "Separate local browser profiles",
+      "Shared navigation and window arrangement",
+      "Review targets before following an action"
+    ],
+    "specificationsLabel": "Browser control · Electron desktop",
+    "specificationsTitle": "Browser control · Electron desktop",
+    "specificationsIntro": "Web Control Studio brings authorized browser sessions into a single desktop workspace. Select profiles, open a shared URL, arrange windows, choose a lead browser and review an action before following it in other profiles. The current app is named TicketWatch Studio; its watch rules and manual guides complement the control desk.",
+    "specifications": [
+      [
+        "Desktop stack",
+        "Electron, React, TypeScript, Playwright and local SQLite. The interface supports English and Traditional Chinese."
+      ],
+      [
+        "Profile workspace",
+        "Select authorized profiles, open the same URL, arrange browser windows in a grid or side by side, and see loading or attention states per account."
+      ],
+      [
+        "Supervised actions",
+        "Capture an ordinary control in the lead browser, inspect the destination and matching targets, then approve or discard the step. Different labels require manual target selection."
+      ],
+      [
+        "Bounded repeat",
+        "An approved exact target can repeat with an interval, a maximum count and optional success text. Page changes, validation failures and the stop control end the run."
+      ],
+      [
+        "Watch and handoff",
+        "Watch visible page text with intervals of at least five minutes. Desktop alerts and optional Telegram notifications support manual follow-up when a change or access restriction appears."
+      ],
+      [
+        "Local session handling",
+        "Profile state and SQLite remain on the computer. OS-backed encryption protects configured secrets; login, payment and restricted pages require manual handling."
+      ]
+    ],
+    "previewBadge": "TicketWatch Studio · Desktop demo",
+    "screenshotsLabel": "Review a pending action",
+    "screenshotsNote": "Actual captures from the current TicketWatch Studio interface using fictional demo profiles and localhost pages. The error screen demonstrates recovery feedback. These are app screenshots, not a hosted browser service.",
+    "previews": [
+      [
+        "Review a pending action",
+        "Two fictional local demo profiles show a held action and the target-selection controls before confirmation."
+      ],
+      [
+        "Shared navigation",
+        "The real control desk reports page loading separately for each demo profile and provides a stop control."
+      ],
+      [
+        "Recover from a page error",
+        "A local HTTP 503 demo shows per-profile attention messages and the activity history."
+      ]
+    ]
+  },
+  "zh-hk": {
+    "category": "瀏覽器控制 · Electron 桌面程式",
+    "summary": "在同一個控制工作台管理獨立瀏覽器帳戶、共用網址、視窗排列及真人確認操作。",
+    "description": "Web Control Studio 將獲授權的瀏覽器工作階段集中到桌面工作區。選擇帳戶、開啟相同網址、排列視窗，再選主瀏覽器，檢查目標後才同步操作。目前程式名稱為 TicketWatch Studio，亦提供監察規則及手動操作指南。",
+    "focus": [
+      "獨立本機瀏覽器設定檔",
+      "共用網址與視窗排列",
+      "確認目標後才同步操作"
+    ],
+    "specificationsLabel": "瀏覽器控制 · Electron 桌面程式",
+    "specificationsTitle": "瀏覽器控制 · Electron 桌面程式",
+    "specificationsIntro": "Web Control Studio 將獲授權的瀏覽器工作階段集中到桌面工作區。選擇帳戶、開啟相同網址、排列視窗，再選主瀏覽器，檢查目標後才同步操作。目前程式名稱為 TicketWatch Studio，亦提供監察規則及手動操作指南。",
+    "specifications": [
+      [
+        "桌面技術",
+        "Electron、React、TypeScript、Playwright 及本機 SQLite，支援繁體中文及英文介面。"
+      ],
+      [
+        "帳戶工作區",
+        "選擇已授權帳戶、開啟共用網址，以網格或並排方式排列視窗，逐帳戶查看載入及待處理狀態。"
+      ],
+      [
+        "真人確認同步",
+        "擷取主瀏覽器的一般控制項，檢查目的地及各帳戶目標，再確認或取消。文字不同時由你手動選擇目標。"
+      ],
+      [
+        "有限次重複",
+        "確認完全相同的目標後，可設定間隔、次數上限及成功文字。頁面改變、驗證失敗或按停止會結束執行。"
+      ],
+      [
+        "監察與接手",
+        "按最少五分鐘間隔監察可見頁面文字；桌面及選用 Telegram 通知提示變更或需要人手處理的存取限制。"
+      ],
+      [
+        "本機工作階段",
+        "設定檔及 SQLite 保存在電腦，設定的秘密資料使用作業系統加密；登入、付款及受限制頁面由人手處理。"
+      ]
+    ],
+    "previewBadge": "TicketWatch Studio · Desktop demo",
+    "screenshotsLabel": "檢查待確認操作",
+    "screenshotsNote": "截自目前 TicketWatch Studio 介面，使用虛構示範帳戶及 localhost 頁面。錯誤畫面展示恢復提示。圖片為桌面程式截圖。",
+    "previews": [
+      [
+        "檢查待確認操作",
+        "兩個虛構本機示範帳戶顯示已暫停的操作，以及確認前的目標選擇控制項。"
+      ],
+      ["共用網址載入", "實際控制台逐帳戶顯示載入進度，並提供停止載入。"],
+      ["頁面錯誤恢復", "本機 HTTP 503 示範顯示各帳戶的待處理訊息及活動紀錄。"]
+    ]
+  },
+  "zh-cn": {
+    "category": "浏览器控制 · Electron 桌面程序",
+    "summary": "在同一个控制台管理独立浏览器账户、共享网址、窗口排列及人工确认操作。",
+    "description": "Web Control Studio 将已授权的浏览器会话集中到桌面工作区。选择账户、打开相同网址、排列窗口，再选择主浏览器，检查目标后同步操作。当前程序名为 TicketWatch Studio，也提供监控规则和手动操作指南。",
+    "focus": ["独立本地浏览器配置", "共享网址与窗口排列", "确认目标后同步操作"],
+    "specificationsLabel": "浏览器控制 · Electron 桌面程序",
+    "specificationsTitle": "浏览器控制 · Electron 桌面程序",
+    "specificationsIntro": "Web Control Studio 将已授权的浏览器会话集中到桌面工作区。选择账户、打开相同网址、排列窗口，再选择主浏览器，检查目标后同步操作。当前程序名为 TicketWatch Studio，也提供监控规则和手动操作指南。",
+    "specifications": [
+      [
+        "桌面技术",
+        "Electron、React、TypeScript、Playwright 和本地 SQLite，支持繁体中文及英文界面。"
+      ],
+      [
+        "账户工作区",
+        "选择授权账户、打开共享网址，以网格或并排方式排列窗口，逐账户查看加载及待处理状态。"
+      ],
+      [
+        "人工确认同步",
+        "捕获主浏览器的普通控件，检查目的地及各账户目标，再确认或取消。文字不同时手动选择目标。"
+      ],
+      [
+        "有限次重复",
+        "确认完全相同的目标后，设置间隔、次数上限及成功文字。页面变化、验证失败或停止操作将结束运行。"
+      ],
+      [
+        "监控与接手",
+        "按至少五分钟间隔监控可见文字；桌面及可选 Telegram 通知提示变化或需要人工处理的访问限制。"
+      ],
+      [
+        "本地会话",
+        "配置及 SQLite 保存在电脑，秘密信息使用操作系统加密；登录、付款和受限页面由人工处理。"
+      ]
+    ],
+    "previewBadge": "TicketWatch Studio · Desktop demo",
+    "screenshotsLabel": "检查待确认操作",
+    "screenshotsNote": "截图来自当前 TicketWatch Studio，使用虚构演示账户及 localhost 页面。错误画面展示恢复提示。图片为桌面程序截图。",
+    "previews": [
+      [
+        "检查待确认操作",
+        "两个虚构本地演示账户显示暂停的操作，以及确认前的目标选择控件。"
+      ],
+      ["共享网址加载", "实际控制台逐账户显示加载进度，并提供停止加载。"],
+      ["页面错误恢复", "本地 HTTP 503 演示显示各账户的待处理信息及活动记录。"]
+    ]
+  },
+  "ja": {
+    "category": "ブラウザー操作 · Electronデスクトップ",
+    "summary": "複数のブラウザープロフィール、共通URL、ウィンドウ配置、承認付き操作を一つの画面で管理。",
+    "description": "Web Control Studioは許可されたブラウザーセッションをデスクトップに集約します。プロフィールを選び、共通URLを開き、画面を配置し、対象を確認してから操作を承認します。現在のアプリ名はTicketWatch Studioで、監視ルールと手動ガイドも備えています。",
+    "focus": [
+      "独立したローカルプロフィール",
+      "共通URLとウィンドウ配置",
+      "対象確認と操作の承認"
+    ],
+    "specificationsLabel": "ブラウザー操作 · Electronデスクトップ",
+    "specificationsTitle": "ブラウザー操作 · Electronデスクトップ",
+    "specificationsIntro": "Web Control Studioは許可されたブラウザーセッションをデスクトップに集約します。プロフィールを選び、共通URLを開き、画面を配置し、対象を確認してから操作を承認します。現在のアプリ名はTicketWatch Studioで、監視ルールと手動ガイドも備えています。",
+    "specifications": [
+      [
+        "技術構成",
+        "Electron、React、TypeScript、Playwright、ローカルSQLite。英語と繁体字中国語に対応。"
+      ],
+      [
+        "プロフィール管理",
+        "許可されたアカウントを選択し、同じURLを開いてグリッドや横並びに配置。読み込みと要確認状態を個別に表示します。"
+      ],
+      [
+        "承認付き操作",
+        "主ブラウザーの通常の操作を保留し、移動先と対象を確認して承認または破棄。ラベルが違う場合は手動で対象を選びます。"
+      ],
+      [
+        "回数制限付き反復",
+        "完全一致した対象に間隔、上限回数、成功テキストを設定。ページ変更、検証失敗、停止操作で終了します。"
+      ],
+      [
+        "監視と引き継ぎ",
+        "表示テキストを最短5分間隔で監視。デスクトップ通知と任意のTelegram通知で変化や手動対応を知らせます。"
+      ],
+      [
+        "ローカル保存",
+        "プロフィールとSQLiteを端末内に保存。機密設定はOSの暗号化を利用し、ログインや支払いは手動で行います。"
+      ]
+    ],
+    "previewBadge": "TicketWatch Studio · Desktop demo",
+    "screenshotsLabel": "操作対象の確認",
+    "screenshotsNote": "現在のTicketWatch Studioを架空のデモプロフィールとlocalhostページで撮影。エラー画面は復旧時の表示例です。",
+    "previews": [
+      [
+        "操作対象の確認",
+        "架空のデモ用プロフィール2件で保留中の操作と確認前の対象選択を表示。"
+      ],
+      [
+        "共通URLを開く",
+        "実際の操作画面がプロフィールごとの読み込みと停止ボタンを表示。"
+      ],
+      [
+        "ページエラーへの対応",
+        "ローカルHTTP 503デモで要確認メッセージと操作履歴を表示。"
+      ]
+    ]
+  },
+  "ko": {
+    "category": "브라우저 제어 · Electron 데스크톱",
+    "summary": "독립 브라우저 프로필, 공통 URL, 창 배치와 승인 작업을 하나의 제어 화면에서 관리합니다.",
+    "description": "Web Control Studio는 허가된 브라우저 세션을 데스크톱 작업 공간에 모읍니다. 프로필 선택, 공통 URL 열기, 창 배치 후 대상과 작업을 확인해 승인합니다. 현재 앱 이름은 TicketWatch Studio이며 모니터링 규칙과 수동 가이드도 제공합니다.",
+    "focus": [
+      "독립 로컬 브라우저 프로필",
+      "공통 URL과 창 배치",
+      "대상 확인 후 작업 승인"
+    ],
+    "specificationsLabel": "브라우저 제어 · Electron 데스크톱",
+    "specificationsTitle": "브라우저 제어 · Electron 데스크톱",
+    "specificationsIntro": "Web Control Studio는 허가된 브라우저 세션을 데스크톱 작업 공간에 모읍니다. 프로필 선택, 공통 URL 열기, 창 배치 후 대상과 작업을 확인해 승인합니다. 현재 앱 이름은 TicketWatch Studio이며 모니터링 규칙과 수동 가이드도 제공합니다.",
+    "specifications": [
+      [
+        "기술 구성",
+        "Electron, React, TypeScript, Playwright와 로컬 SQLite. 영어와 번체 중국어 인터페이스를 지원합니다."
+      ],
+      [
+        "프로필 작업 공간",
+        "허가된 계정을 선택하고 같은 URL을 연 뒤 격자 또는 나란히 배치합니다. 계정별 로딩 및 확인 상태를 표시합니다."
+      ],
+      [
+        "승인 기반 작업",
+        "주 브라우저의 일반 작업을 보류하고 목적지와 대상을 확인한 뒤 승인하거나 취소합니다. 이름이 다르면 대상을 직접 선택합니다."
+      ],
+      [
+        "횟수 제한 반복",
+        "정확히 일치하는 대상에 간격, 최대 횟수와 성공 문구를 설정합니다. 페이지 변경, 검증 실패 또는 중지 시 종료합니다."
+      ],
+      [
+        "모니터링과 인계",
+        "최소 5분 간격으로 보이는 텍스트를 확인합니다. 데스크톱 및 선택형 Telegram 알림으로 변경과 수동 처리를 알립니다."
+      ],
+      [
+        "로컬 세션",
+        "프로필과 SQLite는 컴퓨터에 저장합니다. 비밀 설정은 운영체제 암호화를 이용하며 로그인과 결제는 수동 처리합니다."
+      ]
+    ],
+    "previewBadge": "TicketWatch Studio · Desktop demo",
+    "screenshotsLabel": "대기 중인 작업 확인",
+    "screenshotsNote": "현재 TicketWatch Studio에서 가상 프로필과 localhost 페이지를 사용한 실제 캡처입니다. 오류 화면은 복구 안내의 예시입니다.",
+    "previews": [
+      [
+        "대기 중인 작업 확인",
+        "가상 로컬 데모 프로필 두 개로 승인 전 작업과 대상 선택을 보여 줍니다."
+      ],
+      [
+        "공통 URL 로딩",
+        "실제 제어 화면이 프로필별 로딩과 중지 버튼을 표시합니다."
+      ],
+      [
+        "페이지 오류 복구",
+        "로컬 HTTP 503 데모로 계정별 확인 메시지와 활동 기록을 보여 줍니다."
+      ]
+    ]
+  }
+}
