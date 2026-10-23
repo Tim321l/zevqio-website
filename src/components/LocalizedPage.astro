@@ -1,4 +1,7 @@
 ---
+import ProjectPromotion from "./ProjectPromotion.astro";
+import { getPromotion } from "../data/project-promotion";
+import promotionLabels from "../data/promotion-labels.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "./Icon.astro";
 import ProjectShowcase from "./ProjectShowcase.astro";
@@ -6,7 +9,6 @@ import DocuPassShowcase from "./DocuPassShowcase.astro";
 import DocuPassFeatures from "./DocuPassFeatures.astro";
 import docuShowcaseCopy from "../data/docupass-showcase.json";
 import { docuEvidence } from "../data/docupass-evidence";
-import { docuFeatureLabels } from "../data/docupass-features";
 import { docuStory } from "../data/docupass-story";
 import docuResult from "../data/docupass-demo-result.json";
 import { showcaseLabels } from "../data/project-showcase";
@@ -43,6 +45,8 @@ interface Props {
 }
 
 const { locale, page, slug } = Astro.props;
+const promotion = slug ? getPromotion(slug, locale) : undefined;
+const promotionUI = promotionLabels[locale];
 const copy = getLocaleContent(locale);
 const home = copy.home;
 const about = copy.about;
@@ -355,7 +359,7 @@ const getHomeProjectCopy = (href?: string) => {
               </h2>
             </div>
             <div class="section-intro-block">
-              <p class="section-intro">{home.productsIntro}</p>
+              <p class="section-intro">{promotionUI[8]}</p>
               <a
                 class="text-link"
                 href={withBase(localeHref(locale, "/products"))}
@@ -407,7 +411,10 @@ const getHomeProjectCopy = (href?: string) => {
                   <h3>
                     <a href={productUrl(product.slug)}>{text.name}</a>
                   </h3>
-                  <p class="product-card-copy">{text.summary}</p>
+                  <p class="product-card-copy">
+                    {getPromotion(product.slug, locale)?.headline ??
+                      text.summary}
+                  </p>
                   <ul class="home-product-highlights">
                     {text.focus.slice(0, 4).map((highlight) => (
                       <li>
@@ -866,7 +873,7 @@ const getHomeProjectCopy = (href?: string) => {
               <br />
               <span class="text-gradient">{productsPage.headline[1]}</span>
             </h1>
-            <p>{productsPage.intro}</p>
+            <p>{promotionUI[8]}</p>
           </div>
         </div>
       </section>
@@ -957,7 +964,10 @@ const getHomeProjectCopy = (href?: string) => {
                   <h3>
                     <a href={productUrl(product.slug)}>{text.name}</a>
                   </h3>
-                  <p class="product-card-copy">{text.summary}</p>
+                  <p class="product-card-copy">
+                    {getPromotion(product.slug, locale)?.headline ??
+                      text.summary}
+                  </p>
                   <ul class="home-product-highlights">
                     {text.focus.slice(0, 4).map((highlight) => (
                       <li>
@@ -1114,10 +1124,24 @@ const getHomeProjectCopy = (href?: string) => {
                 <span class="product-title-period">.</span>
               </h1>
               <p class="detail-lede">
-                {slug === "docupass"
-                  ? docuStory.hero[locale]
-                  : productCopy.summary}
+                {promotion?.headline ?? productCopy.summary}
               </p>
+              {promotion && (
+                <p class="promotion-audience">{promotion.audience}</p>
+              )}
+              <div class="promotion-actions">
+                <a
+                  class="button button-primary"
+                  href={mailUrl(`${promotionUI[3]}: ${productCopy.name}`)}
+                >
+                  {promotionUI[3]}
+                  <Icon name="arrowUpRight" size={16} />
+                </a>
+                <a class="button button-secondary" href="#product-journey">
+                  {promotionUI[2]}
+                  <Icon name="arrowRight" size={16} />
+                </a>
+              </div>
               <div class="detail-meta">
                 <span class="status-pill detail-status">
                   <span class="status-dot" aria-hidden="true"></span>
@@ -1129,25 +1153,6 @@ const getHomeProjectCopy = (href?: string) => {
                   </a>
                 )}
               </div>
-              {slug === "docupass" && (
-                <div class="docu-hero-actions">
-                  <a
-                    class="button button-primary"
-                    href="#docupass-features"
-                    data-docu-start
-                  >
-                    {docuStory.watch[locale]}
-                    <Icon name="arrowRight" size={16} />
-                  </a>
-                  <a class="button button-secondary" href="#docupass-demo">
-                    {docuFeatureLabels.screens[locale]}
-                  </a>
-                  <a class="text-link" href="#ocr-results">
-                    {docuFeatureLabels.results[locale]}
-                    <Icon name="arrowRight" size={16} />
-                  </a>
-                </div>
-              )}
               <div class="product-hero-focus">
                 <span class="focus-kicker">{detail.focusKicker}</span>
                 <div class="product-hero-highlights">
@@ -1206,6 +1211,11 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </div>
       </section>
+      <ProjectPromotion
+        {locale}
+        slug={sourceProduct.slug}
+        name={productCopy.name}
+      />
       {slug === "docupass" && <DocuPassFeatures {locale} />}
       {slug === "docupass" && <DocuPassShowcase {locale} />}
       {slug === "docupass" && (
@@ -1222,15 +1232,6 @@ const getHomeProjectCopy = (href?: string) => {
               <h2 id="handwriting-title">{docuEvidence.handwriting[locale]}</h2>
               <p>{docuEvidence.handwritingIntro[locale]}</p>
               <p>{docuEvidence.method[locale]}</p>
-              <a
-                class="text-link"
-                href="https://github.com/Tim321l/paddleocr-studio/blob/bf86a8c1853b976cdba95610fd5515ce46b5a5b9/docs/studio-plan.md#phase-7-validation-on-real-handwriting"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {docuEvidence.source[locale]}{" "}
-                <Icon name="arrowUpRight" size={16} />
-              </a>
             </div>
             <div class="handwriting-results-card">
               <p class="eyebrow">{docuEvidence.exact[locale]}</p>
@@ -1512,23 +1513,12 @@ const getHomeProjectCopy = (href?: string) => {
           </div>
         </section>
       )}
-      <section class="page-cta-section">
-        <div class="shell page-cta-inner">
-          <div>
-            <p class="eyebrow">
-              <span class="eyebrow-line"></span>
-              {detail.ctaLabel}
-            </p>
-            <h2>{detail.ctaTitle}</h2>
-          </div>
-          <a
-            class="button button-primary"
-            href={mailUrl(`${detail.questionSubject}: ${productCopy.name}`)}
-          >
-            {detail.ctaButton} <Icon name="arrowUpRight" size={16} />
-          </a>
-        </div>
-      </section>
+      <ProjectPromotion
+        {locale}
+        slug={sourceProduct.slug}
+        name={productCopy.name}
+        cta
+      />
     </>
   )}
 
@@ -1561,7 +1551,25 @@ const getHomeProjectCopy = (href?: string) => {
                 {projectCopy.name}
                 <span class="product-title-period">.</span>
               </h1>
-              <p class="detail-lede">{projectCopy.summary}</p>
+              <p class="detail-lede">
+                {promotion?.headline ?? projectCopy.summary}
+              </p>
+              {promotion && (
+                <p class="promotion-audience">{promotion.audience}</p>
+              )}
+              <div class="promotion-actions">
+                <a
+                  class="button button-primary"
+                  href={mailUrl(`${promotionUI[3]}: ${projectCopy.name}`)}
+                >
+                  {promotionUI[3]}
+                  <Icon name="arrowUpRight" size={16} />
+                </a>
+                <a class="button button-secondary" href="#gameplay-demo">
+                  {promotionUI[2]}
+                  <Icon name="arrowRight" size={16} />
+                </a>
+              </div>
               <div class="detail-meta">
                 <span class="status-pill detail-status">
                   <span class="status-dot" aria-hidden="true"></span>
@@ -1605,6 +1613,11 @@ const getHomeProjectCopy = (href?: string) => {
         </div>
       </section>
 
+      <ProjectPromotion
+        {locale}
+        slug={sourceProject.slug}
+        name={projectCopy.name}
+      />
       <nav class="game-switcher shell" aria-label={gameUI.games}>
         {selectedProjects
           .filter((item) => item.href)
@@ -1883,23 +1896,12 @@ const getHomeProjectCopy = (href?: string) => {
         </div>
       </section>
 
-      <section class="page-cta-section">
-        <div class="shell page-cta-inner">
-          <div>
-            <p class="eyebrow">
-              <span class="eyebrow-line"></span>
-              {portfolio.ctaLabel}
-            </p>
-            <h2>{portfolio.ctaTitle}</h2>
-          </div>
-          <a
-            class="button button-primary"
-            href={mailUrl(`${portfolio.ctaLabel}: ${projectCopy.name}`)}
-          >
-            {portfolio.ctaButton} <Icon name="arrowUpRight" size={16} />
-          </a>
-        </div>
-      </section>
+      <ProjectPromotion
+        {locale}
+        slug={sourceProject.slug}
+        name={projectCopy.name}
+        cta
+      />
     </div>
   )}
 

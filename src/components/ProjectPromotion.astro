@@ -1,0 +1,61 @@
+---
+import { getPromotion } from "../data/project-promotion";
+import labels from "../data/promotion-labels.json";
+import { site } from "../data/site";
+import type { Locale } from "../data/locales";
+import Icon from "./Icon.astro";
+interface Props {
+  slug: string;
+  locale: Locale;
+  name: string;
+  cta?: boolean;
+}
+const { slug, locale, name, cta = false } = Astro.props;
+const pitch = getPromotion(slug, locale);
+const ui = labels[locale];
+const mail = `mailto:${site.email}?subject=${encodeURIComponent(`${ui[3]}: ${name}`)}`;
+---
+
+{pitch &&
+  (cta ? (
+    <section class="promotion-enquiry section-space">
+      <div class="shell promotion-enquiry-inner">
+        <div>
+          <p class="eyebrow">{name}</p>
+          <h2>{ui[5]}</h2>
+          <p>{ui[6]}</p>
+          <p class="promotion-stage">{ui[7]}</p>
+        </div>
+        <a class="button button-primary" href={mail}>
+          {ui[3]}
+          <Icon name="arrowUpRight" size={16} />
+        </a>
+      </div>
+    </section>
+  ) : (
+    <section
+      class="promotion-journey section-space"
+      id="product-journey"
+      aria-labelledby="journey-title"
+    >
+      <div class="shell">
+        <div class="promotion-journey-heading">
+          <div>
+            <p class="eyebrow">{ui[0]}</p>
+            <h2 id="journey-title">{ui[1]}</h2>
+          </div>
+          <p>{pitch.audience}</p>
+        </div>
+        <div class="promotion-steps">
+          {pitch.steps.map((step, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step}</h3>
+              <Icon name="arrowRight" size={20} />
+            </article>
+          ))}
+        </div>
+        <p class="promotion-flow-label">{ui[1]}</p>
+      </div>
+    </section>
+  ))}

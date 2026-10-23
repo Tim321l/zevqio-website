@@ -21,8 +21,6 @@ interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const source =
-  "https://github.com/Tim321l/paddleocr-studio/blob/bf86a8c1853b976cdba95610fd5515ce46b5a5b9/";
 ---
 
 <section
@@ -96,14 +94,6 @@ const source =
                   <li>{point[locale]}</li>
                 ))}
               </ul>
-              <a
-                href={source + scene.source}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {ui.source[locale]}
-                <ArrowRight size={15} />
-              </a>
             </div>
             <div class="docu-scene-visual">
               {scene.image ? (

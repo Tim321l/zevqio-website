@@ -1,0 +1,335 @@
+{
+  "vidoany": {
+    "en": {
+      "headline": "Turn long videos into notes you can use.",
+      "audience": "For researchers and creators reviewing video material.",
+      "steps": [
+        "Choose a video",
+        "Analyse the content",
+        "Keep timestamped notes"
+      ]
+    },
+    "zh-hk": {
+      "headline": "將長影片整理成用得上的筆記。",
+      "audience": "適合需要整理影片資料的研究者及創作者。",
+      "steps": ["選擇影片", "分析內容", "保存時間標記筆記"]
+    },
+    "zh-cn": {
+      "headline": "将长视频整理成实用笔记。",
+      "audience": "适合整理视频资料的研究者及创作者。",
+      "steps": ["选择视频", "分析内容", "保存时间标记笔记"]
+    },
+    "ja": {
+      "headline": "長い動画を、使えるノートへ。",
+      "audience": "動画資料を整理する研究者やクリエイター向け。",
+      "steps": ["動画を選ぶ", "内容を分析", "時刻付きノートを保存"]
+    },
+    "ko": {
+      "headline": "긴 영상을 활용할 수 있는 노트로.",
+      "audience": "영상 자료를 검토하는 연구자와 제작자를 위해.",
+      "steps": ["영상 선택", "내용 분석", "시간 표시 노트 저장"]
+    }
+  },
+  "tokensaver": {
+    "en": {
+      "headline": "Give your next AI task a clearer starting point.",
+      "audience": "For developers who want to plan and reuse project prompts.",
+      "steps": [
+        "Set the project context",
+        "Prepare the prompt",
+        "Keep useful versions"
+      ]
+    },
+    "zh-hk": {
+      "headline": "讓下一次 AI 任務有更清晰的起點。",
+      "audience": "適合需要規劃及重用項目提示詞的開發者。",
+      "steps": ["設定項目背景", "整理提示詞", "保留實用版本"]
+    },
+    "zh-cn": {
+      "headline": "为下一次 AI 任务准备清晰起点。",
+      "audience": "适合规划和复用项目提示词的开发者。",
+      "steps": ["设置项目背景", "整理提示词", "保留实用版本"]
+    },
+    "ja": {
+      "headline": "次のAIタスクに、明確な出発点を。",
+      "audience": "プロジェクトの指示を整理・再利用したい開発者向け。",
+      "steps": ["背景を整理", "指示を準備", "使える版を保存"]
+    },
+    "ko": {
+      "headline": "다음 AI 작업을 더 명확하게 시작하세요.",
+      "audience": "프로젝트 프롬프트를 계획하고 재사용하는 개발자를 위해.",
+      "steps": ["프로젝트 배경 설정", "프롬프트 준비", "유용한 버전 저장"]
+    }
+  },
+  "monitor": {
+    "en": {
+      "headline": "See what your computer is doing at a glance.",
+      "audience": "For Windows users checking resource usage while they work or play.",
+      "steps": [
+        "Open the panel",
+        "Watch resource usage",
+        "Inspect busy applications"
+      ]
+    },
+    "zh-hk": {
+      "headline": "一眼掌握電腦的運作狀態。",
+      "audience": "適合工作或遊戲時需要查看資源用量的 Windows 用戶。",
+      "steps": ["開啟監察面板", "查看資源用量", "檢查活躍程式"]
+    },
+    "zh-cn": {
+      "headline": "一眼掌握电脑运行状态。",
+      "audience": "适合工作或游戏时查看资源占用的 Windows 用户。",
+      "steps": ["打开监控面板", "查看资源使用", "检查活跃程序"]
+    },
+    "ja": {
+      "headline": "PCの動きを、ひと目で把握。",
+      "audience": "作業やゲーム中にリソースを確認したいWindowsユーザー向け。",
+      "steps": ["パネルを開く", "使用量を確認", "稼働アプリを調べる"]
+    },
+    "ko": {
+      "headline": "컴퓨터 상태를 한눈에 확인하세요.",
+      "audience": "작업과 게임 중 자원 사용량을 확인하는 Windows 사용자를 위해.",
+      "steps": ["패널 열기", "자원 사용 확인", "활성 앱 점검"]
+    }
+  },
+  "docupass": {
+    "en": {
+      "headline": "Turn document piles into records you can check.",
+      "audience": "For people reviewing receipts, invoices and document batches.",
+      "steps": [
+        "Add your documents",
+        "Review extracted values",
+        "Export checked records"
+      ]
+    },
+    "zh-hk": {
+      "headline": "將成疊單據變成可核對的記錄。",
+      "audience": "適合需要核對收據、發票及批次文件的人員。",
+      "steps": ["加入文件", "核對抽取欄位", "匯出已核對記錄"]
+    },
+    "zh-cn": {
+      "headline": "将成堆单据变成可核对记录。",
+      "audience": "适合核对收据、发票及批量文档的人员。",
+      "steps": ["添加文档", "核对提取字段", "导出已核对记录"]
+    },
+    "ja": {
+      "headline": "書類の山を、確認できるデータへ。",
+      "audience": "レシート・請求書・大量の書類を確認する担当者向け。",
+      "steps": ["書類を追加", "抽出値を確認", "確認済みデータを出力"]
+    },
+    "ko": {
+      "headline": "쌓인 문서를 검토 가능한 기록으로.",
+      "audience": "영수증, 청구서와 문서 묶음을 검토하는 담당자를 위해.",
+      "steps": ["문서 추가", "추출값 검토", "확인한 기록 내보내기"]
+    }
+  },
+  "basketball-clip-mixer": {
+    "en": {
+      "headline": "Bring basketball highlights from clips to a finished edit.",
+      "audience": "For basketball video creators managing highlights and Shorts.",
+      "steps": [
+        "Organise game clips",
+        "Frame and review Shorts",
+        "Prepare the final video"
+      ]
+    },
+    "zh-hk": {
+      "headline": "由籃球片段到完整精華，在同一工作室處理。",
+      "audience": "適合需要整理精華及 Shorts 的籃球影片創作者。",
+      "steps": ["整理比賽片段", "取景及覆核 Shorts", "準備影片成品"]
+    },
+    "zh-cn": {
+      "headline": "从篮球片段到完整集锦，在同一工作室处理。",
+      "audience": "适合整理集锦及 Shorts 的篮球视频创作者。",
+      "steps": ["整理比赛片段", "取景及复核 Shorts", "准备视频成品"]
+    },
+    "ja": {
+      "headline": "バスケのクリップから、仕上げた動画へ。",
+      "audience": "ハイライトやShortsを制作するバスケ動画クリエイター向け。",
+      "steps": ["クリップを整理", "Shortsを構図・確認", "完成動画を準備"]
+    },
+    "ko": {
+      "headline": "농구 클립을 완성된 하이라이트로.",
+      "audience": "하이라이트와 Shorts를 제작하는 농구 영상 제작자를 위해.",
+      "steps": ["경기 클립 정리", "Shorts 구도와 검토", "최종 영상 준비"]
+    }
+  },
+  "smartcart-ai": {
+    "en": {
+      "headline": "Keep the shopping list and price comparison together.",
+      "audience": "For shoppers planning lists and comparing recorded prices.",
+      "steps": [
+        "Make a list",
+        "Compare recorded prices",
+        "Use the shopping view"
+      ]
+    },
+    "zh-hk": {
+      "headline": "將購物清單與價格比較放在一起。",
+      "audience": "適合規劃購物清單及比較已記錄價格的用戶。",
+      "steps": ["建立清單", "比較已記錄價格", "使用購物畫面"]
+    },
+    "zh-cn": {
+      "headline": "将购物清单与价格比较放在一起。",
+      "audience": "适合规划购物清单和比较已记录价格的用户。",
+      "steps": ["建立清单", "比较已记录价格", "使用购物界面"]
+    },
+    "ja": {
+      "headline": "買い物リストと価格比較を、一緒に。",
+      "audience": "買い物リストを作り、記録した価格を比べたい方へ。",
+      "steps": ["リストを作成", "記録価格を比較", "買い物画面を使う"]
+    },
+    "ko": {
+      "headline": "장보기 목록과 가격 비교를 한곳에서.",
+      "audience": "장보기 목록을 계획하고 기록한 가격을 비교하는 사용자를 위해.",
+      "steps": ["목록 만들기", "기록 가격 비교", "장보기 화면 사용"]
+    }
+  },
+  "web-control-studio": {
+    "en": {
+      "headline": "Bring your browser sessions under one clear control desk.",
+      "audience": "For people coordinating several authorised browser profiles.",
+      "steps": [
+        "Choose profiles",
+        "Open and arrange pages",
+        "Review the next action"
+      ]
+    },
+    "zh-hk": {
+      "headline": "用一個清晰工作台管理多個瀏覽器工作階段。",
+      "audience": "適合需要協調多個獲授權瀏覽器帳戶的用戶。",
+      "steps": ["選擇帳戶", "開啟及排列頁面", "確認下一步操作"]
+    },
+    "zh-cn": {
+      "headline": "用一个清晰工作台管理多个浏览器会话。",
+      "audience": "适合协调多个已授权浏览器账户的用户。",
+      "steps": ["选择账户", "打开及排列页面", "确认下一步操作"]
+    },
+    "ja": {
+      "headline": "複数のブラウザーを、一つの操作画面へ。",
+      "audience": "許可された複数のブラウザープロフィールを扱う方へ。",
+      "steps": ["プロフィールを選ぶ", "ページを開き配置", "次の操作を確認"]
+    },
+    "ko": {
+      "headline": "여러 브라우저 세션을 하나의 제어 화면으로.",
+      "audience": "허가된 여러 브라우저 프로필을 관리하는 사용자를 위해.",
+      "steps": ["프로필 선택", "페이지 열기와 배치", "다음 작업 검토"]
+    }
+  },
+  "rimrise-unity": {
+    "en": {
+      "headline": "Build a basketball career beyond the final whistle.",
+      "audience": "For players interested in basketball, career progression and city life.",
+      "steps": ["Create a player", "Play and develop", "Explore city life"]
+    },
+    "zh-hk": {
+      "headline": "終場哨聲之後，繼續你的籃球生涯。",
+      "audience": "適合喜歡籃球、生涯成長與城市生活的玩家。",
+      "steps": ["建立球員", "比賽與成長", "探索城市生活"]
+    },
+    "zh-cn": {
+      "headline": "终场哨声之后，继续你的篮球生涯。",
+      "audience": "适合喜欢篮球、生涯成长和城市生活的玩家。",
+      "steps": ["创建球员", "比赛与成长", "探索城市生活"]
+    },
+    "ja": {
+      "headline": "試合の先へ続く、バスケキャリア。",
+      "audience": "バスケ、選手の成長、街の生活を楽しみたいプレイヤー向け。",
+      "steps": ["選手を作成", "試合と成長", "街の生活を探索"]
+    },
+    "ko": {
+      "headline": "경기 종료 후에도 이어지는 농구 커리어.",
+      "audience": "농구, 선수 성장과 도시 생활을 즐기는 플레이어를 위해.",
+      "steps": ["선수 만들기", "경기와 성장", "도시 생활 탐험"]
+    }
+  },
+  "rimrise-web": {
+    "en": {
+      "headline": "Move from the basketball court into a browser-built city.",
+      "audience": "For players exploring browser basketball and connected career systems.",
+      "steps": ["Start a career", "Enter the court", "Explore the 3D city"]
+    },
+    "zh-hk": {
+      "headline": "由籃球場走進瀏覽器中的城市。",
+      "audience": "適合想探索網頁籃球及生涯系統的玩家。",
+      "steps": ["開始生涯", "進入球場", "探索 3D 城市"]
+    },
+    "zh-cn": {
+      "headline": "从篮球场走进浏览器中的城市。",
+      "audience": "适合探索网页篮球和生涯系统的玩家。",
+      "steps": ["开始生涯", "进入球场", "探索 3D 城市"]
+    },
+    "ja": {
+      "headline": "コートから、ブラウザーの街へ。",
+      "audience": "ブラウザーのバスケとキャリアシステムに関心のある方へ。",
+      "steps": ["キャリアを開始", "コートへ", "3Dの街を探索"]
+    },
+    "ko": {
+      "headline": "농구 코트에서 브라우저 속 도시로.",
+      "audience": "브라우저 농구와 커리어 시스템에 관심 있는 플레이어를 위해.",
+      "steps": ["커리어 시작", "코트 입장", "3D 도시 탐험"]
+    }
+  },
+  "bigdeal": {
+    "en": {
+      "headline": "Make every card a property decision.",
+      "audience": "For groups who enjoy property strategy, card play and room-based matches.",
+      "steps": [
+        "Choose the room rules",
+        "Build your property sets",
+        "React to the next turn"
+      ]
+    },
+    "zh-hk": {
+      "headline": "每張卡牌，都能改變你的地產策略。",
+      "audience": "適合喜歡地產策略、卡牌及房間對局的玩家。",
+      "steps": ["選擇房間規則", "收集物業組合", "應對下一回合"]
+    },
+    "zh-cn": {
+      "headline": "每张卡牌，都能改变你的地产策略。",
+      "audience": "适合喜欢地产策略、卡牌和房间对局的玩家。",
+      "steps": ["选择房间规则", "收集物业组合", "应对下一回合"]
+    },
+    "ja": {
+      "headline": "一枚のカードで変わる、不動産戦略。",
+      "audience": "不動産戦略やカード対戦を楽しむグループ向け。",
+      "steps": ["ルールを選ぶ", "物件セットを集める", "次のターンに対応"]
+    },
+    "ko": {
+      "headline": "카드 한 장으로 달라지는 부동산 전략.",
+      "audience": "부동산 전략과 카드 대전을 즐기는 그룹을 위해.",
+      "steps": ["방 규칙 선택", "부동산 세트 수집", "다음 턴에 대응"]
+    }
+  },
+  "song-guess": {
+    "en": {
+      "headline": "Give your next music quiz its own rules.",
+      "audience": "For music quiz groups exploring timed rounds and custom rooms.",
+      "steps": [
+        "Choose a quiz mode",
+        "Set timers and rounds",
+        "Review the room setup"
+      ]
+    },
+    "zh-hk": {
+      "headline": "為下一場音樂問答訂下你的玩法。",
+      "audience": "適合想體驗限時回合及自訂房間的音樂問答玩家。",
+      "steps": ["選擇問答模式", "設定時間與回合", "檢查房間設定"]
+    },
+    "zh-cn": {
+      "headline": "为下一场音乐问答设定玩法。",
+      "audience": "适合体验限时回合和自定义房间的音乐问答玩家。",
+      "steps": ["选择问答模式", "设置时间和回合", "检查房间设置"]
+    },
+    "ja": {
+      "headline": "次の音楽クイズを、自分たちのルールで。",
+      "audience": "制限時間やルーム設定を楽しみたい音楽クイズのグループ向け。",
+      "steps": ["モードを選ぶ", "時間と回数を設定", "ルーム設定を確認"]
+    },
+    "ko": {
+      "headline": "다음 음악 퀴즈를 나만의 규칙으로.",
+      "audience": "제한 시간과 맞춤 방을 설정하는 음악 퀴즈 그룹을 위해.",
+      "steps": ["퀴즈 모드 선택", "시간과 라운드 설정", "방 설정 확인"]
+    }
+  }
+}
